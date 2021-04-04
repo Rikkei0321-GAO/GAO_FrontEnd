@@ -12,7 +12,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     src:url(../fonts/Oxygen-Regular.ttf) format('truetype');
 }
 html,body{
-	background:#fff;
+	background:#EDF5;
 	font-size: 100%;
 	font-family: 'Oxygen-Regular';
 }
@@ -28,7 +28,7 @@ body a{
 	margin: 0;
 }
 h1,h2,h3,h4,h5,h6,label,p{
-	margin:0;	
+	margin:0;
 }
 /*----*/
 .logo {
@@ -40,13 +40,13 @@ h1,h2,h3,h4,h5,h6,label,p{
 }
 /*--header--*/
 .header{
-  	background-color: #27da93; 
+  	background-color: #27da93;
   	  padding: 0.8em 0;
 }
 .bottom-head {
 	text-align: center;
   	border-right:1px solid #EBEBEB;
-  	padding: 0; 
+  	padding: 0;
   	float: left;
   	width: 14.285%;
 }
@@ -58,8 +58,8 @@ h1,h2,h3,h4,h5,h6,label,p{
 	border-right: none;
 }
 .bottom-head a {
-  	text-decoration: none;  	
-  	display: block;	
+  	text-decoration: none;
+  	display: block;
   	height: 120px;
     position: relative;
     transition: 0.5s all;
@@ -85,9 +85,9 @@ h1,h2,h3,h4,h5,h6,label,p{
   transition: transform .2s ease,height .2s ease;
 }
 .bottom-head  h6{
-	font-size: 1em;
-	color:#919090;
-	font-family: 'Montserrat-Regular';
+	font-size: 1.2em;
+	color:#BC896A;
+	font-family: ui-sans-serif;
 	margin: 0.5em 0 0;
 }
 
@@ -212,7 +212,7 @@ i.deal{
 .right-icons li i{
 	margin: 0 0.3em;
 }
-ul.right-icons {  	
+ul.right-icons {
     z-index: 9;
     float: left;
     margin-top: 4px;
@@ -283,10 +283,10 @@ i.glyphicon.glyphicon-menu-hamburger {
 	-o-transition: all 0.3s ease-out;
 	transition: all 0.3s ease-out;
 	background:#000000;
-	color:#fff;	
+	color:#fff;
 }
 .resp-tab-active{
-	color:#fff;	
+	color:#fff;
 	background:#27da93;
 }
 .resp-tab-item span{
@@ -338,7 +338,7 @@ h2.resp-accordion:hover{
   	font-size: 1.1em;
   	color: #DADADA;
 }
-.login input[type="submit"] {	
+.login input[type="submit"] {
 	width: 32px;
 	height: 32px;
 	background: url(../images/search.png) no-repeat ;
@@ -418,7 +418,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 	font-size: 3em;
   	text-transform: uppercase;
   	display: inline-block;
-  	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
   	padding: 0 0 0.3em;
 }
 .caption h3 span{
@@ -430,7 +430,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 	margin: 0.5em 0em 0;
 }
 .banner1{
-	background: url(../images/images1244827_2_1461256073_660x0.jpg) no-repeat;
+	background: url(../images/fville-hanoi.jpg) no-repeat;
 	width:100%;
 	min-height: 550px;
 	background-size: cover;
@@ -448,7 +448,7 @@ ul.callbacks_tabs.callbacks1_tabs {
   -o-background-size: cover;
 }
 .banner3{
-	background: url(../images/529-cover-app.jpg) no-repeat;
+	background: url(../images/RK_SLIDER_201910040455370000006532.jpg) no-repeat;
 	width:100%;
 	min-height: 550px;
 	background-size: cover;
@@ -463,7 +463,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 	color: #fff;
   	font-size: 3em;
  	padding: 0 0 1.3em;
-  	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 }
 .content-grid h3:after,.content-grid h3:before{
 	width: 200px;
@@ -493,7 +493,7 @@ ul.callbacks_tabs.callbacks1_tabs {
    	font-size: 1.2em;
   	color: #27DA93;
   	padding: 0em 0 0.3em;
-    font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 }
 .most-1 h5 a{
    	text-decoration:none;
@@ -542,9 +542,9 @@ a.mask {
 .service-top h3{
 	text-align:center;
 	color: #000;
-  	font-size: 3em;
+  	font-size: 2.5em;
   	padding: 0 0 0.3em;
-  	font-family: 'Montserrat-Regular';
+  font-family: ui-sans-serif;
 }
 .service-top h3:after,.service-top h3:before{
 	width: 200px;
@@ -572,16 +572,17 @@ a.mask {
 	width:77%;
 }
 .ser-top h4{
-	font-size: 1.4em;
+	font-size: 1.2em;
 	text-transform: uppercase;
-	font-family: 'Montserrat-Regular';
+  font-family: ui-sans-serif;
 	color:#27da93 ;
 }
 .ser-top p{
-	color:#a3a3a3;
-	font-size: 0.9em;
+	color: #000000;
+	font-size: 1.04em;
 	line-height:2em;
 	margin:0.5em 0 0em;
+  font-family: ui-sans-serif;
 }
 .ser-grid{
 	float:left;
@@ -611,8 +612,8 @@ a.mask {
 	height: 100%;
 	border-radius: 50%;
 	content: '';
-	-webkit-box-sizing: content-box; 
-	-moz-box-sizing: content-box; 
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
 	box-sizing: content-box;
 }
 
@@ -701,7 +702,7 @@ a.mask {
 /*--phone--*/
 .phone-text h4{
 	color:#000;
-	font-size:3em;	
+	font-size:3em;
 }
 .text-1 h5{
 	color: #000;
@@ -788,7 +789,7 @@ a.more:hover{
 	color: #000;
   	font-size: 3em;
   	padding: 0 0 0.3em;
-  	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 }
 .project h3:after,.project h3:before{
 	width: 200px;
@@ -810,7 +811,7 @@ a.more:hover{
   width: 100%;
   min-height: 250px;
   display: block;
-  background-size: cover; 
+  background-size: cover;
 }
 .mid-content{
 	background:#27da93;
@@ -822,8 +823,8 @@ a.more:hover{
 .mid-content h3{
 	text-transform:uppercase;
 	font-size:2.7em;
-	font-family: 'Montserrat-Regular';
-	color:#fff;	
+  font-family: 'Montserrat-Regular', serif;
+	color:#fff;
 }
 .mid-content p{
 	font-size: 0.9em;
@@ -894,9 +895,9 @@ a.more-in:hover{
 .content-bottom h3{
 	text-align:center;
 	color: #000;
-  	font-size: 3em;
+  	font-size: 2.5em;
   	padding: 0 0 0.3em;
-  	font-family: 'Montserrat-Regular';
+  font-family: ui-sans-serif;
 }
 .content-bottom h3:after,.content-bottom h3:before{
 	width: 200px;
@@ -908,10 +909,11 @@ a.more-in:hover{
 	  margin: 0 1%;
 }
  p.para-in{
-	color:#a3a3a3;
-	font-size:1.2em;
+	color:#000000;
+	font-size:1.1em;
 	width: 80%;
 	line-height: 1.6em;
+   font-family: ui-sans-serif;
 }
 i.dolor{
 	background:url(../images/arr.png) no-repeat 0px 0px;
@@ -942,7 +944,7 @@ i.dolor{
 .men span {
 	color:#27da93;
 	font-size: 1.2em;
-	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 }
 .men p{
 	color: #a3a3a3;
@@ -969,9 +971,9 @@ i.dolor{
 .content-bottom1 h3{
 	text-align:center;
 	color: #000;
-  font-size: 3em;
+  font-size: 2.5em;
   padding: 0 0 1em;
-font-family: 'Montserrat-Regular';
+  font-family: ui-sans-serif;
 }
 .content-bottom1 h3:after,.content-bottom1 h3:before{
 	width: 200px;
@@ -997,7 +999,7 @@ font-family: 'Montserrat-Regular';
 	font-size: 1.5em;
   	color: #fff;
 	margin: 0 0 0.7em;
-	font-family: 'Montserrat-Regular';
+  font-family: ui-sans-serif;
 }
 .footer-top-at {
   	padding: 5em 0;
@@ -1007,8 +1009,7 @@ font-family: 'Montserrat-Regular';
 }
 ul.nav-bottom li  a{
 	text-decoration:none;
-	color:#989696;
-	font-size:0.8em;
+	color:#FBEEC1;
 	display: inline-block;
 	margin: 0.5em 0;
 }
@@ -1016,8 +1017,7 @@ ul.nav-bottom li  a:hover{
 	color:#27da93;
 }
 .amet-sed p{
-	color:#989696;
-	font-size: 0.9em;
+	color:#FBEEC1;
 	margin: 0.5em 0 0;
 }
 .footer-class  p{
@@ -1040,7 +1040,7 @@ ul.nav-bottom li  a:hover{
 }
 .footer-logo h2{
 	font-size: 2em;
-  	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 }
 .footer-logo h2 a{
 	color:#fff;
@@ -1099,7 +1099,7 @@ transform: rotatey(360deg);
 	font-size: 3em;
   	text-transform: uppercase;
   	display: inline-block;
-  	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
   	padding: 0 0 0.3em;
   	float: left;
   	margin-top: 1.8em;
@@ -1140,7 +1140,7 @@ ul {
 	font-size:0.9em;
 	text-decoration:none;
 }
-.menu ul li a {	
+.menu ul li a {
 	width: 100%;
 	display: block;
 	position: relative;
@@ -1167,7 +1167,7 @@ i.glyphicon.glyphicon-menu-down {
 	border-bottom: none;
 }
 ul.kid-menu li{
-	list-style: none;	
+	list-style: none;
 }
 ul.kid-menu li.menu-kid-left{
 	border-bottom:none;
@@ -1179,7 +1179,7 @@ ul.kid-menu li.menu-kid-left{
 }
 .price-top h4,.price-top1 h4{
 	font-size: 1.2em;
-  	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
   	color: #27da93;
   	margin: 0 0 0.5em;
 }
@@ -1210,7 +1210,7 @@ select.in-drop {
  	 font-size: 3em;
   	color: #000;
   	margin:0 0 0.4em;
-	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
   	text-align: center;
 }
 .top-grid h3:after,.top-grid h3:before {
@@ -1308,7 +1308,7 @@ figure.effect-layla figcaption::after {
 figure.effect-layla h4 {
 	margin-top: 14%;
 	font-size: 1.2em;
-  	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 	opacity: 0;
 	-webkit-transform: translate3d(0,-10px,0);
 	transform: translate3d(0,-10px,0);
@@ -1393,7 +1393,7 @@ figure.effect-layla:hover {
 figure.effect-layla h4 {
 	margin-top: 90%;
 	font-size: 1.2em;
-  	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 	opacity: 0;
 	-webkit-transform: translate3d(0,-10px,0);
 	transform: translate3d(0,-10px,0);
@@ -1448,7 +1448,7 @@ figure.effect-layla h4.effect3{
 }
 .pre-top h5{
 	font-size: 1.5em;
-	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 }
 .pre-top p{
 	font-size: 1em;
@@ -1460,7 +1460,7 @@ figure.effect-layla h4.effect3{
   font-size: 3em;
   color: #000;
   margin: 0 0 1em;
-font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
   text-align: center;
 }
 .future h3:after,.future h3:before {
@@ -1495,7 +1495,7 @@ span.fur-money{
 .fur1 h6{
 	color:#27da93;
 	font-size: 1em;
-	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 	margin: 0.3em 0;
 }
 .fur1 h6 a{
@@ -1543,7 +1543,7 @@ span.fur-money{
 }
 .nbs-flexisel-item > img {
 	cursor: pointer;
-	position: relative;	
+	position: relative;
 }
 /*---- Navigation ---*/
 .nbs-flexisel-nav-left, .nbs-flexisel-nav-right {
@@ -1597,7 +1597,7 @@ option.rm{
 .single-bottom h4{
 	font-size: 1.3em;
   	color: #27da93;
-  	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 }
 /*--checkbox--*/
 .single-bottom ul{
@@ -1661,7 +1661,7 @@ option.rm{
   	text-transform: uppercase;
  	color: #27DA93;
 	margin: 0 0 0.5em;
-	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 }
 .middle-side p{
 	font-size:0.9em;
@@ -1770,7 +1770,7 @@ a.in-box:hover {
 .single-box-right h4{
 	font-size: 1.3em;
  	color: #27DA93;
-	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 }
 /*--//single--*/
 /*--buy-single--*/
@@ -1787,13 +1787,13 @@ a.in-box:hover {
 .map-buy-single h4 {
   font-size: 1.5em;
   color: #000;
-font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
   padding: 1em 0;
 }
 .buy-sin h4{
 	font-size: 1.5em;
   color: #000;
-font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 }
 .buy-sin p{
 	color: #a3a3a3;
@@ -1819,7 +1819,7 @@ font-family: 'Montserrat-Regular';
 .video-pre h4 {
   font-size: 1.5em;
   color: #000;
-  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
   padding: 1em 0;
 }
 .video-pre iframe{
@@ -1832,7 +1832,7 @@ font-family: 'Montserrat-Regular';
 .home-loan h3,.bank-bottom1 h3{
 	font-size: 3em;
   	color: #000;
-  	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
   	margin: 0em 0 1em;
   	text-align: center;
 }
@@ -1926,7 +1926,7 @@ font-family: 'Montserrat-Regular';
   	font-size: 3em;
   	color: #000;
   	margin: 0 0 0.8em;
-	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
   	text-align: center;
 }
 .loan-col h3:after, .loan-col h3:before {
@@ -1940,7 +1940,7 @@ font-family: 'Montserrat-Regular';
 }
 .loan-col h4 ,.loan-col1 h4{
     color:#27da93;
-  	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
   	padding: 1em 0;
   	  font-size: 1.2em;
 }
@@ -2042,7 +2042,7 @@ label.hvr-sweep-to-right{
   text-align: center;
   color: #000;
   font-size: 3em;
-font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 }
 .dealers h3:after, .dealers h3:before {
   width: 200px;
@@ -2056,7 +2056,7 @@ font-family: 'Montserrat-Regular';
 .dealer h4 {
   	font-size: 1.8em;
  	color:#000;
-  	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
   	text-transform: uppercase;
 }
 .dealer-grid-top span{
@@ -2076,7 +2076,7 @@ font-family: 'Montserrat-Regular';
   	color: #27DA93;
   	width: 78%;
   	line-height: 1.3em;
-  	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 }
 .dealer-grid-top h6 a{
   	color:#27DA93;
@@ -2102,7 +2102,7 @@ font-family: 'Montserrat-Regular';
 }
 .top-deal1 h5{
 	font-size: 1.2em;
-	  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 }
 .top-deal1 h5 a{
 	color:#27DA93;
@@ -2123,7 +2123,7 @@ font-family: 'Montserrat-Regular';
 .dealer-top h4{
 	font-size: 1.8em;
  	color:#000;
-  	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
   	  text-transform: uppercase;
 }
 .deal-bottom {
@@ -2144,7 +2144,7 @@ font-family: 'Montserrat-Regular';
 .about-head h3 {
   	font-size: 3em;
   	text-align: center;
-  	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
   	margin: 0 0 0.5em;
 }
 .about-head h3:after,.about-head h3:before{
@@ -2160,7 +2160,7 @@ font-family: 'Montserrat-Regular';
 	font-size: 1.3em;
   	width: 72%;
   	line-height: 1.6em;
-  	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
   	margin: 0.5em auto;
 }
 .about-in h6 a{
@@ -2193,12 +2193,12 @@ font-family: 'Montserrat-Regular';
 	color:#000;
 	font-size: 2em;
 	text-transform: uppercase;
-	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 }
 .about-mid h6{
 	font-size: 1.4em;
   	margin: 1em 0 0.7em;
-  	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
   	line-height: 1.5em;
 }
 .about-mid h6 a{
@@ -2224,7 +2224,7 @@ font-family: 'Montserrat-Regular';
 	line-height: 1.5em;
 	text-transform: uppercase;
 	margin: 0 0 0.5em;
-	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 }
 .about-middle {
 	padding: 5em 0;
@@ -2234,7 +2234,7 @@ font-family: 'Montserrat-Regular';
 	font-size: 3em;
 	color: #000;
 	text-align: center;
-	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 	margin: 0 0 0.3em;
 }
 .choose-us h3:after,.choose-us h3:before{
@@ -2254,7 +2254,7 @@ font-family: 'Montserrat-Regular';
 	font-size: 1.4em;
 	text-transform: uppercase;
 	color:#27DA93;
-	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 }
 .beautiful label{
 	margin: 0;
@@ -2279,7 +2279,7 @@ font-family: 'Montserrat-Regular';
 .bottom-about h4{
 	color: #27da93;
     font-size: 1.3em;
-  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
     line-height: 1.5em;
 }
 .bottom-about h4 a{
@@ -2309,7 +2309,7 @@ font-family: 'Montserrat-Regular';
 .content-events h3{
 	font-size:3em;
 	color: #000;
-  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
     text-align: center;
     margin: 0 0 0.5em;
 }
@@ -2329,12 +2329,12 @@ font-family: 'Montserrat-Regular';
     border-bottom: 1px solid #000;
     width: 50%;
     padding: 0 0 0.2em;
-  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
   	margin: 0 0 0.5em;
 }
 .event h6{
 	font-size:1.2em;
-	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 	display: block;
 }
 .event h6 a{
@@ -2359,7 +2359,7 @@ font-family: 'Montserrat-Regular';
 .blog h3{
 	font-size:3em;
 	color: #000;
-  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
     text-align: center;
     margin: 0 0 1em;
 }
@@ -2377,7 +2377,7 @@ font-family: 'Montserrat-Regular';
  	text-transform: uppercase;
     font-size: 1.1em;
     margin: 1em 0 0.3em;
-  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
     color:#27DA93;
 }
 .blog-top h4 a{
@@ -2454,7 +2454,7 @@ ul.blog-links li a i{
 	color:#27da93;
 	margin-bottom:0.8em;
 	text-transform: uppercase;
-	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 }
 .blog-img{
 	float:left;
@@ -2524,7 +2524,7 @@ img.media-object {
 h4.media-heading {
   font-size: 1.2em;
   color: #27da93;
-font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 }
 .media-body p {
   padding: 0.5em 0 0;
@@ -2564,7 +2564,7 @@ font-family: 'Montserrat-Regular';
 	font-size: 2em;
   	color: #000;
   	margin-bottom: 1em;
-  	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 }
 .leave {
   padding: 3em 0 0;
@@ -2580,7 +2580,7 @@ font-family: 'Montserrat-Regular';
 .contact h3{
 	font-size:3em;
 	color: #000;
-  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
     text-align: center;
 }
 .contact h3:after,.contact h3:before{
@@ -2635,14 +2635,14 @@ font-family: 'Montserrat-Regular';
    	display: block;
   	color: #000;
   	font-size: 2em;
-  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
     margin: 0 0 0.7em;
 }
 .contact-address h5{
 	display: block;
   	color: #27DA93;
   font-size: 1.3em;
-  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 }
 .contact-address1 {
   	padding: 0;
@@ -2668,7 +2668,7 @@ font-family: 'Montserrat-Regular';
 .terms h3 {
   	font-size: 3em;
   	color:#000;
-	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
   	padding: 0 0 0.5em;
   	text-align: center;
 }
@@ -2684,7 +2684,7 @@ font-family: 'Montserrat-Regular';
 .terms h4 {
   	font-size: 1.5em;
   	color:#27da93;
-	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 }
 .terms p{
 	font-size: 0.9em;
@@ -2723,7 +2723,7 @@ ul.terms-start li a i{
 .privacy h3 {
   	font-size: 3em;
   	color:#000;
-	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
   	padding: 0 0 0.3em;
   	text-align: center;
 }
@@ -2739,7 +2739,7 @@ ul.terms-start li a i{
 .privacy h4 {
   	font-size: 1.5em;
   	color:#27da93;
-	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 }
 .privacy p{
 	font-size: 0.9em;
@@ -2785,7 +2785,7 @@ p.privacy-para {
 	  text-align: center;
 	  color: #000;
 	  font-size: 3em;
-	  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 	  margin: 0 0 1em;
 }
 .login-right h3:after, .login-right h3:before {
@@ -2889,7 +2889,7 @@ ul.login-icons li:nth-child(2),ul.login-icons li:nth-child(4) {
 	font-size: 1.3em;
 	color:#000;
 	  margin-top: 9px;
-	    font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 }
 .create a{
 	float: right;
@@ -2930,7 +2930,7 @@ ul.login-icons li:nth-child(2),ul.login-icons li:nth-child(4) {
 	text-align: center;
 	color: #000;
 	font-size: 3em;
-	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 	margin: 0 0 1em;
 }
 .feedback h3:after,.feedback h3:before {
@@ -2976,7 +2976,7 @@ ul.login-icons li:nth-child(2),ul.login-icons li:nth-child(4) {
 	text-align: center;
 	color: #000;
 	font-size: 3em;
-	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 	margin: 0 0 1em;
 }
 .asked h3:after,.asked h3:before {
@@ -2994,7 +2994,7 @@ ul.login-icons li:nth-child(2),ul.login-icons li:nth-child(4) {
 .questions h5{
 	color: #27da93;
 	font-size: 1.3em;
-	font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 	line-height: 1.6em;
 }
 .questions p{
@@ -3012,7 +3012,7 @@ ul.login-icons li:nth-child(2),ul.login-icons li:nth-child(4) {
   text-align: center;
   color: #000;
   font-size: 3em;
-  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
   margin: 0 0 1em;
 }
 .career h3:after, .career h3:before {
@@ -3033,7 +3033,7 @@ ul.login-icons li:nth-child(2),ul.login-icons li:nth-child(4) {
   font-size: 1.4em;
   color: #27DA93;
   margin: 0.5em 0;
-  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
 }
 ul.career-start{
 	padding: 0.1em 0 0.5em;
@@ -3067,7 +3067,7 @@ h3.typo1 {
    text-align: center;
   color: #000;
   font-size: 3em;
-  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat-Regular', serif;
   margin: 0 0 1em;
 }
 h3.typo1:after, h3.typo1:before {
@@ -3101,12 +3101,12 @@ ul.nav.nav-pills {
 /*--//typo--*/
 /*--responsive--*/
 @media(max-width:1366px){
-	
+
 }
 @media(max-width:1280px){
-	
+
 }
-@media(max-width:1200px){	
+@media(max-width:1200px){
 }
 @media(max-width:1024px){
 .banner1,.banner2,.banner3 {
@@ -3118,7 +3118,7 @@ ul.nav.nav-pills {
 }
 p.para-in {
   width: 100%;
-}	
+}
 .buy-media {
   padding: 30px 10px;
 }
@@ -3193,7 +3193,7 @@ select.drop-select1 {
   padding: 3em 0;
 }
 }
-@media(max-width:768px){	
+@media(max-width:768px){
 .banner1,.banner2,.banner3 {
   min-height: 390px;
 }
@@ -3225,7 +3225,7 @@ select.drop-select1 {
 , .content-bottom h3:before,.content-bottom1 h3:after, .content-bottom1 h3:before,
 .about-head h3:after, .about-head h3:before,.choose-us h3:after, .choose-us h3:before,
 .content-events h3:after, .content-events h3:before,.blog h3:after, .blog h3:before,
-.terms h3:after, .terms h3:before,.privacy h3:after, .privacy h3:before,.contact h3:after, 
+.terms h3:after, .terms h3:before,.privacy h3:after, .privacy h3:before,.contact h3:after,
 .contact h3:before,.career h3:after, .career h3:before,.asked h3:after,.asked h3:before
 ,.feedback h3:after,.feedback h3:before,.home-loan h3:after,.home-loan h3:before,.bank-bottom1 h3:after,
 .bank-bottom1 h3:before ,.loan-col h3:after, .loan-col h3:before ,.dealers h3:after, .dealers h3:before,
@@ -3625,16 +3625,16 @@ h1.grid2 {
 ,.dealers h3,.top-grid h3,.future h3,h3.typo1{
   font-size: 2.3em;
 }
-.content-grid h3:after, .content-grid h3:before, .service-top h3:after, 
-.service-top h3:before, .project h3:after, .project h3:before, 
+.content-grid h3:after, .content-grid h3:before, .service-top h3:after,
+.service-top h3:before, .project h3:after, .project h3:before,
 .content-bottom h3:after, .content-bottom h3:before, .content-bottom1 h3:after,
-.content-bottom1 h3:before ,.about-head h3:after, .about-head h3:before, 
-.choose-us h3:after, .choose-us h3:before, 
-.content-events h3:after, .content-events h3:before,.blog h3:after, .blog h3:before,.terms h3:after, 
+.content-bottom1 h3:before ,.about-head h3:after, .about-head h3:before,
+.choose-us h3:after, .choose-us h3:before,
+.content-events h3:after, .content-events h3:before,.blog h3:after, .blog h3:before,.terms h3:after,
 .terms h3:before ,.privacy h3:after, .privacy h3:before,.contact h3:after, .contact h3:before,
 .career h3:after, .career h3:before,.asked h3:after,.asked h3:before ,.feedback h3:after,.feedback h3:before
 ,.home-loan h3:after,.home-loan h3:before,.bank-bottom1 h3:after,.bank-bottom1 h3:before,
-.loan-col h3:after, .loan-col h3:before ,.dealers h3:after, .dealers h3:before,.top-grid h3:after, 
+.loan-col h3:after, .loan-col h3:before ,.dealers h3:after, .dealers h3:before,.top-grid h3:after,
 .top-grid h3:before,.future h3:after, .future h3:before,h3.typo1:after, h3.typo1:before{
   width: 103px;
 }
@@ -3766,7 +3766,7 @@ h3.typo1 {
 @media(max-width:480px){
 .logo h1 {
   font-size: 1.7em;
-}	
+}
 .top-nav {
   margin-top: 1px;
 }
@@ -3790,15 +3790,15 @@ h3.typo1 {
 .dealers h3,.top-grid h3,.future h3,h3.typo1{
   font-size: 2em;
 }
-.content-grid h3:after, .content-grid h3:before, .service-top h3:after, 
-.service-top h3:before, .project h3:after, .project h3:before, 
-.content-bottom h3:after, .content-bottom h3:before, .content-bottom1 h3:after, 
-.content-bottom1 h3:before,.about-head h3:after, .about-head h3:before, .choose-us h3:after, 
+.content-grid h3:after, .content-grid h3:before, .service-top h3:after,
+.service-top h3:before, .project h3:after, .project h3:before,
+.content-bottom h3:after, .content-bottom h3:before, .content-bottom1 h3:after,
+.content-bottom1 h3:before,.about-head h3:after, .about-head h3:before, .choose-us h3:after,
 .choose-us h3:before, .content-events h3:after, .content-events h3:before ,
 .blog h3:after, .blog h3:before,.terms h3:after, .terms h3:before,.privacy h3:after, .privacy h3:before,
 .contact h3:after, .contact h3:before,.career h3:after, .career h3:before ,.asked h3:after,.asked h3:before
 ,.feedback h3:after,.feedback h3:before,.home-loan h3:after,.home-loan h3:before,.bank-bottom1 h3:after,
-.bank-bottom1 h3:before ,.loan-col h3:after, .loan-col h3:before ,.dealers h3:after, 
+.bank-bottom1 h3:before ,.loan-col h3:after, .loan-col h3:before ,.dealers h3:after,
 .dealers h3:before,.top-grid h3:after, .top-grid h3:before,.future h3:after, .future h3:before
 ,h3.typo1:after, h3.typo1:before{
   width: 50px;
@@ -4117,7 +4117,7 @@ ul.loan-col1 li.loan-list-top {
 }
 /*--typo--*/
 .page-header h3 {
-  font-size: 2em; 
+  font-size: 2em;
 }
 button.btn.btn-lg {
   font-size: 1em;
@@ -4281,15 +4281,15 @@ i.buy,i.rent,i.pg,i.sell,i.loan,i.apart ,i.deal{
 .dealers h3,.top-grid h3,.future h3,h3.typo1{
   font-size: 1.4em;
 }
-.content-grid h3:after, .content-grid h3:before, .service-top h3:after, 
-.service-top h3:before, .project h3:after, .project h3:before, 
-.content-bottom h3:after, .content-bottom h3:before, .content-bottom1 h3:after, 
-.content-bottom1 h3:before,.about-head h3:after, .about-head h3:before, .choose-us h3:after, 
+.content-grid h3:after, .content-grid h3:before, .service-top h3:after,
+.service-top h3:before, .project h3:after, .project h3:before,
+.content-bottom h3:after, .content-bottom h3:before, .content-bottom1 h3:after,
+.content-bottom1 h3:before,.about-head h3:after, .about-head h3:before, .choose-us h3:after,
 .choose-us h3:before, .content-events h3:after, .content-events h3:before ,
 .blog h3:after, .blog h3:before,.privacy h3:after, .privacy h3:before,
-.contact h3:after, .contact h3:before,.career h3:after, .career h3:before 
+.contact h3:after, .contact h3:before,.career h3:after, .career h3:before
 ,.home-loan h3:after,.home-loan h3:before,.bank-bottom1 h3:after,
-.bank-bottom1 h3:before ,.loan-col h3:after, .loan-col h3:before ,.dealers h3:after, 
+.bank-bottom1 h3:before ,.loan-col h3:after, .loan-col h3:before ,.dealers h3:after,
 .dealers h3:before,.top-grid h3:after, .top-grid h3:before,h3.typo1:after, h3.typo1:before{
   width: 45px;
 }
@@ -4958,7 +4958,7 @@ h3.typo1 {
 }
 .page-header h3 {
   font-size: 1.8em;
-} 
+}
 h1.typo1 {
   font-size: 1.7em;
   margin: 0 0 0.5em;

@@ -6,17 +6,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 // @ts-ignore
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 import {AdminModule} from './admin/admin.module';
 import {QuanlytaikhoanIndexComponent} from './admin/quanlytaikhoan-index/quanlytaikhoan-index.component';
+import { MenuComponent } from './menu/menu.component';
+import {ClientComponent} from './menu/client/client.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    QuanlytaikhoanIndexComponent
+    QuanlytaikhoanIndexComponent,
+    MenuComponent,
+    ClientComponent
   ],
   imports: [
     BrowserModule,
