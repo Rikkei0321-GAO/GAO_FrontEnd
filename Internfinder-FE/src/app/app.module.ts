@@ -14,6 +14,12 @@ import { QuanlybaidangCreateComponent } from './admin/quanlybaidang/quanlybaidan
 import { QuanlybaichiaseIndexComponent } from './admin/quanlybaichiase/quanlybaichiase-index/quanlybaichiase-index.component';
 import { QuanlybaichiaseCreateComponent } from './admin/quanlybaichiase/quanlybaichiase-create/quanlybaichiase-create.component';
 import { QuanlybaichiaseEditComponent } from './admin/quanlybaichiase/quanlybaichiase-edit/quanlybaichiase-edit.component';
+import { QuanlymauCVComponent } from './admin/quanlymau-cv/quanlymau-cv.component';
+import { QuanlymaucvIndexComponent } from './admin/quanlymau-cv/quanlymaucv-index/quanlymaucv-index.component';
+import { QuanlymaucvCreateComponent } from './admin/quanlymau-cv/quanlymaucv-create/quanlymaucv-create.component';
+import { QuanlymaucvDetailComponent } from './admin/quanlymau-cv/quanlymaucv-detail/quanlymaucv-detail.component';
+import { QuanlymaucvEditComponent } from './admin/quanlymau-cv/quanlymaucv-edit/quanlymaucv-edit.component';
+import { ModuleCreateCvComponent } from './client/module-create-cv/module-create-cv.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +35,12 @@ import { QuanlybaichiaseEditComponent } from './admin/quanlybaichiase/quanlybaic
     QuanlybaichiaseIndexComponent,
     QuanlybaichiaseCreateComponent,
     QuanlybaichiaseEditComponent,
+    QuanlymauCVComponent,
+    QuanlymaucvIndexComponent,
+    QuanlymaucvCreateComponent,
+    QuanlymaucvDetailComponent,
+    QuanlymaucvEditComponent,
+    ModuleCreateCvComponent,
   ],
   imports: [
     BrowserModule,
