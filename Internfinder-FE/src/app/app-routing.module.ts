@@ -9,21 +9,23 @@ import {QuanlymaucvIndexComponent} from './admin/quanlymau-cv/quanlymaucv-index/
 import {QuanlymaucvCreateComponent} from './admin/quanlymau-cv/quanlymaucv-create/quanlymaucv-create.component';
 import {QuanlymaucvDetailComponent} from './admin/quanlymau-cv/quanlymaucv-detail/quanlymaucv-detail.component';
 import {ModuleCreateCvComponent} from './client/module-create-cv/module-create-cv.component';
-import {PageComponent} from './page/page.component';
 import {AdminComponent} from './admin/admin.component';
+import {ClientComponent} from './client/client.component';
+import {PageComponent} from './client/page/page.component';
 
 const routes: Routes = [
   {path: '', component: PageComponent},
-  {path: 'admin', component: AdminComponent},
-  {path: 'admin/quanlytaikhoan/index', component: QuanlytaikhoanIndexComponent},
-  {path: 'admin/quanlytaikhoan/create', component: QuanlytaikhoanCreateComponent},
-  {path: 'admin/quanlytaikhoan/edit', component: QuanlytaikhoanEditComponent},
-  {path: 'admin/quanlybaidang/index', component: QuanlybaidangIndexComponent},
-  {path: 'admin/quanlybaidang/create', component: QuanlybaidangCreateComponent},
-  {path: 'admin/quanlymaucv/index', component: QuanlymaucvIndexComponent},
-  {path: 'admin/quanlymaucv/create', component: QuanlymaucvCreateComponent},
-  {path: 'admin/quanlymaucv/detail', component: QuanlymaucvDetailComponent},
-  {path: 'create_cv', component: ModuleCreateCvComponent  }
+  {path: 'admin', component: AdminComponent, children: [
+      {path: 'quanlytaikhoan/index', component: QuanlytaikhoanIndexComponent},
+      {path: 'quanlytaikhoan/create', component: QuanlytaikhoanCreateComponent},
+      {path: 'quanlytaikhoan/edit', component: QuanlytaikhoanEditComponent},
+      {path: 'quanlybaidang/index', component: QuanlybaidangIndexComponent},
+      {path: 'quanlybaidang/create', component: QuanlybaidangCreateComponent},
+      {path: 'quanlymaucv/index', component: QuanlymaucvIndexComponent},
+      {path: 'quanlymaucv/create', component: QuanlymaucvCreateComponent},
+      {path: 'quanlymaucv/detail', component: QuanlymaucvDetailComponent}
+    ]},
+  {path: 'client', component: ClientComponent, children: [{path: 'create_cv', component: ModuleCreateCvComponent  }]}
 ];
 
 @NgModule({

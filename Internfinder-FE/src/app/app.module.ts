@@ -20,9 +20,9 @@ import { QuanlymaucvCreateComponent } from './admin/quanlymau-cv/quanlymaucv-cre
 import { QuanlymaucvDetailComponent } from './admin/quanlymau-cv/quanlymaucv-detail/quanlymaucv-detail.component';
 import { QuanlymaucvEditComponent } from './admin/quanlymau-cv/quanlymaucv-edit/quanlymaucv-edit.component';
 import { ModuleCreateCvComponent } from './client/module-create-cv/module-create-cv.component';
-import { PageComponent } from './page/page.component';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { PageComponent } from './client/page/page.component';
 
 @NgModule({
   declarations: [
@@ -44,9 +44,9 @@ import { FooterComponent } from './component/footer/footer.component';
     QuanlymaucvDetailComponent,
     QuanlymaucvEditComponent,
     ModuleCreateCvComponent,
-    PageComponent,
     HeaderComponent,
     FooterComponent,
+    PageComponent,
   ],
   imports: [
     BrowserModule,

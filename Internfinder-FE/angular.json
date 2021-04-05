@@ -32,14 +32,7 @@
             ],
             "styles": [
             ],
-            "scripts": [
-              "src/assets/admin/vendor/jquery/jquery.min.js",
-              "src/assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js",
-              "src/assets/admin/vendor/jquery-easing/jquery.easing.min.js",
-              "src/assets/admin/js/sb-admin-2.min.js",
-              "src/assets/admin/vendor/datatables/jquery.dataTables.min.js",
-              "src/assets/admin/vendor/datatables/dataTables.bootstrap4.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
