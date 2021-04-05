@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -35,8 +38,7 @@
               "src/assets/admin/vendor/jquery-easing/jquery.easing.min.js",
               "src/assets/admin/js/sb-admin-2.min.js",
               "src/assets/admin/vendor/datatables/jquery.dataTables.min.js",
-              "src/assets/admin/vendor/datatables/dataTables.bootstrap4.min.js",
-              "src/assets/admin/js/demo/datatables-demo.js"
+              "src/assets/admin/vendor/datatables/dataTables.bootstrap4.min.js"
             ]
           },
           "configurations": {

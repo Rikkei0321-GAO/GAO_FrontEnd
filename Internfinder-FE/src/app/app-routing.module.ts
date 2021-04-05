@@ -9,8 +9,12 @@ import {QuanlymaucvIndexComponent} from './admin/quanlymau-cv/quanlymaucv-index/
 import {QuanlymaucvCreateComponent} from './admin/quanlymau-cv/quanlymaucv-create/quanlymaucv-create.component';
 import {QuanlymaucvDetailComponent} from './admin/quanlymau-cv/quanlymaucv-detail/quanlymaucv-detail.component';
 import {ModuleCreateCvComponent} from './client/module-create-cv/module-create-cv.component';
+import {PageComponent} from './page/page.component';
+import {AdminComponent} from './admin/admin.component';
 
 const routes: Routes = [
+  {path: '', component: PageComponent},
+  {path: 'admin', component: AdminComponent},
   {path: 'admin/quanlytaikhoan/index', component: QuanlytaikhoanIndexComponent},
   {path: 'admin/quanlytaikhoan/create', component: QuanlytaikhoanCreateComponent},
   {path: 'admin/quanlytaikhoan/edit', component: QuanlytaikhoanEditComponent},
