@@ -16,6 +16,9 @@ import {QuanlythongtintaikhoanSinhvienComponent} from './client/quanlythongtinta
 import {QuanlybaidangEditComponent} from './admin/quanlybaidang/quanlybaidang-edit/quanlybaidang-edit.component';
 import {LoginComponent} from './login/login.component';
 import {AdminLoginComponent} from './login/admin-login/admin-login.component';
+import {ClientLoginComponent} from './login/client-login/client-login.component';
+import {DangkysinhvienComponent} from './login/dangkysinhvien/dangkysinhvien.component';
+import {DangkyNTTComponent} from './login/dangky-ntt/dangky-ntt.component';
 
 const routes: Routes = [
   {   path: 'admin', component: AdminComponent, children :
@@ -40,9 +43,12 @@ const routes: Routes = [
       ]
   },
   {
-    path: 'login', component: LoginComponent, children :
+    path: 'internfinder', component: LoginComponent, children :
       [
-        {path: 'admin', component: AdminLoginComponent  }
+        {path: 'dangnhap/admin', component: AdminLoginComponent  },
+        {path: 'dangnhap/client', component: ClientLoginComponent},
+        {path: 'dangky/sinhvien', component: DangkysinhvienComponent},
+        {path: 'dangky/nhatuyendung', component: DangkyNTTComponent}
       ]
   }
 ];

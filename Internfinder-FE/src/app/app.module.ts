@@ -26,6 +26,9 @@ import { FooterComponent } from './client/footer/footer.component';
 import { QuanlythongtintaikhoanSinhvienComponent } from './client/quanlythongtintaikhoan-sinhvien/quanlythongtintaikhoan-sinhvien.component';
 import { LoginComponent } from './login/login.component';
 import {AdminLoginComponent} from './login/admin-login/admin-login.component';
+import { ClientLoginComponent } from './login/client-login/client-login.component';
+import { DangkysinhvienComponent } from './login/dangkysinhvien/dangkysinhvien.component';
+import { DangkyNTTComponent } from './login/dangky-ntt/dangky-ntt.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +56,9 @@ import {AdminLoginComponent} from './login/admin-login/admin-login.component';
     QuanlythongtintaikhoanSinhvienComponent,
     AdminLoginComponent,
     LoginComponent,
+    ClientLoginComponent,
+    DangkysinhvienComponent,
+    DangkyNTTComponent,
   ],
   imports: [
     BrowserModule,
