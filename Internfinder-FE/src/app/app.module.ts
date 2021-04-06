@@ -23,6 +23,7 @@ import { ModuleCreateCvComponent } from './client/module-create-cv/module-create
 import { PageComponent } from './client/page/page.component';
 import { HeaderComponent } from './client/header/header.component';
 import { FooterComponent } from './client/footer/footer.component';
+import { AdminLoginComponent } from './client/admin-login/admin-login.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { FooterComponent } from './client/footer/footer.component';
     PageComponent,
     HeaderComponent,
     FooterComponent,
+    AdminLoginComponent,
   ],
   imports: [
     BrowserModule,

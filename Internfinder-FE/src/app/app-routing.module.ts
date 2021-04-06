@@ -12,6 +12,7 @@ import {ModuleCreateCvComponent} from './client/module-create-cv/module-create-c
 import {PageComponent} from './client/page/page.component';
 import {AdminComponent} from './admin/admin.component';
 import {ClientComponent} from './client/client.component';
+import {AdminLoginComponent} from './client/admin-login/admin-login.component';
 
 const routes: Routes = [
   {   path: 'admin', component: AdminComponent, children :
@@ -32,7 +33,8 @@ const routes: Routes = [
         {path: 'create_cv', component: ModuleCreateCvComponent  },
         {path: 'page', component: PageComponent},
       ]
-  }
+  },
+  {path: 'admin/login', component: AdminLoginComponent}
 ];
 
 @NgModule({

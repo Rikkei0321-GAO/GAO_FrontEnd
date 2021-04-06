@@ -20,6 +20,7 @@ export class ClientComponent implements OnInit {
       this.loadcssServices.loadScript('assets/page/js/responsiveslides.min.js');
       this.loadcssServices.loadScript('assets/page/js/jquery.magnific-popup.js');
       this.loadcssServices.loadScript('assets/page/js/easyResponsiveTabs.js');
+      this.loadcssServices.loaddCss('assets/login/css/bootstrap.css');
   }
 
   ngOnInit(): void {
