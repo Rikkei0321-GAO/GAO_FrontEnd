@@ -7,21 +7,21 @@
   <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <div class="sidebar-brand d-flex align-items-center justify-content-center">
       <div class="sidebar-brand-icon rotate-n-15">
         <i class="fas fa-laugh-wink"></i>
       </div>
       <div class="sidebar-brand-text mx-3">InternFinder<sup>Admin</sup></div>
-    </a>
+    </div>
 
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-      <a class="nav-link" href="index.html">
+      <div class="nav-link" href="#">
         <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Dashboard</span></a>
+        <span>Dashboard</span></div>
     </li>
 
     <!-- Divider -->
@@ -29,53 +29,53 @@
 
     <!-- Heading -->
     <div class="sidebar-heading">
-      Quản Lý Tài Khoản
+      Quản Lý
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+      <div class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
          aria-expanded="true" aria-controls="collapseTwo">
         <i class="fas fa-fw fa-cog"></i>
         <span>Quản Lý Tài Khoản</span>
-      </a>
+      </div>
       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Các Chức Năng:</h6>
-          <a class="collapse-item" routerLink="/admin/quanlytaikhoan/index" routerLinkActive="active">Danh Sách Tài Khoản</a>
-          <a class="collapse-item" routerLink="/admin/quanlytaikhoan/create" routerLinkActive="active">Thêm Mới</a>
+          <a class="collapse-item" routerLink="/admin/quanlytaikhoan/index">Danh Sách Tài Khoản</a>
+          <a class="collapse-item" routerLink="/admin/quanlytaikhoan/create">Thêm Mới</a>
         </div>
       </div>
     </li>
 
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+      <div class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
          aria-expanded="true" aria-controls="collapseUtilities">
         <i class="fas fa-fw fa-wrench"></i>
         <span>Quản Lý Bài Đăng</span>
-      </a>
+      </div>
       <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
            data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Các Chức Năng:</h6>
-          <a class="collapse-item" routerLink="admin/quanlybaidang/index">Danh Sách Bài Đăng</a>
-          <a class="collapse-item" routerLink="admin/quanlybaidang/create">Thêm Mới</a>
+          <a class="collapse-item" routerLink="/admin/quanlybaidang/index">Danh Sách Bài Đăng</a>
+          <a class="collapse-item" routerLink="/admin/quanlybaidang/create">Thêm Mới</a>
         </div>
       </div>
     </li>
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne"
+      <div class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne"
          aria-expanded="true" aria-controls="collapseOne">
         <i class="fas fa-fw fa-wrench"></i>
         <span>Quản Lý Bài Chia sẻ</span>
-      </a>
+      </div>
       <div id="collapseOne" class="collapse" aria-labelledby="headingUtilities"
            data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Các Chức Năng:</h6>
-          <a class="collapse-item" href="admin/quanlybaidang/index">Danh Sách Bài Đăng</a>
-          <a class="collapse-item" href="admin/quanlybaidang/create">Thêm Mới</a>
+          <a class="collapse-item" routerLink="/admin/quanlybaidang/index">Danh Sách Bài Đăng</a>
+          <a class="collapse-item" routerLink="/admin/quanlybaidang/create">Thêm Mới</a>
         </div>
       </div>
     </li>

@@ -12,25 +12,37 @@ import {ModuleCreateCvComponent} from './client/module-create-cv/module-create-c
 import {PageComponent} from './client/page/page.component';
 import {AdminComponent} from './admin/admin.component';
 import {ClientComponent} from './client/client.component';
+import {QuanlythongtintaikhoanSinhvienComponent} from './client/quanlythongtintaikhoan-sinhvien/quanlythongtintaikhoan-sinhvien.component';
+import {QuanlybaidangEditComponent} from './admin/quanlybaidang/quanlybaidang-edit/quanlybaidang-edit.component';
+import {LoginComponent} from './login/login.component';
+import {AdminLoginComponent} from './login/admin-login/admin-login.component';
 
 const routes: Routes = [
   {   path: 'admin', component: AdminComponent, children :
       [
-      {path: 'quanlytaikhoan/index', component: QuanlytaikhoanIndexComponent},
-      {path: 'quanlytaikhoan/create', component: QuanlytaikhoanCreateComponent},
-      {path: 'quanlytaikhoan/edit', component: QuanlytaikhoanEditComponent},
-      {path: 'quanlybaidang/index', component: QuanlybaidangIndexComponent},
-      {path: 'quanlybaidang/create', component: QuanlybaidangCreateComponent},
-      {path: 'quanlymaucv/index', component: QuanlymaucvIndexComponent},
-      {path: 'quanlymaucv/create', component: QuanlymaucvCreateComponent},
-      {path: 'quanlymaucv/detail', component: QuanlymaucvDetailComponent},
+        {path: 'quanlytaikhoan/index', component: QuanlytaikhoanIndexComponent},
+        {path: 'quanlytaikhoan/create', component: QuanlytaikhoanCreateComponent},
+        {path: 'quanlytaikhoan/edit', component: QuanlytaikhoanEditComponent},
+        {path: 'quanlybaidang/index', component: QuanlybaidangIndexComponent},
+        {path: 'quanlybaidang/create', component: QuanlybaidangCreateComponent},
+        {path: 'quanlybaidang/edit', component: QuanlybaidangEditComponent },
+        {path: 'quanlymaucv/index', component: QuanlymaucvIndexComponent},
+        {path: 'quanlymaucv/create', component: QuanlymaucvCreateComponent},
+        {path: 'quanlymaucv/detail', component: QuanlymaucvDetailComponent},
       ]
   },
   {
     path: '', component: ClientComponent, children :
       [
+        {path: 'index', component: PageComponent},
         {path: 'create_cv', component: ModuleCreateCvComponent  },
-        {path: 'page', component: PageComponent},
+        {path: 'quanlythongtintaikhoan-sinhvien', component : QuanlythongtintaikhoanSinhvienComponent}
+      ]
+  },
+  {
+    path: 'login', component: LoginComponent, children :
+      [
+        {path: 'admin', component: AdminLoginComponent  }
       ]
   }
 ];

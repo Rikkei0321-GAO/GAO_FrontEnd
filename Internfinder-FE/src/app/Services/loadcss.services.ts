@@ -8,14 +8,14 @@ export class LoadcssServices {
   constructor() { }
   // tslint:disable-next-line:typedef
   loaddCss(src: string) {
-    const css = document.createElement('link');
+    var css = document.createElement('link');
     css.rel = 'stylesheet';
     document.getElementsByTagName('head')[0].appendChild(css);
     css.href = src;
   }
   // tslint:disable-next-line:typedef
   loadScript(src: string) {
-    const script = document.createElement('script');
+    var script = document.createElement('script');
     script.type = 'text/javascript';
     document.getElementsByTagName('body')[0].appendChild(script);
     script.src = src;
