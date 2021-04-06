@@ -29,6 +29,13 @@ import {AdminLoginComponent} from './login/admin-login/admin-login.component';
 import { ClientLoginComponent } from './login/client-login/client-login.component';
 import { DangkysinhvienComponent } from './login/dangkysinhvien/dangkysinhvien.component';
 import { DangkyNTTComponent } from './login/dangky-ntt/dangky-ntt.component';
+import { BaivietForumComponent } from './client/module-forum/baiviet-forum/baiviet-forum.component';
+import { DangbaivietForumComponent } from './client/module-forum/dangbaiviet-forum/dangbaiviet-forum.component';
+import { TrangchuForumComponent } from './client/module-forum/trangchu-forum/trangchu-forum.component';
+import {FormsModule} from "@angular/forms";
+import {CKEditorModule} from "ckeditor4-angular";
+import { ModuleDangtuyendungComponent } from './client/module-dangtuyendung/module-dangtuyendung.component';
+import { ModuleXemvcNtdComponent } from './client/module-xemvc-ntd/module-xemvc-ntd.component';
 
 @NgModule({
   declarations: [
@@ -59,10 +66,17 @@ import { DangkyNTTComponent } from './login/dangky-ntt/dangky-ntt.component';
     ClientLoginComponent,
     DangkysinhvienComponent,
     DangkyNTTComponent,
+    BaivietForumComponent,
+    DangbaivietForumComponent,
+    TrangchuForumComponent,
+    ModuleDangtuyendungComponent,
+    ModuleXemvcNtdComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    CKEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

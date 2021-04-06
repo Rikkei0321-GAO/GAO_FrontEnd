@@ -19,6 +19,12 @@ import {AdminLoginComponent} from './login/admin-login/admin-login.component';
 import {ClientLoginComponent} from './login/client-login/client-login.component';
 import {DangkysinhvienComponent} from './login/dangkysinhvien/dangkysinhvien.component';
 import {DangkyNTTComponent} from './login/dangky-ntt/dangky-ntt.component';
+import {CKEditorModule} from "ckeditor4-angular";
+import {TrangchuForumComponent} from "./client/module-forum/trangchu-forum/trangchu-forum.component";
+import {BaivietForumComponent} from "./client/module-forum/baiviet-forum/baiviet-forum.component";
+import {DangbaivietForumComponent} from "./client/module-forum/dangbaiviet-forum/dangbaiviet-forum.component";
+import {ModuleDangtuyendungComponent} from "./client/module-dangtuyendung/module-dangtuyendung.component";
+import {ModuleXemvcNtdComponent} from "./client/module-xemvc-ntd/module-xemvc-ntd.component";
 
 const routes: Routes = [
   {   path: 'admin', component: AdminComponent, children :
@@ -39,7 +45,12 @@ const routes: Routes = [
       [
         {path: 'index', component: PageComponent},
         {path: 'create_cv', component: ModuleCreateCvComponent  },
-        {path: 'quanlythongtintaikhoan-sinhvien', component : QuanlythongtintaikhoanSinhvienComponent}
+        {path: 'quanlythongtintaikhoan-sinhvien', component : QuanlythongtintaikhoanSinhvienComponent},
+        {path: 'forum', component: TrangchuForumComponent},
+        {path: 'baiviet', component: BaivietForumComponent},
+        {path: 'dangbaichiase', component: DangbaivietForumComponent},
+        {path: 'dangtuyendung', component: ModuleDangtuyendungComponent},
+        {path: 'xemcv-ntd', component: ModuleXemvcNtdComponent},
       ]
   },
   {
@@ -48,13 +59,14 @@ const routes: Routes = [
         {path: 'dangnhap/admin', component: AdminLoginComponent  },
         {path: 'dangnhap/client', component: ClientLoginComponent},
         {path: 'dangky/sinhvien', component: DangkysinhvienComponent},
-        {path: 'dangky/nhatuyendung', component: DangkyNTTComponent}
+        {path: 'dangky/nhatuyendung', component: DangkyNTTComponent},
+
       ]
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),CKEditorModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
