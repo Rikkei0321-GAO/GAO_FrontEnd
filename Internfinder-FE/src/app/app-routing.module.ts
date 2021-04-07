@@ -27,6 +27,7 @@ import {ModuleDangtuyendungComponent} from "./client/module-dangtuyendung/module
 import {ModuleXemvcNtdComponent} from "./client/module-xemvc-ntd/module-xemvc-ntd.component";
 
 const routes: Routes = [
+
   {   path: 'admin', component: AdminComponent, children :
       [
         {path: 'quanlytaikhoan/index', component: QuanlytaikhoanIndexComponent},
@@ -43,7 +44,7 @@ const routes: Routes = [
   {
     path: '', component: ClientComponent, children :
       [
-        {path: 'index', component: PageComponent},
+        {path: '', component: PageComponent},
         {path: 'create_cv', component: ModuleCreateCvComponent  },
         {path: 'quanlythongtintaikhoan-sinhvien', component : QuanlythongtintaikhoanSinhvienComponent},
         {path: 'forum', component: TrangchuForumComponent},
@@ -54,7 +55,7 @@ const routes: Routes = [
       ]
   },
   {
-    path: 'internfinder', component: LoginComponent, children :
+    path: 'login', component: LoginComponent, children :
       [
         {path: 'dangnhap/admin', component: AdminLoginComponent  },
         {path: 'dangnhap/client', component: ClientLoginComponent},
