@@ -1,39 +1,72 @@
-
-<body>
+<app-header></app-header>
 <!--header-->
 <!--//-->
-<div class=" header-right">
-  <div class=" banner">
-    <div class="slider">
-      <div class="callbacks_container">
-        <ul class="rslides" id="slider">
-          <li>
-            <div class="banner1">
-              <div class="caption">
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="banner2">
-              <div class="caption">
-                <h3><span>MGM</span> ĐÀ NẴNG</h3>
-                <p>"Start-up - Dare to Dream, Dare to Do"</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="banner3">
-              <div class="caption">
-                <h3><span>RIKKEISOFT</span> ĐÀ NẴNG</h3>
-                <p>"Where the dream begins"</p>
-              </div>
-            </div>
-          </li>
-        </ul>
+<div id="demo" class="carousel slide" data-ride="carousel">
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../../../assets/page/images/RK_SLIDER_20191004045611000000_thumbnail.jpg" alt="RIKKEISOFT" style="height: 500px">
+      <div class="carousel-caption">
+        <h3 style="font-size: 50px">RIKKEISOFT ĐÀ NẴNG</h3>
+        <p style="font-size: 20px">Where the dream begins.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="../../../assets/page/images/fville-hanoi.jpg" alt="FPT" style="height: 500px">
+      <div class="carousel-caption">
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="../../../assets/page/images/phoican.jpg" alt="MGM" style="height: 500px">
+      <div class="carousel-caption">
+        <h3 style="font-size: 50px">MGM Đà Nẵng</h3>
+        <p style="font-size: 20px">Start-up - Dare to Dream, Dare to Do!</p>
       </div>
     </div>
   </div>
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
 </div>
+<!--<div class=" header-right">-->
+<!--  <div class=" banner">-->
+<!--    <div class="slider">-->
+<!--      <div class="callbacks_container">-->
+<!--        <ul class="rslides" id="slider">-->
+<!--          <li>-->
+<!--            <div class="banner1">-->
+<!--              <div class="caption">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <div class="banner2">-->
+<!--              <div class="caption">-->
+<!--                <h3><span>MGM</span> ĐÀ NẴNG</h3>-->
+<!--                <p>"Start-up - Dare to Dream, Dare to Do"</p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <div class="banner3">-->
+<!--              <div class="caption">-->
+<!--                <h3><span>RIKKEISOFT</span> ĐÀ NẴNG</h3>-->
+<!--                <p>"Where the dream begins"</p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </li>-->
+<!--        </ul>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
 
 <!--header-bottom-->
 <form id="search-form" class="recruitment-search-form totalcv-search-form" style="margin-top: 31px;
@@ -265,7 +298,7 @@
   <!--partners-->
   <div class="content-bottom1">
     <h3>ĐỐI TÁC</h3>
-    <div class="container">
+    <div class="container" style="height: 233px">
       <ul>
         <li><a href="#"><img class="img-responsive" src="../../../assets/page/images/lg.png" alt=""></a></li>
         <li><a href="#"><img class="img-responsive" src="../../../assets/page/images/lg1.png" alt=""></a></li>
@@ -283,9 +316,9 @@
         <div class="clearfix"> </div>
       </ul>
     </div>
+    <app-client></app-client>
   </div>
   <!--//partners-->
 </div>
 <!--footer-->
 <!--//footer-->
-</body>

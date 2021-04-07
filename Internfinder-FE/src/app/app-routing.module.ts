@@ -25,8 +25,10 @@ import {BaivietForumComponent} from "./client/module-forum/baiviet-forum/baiviet
 import {DangbaivietForumComponent} from "./client/module-forum/dangbaiviet-forum/dangbaiviet-forum.component";
 import {ModuleDangtuyendungComponent} from "./client/module-dangtuyendung/module-dangtuyendung.component";
 import {ModuleXemvcNtdComponent} from "./client/module-xemvc-ntd/module-xemvc-ntd.component";
+import {QuanlycvNtdComponent} from "./client/quanlycv-ntd/quanlycv-ntd.component";
 
 const routes: Routes = [
+  {path: '', component: PageComponent},
   {   path: 'admin', component: AdminComponent, children :
       [
         {path: 'quanlytaikhoan/index', component: QuanlytaikhoanIndexComponent},
@@ -41,9 +43,8 @@ const routes: Routes = [
       ]
   },
   {
-    path: '', component: ClientComponent, children :
+    path: 'client', component: ClientComponent, children :
       [
-        {path: 'index', component: PageComponent},
         {path: 'create_cv', component: ModuleCreateCvComponent  },
         {path: 'quanlythongtintaikhoan-sinhvien', component : QuanlythongtintaikhoanSinhvienComponent},
         {path: 'forum', component: TrangchuForumComponent},
@@ -51,6 +52,7 @@ const routes: Routes = [
         {path: 'dangbaichiase', component: DangbaivietForumComponent},
         {path: 'dangtuyendung', component: ModuleDangtuyendungComponent},
         {path: 'xemcv-ntd', component: ModuleXemvcNtdComponent},
+        {path: 'quanlyCVNTD', component: QuanlycvNtdComponent},
       ]
   },
   {

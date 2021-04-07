@@ -36,6 +36,9 @@ import {FormsModule} from "@angular/forms";
 import {CKEditorModule} from "ckeditor4-angular";
 import { ModuleDangtuyendungComponent } from './client/module-dangtuyendung/module-dangtuyendung.component';
 import { ModuleXemvcNtdComponent } from './client/module-xemvc-ntd/module-xemvc-ntd.component';
+import {QuanlycvNtdComponent} from "./client/quanlycv-ntd/quanlycv-ntd.component";
+import {QuanlycvSvComponent} from "./client/quanlycv_sinhvien/quanlycv-sv/quanlycv-sv.component";
+import {CvAcceptComponent} from "./client/quanlycv_sinhvien/cv-accept/cv-accept.component";
 
 @NgModule({
   declarations: [
@@ -71,6 +74,9 @@ import { ModuleXemvcNtdComponent } from './client/module-xemvc-ntd/module-xemvc-
     TrangchuForumComponent,
     ModuleDangtuyendungComponent,
     ModuleXemvcNtdComponent,
+    QuanlycvNtdComponent,
+    QuanlycvSvComponent,
+    CvAcceptComponent
   ],
   imports: [
     BrowserModule,
