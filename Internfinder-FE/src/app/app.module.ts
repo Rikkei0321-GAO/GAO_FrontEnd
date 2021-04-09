@@ -24,6 +24,7 @@ import { PageComponent } from './client/page/page.component';
 import { HeaderComponent } from './client/header/header.component';
 import { FooterComponent } from './client/footer/footer.component';
 import { AdminLoginComponent } from './client/admin-login/admin-login.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -50,10 +51,11 @@ import { AdminLoginComponent } from './client/admin-login/admin-login.component'
     FooterComponent,
     AdminLoginComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

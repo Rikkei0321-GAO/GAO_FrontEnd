@@ -2,8 +2,8 @@
   <div class="container">
     <h3><strong>ADMIN</strong></h3>
     <div class="login-top">
-      <div class="form-info">
-        <form>
+      <div class="form-info"  [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+        <form >
           <input type="text" class="text" placeholder="Tên Đăng Nhập" required="">
           <input type="password"  placeholder="Mật Khẩu" required="">
           <div class="custom-control custom-checkbox" style="margin-bottom: 10px;">

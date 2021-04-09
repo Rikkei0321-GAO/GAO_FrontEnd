@@ -7,6 +7,7 @@ import {LoadcssServices} from '../../Services/loadcss.services';
   styleUrls: ['./admin-login.component.css']
 })
 export class AdminLoginComponent implements OnInit {
+  formGroup: any;
 
   constructor() {
   }
@@ -14,4 +15,7 @@ export class AdminLoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit() {
+
+  }
 }
