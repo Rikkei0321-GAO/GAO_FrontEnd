@@ -22,7 +22,6 @@ import { ModuleCreateCvComponent } from './client/module-create-cv/module-create
 import { PageComponent } from './client/page/page.component';
 import { HeaderComponent } from './client/header/header.component';
 import { FooterComponent } from './client/footer/footer.component';
-import { QuanlythongtintaikhoanSinhvienComponent } from './client/quanlythongtintaikhoan-sinhvien/quanlythongtintaikhoan-sinhvien.component';
 import { LoginComponent } from './login/login.component';
 import {AdminLoginComponent} from './login/admin-login/admin-login.component';
 import { ClientLoginComponent } from './login/client-login/client-login.component';
@@ -31,10 +30,13 @@ import { DangkyNTTComponent } from './login/dangky-ntt/dangky-ntt.component';
 import { BaivietForumComponent } from './client/module-forum/baiviet-forum/baiviet-forum.component';
 import { DangbaivietForumComponent } from './client/module-forum/dangbaiviet-forum/dangbaiviet-forum.component';
 import { TrangchuForumComponent } from './client/module-forum/trangchu-forum/trangchu-forum.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CKEditorModule} from "ckeditor4-angular";
 import { ModuleDangtuyendungComponent } from './client/module-dangtuyendung/module-dangtuyendung.component';
 import { ModuleXemvcNtdComponent } from './client/module-xemvc-ntd/module-xemvc-ntd.component';
+import {HttpClientModule} from "@angular/common/http";
+import {JwPaginationModule} from "jw-angular-pagination";
+import { QuanlythongtinTaikhoanComponent } from './client/quanlythongtin-taikhoan/quanlythongtin-taikhoan.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,6 @@ import { ModuleXemvcNtdComponent } from './client/module-xemvc-ntd/module-xemvc-
     PageComponent,
     HeaderComponent,
     FooterComponent,
-    QuanlythongtintaikhoanSinhvienComponent,
     AdminLoginComponent,
     LoginComponent,
     ClientLoginComponent,
@@ -70,12 +71,16 @@ import { ModuleXemvcNtdComponent } from './client/module-xemvc-ntd/module-xemvc-
     TrangchuForumComponent,
     ModuleDangtuyendungComponent,
     ModuleXemvcNtdComponent,
+    QuanlythongtinTaikhoanComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    CKEditorModule
+    CKEditorModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    JwPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

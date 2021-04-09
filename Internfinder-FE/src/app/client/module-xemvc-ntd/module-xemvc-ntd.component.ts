@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Xemcv} from "../../module/Xemcv";
+import {Xemcv} from "../../model/Xemcv";
 import {XemcvService} from "../../Services/xemcvService";
 
 @Component({

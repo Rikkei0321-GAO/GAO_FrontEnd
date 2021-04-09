@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import {AccountService} from "../../../Services/Account.service";
-import {AccountClass} from "../../../model/Account.class";
 import {FormBuilder} from "@angular/forms";
-import {ActivatedRoute, Params, Router} from "@angular/router";
+import {AccountService} from "../../Services/Account.service";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Subscription} from "rxjs";
+import {AccountClass} from "../../model/Account.class";
 
 @Component({
-  selector: 'app-quanlytaikhoan-edit',
-  templateUrl: './quanlytaikhoan-edit.component.html',
-  styleUrls: ['./quanlytaikhoan-edit.component.css'],
-  providers:[AccountService ]
+  selector: 'app-quanlythongtin-taikhoan',
+  templateUrl: './quanlythongtin-taikhoan.component.html',
+  styleUrls: ['./quanlythongtin-taikhoan.component.css']
 })
-export class QuanlytaikhoanEditComponent implements OnInit {
+export class QuanlythongtinTaikhoanComponent implements OnInit {
 
   constructor(private  fb: FormBuilder, private  accountservice: AccountService, private  activatedRouteService: ActivatedRoute, private  router: Router) {
   }
@@ -25,6 +24,7 @@ export class QuanlytaikhoanEditComponent implements OnInit {
   account: AccountClass=new AccountClass();
   // @ts-ignore
   activateRouteService: ActivatedRoute;
+
   ngOnInit(): void {
     // @ts-ignore
     this.id=this.activatedRouteService.snapshot.params['id'];
@@ -38,7 +38,7 @@ export class QuanlytaikhoanEditComponent implements OnInit {
       console.log(data);
       // this.router.navigate(['list']);
       console.log(alert("Cập nhật thành công !"))
-      this.router.navigate(['/admin/quanlytaikhoan/index']);
+      this.router.navigate(['/quanlythongtin-taikhoan']);
     },error => console.log(error));
   }
 }

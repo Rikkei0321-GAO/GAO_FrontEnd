@@ -1,4 +1,4 @@
-import {Xemcv} from "../module/Xemcv";
+import {Xemcv} from "../model/Xemcv";
 
 export class XemcvService {
   static getXemCV() {
