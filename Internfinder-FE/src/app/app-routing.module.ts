@@ -26,6 +26,7 @@ import {DangbaivietForumComponent} from "./client/module-forum/dangbaiviet-forum
 import {ModuleDangtuyendungComponent} from "./client/module-dangtuyendung/module-dangtuyendung.component";
 import {ModuleXemvcNtdComponent} from "./client/module-xemvc-ntd/module-xemvc-ntd.component";
 import {QuanlycvNtdComponent} from "./client/quanlycv-ntd/quanlycv-ntd.component";
+import {ResetPasswordComponent} from "./login/reset-password/reset-password.component";
 
 const routes: Routes = [
   {path: '', component: PageComponent},
@@ -56,12 +57,14 @@ const routes: Routes = [
       ]
   },
   {
-    path: 'internfinder', component: LoginComponent, children :
+    path: 'login', component: LoginComponent, children :
       [
         {path: 'dangnhap/admin', component: AdminLoginComponent  },
         {path: 'dangnhap/client', component: ClientLoginComponent},
         {path: 'dangky/sinhvien', component: DangkysinhvienComponent},
         {path: 'dangky/nhatuyendung', component: DangkyNTTComponent},
+        {path: 'reset-password', component: ResetPasswordComponent}
+
 
       ]
   }

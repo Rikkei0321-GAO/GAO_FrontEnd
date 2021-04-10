@@ -39,6 +39,9 @@ import { ModuleXemvcNtdComponent } from './client/module-xemvc-ntd/module-xemvc-
 import {QuanlycvNtdComponent} from "./client/quanlycv-ntd/quanlycv-ntd.component";
 import {QuanlycvSvComponent} from "./client/quanlycv_sinhvien/quanlycv-sv/quanlycv-sv.component";
 import {CvAcceptComponent} from "./client/quanlycv_sinhvien/cv-accept/cv-accept.component";
+import {HttpClientModule} from "@angular/common/http";
+import { ResetPasswordComponent } from './login/reset-password/reset-password.component';
+
 
 @NgModule({
   declarations: [
@@ -76,13 +79,15 @@ import {CvAcceptComponent} from "./client/quanlycv_sinhvien/cv-accept/cv-accept.
     ModuleXemvcNtdComponent,
     QuanlycvNtdComponent,
     QuanlycvSvComponent,
-    CvAcceptComponent
+    CvAcceptComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    CKEditorModule
+    CKEditorModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

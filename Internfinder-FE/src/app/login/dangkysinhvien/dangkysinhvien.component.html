@@ -4,15 +4,15 @@
     <div class="login-top">
       <div class="form-info">
         <form>
-          <input type="text"   placeholder="Tên Đăng Nhập"  >
-          <input type="text"   placeholder="Địa Chỉ Email"  >
+          <input type="text" [(ngModel)]="user.full_name"   placeholder="Tên Đăng Nhập"  >
+          <input type="text" [(ngModel)]="user.email"   placeholder="Địa Chỉ Email"  >
           <input type="text"  placeholder="Địa Chỉ ">
-          <input type="text"  placeholder="Số Điện thoại">
-          <input type="password"  placeholder="Mật khẩu "><div class="custom-control custom-checkbox">
-          <input type="password"  placeholder="Mật lại khẩu ">
+          <input type="text" [(ngModel)]="user.phone"  placeholder="Số Điện thoại">
+          <input type="password" [(ngModel)]="user.password"  placeholder="Mật khẩu "><div class="custom-control custom-checkbox">
+          <input type="password" [(ngModel)]="user.confirmpassword"  placeholder="Mật lại khẩu ">
         </div>
           <label class="hvr-sweep-to-right">
-            <input type="submit" value="Đăng ký">
+            <input type="submit" value="Đăng ký" (ngSubmit)="onsubmit()">
           </label>
         </form>
         <p>Bạn đã có tài khoản? <a href="dangnhap/client">Đăng nhập</a></p>

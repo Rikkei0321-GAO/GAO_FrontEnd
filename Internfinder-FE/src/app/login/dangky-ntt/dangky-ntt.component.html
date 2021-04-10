@@ -9,18 +9,18 @@
       <!--				</ul>-->
       <div class="form-info">
         <form>
-          <input type="text"   placeholder="Tên Đăng Nhập"  >
-          <input type="password"  placeholder="Mật Khẩu " >
-          <input type="password"  placeholder=" Nhập lại mật khẩu " >
+          <input type="text" [(ngModel)]="user.full_name"   placeholder="Tên Đăng Nhập"  >
+          <input type="password" [(ngModel)]="user.password"  placeholder="Mật Khẩu " >
+          <input type="password" [(ngModel)]="user.confirmpassword"  placeholder=" Nhập lại mật khẩu " >
           <label style="margin-bottom: 10px;">Thông Tin Công Ty</label>
 
           <input type="text"  placeholder="Tên Công Ty ">
           <input type="text"  placeholder="Địa Chỉ Công Ty " >
           <input type="text"  placeholder="Mã Số Thuế " >
           <input type="text"  placeholder="Website " >
-          <input type="text"  placeholder="Số Điện thoại" >
+          <input type="text" [(ngModel)]="user.phone"  placeholder="Số Điện thoại" >
           <input type="text"   placeholder="Tên người liên hệ">
-          <input type="text"   placeholder="Email liên hệ" >
+          <input type="text" [(ngModel)]="user.email"   placeholder="Email liên hệ" >
 
 
           <!--						<div class="custom-control custom-checkbox" style="margin-bottom: 10px;">-->
@@ -28,7 +28,7 @@
           <!--							<label class="custom-control-label" for="customCheck1">Tôi đồng ý với điều khoản và dịch vụ</label>-->
           <!--						</div>-->
           <label class="hvr-sweep-to-right">
-            <input type="submit" value="Sign Up">
+            <input type="submit" value="Sign Up" (ngSubmit)="onsubmit()">
           </label>
         </form>
         <p>Bạn đã có tài khoản? <a href="dangnhap/client">Đăng nhập</a></p>
