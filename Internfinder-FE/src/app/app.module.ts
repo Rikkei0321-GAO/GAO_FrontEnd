@@ -35,6 +35,10 @@ import {FormsModule} from "@angular/forms";
 import {CKEditorModule} from "ckeditor4-angular";
 import { ModuleDangtuyendungComponent } from './client/module-dangtuyendung/module-dangtuyendung.component';
 import { ModuleXemvcNtdComponent } from './client/module-xemvc-ntd/module-xemvc-ntd.component';
+import { ModuleTimkiemTrangchuComponent } from './client/module-timkiem-trangchu/module-timkiem-trangchu.component';
+import {HttpClientModule} from "@angular/common/http";
+import {NgxPaginationModule} from "ngx-pagination";
+
 
 @NgModule({
   declarations: [
@@ -70,12 +74,15 @@ import { ModuleXemvcNtdComponent } from './client/module-xemvc-ntd/module-xemvc-
     TrangchuForumComponent,
     ModuleDangtuyendungComponent,
     ModuleXemvcNtdComponent,
+    ModuleTimkiemTrangchuComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    CKEditorModule
+    HttpClientModule,
+    CKEditorModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

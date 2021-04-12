@@ -24,53 +24,53 @@
 /*}*/
 
 
-/*!*<!---information--->*!*/
-/*.create-cnt {*/
-/*    width: 100%;*/
-/*    margin: auto;*/
-/*    background: white;*/
-/*    padding-top: 10px;*/
-/*    max-width: 800px;*/
-/*    min-width: 150px ;*/
+/*<!---information--->*/
+.create-cnt {
+    width: 100%;
+    margin: auto;
+    background: white;
+    padding-top: 10px;
+    max-width: 800px;
+    min-width: 150px ;
 
-/*}*/
-/*.create-cnt>div {*/
-/*    scroll-margin-top: 90px;*/
-/*}*/
+}
+.create-cnt>div {
+    scroll-margin-top: 90px;
+}
 /*.main-colm {*/
 /*    padding: 25px 30px;*/
 /*    border: 1px solid #e0e0e0;*/
 /*    border-radius: 3px;*/
 /*    background-color: #fff;*/
 /*}*/
-/*.btn:not(:disabled) {*/
-/*    cursor: pointer;*/
-/*    color: rgb(224, 230, 238);*/
-/*}*/
-/*.btn.btn-orange-46:before {*/
-/*    content: "";*/
-/*    position: relative;*/
-/*}*/
-/*.btn{*/
-/*    background: linear-gradient(*/
-/*0deg*/
-/*, rgb(96 127 150) 0%, rgb(73 25 222) 100%);*/
-/*    background: rgb(66, 89, 240);*/
-/*    border: none;*/
-/*    font-weight: bold;*/
-/*    color: white;*/
+.btn:not(:disabled) {
+    cursor: pointer;
+    color: rgb(224, 230, 238);
+}
+.btn.btn-orange-46:before {
+    content: "";
+    position: relative;
+}
+.btn{
+    background: linear-gradient(
+0deg
+, rgb(96 127 150) 0%, rgb(73 25 222) 100%);
+    background: rgb(66, 89, 240);
+    border: none;
+    font-weight: bold;
+    color: white;
 
-/*}*/
-/*.btn:before {*/
-/*    height: 0%;*/
-/*    width: 2px;*/
-/*}*/
-/*.btn:hover {*/
-/*    box-shadow:  4px 4px 6px 0 rgb(252, 255, 236);*/
-/*    background: white;*/
-/*    border: 1px solid rgb(0, 132, 255);*/
-/*    color: rgb(0, 140, 255);*/
-/*}*/
+}
+.btn:before {
+    height: 0%;
+    width: 2px;
+}
+.btn:hover {
+    box-shadow:  4px 4px 6px 0 rgb(252, 255, 236);
+    background: white;
+    border: 1px solid rgb(0, 132, 255);
+    color: rgb(0, 140, 255);
+}
 
 /*form đăng bài*/
 .create-paper{
@@ -148,42 +148,42 @@
 }
 
 /*XemCV*/
-.box-cv{
-    color: white;
-}
-#search-form{
-    margin-top:0px;
-}
-.totalcv-search-form {
-    background: #2d82c3;
-    position: relative;
-    border: none!important;
-    margin-top: -11px;
-}
-.recruitment-search-form {
-    padding: 5px 5px;
-    background-color: #eee;
-    max-width: 650px;
-    margin: auto;
-    background: #2d82c3;
-}
-.box-cv .row {
-    margin-right: 5px;
-    margin-left: 5px;
-}
-.row .col-lg-4,.col-lg-3,.col-lg-2{
-    padding-left: 2px;
-    padding-right: 2px;
-}
-.btn-group-vertical>.btn-group:after, .btn-group-vertical>.btn-group:before, .btn-toolbar:after, .btn-toolbar:before, .clearfix:after, .clearfix:before, .container-fluid:after, .container-fluid:before, .container:after, .container:before, .dl-horizontal dd:after, .dl-horizontal dd:before, .form-horizontal .form-group:after, .form-horizontal .form-group:before, .modal-footer:after, .modal-footer:before, .nav:after, .nav:before, .navbar-collapse:after, .navbar-collapse:before, .navbar-header:after, .navbar-header:before, .navbar:after, .navbar:before, .pager:after, .pager:before, .panel-body:after, .panel-body:before, .row:after, .row:before {
-    display: table;
-    content: " ";
-}
-.recruitment-search-form .form-control {
-    font-size: 14px;
-    border: solid 1px #ddd;
-    border-radius: 8px;
-}
+/*.box-cv{*/
+/*    color: white;*/
+/*}*/
+/*#search-form{*/
+/*    margin-top:0px;*/
+/*}*/
+/*.totalcv-search-form {*/
+/*    background: #2d82c3;*/
+/*    position: relative;*/
+/*    border: none!important;*/
+/*    margin-top: -11px;*/
+/*}*/
+/*.recruitment-search-form {*/
+/*    padding: 5px 5px;*/
+/*    background-color: #eee;*/
+/*    max-width: 650px;*/
+/*    margin: auto;*/
+/*    background: #2d82c3;*/
+/*}*/
+/*.box-cv .row {*/
+/*    margin-right: 5px;*/
+/*    margin-left: 5px;*/
+/*}*/
+/*.row .col-lg-4,.col-lg-3,.col-lg-2{*/
+/*    padding-left: 2px;*/
+/*    padding-right: 2px;*/
+/*}*/
+/*.btn-group-vertical>.btn-group:after, .btn-group-vertical>.btn-group:before, .btn-toolbar:after, .btn-toolbar:before, .clearfix:after, .clearfix:before, .container-fluid:after, .container-fluid:before, .container:after, .container:before, .dl-horizontal dd:after, .dl-horizontal dd:before, .form-horizontal .form-group:after, .form-horizontal .form-group:before, .modal-footer:after, .modal-footer:before, .nav:after, .nav:before, .navbar-collapse:after, .navbar-collapse:before, .navbar-header:after, .navbar-header:before, .navbar:after, .navbar:before, .pager:after, .pager:before, .panel-body:after, .panel-body:before, .row:after, .row:before {*/
+/*    display: table;*/
+/*    content: " ";*/
+/*}*/
+/*.recruitment-search-form .form-control {*/
+/*    font-size: 14px;*/
+/*    border: solid 1px #ddd;*/
+/*    border-radius: 8px;*/
+/*}*/
 .box-cv .row button{
     background: rgb(66, 89, 240);
     background: linear-gradient(0deg, rgb(40, 75, 240) 0%, rgb(173, 240, 229) 100%);

@@ -1,110 +1,278 @@
-<!--<div class="navigation">-->
-<!--  <div class="container-fluid">-->
-<!--    <nav class="pull">-->
-<!--      <ul>-->
-<!--        <li><a  href="../../../index.html">TOP CV</a></li>-->
-<!--        <li><a  href="about.html">MẪU CV</a></li>-->
-<!--        <li><a  href="blog.html">VIỆC LÀM</a></li>-->
-<!--        <li><a  href="terms.html">CÔNG TY</a></li>-->
-<!--        <li><a  href="privacy.html">TƯ VẤN</a></li>-->
-<!--        <li><a  href="contact.html">ĐĂNG TIN-TÌM HỒ SƠ</a></li>-->
+
+<!--<div class="header">-->
+<!--  <div class="container">-->
+<!--    &lt;!&ndash;logo&ndash;&gt;-->
+<!--    <div class="logo">-->
+<!--      <h1><a href="../../../index.html">INTERNFINDER</a></h1>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;//logo&ndash;&gt;-->
+<!--    <div class="top-nav">-->
+<!--      <ul class="right-icons">-->
+<!--        <li><span ><i class="glyphicon glyphicon-phone"> </i>+84972921571</span></li>-->
+<!--        <li><a href="src/app/menu/client/client.component.html" routerLink="#"><i class="glyphicon glyphicon-user"> </i>Đăng Nhập</a></li>-->
 <!--      </ul>-->
-<!--    </nav>-->
+<!--      <div class="nav-icon">-->
+<!--        <div class="hero nav_slide_button" id="hero">-->
+<!--          <a href="#"><i class="glyphicon glyphicon-menu-hamburger"></i> </a>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;- -->
+<!--        <a href="#" class="right_bt" id="activator"><i class="glyphicon glyphicon-menu-hamburger"></i>  </a>-->
+<!--      -&ndash;&gt;-->
+<!--      </div>-->
+<!--      <div class="clearfix"> </div>-->
+<!--      &lt;!&ndash;-pop-up-box&#45;&#45;&ndash;&gt;-->
+<!--      &lt;!&ndash;      <script src="../src/assets/js/jquery.min.js"></script>&ndash;&gt;-->
+<!--      &lt;!&ndash;-//pop-up-box&#45;&#45;&ndash;&gt;-->
+<!--      <div id="small-dialog" class="mfp-hide">-->
+<!--        &lt;!&ndash;-&#45;&#45; tabs-box &#45;&#45;&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="sap_tabs">&ndash;&gt;-->
+<!--&lt;!&ndash;          <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">&ndash;&gt;-->
+<!--&lt;!&ndash;            <ul class="resp-tabs-list">&ndash;&gt;-->
+<!--&lt;!&ndash;              <li class="resp-tab-item " aria-controls="tab_item-0" role="tab"><span>Vị Trí Muốn Ứng Tuyển</span></li>&ndash;&gt;-->
+<!--&lt;!&ndash;              <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>Địa Điểm</span></li>&ndash;&gt;-->
+<!--&lt;!&ndash;              <li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span>Ngành Nghề</span></li>&ndash;&gt;-->
+<!--&lt;!&ndash;              <div class="clearfix"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </ul>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="resp-tabs-container">&ndash;&gt;-->
+<!--&lt;!&ndash;              <h2 class="resp-accordion resp-tab-active" role="tab" aria-controls="tab_item-0"><span class="resp-arrow"></span>Vị Trí Ứng Tuyển</h2><div class="tab-1 resp-tab-content resp-tab-content-active" aria-labelledby="tab_item-0" style="display:block">&ndash;&gt;-->
+<!--&lt;!&ndash;              <div class="facts">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="login">&ndash;&gt;-->
+<!--&lt;!&ndash;                  <input type="text" value="Công việc,vị trí ứng tuyển...." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Công việc,vị trí ứng tuyển....';}">&ndash;&gt;-->
+<!--&lt;!&ndash;                  <input type="submit" value="">&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;              </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;              <h2 class="resp-accordion" role="tab" aria-controls="tab_item-1"><span class="resp-arrow"></span>Địa Điểm</h2><div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">&ndash;&gt;-->
+<!--&lt;!&ndash;              <div class="facts">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="login">&ndash;&gt;-->
+<!--&lt;!&ndash;                  <input type="text" value="Địa điểm" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Địa điểm';}">&ndash;&gt;-->
+<!--&lt;!&ndash;                  <input type="submit" value="">&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;              </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;              <h2 class="resp-accordion" role="tab" aria-controls="tab_item-2"><span class="resp-arrow"></span>Ngành Nghề</h2><div class="tab-1 resp-tab-content" aria-labelledby="tab_item-2">&ndash;&gt;-->
+<!--&lt;!&ndash;              <div class="facts">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="login">&ndash;&gt;-->
+<!--&lt;!&ndash;                  <input type="text" value="Ngành nghề phù hợp với bản thân" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Ngành nghề phù hợp với bản thân';}">&ndash;&gt;-->
+<!--&lt;!&ndash;                  <input type="submit" value="">&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;              </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;          <script type="text/javascript">&ndash;&gt;-->
+<!--&lt;!&ndash;            $(document).ready(function () {&ndash;&gt;-->
+<!--&lt;!&ndash;              $('#horizontalTab').easyResponsiveTabs({&ndash;&gt;-->
+<!--&lt;!&ndash;                type: 'default', //Types: default, vertical, accordion&ndash;&gt;-->
+<!--&lt;!&ndash;                width: 'auto', //auto or any width like 600px&ndash;&gt;-->
+<!--&lt;!&ndash;                fit: true   // 100% fit in a container&ndash;&gt;-->
+<!--&lt;!&ndash;              });&ndash;&gt;-->
+<!--&lt;!&ndash;            });&ndash;&gt;-->
+<!--&lt;!&ndash;          </script>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--      </div>-->
+<!--      <script>-->
+<!--        $(document).ready(function() {-->
+<!--          $('.popup-with-zoom-anim').magnificPopup({-->
+<!--            type: 'inline',-->
+<!--            fixedContentPos: false,-->
+<!--            fixedBgPos: true,-->
+<!--            overflowY: 'auto',-->
+<!--            closeBtnInside: true,-->
+<!--            preloader: false,-->
+<!--            midClick: true,-->
+<!--            removalDelay: 300,-->
+<!--            mainClass: 'my-mfp-zoom-in'-->
+<!--          });-->
+
+<!--        });-->
+<!--      </script>-->
+
+
+<!--    </div>-->
+<!--    <div class="clearfix"> </div>-->
 <!--  </div>-->
 <!--</div>-->
 
-<div class="header">
-  <div class="container">
-    <!--logo-->
-    <div class="logo">
-      <h1><a href="../../../index.html">INTERNFINDER</a></h1>
-    </div>
-    <!--//logo-->
-    <div class="top-nav">
-      <ul class="right-icons">
-        <li><span ><i class="glyphicon glyphicon-phone"> </i>+84972921571</span></li>
-        <li><a href="src/app/menu/client/client.component.html" routerLink="#"><i class="glyphicon glyphicon-user"> </i>Đăng Nhập</a></li>
-      </ul>
-      <div class="nav-icon">
-        <div class="hero nav_slide_button" id="hero">
-          <a href="#"><i class="glyphicon glyphicon-menu-hamburger"></i> </a>
+
+<header class="header">
+
+  <div class="top_bar background-color-orange">
+    <div class="top_bar_container">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
+              <ul class="top_bar_contact_list">
+                <li>
+                  <i class="fa fa-phone coll" aria-hidden="true"></i>
+                  <div class="contact-no">0777941772</div>
+                </li>
+                <li>
+                  <i class="fa fa-envelope coll" aria-hidden="true"></i>
+                  <div class="email"><a>interfinder@dtu.com</a>
+                  </div>
+                </li>
+              </ul>
+              <div class=" ml-auto ">
+                <ul class="top_bar_contact_list">
+                  <li>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <div class="contact-no">
+                      <a href="dangnhap" style="color: white">&nbsp; Đăng nhập</a></div>
+                  </li>
+                  <li>
+                    <i class="fa fa-edit" aria-hidden="true"></i>
+                    <div class="contact-no">
+                      <a href="Dangki"  style="color: white">&nbsp; Đăng kí</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="menu-ml">
+                <div class="hamburger menu_mm  search_button transparent search display"><i
+                  class="large material-icons font-color-white  search-icone  menu_mm ">menu</i>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <!---
-        <a href="#" class="right_bt" id="activator"><i class="glyphicon glyphicon-menu-hamburger"></i>  </a>
-      --->
       </div>
-      <div class="clearfix"> </div>
-      <!---pop-up-box---->
-      <!--      <script src="../src/assets/js/jquery.min.js"></script>-->
-      <!---//pop-up-box---->
-      <div id="small-dialog" class="mfp-hide">
-        <!----- tabs-box ---->
-<!--        <div class="sap_tabs">-->
-<!--          <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">-->
-<!--            <ul class="resp-tabs-list">-->
-<!--              <li class="resp-tab-item " aria-controls="tab_item-0" role="tab"><span>Vị Trí Muốn Ứng Tuyển</span></li>-->
-<!--              <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>Địa Điểm</span></li>-->
-<!--              <li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span>Ngành Nghề</span></li>-->
-<!--              <div class="clearfix"></div>-->
-<!--            </ul>-->
-<!--            <div class="resp-tabs-container">-->
-<!--              <h2 class="resp-accordion resp-tab-active" role="tab" aria-controls="tab_item-0"><span class="resp-arrow"></span>Vị Trí Ứng Tuyển</h2><div class="tab-1 resp-tab-content resp-tab-content-active" aria-labelledby="tab_item-0" style="display:block">-->
-<!--              <div class="facts">-->
-<!--                <div class="login">-->
-<!--                  <input type="text" value="Công việc,vị trí ứng tuyển...." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Công việc,vị trí ứng tuyển....';}">-->
-<!--                  <input type="submit" value="">-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--              <h2 class="resp-accordion" role="tab" aria-controls="tab_item-1"><span class="resp-arrow"></span>Địa Điểm</h2><div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">-->
-<!--              <div class="facts">-->
-<!--                <div class="login">-->
-<!--                  <input type="text" value="Địa điểm" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Địa điểm';}">-->
-<!--                  <input type="submit" value="">-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--              <h2 class="resp-accordion" role="tab" aria-controls="tab_item-2"><span class="resp-arrow"></span>Ngành Nghề</h2><div class="tab-1 resp-tab-content" aria-labelledby="tab_item-2">-->
-<!--              <div class="facts">-->
-<!--                <div class="login">-->
-<!--                  <input type="text" value="Ngành nghề phù hợp với bản thân" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Ngành nghề phù hợp với bản thân';}">-->
-<!--                  <input type="submit" value="">-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            </div>-->
-<!--          </div>-->
-
-<!--          <script type="text/javascript">-->
-<!--            $(document).ready(function () {-->
-<!--              $('#horizontalTab').easyResponsiveTabs({-->
-<!--                type: 'default', //Types: default, vertical, accordion-->
-<!--                width: 'auto', //auto or any width like 600px-->
-<!--                fit: true   // 100% fit in a container-->
-<!--              });-->
-<!--            });-->
-<!--          </script>-->
-<!--        </div>-->
-      </div>
-      <script>
-        $(document).ready(function() {
-          $('.popup-with-zoom-anim').magnificPopup({
-            type: 'inline',
-            fixedContentPos: false,
-            fixedBgPos: true,
-            overflowY: 'auto',
-            closeBtnInside: true,
-            preloader: false,
-            midClick: true,
-            removalDelay: 300,
-            mainClass: 'my-mfp-zoom-in'
-          });
-
-        });
-      </script>
-
-
     </div>
-    <div class="clearfix"> </div>
   </div>
-</div>
+
+  <div class="header_container background-color-orange-light">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="header_content d-flex flex-row align-items-center justify-content-start">
+            <div class="logo_container">
+              <a href="index.html">
+                <img src="../../../assets/Client/minhhoang/imags/interfinder.jpg" style="max-width: 170px;" class="logo-text" alt="">
+              </a>
+            </div>
+            <nav class="main_nav_contaner ml-auto">
+              <ul class="main_nav">
+                <li class="dropdown active ">
+                  <a class="dropdown-toggle" data-toggle="dropdown">Trang chủ</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="index.html">Nhà tuyển dụng</a></li>
+                    <li><a href="index2.html">Người tìm việc</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown ">
+                  <a class="dropdown-toggle" data-toggle="dropdown" >Kĩ năng</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="job_category.html">Khóa Học</a></li>
+                    <li><a href="job_detail.html">Phỏng Vấn</a></li>
+                  </ul>
+                </li>
+                <li><a href="blog_page.html">Việc làm</a></li>
+                <li><a href="blog_page.html">Diễn đàn</a></li>
+                <li><a href="about_us.html">Công ty</a></li>
+                <li><a href="contact.html">Liên hệ</a></li>
+              </ul>
+              <div class=" Post-Jobs">
+                <a href="post_job.html" class="">
+                  Mẫu CV
+                </a>
+              </div>
+              <div class="hamburger menu_mm menu-vertical">
+                <i class="large material-icons font-color-white menu_mm menu-vertical">menu</i>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--  <div class="header_container background-color-orange-light">-->
+<!--    <div class="container">-->
+<!--      <div class="row">-->
+<!--        <div class="col">-->
+<!--          <div class="header_content d-flex flex-row align-items-center justify-content-start">-->
+<!--            <div class="logo_container">-->
+<!--              <a href="index.html">-->
+<!--                <img src="imags/logo.png" class="logo-text" alt="">-->
+<!--              </a>-->
+<!--            </div>-->
+<!--            <nav class="main_nav_contaner ml-auto">-->
+<!--              <ul class="main_nav">-->
+<!--                <li><a href="blog_page.html">Trang chủ</a></li>-->
+<!--                <li class="dropdown ">-->
+<!--                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Quản lý CV</a>-->
+<!--                  <ul class="dropdown-menu">-->
+<!--                    <li><a href="job_category.html">Tạo CV</a></li>-->
+<!--                    <li><a href="job_detail.html">Tải CV lên</a></li>-->
+<!--                    <li><a href="job_detail.html">Xem CV</a></li>-->
+<!--                  </ul>-->
+<!--                </li>-->
+<!--                <li class="dropdown ">-->
+<!--                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Kĩ năng</a>-->
+<!--                <ul class="dropdown-menu">-->
+<!--                  <li><a href="job_category.html">Khóa Học</a></li>-->
+<!--                  <li><a href="job_detail.html">Phỏng Vấn</a></li>-->
+<!--                </ul>-->
+<!--              </li>-->
+<!--                <li><a href="blog_page.html">Việc làm</a></li>-->
+<!--                <li><a href="about_us.html">Công ty</a></li>-->
+<!--                <li><a href="blog_page.html">Diễn đàn</a></li>-->
+<!--                <li><a href="contact.html">Liên hệ</a></li>-->
+<!--              </ul>-->
+<!--              <div class=" Post-Jobs">-->
+<!--                <a href="post_job.html" class="">-->
+<!--                  Đăng bài-->
+<!--                </a>-->
+<!--              </div>-->
+<!--              <div class="hamburger menu_mm menu-vertical">-->
+<!--                <i class="large material-icons font-color-white menu_mm menu-vertical">menu</i>-->
+<!--              </div>-->
+<!--            </nav>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+  <div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+    <div class="menu_close_container">
+      <div class="menu_close">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div class="search">
+      <form action="#" class="header_search_form menu_mm">
+        <input type="search" class="search_input menu_mm" placeholder="Search" required="required">
+        <button
+          class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
+          <i class="fa fa-search menu_mm" aria-hidden="true"></i>
+        </button>
+      </form>
+    </div>
+    <nav class="menu_nav">
+      <ul class="menu_mm">
+        <li class="dropdown active ">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Trang chủ</a>
+<!--          <ul class="dropdown-menu">-->
+<!--            <li><a href="index.html">Home variation 1</a></li>-->
+<!--            <li><a href="index2.html">Home variation 2</a></li>-->
+<!--          </ul>-->
+        </li>
+        <li class="dropdown ">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Kĩ năng</a>
+          <ul class="dropdown-menu">
+            <li><a href="job_category.html">Khóa Học</a></li>
+            <li><a href="job_detail.html">Phỏng Vấn</a></li>
+          </ul>
+        </li>
+        <li><a href="blog_page.html">Việc làm</a></li>
+        <li><a href="blog_page.html">Diễn đàn</a></li>
+        <li><a href="about_us.html">Công ty</a></li>
+        <li><a href="contact.html">Liên hệ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+

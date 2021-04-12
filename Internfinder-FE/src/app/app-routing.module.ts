@@ -25,6 +25,7 @@ import {BaivietForumComponent} from "./client/module-forum/baiviet-forum/baiviet
 import {DangbaivietForumComponent} from "./client/module-forum/dangbaiviet-forum/dangbaiviet-forum.component";
 import {ModuleDangtuyendungComponent} from "./client/module-dangtuyendung/module-dangtuyendung.component";
 import {ModuleXemvcNtdComponent} from "./client/module-xemvc-ntd/module-xemvc-ntd.component";
+import {ModuleTimkiemTrangchuComponent} from "./client/module-timkiem-trangchu/module-timkiem-trangchu.component";
 
 const routes: Routes = [
 
@@ -52,6 +53,8 @@ const routes: Routes = [
         {path: 'dangbaichiase', component: DangbaivietForumComponent},
         {path: 'dangtuyendung', component: ModuleDangtuyendungComponent},
         {path: 'xemcv-ntd', component: ModuleXemvcNtdComponent},
+        {path: 'timkiem-trangchu', component: ModuleTimkiemTrangchuComponent},
+
       ]
   },
   {

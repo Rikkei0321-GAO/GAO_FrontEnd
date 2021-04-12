@@ -39,10 +39,10 @@ h1,h2,h3,h4,h5,h6,label,p{
 	margin-top: 3px;
 }
 /*--header--*/
-.header{
-  	background-color: #27da93;
-  	  padding: 0.8em 0;
-}
+/*.header{*/
+/*  	background-color: #27da93;*/
+/*  	  padding: 0.8em 0;*/
+/*}*/
 .bottom-head {
 	text-align: center;
   	border-right:1px solid #EBEBEB;
