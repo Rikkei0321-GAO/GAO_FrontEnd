@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {LoadcssServices} from "../../Services/loadcss.services";
+import {AccountClass} from "../../model/Account.class";
 
 @Component({
   selector: 'app-page',
@@ -7,7 +8,10 @@ import {LoadcssServices} from "../../Services/loadcss.services";
   styleUrls: ['./page.component.css']
 })
 export class PageComponent implements OnInit {
-
+  // @ts-ignore
+  us: AccountClass
+  // @ts-ignore
+  public logName: string
   constructor(private  loadcssServices: LoadcssServices) {
     this.loadcssServices.loaddCss('assets/page/css/bootstrap.css');
     this.loadcssServices.loaddCss('assets/page/css/style.css');
@@ -23,6 +27,10 @@ export class PageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // @ts-ignore
+    let userName = JSON.parse(sessionStorage.getItem("auth-user"));
+    this.us.username = userName['username'];
+    this.logName = userName['username'];
   }
 
 }

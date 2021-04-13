@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AccountService} from "../../../Services/Account.service";
 import {AccountClass} from "../../../model/Account.class";
-import {FormBuilder} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Params, Router} from "@angular/router";
 import {Subscription} from "rxjs";
 
@@ -41,4 +41,19 @@ export class QuanlytaikhoanEditComponent implements OnInit {
       this.router.navigate(['/admin/quanlytaikhoan/index']);
     },error => console.log(error));
   }
+  contactForm = new FormGroup({
+    username: new FormControl('',[Validators.required, Validators.maxLength(45)]),
+    password: new FormControl('', [Validators.required, Validators.maxLength(255)]),
+    // createDate: new FormControl(''),
+    status: new  FormControl('')
+    // fullName:new  FormControl(''),
+    // brithday:new  FormControl(''),
+    // address:new  FormControl(''),
+    // email:new  FormControl(''),
+    // companyName:new  FormControl(''),
+    // taxtCode:new  FormControl(''),
+    // link:new  FormControl(''),
+    // nameContact:new  FormControl(''),
+    // sex:new  FormControl('')
+  });
 }

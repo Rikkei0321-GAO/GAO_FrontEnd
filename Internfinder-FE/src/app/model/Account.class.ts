@@ -1,9 +1,8 @@
 export class AccountClass {
   idAccount: number;
-  userName: string;
-  passWord: string;
+  username: string;
+  password: string;
   createDate: Date;
-  roleID: string;
   fullName: string;
   brithday: Date;
   sex: boolean;
@@ -15,15 +14,14 @@ export class AccountClass {
   link: string;
   nameContact: string;
   status: boolean;
-  icon: string;
+  image: string;
 
 
-  constructor(idAccount: number, userName: string, passWord: string, createDate: Date, roleID: string, fullName: string, brithday: Date, sex: boolean, phone: string, address: string, email: string, compyName: string, taxtCode: string, link: string, nameContact: string, status: boolean, icon: string) {
+  constructor(idAccount: number, username: string, password: string, createDate: Date, fullName: string, brithday: Date, sex: boolean, phone: string, address: string, email: string, compyName: string, taxtCode: string, link: string, nameContact: string, status: boolean, image: string) {
     this.idAccount = idAccount;
-    this.userName = userName;
-    this.passWord = passWord;
+    this.username = username;
+    this.password = password;
     this.createDate = createDate;
-    this.roleID = roleID;
     this.fullName = fullName;
     this.brithday = brithday;
     this.sex = sex;
@@ -35,6 +33,6 @@ export class AccountClass {
     this.link = link;
     this.nameContact = nameContact;
     this.status = status;
-    this.icon = icon;
+    this.image = image;
   }
 }

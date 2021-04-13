@@ -37,6 +37,8 @@ import { ModuleXemvcNtdComponent } from './client/module-xemvc-ntd/module-xemvc-
 import {HttpClientModule} from "@angular/common/http";
 import {JwPaginationModule} from "jw-angular-pagination";
 import { QuanlythongtinTaikhoanComponent } from './client/quanlythongtin-taikhoan/quanlythongtin-taikhoan.component';
+import {ToastrModule, ToastrService} from "ngx-toastr";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -80,7 +82,9 @@ import { QuanlythongtinTaikhoanComponent } from './client/quanlythongtin-taikhoa
     CKEditorModule,
     HttpClientModule,
     ReactiveFormsModule,
-    JwPaginationModule
+    JwPaginationModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
