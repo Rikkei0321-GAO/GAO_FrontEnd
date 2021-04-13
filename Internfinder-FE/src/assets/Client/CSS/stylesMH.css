@@ -185,8 +185,8 @@
 /*    border-radius: 8px;*/
 /*}*/
 .box-cv .row button{
-    background: rgb(66, 89, 240);
-    background: linear-gradient(0deg, rgb(40, 75, 240) 0%, rgb(173, 240, 229) 100%);
+    background: rgb(40 167 69);
+    background: linear-gradient(0deg, rgb(135, 240, 127) 0%, rgb(173, 240, 229) 100%);
     border: none;
     font-weight: bold;
     color: white;
@@ -217,7 +217,7 @@ button, input, optgroup, select, textarea {
     text-align: center;
 }
 .text-primary {
-    color: #007bff!important;
+    color: rgb(40 167 69)!important;
     font-size: 20px;
 }
 
@@ -326,7 +326,7 @@ button, input, optgroup, select, textarea {
 .content-word .link h3{
     margin: 0;
     padding: 5px;
-    color: #2d82c4;
+    color: rgb(40 167 69);
 }
 .content-word .link .tags{
     border: rgba(30, 47, 35, 0.28);
@@ -352,13 +352,13 @@ button, input, optgroup, select, textarea {
     padding-right: 5px;
 }
 .name span{
-    color: #2d82c4;
+    color: rgb(40 167 69);
 }
 /* .fa {
     color: #adada5c2;
 } */
 .fa:hover{
-    color: #0A3284;
+    color: rgb(40 167 69);
 }
 /* .glyphicon:before{
     color: #a99d9d;
@@ -375,7 +375,7 @@ button, input, optgroup, select, textarea {
     color: black;
 }
 .content-new h5,h4:hover{
-    color: #2d82c4;
+    color: rgb(40 167 69);
 }
 .tags span{
     background: #A3B1B6;
@@ -385,7 +385,7 @@ button, input, optgroup, select, textarea {
 }
 .tags span:hover{
     background: #A3B1B6;
-    color: #2d82c4;
+    color: rgb(40 167 69);
 }
 
 
@@ -417,7 +417,7 @@ button, input, optgroup, select, textarea {
     padding: 10px;
 }
 .answer-meta .accept-answer.accepted {
-    background: #0cbd2f;
+    background: rgb(40 167 69);
     color: #fff;
 }
 .noidung1{
@@ -458,7 +458,7 @@ button>.btn-share:before {
 
 /*MENUTOP*/
 .top-header {
-    background-color: #2d82c3;
+    background-color: rgb(40 167 69);
    padding-left: 40px;
     font-family: Arial;
 }
@@ -517,8 +517,8 @@ button>.btn-share:before {
     margin-right: 8px;
 }
 .breadcrumb-lst {
-    background: #2d82c3;
-    border-top: 1px solid #2d82c3;
+    background: rgb(40 167 69);
+    border-top: 1px solid rgb(40 167 69);
     transition: top .5s ease-in-out 0s;
     font-size: 12px;
     padding: 5px 0 5px;
@@ -529,7 +529,7 @@ button>.btn-share:before {
     padding-right: 10px;
 }
 .breadcrumb-lst .breadcrumb {
-    background-color: #2d82c3;
+    background-color: rgb(40 167 69);
     padding: 5px 0;
     margin-bottom: 0;
 }

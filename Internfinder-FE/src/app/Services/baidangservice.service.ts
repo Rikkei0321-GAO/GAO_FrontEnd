@@ -7,9 +7,9 @@ import {news} from "../module/news";
 })
 export class baidangservice {
 
-  private baseURL = 'http://localhost:8080/News/all';
+  // private baseURL = 'http://172.16.1.149/News/all';
 
-
+  private baseURL = 'http://localhost:8080/Category/all/';
   constructor(private httpClient: HttpClient) {
   }
 
@@ -20,9 +20,11 @@ export class baidangservice {
 
   deleteNews(idNews: any): Observable<any> {
     return this.httpClient.delete(`${'http://localhost:8080/News/delete'}/${idNews}`);
+
   }
 
   addNews(data: any): Observable<any>{
+    console.log("kaka:" + data);
     return this.httpClient.post<news>('http://localhost:8080/News/add', data);
   }
 

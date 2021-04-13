@@ -1,27 +1,29 @@
-<div class="navigation" >
-  <div class="container-fluid">
-    <nav class="pull" style="display: block; background: whitesmoke;
-		width: 100%;
-		margin: auto;
-		max-width: 800px;
-		min-width: 150px;
-		border-bottom-right-radius: 2000px;
-    border-bottom-left-radius: 2000px;">
-      <ul>
-        <li><a  href="#">TÌM KIẾM</a></li>
-        <li><a  href="#">ĐĂNG TIN TUYỂN DỤNG</a></li>
-        <li><a  href="#">QUẢN LÝ BÀI ĐĂNG</a></li>
-        <li><a  href="#">QUẢN LÝ THÔNG TIN HỒ SƠ</a></li>
-      </ul>
-    </nav>
-  </div>
-</div>
+<!--<div class="navigation" >-->
+<!--  <div class="container-fluid">-->
+<!--    <nav class="pull" style="display: block; background: whitesmoke;-->
+<!--		width: 100%;-->
+<!--		margin: auto;-->
+<!--		max-width: 800px;-->
+<!--		min-width: 150px;-->
+<!--		border-bottom-right-radius: 2000px;-->
+<!--    border-bottom-left-radius: 2000px;">-->
+<!--      <ul>-->
+<!--        <li><a  href="#">TÌM KIẾM</a></li>-->
+<!--        <li><a  href="#">ĐĂNG TIN TUYỂN DỤNG</a></li>-->
+<!--        <li><a  href="#">QUẢN LÝ BÀI ĐĂNG</a></li>-->
+<!--        <li><a  href="#">QUẢN LÝ THÔNG TIN HỒ SƠ</a></li>-->
+<!--      </ul>-->
+<!--    </nav>-->
+<!--  </div>-->
+<!--</div>-->
 <!--//-->
 <!--//header-->
 <!--contact-->
+<div style="height: 10px"></div>
 <section>
-  <div class="create-cnt box-approval-rules">
-    <div class="main-colm my-3">
+  <div class="create-cnt box-approval-rules" style="padding: 20px;
+    border-radius: 20px;">
+    <div class="main-colm my-3" >
       <div class="mb-3">
         <span>Quý khách đang sử dụng tài khoản</span>
         <b class="ml-1 text-uppercase text-red">Miễn phí</b>
@@ -36,7 +38,7 @@
       <a target="_blank" href="/quy-dinh-dang-tin-tuyen-dung">Quy định duyệt tin trên Intership »</a>
     </div>
   </div>
-  <form class="create-paper"(ngSubmit)="onSubmit()">
+  <form class="create-paper"(ngSubmit)="onSubmit()" style="padding-top: 0px;">
     <div class="row box">
       <div class="col-md-12">
         <h3 class="header-box-list d-none d-md-block">
@@ -45,165 +47,165 @@
       </div>
       <div class="col-md-12">
         <label for="id_tt" class="form-label">Tiêu đề bài đăng</label>
-        <textarea type="text" class="form-control" name="title" id="id_tt"  [ngModel]="addBaidang.title"  title="Nhập vào tiêu đề bài đăng" placeholder="VD: Nhân Viên Kinh Doanh (Thiết Kế Website Và Marketing Online)" style=" min-height: 50px;
+        <textarea type="text" class="form-control" name="title" id="id_tt"  [(ngModel)]="addBaidang.title"  title="Nhập vào tiêu đề bài đăng" placeholder="VD: Nhân Viên Kinh Doanh (Thiết Kế Website Và Marketing Online)" style=" min-height: 50px;
 				max-height: 50px;"></textarea>
       </div>
       <div class="col-md-6">
         <label for="id_cd" class="form-label">Chức danh</label>
-        <input type="text" class="form-control" id="id_cd" name="major" [ngModel]="addBaidang.major" required placeholder="VD: Nhân viên kinh doanh" >
+        <input type="text" class="form-control" id="id_cd" name="major" [(ngModel)]="addBaidang.major" required placeholder="VD: Nhân viên kinh doanh" >
       </div>
       <div class="col-md-6">
         <label for="ml" class="form-label">Mức lương</label>
-        <select class="form-select form-control" [ngModel]="addBaidang.salary"  name="salary" aria-label="Default select example" id="ml">
+        <select class="form-select form-control" [(ngModel)]="addBaidang.salary"  name="salary" aria-label="Default select example" id="ml">
           <option selected>Mức lương</option>
-          <option value="5 triệu -> 7 triệu đồng">5 triệu -> 7 triệu đồng</option>
-          <option value="7 triệu -> 10 triệu đồng">7 triệu -> 10 triệu đồng</option>
-          <option value="10 triệu -> 15 triệu đồng">10 triệu -> 15 triệu đồng</option>
-          <option value="15 triệu -> 20 triệu đồng">15 triệu -> 20 triệu đồng</option>
+          <option value="5 đến 7">5 triệu -> 7 triệu đồng</option>
+          <option value="7 đến 10">7 triệu -> 10 triệu đồng</option>
+          <option value="10 triệu đến 15 triệu đồng">10 triệu -> 15 triệu đồng</option>
+          <option value="15 triệu đến 20 triệu đồng">15 triệu -> 20 triệu đồng</option>
           <option value="Lương thỏa thuận">Lương thỏa thuận</option>
         </select>
       </div>
       <div class="col-md-6">
         <label for="id_sl" class="form-label">Số lượng cần tuyển</label>
-        <input type="text" [ngModel]="addBaidang.quanlity" name="quanlity" class="form-control" id="id_sl" placeholder="0" required>
+        <input type="text" [(ngModel)]="addBaidang.quanlity" name="quanlity" class="form-control" id="id_sl" placeholder="0" required>
       </div>
       <div class="col-md-6">
         <label for="id_add" class="form-label">Địa điểm làm việc</label>
-        <select class="form-select form-control" [ngModel]="addBaidang.work_loaction" name="work_loaction" aria-label="Default select example" id="id_add">
+        <select class="form-select form-control" [(ngModel)]="addBaidang.work_loaction" name="work_loaction" aria-label="Default select example" id="id_add">
           <option selected>Địa điểm làm việc</option>
-          <option value="01">Thành phố Hà Nội</option>
-          <option value="02">Tỉnh Hà Giang</option>
-          <option value="04">Tỉnh Cao Bằng</option>
-          <option value="06">Tỉnh Bắc Kạn</option>
-          <option value="08">Tỉnh Tuyên Quang</option>
-          <option value="10">Tỉnh Lào Cai</option>
-          <option value="11">Tỉnh Điện Biên</option>
-          <option value="12">Tỉnh Lai Châu</option>
-          <option value="14">Tỉnh Sơn La</option>
-          <option value="15">Tỉnh Yên Bái</option>
-          <option value="17">Tỉnh Hoà Bình</option>
-          <option value="19">Tỉnh Thái Nguyên</option>
-          <option value="20">Tỉnh Lạng Sơn</option>
-          <option value="22">Tỉnh Quảng Ninh</option>
-          <option value="24">Tỉnh Bắc Giang</option>
-          <option value="25">Tỉnh Phú Thọ</option>
-          <option value="26">Tỉnh Vĩnh Phúc</option>
-          <option value="27">Tỉnh Bắc Ninh</option>
-          <option value="30">Tỉnh Hải Dương</option>
-          <option value="31">Thành phố Hải Phòng</option>
-          <option value="33">Tỉnh Hưng Yên</option>
-          <option value="34">Tỉnh Thái Bình</option>
-          <option value="35">Tỉnh Hà Nam</option>
-          <option value="36">Tỉnh Nam Định</option>
-          <option value="37">Tỉnh Ninh Bình</option>
-          <option value="38">Tỉnh Thanh Hóa</option>
-          <option value="40">Tỉnh Nghệ An</option>
-          <option value="42">Tỉnh Hà Tĩnh</option>
-          <option value="44">Tỉnh Quảng Bình</option>
-          <option value="45">Tỉnh Quảng Trị</option>
-          <option value="46">Tỉnh Thừa Thiên Huế</option>
-          <option value="48">Thành phố Đà Nẵng</option>
-          <option value="49">Tỉnh Quảng Nam</option>
-          <option value="51">Tỉnh Quảng Ngãi</option>
-          <option value="52">Tỉnh Bình Định</option>
-          <option value="54">Tỉnh Phú Yên</option>
-          <option value="56">Tỉnh Khánh Hòa</option>
-          <option value="58">Tỉnh Ninh Thuận</option>
-          <option value="60">Tỉnh Bình Thuận</option>
-          <option value="62">Tỉnh Kon Tum</option>
-          <option value="64">Tỉnh Gia Lai</option>
-          <option value="66">Tỉnh Đắk Lắk</option>
-          <option value="67">Tỉnh Đắk Nông</option>
-          <option value="68">Tỉnh Lâm Đồng</option>
-          <option value="70">Tỉnh Bình Phước</option>
-          <option value="72">Tỉnh Tây Ninh</option>
-          <option value="74">Tỉnh Bình Dương</option>
-          <option value="75">Tỉnh Đồng Nai</option>
-          <option value="77">Tỉnh Bà Rịa - Vũng Tàu</option>
-          <option value="79">Thành phố Hồ Chí Minh</option>
-          <option value="80">Tỉnh Long An</option>
-          <option value="82">Tỉnh Tiền Giang</option>
-          <option value="83">Tỉnh Bến Tre</option>
-          <option value="84">Tỉnh Trà Vinh</option>
-          <option value="86">Tỉnh Vĩnh Long</option>
-          <option value="87">Tỉnh Đồng Tháp</option>
-          <option value="89">Tỉnh An Giang</option>
-          <option value="91">Tỉnh Kiên Giang</option>
-          <option value="92">Thành phố Cần Thơ</option>
-          <option value="93">Tỉnh Hậu Giang</option>
-          <option value="94">Tỉnh Sóc Trăng</option>
-          <option value="95">Tỉnh Bạc Liêu</option>
-          <option value="96">Tỉnh Cà Mau</option>
-<!--          <option value="An Giang">An Giang</option>-->
-<!--          <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu</option>-->
-<!--          <option value="Bắc Giang">Bắc Giang</option>-->
-<!--          <option value="Bắc Kạn">Bắc Kạn</option>-->
-<!--          <option value="Bạc Liêu">Bạc Liêu</option>-->
-<!--          <option value="Bắc Ninh">Bắc Ninh</option>-->
-<!--          <option value="Bến Tre">Bến Tre</option>-->
-<!--          <option value="Bình Định">Bình Định</option>-->
-<!--          <option value="Bình Dương">Bình Dương</option>-->
-<!--          <option value="Bình Phước">Bình Phước</option>-->
-<!--          <option value="Bình Thuận">Bình Thuận</option>-->
-<!--          <option value="Bình Thuận">Bình Thuận</option>-->
-<!--          <option value="Cà Mau">Cà Mau</option>-->
-<!--          <option value="Cao Bằng">Cao Bằng</option>-->
-<!--          <option value="Đắk Lắk">Đắk Lắk</option>-->
-<!--          <option value="Đắk Nông">Đắk Nông</option>-->
-<!--          <option value="Điện Biên">Điện Biên</option>-->
-<!--          <option value="Đồng Nai">Đồng Nai</option>-->
-<!--          <option value="Đồng Tháp">Đồng Tháp</option>-->
-<!--          <option value="Đồng Tháp">Đồng Tháp</option>-->
-<!--          <option value="Gia Lai">Gia Lai</option>-->
-<!--          <option value="Hà Giang">Hà Giang</option>-->
-<!--          <option value="Hà Nam">Hà Nam</option>-->
-<!--          <option value="Hà Tĩnh">Hà Tĩnh</option>-->
-<!--          <option value="Hải Dương">Hải Dương</option>-->
-<!--          <option value="Hậu Giang">Hậu Giang</option>-->
-<!--          <option value="Hòa Bình">Hòa Bình</option>-->
-<!--          <option value="Hưng Yên">Hưng Yên</option>-->
-<!--          <option value="Khánh Hòa">Khánh Hòa</option>-->
-<!--          <option value="Kiên Giang">Kiên Giang</option>-->
-<!--          <option value="Kon Tum">Kon Tum</option>-->
-<!--          <option value="Lai Châu">Lai Châu</option>-->
-<!--          <option value="Lâm Đồng">Lâm Đồng</option>-->
-<!--          <option value="Lạng Sơn">Lạng Sơn</option>-->
-<!--          <option value="Lào Cai">Lào Cai</option>-->
-<!--          <option value="Long An">Long An</option>-->
-<!--          <option value="Nam Định">Nam Định</option>-->
-<!--          <option value="Nghệ An">Nghệ An</option>-->
-<!--          <option value="Ninh Bình">Ninh Bình</option>-->
-<!--          <option value="Ninh Thuận">Ninh Thuận</option>-->
-<!--          <option value="Phú Thọ">Phú Thọ</option>-->
-<!--          <option value="Quảng Bình">Quảng Bình</option>-->
-<!--          <option value="Quảng Bình">Quảng Bình</option>-->
-<!--          <option value="Quảng Ngãi">Quảng Ngãi</option>-->
-<!--          <option value="Quảng Ninh">Quảng Ninh</option>-->
-<!--          <option value="Quảng Trị">Quảng Trị</option>-->
-<!--          <option value="Sóc Trăng">Sóc Trăng</option>-->
-<!--          <option value="Sơn La">Sơn La</option>-->
-<!--          <option value="Tây Ninh">Tây Ninh</option>-->
-<!--          <option value="Thái Bình">Thái Bình</option>-->
-<!--          <option value="Thái Nguyên">Thái Nguyên</option>-->
-<!--          <option value="Thanh Hóa">Thanh Hóa</option>-->
-<!--          <option value="Thừa Thiên Huế">Thừa Thiên Huế</option>-->
-<!--          <option value="Tiền Giang">Tiền Giang</option>-->
-<!--          <option value="Trà Vinh">Trà Vinh</option>-->
-<!--          <option value="Tuyên Quang">Tuyên Quang</option>-->
-<!--          <option value="Vĩnh Long">Vĩnh Long</option>-->
-<!--          <option value="Vĩnh Phúc">Vĩnh Phúc</option>-->
-<!--          <option value="Yên Bái">Yên Bái</option>-->
-<!--          <option value="Phú Yên">Phú Yên</option>-->
-<!--          <option value="Tp.Cần Thơ">Tp.Cần Thơ</option>-->
-<!--          <option value="Tp.Đà Nẵng">Tp.Đà Nẵng</option>-->
-<!--          <option value="Tp.Hải Phòng">Tp.Hải Phòng</option>-->
-<!--          <option value="Tp.Hà Nội">Tp.Hà Nội</option>-->
-<!--          <option value="TP  HCM">TP HCM</option>-->
+<!--          <option value="Hà Nội">Thành phố Hà Nội</option>-->
+<!--          <option value="Hà Giang">Tỉnh Hà Giang</option>-->
+<!--          <option value="04">Tỉnh Cao Bằng</option>-->
+<!--          <option value="06">Tỉnh Bắc Kạn</option>-->
+<!--          <option value="08">Tỉnh Tuyên Quang</option>-->
+<!--          <option value="10">Tỉnh Lào Cai</option>-->
+<!--          <option value="11">Tỉnh Điện Biên</option>-->
+<!--          <option value="12">Tỉnh Lai Châu</option>-->
+<!--          <option value="14">Tỉnh Sơn La</option>-->
+<!--          <option value="15">Tỉnh Yên Bái</option>-->
+<!--          <option value="17">Tỉnh Hoà Bình</option>-->
+<!--          <option value="19">Tỉnh Thái Nguyên</option>-->
+<!--          <option value="20">Tỉnh Lạng Sơn</option>-->
+<!--          <option value="22">Tỉnh Quảng Ninh</option>-->
+<!--          <option value="24">Tỉnh Bắc Giang</option>-->
+<!--          <option value="25">Tỉnh Phú Thọ</option>-->
+<!--          <option value="26">Tỉnh Vĩnh Phúc</option>-->
+<!--          <option value="27">Tỉnh Bắc Ninh</option>-->
+<!--          <option value="30">Tỉnh Hải Dương</option>-->
+<!--          <option value="31">Thành phố Hải Phòng</option>-->
+<!--          <option value="33">Tỉnh Hưng Yên</option>-->
+<!--          <option value="34">Tỉnh Thái Bình</option>-->
+<!--          <option value="35">Tỉnh Hà Nam</option>-->
+<!--          <option value="36">Tỉnh Nam Định</option>-->
+<!--          <option value="37">Tỉnh Ninh Bình</option>-->
+<!--          <option value="38">Tỉnh Thanh Hóa</option>-->
+<!--          <option value="40">Tỉnh Nghệ An</option>-->
+<!--          <option value="42">Tỉnh Hà Tĩnh</option>-->
+<!--          <option value="44">Tỉnh Quảng Bình</option>-->
+<!--          <option value="45">Tỉnh Quảng Trị</option>-->
+<!--          <option value="46">Tỉnh Thừa Thiên Huế</option>-->
+<!--          <option value="48">Thành phố Đà Nẵng</option>-->
+<!--          <option value="49">Tỉnh Quảng Nam</option>-->
+<!--          <option value="51">Tỉnh Quảng Ngãi</option>-->
+<!--          <option value="52">Tỉnh Bình Định</option>-->
+<!--          <option value="54">Tỉnh Phú Yên</option>-->
+<!--          <option value="56">Tỉnh Khánh Hòa</option>-->
+<!--          <option value="58">Tỉnh Ninh Thuận</option>-->
+<!--          <option value="60">Tỉnh Bình Thuận</option>-->
+<!--          <option value="62">Tỉnh Kon Tum</option>-->
+<!--          <option value="64">Tỉnh Gia Lai</option>-->
+<!--          <option value="66">Tỉnh Đắk Lắk</option>-->
+<!--          <option value="67">Tỉnh Đắk Nông</option>-->
+<!--          <option value="68">Tỉnh Lâm Đồng</option>-->
+<!--          <option value="70">Tỉnh Bình Phước</option>-->
+<!--          <option value="72">Tỉnh Tây Ninh</option>-->
+<!--          <option value="74">Tỉnh Bình Dương</option>-->
+<!--          <option value="75">Tỉnh Đồng Nai</option>-->
+<!--          <option value="77">Tỉnh Bà Rịa - Vũng Tàu</option>-->
+<!--          <option value="79">Thành phố Hồ Chí Minh</option>-->
+<!--          <option value="80">Tỉnh Long An</option>-->
+<!--          <option value="82">Tỉnh Tiền Giang</option>-->
+<!--          <option value="83">Tỉnh Bến Tre</option>-->
+<!--          <option value="84">Tỉnh Trà Vinh</option>-->
+<!--          <option value="86">Tỉnh Vĩnh Long</option>-->
+<!--          <option value="87">Tỉnh Đồng Tháp</option>-->
+<!--          <option value="89">Tỉnh An Giang</option>-->
+<!--          <option value="91">Tỉnh Kiên Giang</option>-->
+<!--          <option value="92">Thành phố Cần Thơ</option>-->
+<!--          <option value="93">Tỉnh Hậu Giang</option>-->
+<!--          <option value="94">Tỉnh Sóc Trăng</option>-->
+<!--          <option value="95">Tỉnh Bạc Liêu</option>-->
+<!--          <option value="96">Tỉnh Cà Mau</option>-->
+          <option value="An Giang">An Giang</option>
+          <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu</option>
+          <option value="Bắc Giang">Bắc Giang</option>
+          <option value="Bắc Kạn">Bắc Kạn</option>
+          <option value="Bạc Liêu">Bạc Liêu</option>
+          <option value="Bắc Ninh">Bắc Ninh</option>
+          <option value="Bến Tre">Bến Tre</option>
+          <option value="Bình Định">Bình Định</option>
+          <option value="Bình Dương">Bình Dương</option>
+          <option value="Bình Phước">Bình Phước</option>
+          <option value="Bình Thuận">Bình Thuận</option>
+          <option value="Bình Thuận">Bình Thuận</option>
+          <option value="Cà Mau">Cà Mau</option>
+          <option value="Cao Bằng">Cao Bằng</option>
+          <option value="Đắk Lắk">Đắk Lắk</option>
+          <option value="Đắk Nông">Đắk Nông</option>
+          <option value="Điện Biên">Điện Biên</option>
+          <option value="Đồng Nai">Đồng Nai</option>
+          <option value="Đồng Tháp">Đồng Tháp</option>
+          <option value="Đồng Tháp">Đồng Tháp</option>
+          <option value="Gia Lai">Gia Lai</option>
+          <option value="Hà Giang">Hà Giang</option>
+          <option value="Hà Nam">Hà Nam</option>
+          <option value="Hà Tĩnh">Hà Tĩnh</option>
+          <option value="Hải Dương">Hải Dương</option>
+          <option value="Hậu Giang">Hậu Giang</option>
+          <option value="Hòa Bình">Hòa Bình</option>
+          <option value="Hưng Yên">Hưng Yên</option>
+          <option value="Khánh Hòa">Khánh Hòa</option>
+          <option value="Kiên Giang">Kiên Giang</option>
+          <option value="Kon Tum">Kon Tum</option>
+          <option value="Lai Châu">Lai Châu</option>
+          <option value="Lâm Đồng">Lâm Đồng</option>
+          <option value="Lạng Sơn">Lạng Sơn</option>
+          <option value="Lào Cai">Lào Cai</option>
+          <option value="Long An">Long An</option>
+          <option value="Nam Định">Nam Định</option>
+          <option value="Nghệ An">Nghệ An</option>
+          <option value="Ninh Bình">Ninh Bình</option>
+          <option value="Ninh Thuận">Ninh Thuận</option>
+          <option value="Phú Thọ">Phú Thọ</option>
+          <option value="Quảng Bình">Quảng Bình</option>
+          <option value="Quảng Bình">Quảng Bình</option>
+          <option value="Quảng Ngãi">Quảng Ngãi</option>
+          <option value="Quảng Ninh">Quảng Ninh</option>
+          <option value="Quảng Trị">Quảng Trị</option>
+          <option value="Sóc Trăng">Sóc Trăng</option>
+          <option value="Sơn La">Sơn La</option>
+          <option value="Tây Ninh">Tây Ninh</option>
+          <option value="Thái Bình">Thái Bình</option>
+          <option value="Thái Nguyên">Thái Nguyên</option>
+          <option value="Thanh Hóa">Thanh Hóa</option>
+          <option value="Thừa Thiên Huế">Thừa Thiên Huế</option>
+          <option value="Tiền Giang">Tiền Giang</option>
+          <option value="Trà Vinh">Trà Vinh</option>
+          <option value="Tuyên Quang">Tuyên Quang</option>
+          <option value="Vĩnh Long">Vĩnh Long</option>
+          <option value="Vĩnh Phúc">Vĩnh Phúc</option>
+          <option value="Yên Bái">Yên Bái</option>
+          <option value="Phú Yên">Phú Yên</option>
+          <option value="Tp.Cần Thơ">Tp.Cần Thơ</option>
+          <option value="Tp.Đà Nẵng">Tp.Đà Nẵng</option>
+          <option value="Tp.Hải Phòng">Tp.Hải Phòng</option>
+          <option value="Tp.Hà Nội">Tp.Hà Nội</option>
+          <option value="TP  HCM">TP HCM</option>
         </select>
       </div>
       <div class="col-md-6">
         <label for="id_capbac" class="form-label">Cấp bậc</label>
-        <select class="form-select form-control" [ngModel]="addBaidang.position" name="position" aria-label="Default select example" id="id_capbac">
+        <select class="form-select form-control" [(ngModel)]="addBaidang.position" name="position" aria-label="Default select example" id="id_capbac">
           <option >Cấp bậc</option>
           <option value="Mới tốt nghiệp/ Thực tập sinh">Mới tốt nghiệp/ Thực tập sinh</option>
           <option value="Sinh Viên">Sinh viên</option>
@@ -214,14 +216,14 @@
 
       <div class="col-md-6">
         <label for="ntd" class="form-label">Ngành tuyển dụng</label>
-          <select id="ntd" class="form-select form-control" name="category_idCategory" required [ngModel]="addBaidang.category_idCategory" (change)='onOptionsSelected($event)'>
-            <option  *ngFor='let option of lisstnganh' [value]="option.idCategory.toString()">{{option.name}}</option>
+          <select id="ntd" class="form-select form-control" name="category_idCategory" required [(ngModel)]="addBaidang.category_idCategory" (change)='onOptionsSelected($event)'>
+            <option  *ngFor='let option of lisstnganh' [value]=option.idCategory.toString()>{{option.name}}</option>
           </select>
 
       </div>
       <div class="col-md-6">
         <label for="lhcv" class="form-label">Loại hình công việc</label>
-        <select class="form-select form-control"  [ngModel]="addBaidang.type_of_work" name="type_of_work" aria-label="Default select example" id="lhcv">
+        <select class="form-select form-control"  [(ngModel)]="addBaidang.type_of_work" name="type_of_work" aria-label="Default select example" id="lhcv">
           <option selected>Loại hình công việc</option>
           <option value="Bán thời gian cố đinh">Bán thời gian cố đinh</option>
           <option value="Bán thới gian tạm thời">Bán thới gian tạm thời</option>
@@ -231,11 +233,11 @@
       </div>
       <div class="col-md-12">
         <label for="mtcv" class="form-label">Mô tả công việc</label>
-        <textarea type="text" class="form-control" [ngModel]="addBaidang.decriptions" name="decriptions" id="mtcv" placeholder="Nhập vào mô tả công việc"required></textarea>
+        <textarea type="text" class="form-control" [(ngModel)]="addBaidang.decriptions" name="decriptions" id="mtcv" placeholder="Nhập vào mô tả công việc"required></textarea>
       </div>
       <div class="col-md-12">
         <label for="ql" class="form-label">Quyền lợi</label>
-        <textarea type="text" class="form-control" id="ql"  [ngModel]="addBaidang.benefit" name="benefit" placeholder="Nhập vào quyền lợi"required></textarea>
+        <textarea type="text" class="form-control" id="ql"  [(ngModel)]="addBaidang.benefit" name="benefit" placeholder="Nhập vào quyền lợi"required></textarea>
       </div>
       <div></div>
     </div>
@@ -247,7 +249,7 @@
       </div>
       <div class="col-md-6">
         <label for="gt" class="form-label">Giới tính</label>
-        <select class="form-select form-control"  [ngModel]="addBaidang.sex" name="sex" aria-label="Default select example" id="gt">
+        <select class="form-select form-control"  [(ngModel)]="addBaidang.sex" name="sex" aria-label="Default select example" id="gt">
           <option selected>Giới tính</option>
           <option value="Nam">Nam</option>
           <option value="Nữ">Nữ</option>
@@ -256,7 +258,7 @@
       </div>
       <div class="col-md-6">
         <label for="id_sl" class="form-label">Bằng cấp</label>
-        <select class="form-select form-control"  [ngModel]="addBaidang.degree" name="degree" aria-label="Default select example" id="id_bc">
+        <select class="form-select form-control"   [(ngModel)]="addBaidang.degree" name="degree" aria-label="Default select example" id="id_bc">
           <option selected>Kiểu bằng cấp</option>
           <option value="Đại học">Đại học</option>
           <option value="Cao Đẳng">Cao đẳng</option>
@@ -266,11 +268,11 @@
       </div>
       <div class="col-md-6">
         <label for="time" class="form-label">Hạn nạp hồ sơ</label>
-        <input type="text" [ngModel]="addBaidang.working_time" name="working_time" class="form-control" id="time"required>
+        <input type="text"  [(ngModel)]="addBaidang.working_time" name="working_time" class="form-control" id="time"required>
       </div>
       <div class="col-md-6">
         <label for="nn" class="form-label">Ngôn ngữ hồ sơ</label>
-        <select class="form-select form-control"  [ngModel]="addBaidang.profile_language"  name="profile_language" aria-label="Default select example" id="nn">
+        <select class="form-select form-control"   [(ngModel)]="addBaidang.profile_language"  name="profile_language" aria-label="Default select example" id="nn">
           <option selected>Cấp bậc</option>
           <option value="Tiếng Anh">Tiếng Anh</option>
           <option value="Tiếng Việt">Tiếng Việt</option>
@@ -280,11 +282,11 @@
       </div>
       <div class="col-md-12">
         <label for="yccv" class="form-label">Yêu cầu công việc</label>
-        <textarea type="text" class="form-control" id="yccv"  [ngModel]="addBaidang.job_requirements" name="job_requirements" placeholder="Nhập vào yêu cầu công việc"required></textarea>
+        <textarea type="text" class="form-control" id="yccv"   [(ngModel)]="addBaidang.job_requirements" name="job_requirements" placeholder="Nhập vào yêu cầu công việc"required></textarea>
       </div>
       <div class="col-md-12">
         <label for="ychs" class="form-label">Yêu cầu hồ sơ</label>
-        <textarea type="text" class="form-control" id="ychs" [ngModel]="addBaidang.profile_requirement" name="profile_requirement" placeholder="Nhập vào yêu cầu hồ sơ lý lịch" required></textarea>
+        <textarea type="text" class="form-control" id="ychs"  [(ngModel)]="addBaidang.profile_requirement" name="profile_requirement" placeholder="Nhập vào yêu cầu hồ sơ lý lịch" required></textarea>
       </div>
     </div>
     <div class="row box"  style="padding-bottom: 50px;">
@@ -295,19 +297,19 @@
       </div>
       <div class="col-md-6">
         <label for="tnll" class="form-label">Họ và tên</label>
-        <input type="text" class="form-control" id="tnll" [ngModel]="addBaidang.name_nd" name="name_nd" placeholder="Nguyễn Văn A" required>
+        <input type="text" class="form-control" id="tnll"  [(ngModel)]="addBaidang.name_nd" name="name_nd" placeholder="Nguyễn Văn A" required>
       </div>
       <div class="col-md-6">
         <label for="id_mumber" class="form-label">Số điện thoại</label>
-        <input type="text" class="form-control" id="id_mumber" [ngModel]="addBaidang.sdt_nd" name="sdt_nd" placeholder="Nhập vào số điện thoại" required>
+        <input type="text" class="form-control" id="id_mumber"  [(ngModel)]="addBaidang.sdt_nd" name="sdt_nd" placeholder="Nhập vào số điện thoại" required>
       </div>
       <div class="col-md-6">
         <label for="id_add1" class="form-label">Địa chỉ</label>
-        <input type="text" class="form-control" id="id_add1" [ngModel]="addBaidang.address_nd" name="address_nd" placeholder="VD: Nhập vào địa chỉ" required>
+        <input type="text" class="form-control" id="id_add1"  [(ngModel)]="addBaidang.address_nd" name="address_nd" placeholder="VD: Nhập vào địa chỉ" required>
       </div>
       <div class="col-md-6">
         <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" [ngModel]="addBaidang.email_nd" name="email_nd" placeholder="Nhập vào email" required>
+        <input type="email" class="form-control" id="email"  [(ngModel)]="addBaidang.email_nd" name="email_nd" placeholder="Nhập vào email" required>
       </div>
     </div>
     <div class="row">

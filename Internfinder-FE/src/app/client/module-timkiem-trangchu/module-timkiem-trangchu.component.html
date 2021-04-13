@@ -39,18 +39,20 @@
   </div>
 </section>
 
-<div id="search-box" class="margin-none">
+<div id="search-box" class="margin-none" >
   <div class="container search-box">
     <form action="#" id="search-box_search_form_3" class="search-box_search_form d-flex flex-lg-row flex-column align-items-center justify-content-between ">
       <div class="d-flex flex-row align-items-center justify-content-start inline-block">
-        <input class="search-box_search_input" [(ngModel)]="titleNew" name="titleNew" type="text" placeholder="Search Keyword">
+        <span class="large fa fa-pen-square search"></span>
+        <input class="search-box_search_input" [(ngModel)]="titleNew" name="titleNew" type="text" placeholder="Nhập vào đây">
         <span class="fa fa-tools large search "></span>
-        <select style="border-radius: 100px"  class="dropdown_item_select search-box_search_input" name="college_name" required [(ngModel)]="nganh" (change)='onOptionsSelected($event)'>
+        <select  class="dropdown_item_select search-box_search_input" placeholder="Search Keyword" name="college_name" required [(ngModel)]="nganh" (change)='onOptionsSelected($event)'>
+          <option value="">Chọn ngành nghề</option>
           <option  *ngFor='let option of lisstnganh' [value]="option.idCategory.toString()">{{option.name}}</option>
         </select>
-        <span class="large material-icons search">place</span>
+        <a class="large material-icons search">place</a>
         <select  style="border-radius: 100px" class="form-control" class="dropdown_item_select search-box_search_input" name="noilam"  placeholde="Địa chỉ làm việc" [(ngModel)]="noilam" >
-          <option>Địa điểm làm việc</option>
+          <option value="">Địa điểm làm việc</option>
           <option value="Hà Nội">Thành phố Hà Nội</option>
           <option value="Hồ Chí Minh">Hồ Chí Minh</option>
           <option value="04">Tỉnh Cao Bằng</option>

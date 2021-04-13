@@ -15,8 +15,9 @@ import {TimkiemService} from "../../Services/timkiem.service";
 export class ModuleDangtuyendungComponent implements OnInit {
   constructor(private  loadcssServices: LoadcssServices, private route: ActivatedRoute, private router: Router,
               private newServiceService: baidangservice) {
+
     this.loadcssServices.loaddCss('assets/Client/minhhoang/bootstrap.css');
-    this.loadcssServices.loaddCss('/assets/Client/CCS/stylesMH.css');
+    this.loadcssServices.loaddCss('assets/Client/CCS/stylesMH.css');
     this.loadcssServices.loaddCss('assets/Client/fontawesome-free-5.15.2-web/css/all.css');
 
   }
@@ -35,6 +36,11 @@ export class ModuleDangtuyendungComponent implements OnInit {
   }
 
   add() {
+    // @ts-ignore
+    this.addBaidang.account_role_id_role="2";
+    // @ts-ignore
+    this.addBaidang.account_idAccount=1;
+    console.log("hang ve: "+ this.addBaidang);
     this.newServiceService.addNews(this.addBaidang)
       .subscribe(
         response => {
@@ -47,6 +53,7 @@ export class ModuleDangtuyendungComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log(this.addBaidang);
     this.add();
   }
 

@@ -16,8 +16,31 @@ import {Category} from "../../module/category";
   styleUrls: ['./module-timkiem-trangchu.component.css']
 })
 export class ModuleTimkiemTrangchuComponent implements OnInit {
-
-
+//Lấy từ Papr
+//   @Input()// @ts-ignore
+//   keyName: string;
+//   // @ts-ignore
+//   keyNoiChon: string;
+//   // @ts-ignore
+//   keyNganh:string;
+//
+//
+//   @Input()
+//   // @ts-ignore
+//   get keyName() {
+//     return this._keyName;
+//   }
+//   @Input()
+//   // @ts-ignore
+//   get keyNoiChon() {
+//     return this._keyNoiChon;
+//   }
+//   @Input()
+//   // @ts-ignore
+//   get keyNganh() {
+//     return this._keyNganh;
+//   }
+  //Xuất
   baidang: news[] = [];
   xemlichsulist: news[] = [];
   // @ts-ignore
