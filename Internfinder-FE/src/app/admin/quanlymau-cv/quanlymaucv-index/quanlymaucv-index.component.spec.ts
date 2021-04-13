@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { QuanlymaucvIndexComponent } from './quanlymaucv-index.component';
+import {QuanlymaucvIndexComponent} from './quanlymaucv-index.component';
 
 describe('QuanlymaucvIndexComponent', () => {
   let component: QuanlymaucvIndexComponent;
@@ -8,9 +8,9 @@ describe('QuanlymaucvIndexComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ QuanlymaucvIndexComponent ]
+      declarations: [QuanlymaucvIndexComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

@@ -34,9 +34,16 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CKEditorModule} from "ckeditor4-angular";
 import { ModuleDangtuyendungComponent } from './client/module-dangtuyendung/module-dangtuyendung.component';
 import { ModuleXemvcNtdComponent } from './client/module-xemvc-ntd/module-xemvc-ntd.component';
-import {HttpClientModule} from "@angular/common/http";
 import {JwPaginationModule} from "jw-angular-pagination";
 import { QuanlythongtinTaikhoanComponent } from './client/quanlythongtin-taikhoan/quanlythongtin-taikhoan.component';
+import {HttpClientModule} from "@angular/common/http";
+import { ResetPasswordComponent } from './login/reset-password/reset-password.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ToastrModule} from "ngx-toastr";
+import { VerifyResetPasswordComponent } from './login/verify-reset-password/verify-reset-password.component';
+import { QuanlycvNtdComponent } from './client/quanlycv-ntd/quanlycv-ntd.component';
+import { QuanlycvComponent } from './client/quanlycv-sv/quanlycv/quanlycv.component';
+import { CvAcceptComponent } from './client/quanlycv-sv/cv-accept/cv-accept.component';
 
 @NgModule({
   declarations: [
@@ -72,15 +79,22 @@ import { QuanlythongtinTaikhoanComponent } from './client/quanlythongtin-taikhoa
     ModuleDangtuyendungComponent,
     ModuleXemvcNtdComponent,
     QuanlythongtinTaikhoanComponent,
+    ResetPasswordComponent,
+    VerifyResetPasswordComponent,
+    QuanlycvNtdComponent,
+    QuanlycvComponent,
+    CvAcceptComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     CKEditorModule,
-    HttpClientModule,
     ReactiveFormsModule,
-    JwPaginationModule
+    JwPaginationModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

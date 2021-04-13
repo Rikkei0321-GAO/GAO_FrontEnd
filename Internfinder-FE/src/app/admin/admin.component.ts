@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { LoadcssServices} from '../Services/loadcss.services';
+import {Component, OnInit} from '@angular/core';
+import {LoadcssServices} from '../Services/loadcss.services';
 
 @Component({
   selector: 'app-admin',
@@ -19,9 +19,9 @@ export class AdminComponent implements OnInit {
       this.loadcssServices.loadScript('assets/admin/vendor/jquery/jquery.min.js');
       this.loadcssServices.loadScript('assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js');
       this.loadcssServices.loadScript('assets/admin/vendor/jquery-easing/jquery.easing.min.js');
-        // this.loadcssServices.loadScript('assets/admin/vendor/datatables/jquery.dataTables.min.js');
-        // this.loadcssServices.loadScript('assets/admin/vendor/datatables/dataTables.bootstrap4.min.js');
-        // this.loadcssServices.loadScript('assets/admin/js/demo/datatables-demo.js');
+      // this.loadcssServices.loadScript('assets/admin/vendor/datatables/jquery.dataTables.min.js');
+      // this.loadcssServices.loadScript('assets/admin/vendor/datatables/dataTables.bootstrap4.min.js');
+      // this.loadcssServices.loadScript('assets/admin/js/demo/datatables-demo.js');
     }, 300);
   }
 

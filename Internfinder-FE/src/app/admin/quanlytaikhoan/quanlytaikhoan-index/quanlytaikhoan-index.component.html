@@ -16,7 +16,7 @@
             <tr>
               <th>ID</th>
               <th>Tên Tài Khoản</th>
-              <th>Họ và Tên </th>
+              <th>Họ và Tên</th>
               <th>Ngày Tạo</th>
               <th>Cấp Quyền</th>
               <th>Địa Chỉ</th>
@@ -40,10 +40,11 @@
                 <label class="switch">
                   <input type="checkbox" [checked]="item.status">
                   <span class="slider round"></span>
-                  </label><td>
-              <a class="btn btn-primary" (click)="OnEdit(item.idAccount)">Sửa</a>
-              <a href="admin/quanlytaikhoan/index" class="btn btn-primary btn-red" (click)="Ondelete(item.idAccount)">Xóa</a>
-            </td>
+                </label>
+              <td>
+                <a class="btn btn-primary" (click)="OnEdit(item.idAccount)">Sửa</a>
+                <a href="admin/quanlytaikhoan/index" class="btn btn-primary btn-red" (click)="Ondelete(item.idAccount)">Xóa</a>
+              </td>
             </tr>
             </tbody>
           </table>

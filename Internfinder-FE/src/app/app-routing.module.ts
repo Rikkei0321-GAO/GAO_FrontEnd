@@ -25,6 +25,11 @@ import {DangbaivietForumComponent} from "./client/module-forum/dangbaiviet-forum
 import {ModuleDangtuyendungComponent} from "./client/module-dangtuyendung/module-dangtuyendung.component";
 import {ModuleXemvcNtdComponent} from "./client/module-xemvc-ntd/module-xemvc-ntd.component";
 import {QuanlythongtinTaikhoanComponent} from "./client/quanlythongtin-taikhoan/quanlythongtin-taikhoan.component";
+import {ResetPasswordComponent} from "./login/reset-password/reset-password.component";
+import {VerifyResetPasswordComponent} from "./login/verify-reset-password/verify-reset-password.component";
+import {QuanlycvNtdComponent} from "./client/quanlycv-ntd/quanlycv-ntd.component";
+import {QuanlycvComponent} from "./client/quanlycv-sv/quanlycv/quanlycv.component";
+import {CvAcceptComponent} from "./client/quanlycv-sv/cv-accept/cv-accept.component";
 
 const routes: Routes = [
 
@@ -51,7 +56,10 @@ const routes: Routes = [
         {path: 'dangbaichiase', component: DangbaivietForumComponent},
         {path: 'dangtuyendung', component: ModuleDangtuyendungComponent},
         {path: 'xemcv-ntd', component: ModuleXemvcNtdComponent},
-        {path: 'quanlythongtin-taikhoan', component: QuanlythongtinTaikhoanComponent}
+        {path: 'quanlycv-ntd', component: QuanlycvNtdComponent},
+        {path: 'quanlycv-sv', component: QuanlycvComponent},
+        {path: 'cv-accept', component: CvAcceptComponent}
+
       ]
   },
   {
@@ -61,6 +69,8 @@ const routes: Routes = [
         {path: 'dangnhap/client', component: ClientLoginComponent},
         {path: 'dangky/sinhvien', component: DangkysinhvienComponent},
         {path: 'dangky/nhatuyendung', component: DangkyNTTComponent},
+        {path: 'reset-password', component: ResetPasswordComponent},
+        {path: 'verify-reset-password', component: VerifyResetPasswordComponent},
 
       ]
   }

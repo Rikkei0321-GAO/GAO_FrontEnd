@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { QuanlybaichiaseCreateComponent } from './quanlybaichiase-create.component';
+import {QuanlybaichiaseCreateComponent} from './quanlybaichiase-create.component';
 
 describe('QuanlybaichiaseCreateComponent', () => {
   let component: QuanlybaichiaseCreateComponent;
@@ -8,9 +8,9 @@ describe('QuanlybaichiaseCreateComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ QuanlybaichiaseCreateComponent ]
+      declarations: [QuanlybaichiaseCreateComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

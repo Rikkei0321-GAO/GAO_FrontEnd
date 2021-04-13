@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ModuleCreateCvComponent } from './module-create-cv.component';
+import {ModuleCreateCvComponent} from './module-create-cv.component';
 
 describe('ModuleCreateCvComponent', () => {
   let component: ModuleCreateCvComponent;
@@ -8,9 +8,9 @@ describe('ModuleCreateCvComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ModuleCreateCvComponent ]
+      declarations: [ModuleCreateCvComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

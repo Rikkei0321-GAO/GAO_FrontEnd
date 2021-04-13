@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Xemcv} from "../../model/Xemcv";
 import {XemcvService} from "../../Services/xemcvService";
 
@@ -11,9 +11,11 @@ export class ModuleXemvcNtdComponent implements OnInit {
   title = 'xemcv';
   xemcv: Xemcv[];
   xemcsService = XemcvService;
+
   constructor() {
     this.xemcv = this.xemcsService.getXemCV();
   }
+
   ngOnInit(): void {
   }
 

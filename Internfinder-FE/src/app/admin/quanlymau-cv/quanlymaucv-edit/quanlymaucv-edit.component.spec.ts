@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { QuanlymaucvEditComponent } from './quanlymaucv-edit.component';
+import {QuanlymaucvEditComponent} from './quanlymaucv-edit.component';
 
 describe('QuanlymaucvEditComponent', () => {
   let component: QuanlymaucvEditComponent;
@@ -8,9 +8,9 @@ describe('QuanlymaucvEditComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ QuanlymaucvEditComponent ]
+      declarations: [QuanlymaucvEditComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

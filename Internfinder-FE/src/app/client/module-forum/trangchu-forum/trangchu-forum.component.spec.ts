@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { TrangchuForumComponent } from './trangchu-forum.component';
+import {TrangchuForumComponent} from './trangchu-forum.component';
 
 describe('TrangchuForumComponent', () => {
   let component: TrangchuForumComponent;
@@ -8,9 +8,9 @@ describe('TrangchuForumComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TrangchuForumComponent ]
+      declarations: [TrangchuForumComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
