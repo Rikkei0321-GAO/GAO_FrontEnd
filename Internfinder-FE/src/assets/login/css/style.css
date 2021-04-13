@@ -28,7 +28,7 @@ body a{
 	margin: 0;
 }
 h1,h2,h3,h4,h5,h6,label,p{
-	margin:0;	
+	margin:0;
 }
 /*----*/
 .logo {
@@ -46,7 +46,7 @@ h1,h2,h3,h4,h5,h6,label,p{
 .bottom-head {
 	text-align: center;
   	border-right:1px solid #EBEBEB;
-  	padding: 0; 
+  	padding: 0;
   	float: left;
   	width: 14.285%;
 }
@@ -58,8 +58,8 @@ h1,h2,h3,h4,h5,h6,label,p{
 	border-right: none;
 }
 .bottom-head a {
-  	text-decoration: none;  	
-  	display: block;	
+  	text-decoration: none;
+  	display: block;
   	height: 120px;
     position: relative;
     transition: 0.5s all;
@@ -122,6 +122,7 @@ body{
 
 	font-family: sans-serif;
 	background-color: #FFFFCC;
+  background-image: url("/src/assets/login/image/background.jpg");
 }
 
 
@@ -213,7 +214,7 @@ body{
 .right-icons li i{
 	margin: 0 0.3em;
 }
-ul.right-icons {  	
+ul.right-icons {
     z-index: 9;
     float: left;
     margin-top: 4px;
@@ -284,10 +285,10 @@ i.glyphicon.glyphicon-menu-hamburger {
 	-o-transition: all 0.3s ease-out;
 	transition: all 0.3s ease-out;
 	background:#000000;
-	color:#fff;	
+	color:#fff;
 }
 .resp-tab-active{
-	color:#fff;	
+	color:#fff;
 	background:#27da93;
 }
 .resp-tab-item span{
@@ -613,8 +614,8 @@ a.mask {
 	height: 100%;
 	border-radius: 50%;
 	content: '';
-	-webkit-box-sizing: content-box; 
-	-moz-box-sizing: content-box; 
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
 	box-sizing: content-box;
 }
 
@@ -703,7 +704,7 @@ a.mask {
 /*--phone--*/
 .phone-text h4{
 	color:#000;
-	font-size:3em;	
+	font-size:3em;
 }
 .text-1 h5{
 	color: #000;
@@ -825,7 +826,7 @@ a.more:hover{
 	text-transform:uppercase;
 	font-size:2.7em;
 	font-family: 'Montserrat-Regular';
-	color:#fff;	
+	color:#fff;
 }
 .mid-content p{
 	font-size: 0.9em;
@@ -1142,7 +1143,7 @@ ul {
 	font-size:0.9em;
 	text-decoration:none;
 }
-.menu ul li a {	
+.menu ul li a {
 	width: 100%;
 	display: block;
 	position: relative;
@@ -1169,7 +1170,7 @@ i.glyphicon.glyphicon-menu-down {
 	border-bottom: none;
 }
 ul.kid-menu li{
-	list-style: none;	
+	list-style: none;
 }
 ul.kid-menu li.menu-kid-left{
 	border-bottom:none;
@@ -1545,7 +1546,7 @@ span.fur-money{
 }
 .nbs-flexisel-item > img {
 	cursor: pointer;
-	position: relative;	
+	position: relative;
 }
 /*---- Navigation ---*/
 .nbs-flexisel-nav-left, .nbs-flexisel-nav-right {
@@ -2835,6 +2836,7 @@ p.privacy-para {
   	background:none;
 }
 ul.login-icons li {
+
 	 display: inline-block;
 	 float:left;
 	 width:48.5%;
@@ -2916,8 +2918,8 @@ ul.login-icons li:nth-child(2),ul.login-icons li:nth-child(4) {
 }
 .login-right {
 
-	background-image: url("../image/background.jpg");
-  	padding: 5em 0;
+	background-image: url("/assets/login/image/background.jpg");
+  padding: 5em 0;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -3120,12 +3122,12 @@ ul.nav.nav-pills {
 /*--//typo--*/
 /*--responsive--*/
 @media(max-width:1366px){
-	
+
 }
 @media(max-width:1280px){
-	
+
 }
-@media(max-width:1200px){	
+@media(max-width:1200px){
 }
 @media(max-width:1024px){
 .banner1,.banner2,.banner3 {
@@ -3137,7 +3139,7 @@ ul.nav.nav-pills {
 }
 p.para-in {
   width: 100%;
-}	
+}
 .buy-media {
   padding: 30px 10px;
 }
@@ -3212,7 +3214,7 @@ select.drop-select1 {
   padding: 3em 0;
 }
 }
-@media(max-width:768px){	
+@media(max-width:768px){
 .banner1,.banner2,.banner3 {
   min-height: 390px;
 }
@@ -3244,7 +3246,7 @@ select.drop-select1 {
 , .content-bottom h3:before,.content-bottom1 h3:after, .content-bottom1 h3:before,
 .about-head h3:after, .about-head h3:before,.choose-us h3:after, .choose-us h3:before,
 .content-events h3:after, .content-events h3:before,.blog h3:after, .blog h3:before,
-.terms h3:after, .terms h3:before,.privacy h3:after, .privacy h3:before,.contact h3:after, 
+.terms h3:after, .terms h3:before,.privacy h3:after, .privacy h3:before,.contact h3:after,
 .contact h3:before,.career h3:after, .career h3:before,.asked h3:after,.asked h3:before
 ,.feedback h3:after,.feedback h3:before,.home-loan h3:after,.home-loan h3:before,.bank-bottom1 h3:after,
 .bank-bottom1 h3:before ,.loan-col h3:after, .loan-col h3:before ,.dealers h3:after, .dealers h3:before,
@@ -3644,16 +3646,16 @@ h1.grid2 {
 ,.dealers h3,.top-grid h3,.future h3,h3.typo1{
   font-size: 2.3em;
 }
-.content-grid h3:after, .content-grid h3:before, .service-top h3:after, 
-.service-top h3:before, .project h3:after, .project h3:before, 
+.content-grid h3:after, .content-grid h3:before, .service-top h3:after,
+.service-top h3:before, .project h3:after, .project h3:before,
 .content-bottom h3:after, .content-bottom h3:before, .content-bottom1 h3:after,
-.content-bottom1 h3:before ,.about-head h3:after, .about-head h3:before, 
-.choose-us h3:after, .choose-us h3:before, 
-.content-events h3:after, .content-events h3:before,.blog h3:after, .blog h3:before,.terms h3:after, 
+.content-bottom1 h3:before ,.about-head h3:after, .about-head h3:before,
+.choose-us h3:after, .choose-us h3:before,
+.content-events h3:after, .content-events h3:before,.blog h3:after, .blog h3:before,.terms h3:after,
 .terms h3:before ,.privacy h3:after, .privacy h3:before,.contact h3:after, .contact h3:before,
 .career h3:after, .career h3:before,.asked h3:after,.asked h3:before ,.feedback h3:after,.feedback h3:before
 ,.home-loan h3:after,.home-loan h3:before,.bank-bottom1 h3:after,.bank-bottom1 h3:before,
-.loan-col h3:after, .loan-col h3:before ,.dealers h3:after, .dealers h3:before,.top-grid h3:after, 
+.loan-col h3:after, .loan-col h3:before ,.dealers h3:after, .dealers h3:before,.top-grid h3:after,
 .top-grid h3:before,.future h3:after, .future h3:before,h3.typo1:after, h3.typo1:before{
   width: 103px;
 }
@@ -3785,7 +3787,7 @@ h3.typo1 {
 @media(max-width:480px){
 .logo h1 {
   font-size: 1.7em;
-}	
+}
 .top-nav {
   margin-top: 1px;
 }
@@ -3809,15 +3811,15 @@ h3.typo1 {
 .dealers h3,.top-grid h3,.future h3,h3.typo1{
   font-size: 2em;
 }
-.content-grid h3:after, .content-grid h3:before, .service-top h3:after, 
-.service-top h3:before, .project h3:after, .project h3:before, 
-.content-bottom h3:after, .content-bottom h3:before, .content-bottom1 h3:after, 
-.content-bottom1 h3:before,.about-head h3:after, .about-head h3:before, .choose-us h3:after, 
+.content-grid h3:after, .content-grid h3:before, .service-top h3:after,
+.service-top h3:before, .project h3:after, .project h3:before,
+.content-bottom h3:after, .content-bottom h3:before, .content-bottom1 h3:after,
+.content-bottom1 h3:before,.about-head h3:after, .about-head h3:before, .choose-us h3:after,
 .choose-us h3:before, .content-events h3:after, .content-events h3:before ,
 .blog h3:after, .blog h3:before,.terms h3:after, .terms h3:before,.privacy h3:after, .privacy h3:before,
 .contact h3:after, .contact h3:before,.career h3:after, .career h3:before ,.asked h3:after,.asked h3:before
 ,.feedback h3:after,.feedback h3:before,.home-loan h3:after,.home-loan h3:before,.bank-bottom1 h3:after,
-.bank-bottom1 h3:before ,.loan-col h3:after, .loan-col h3:before ,.dealers h3:after, 
+.bank-bottom1 h3:before ,.loan-col h3:after, .loan-col h3:before ,.dealers h3:after,
 .dealers h3:before,.top-grid h3:after, .top-grid h3:before,.future h3:after, .future h3:before
 ,h3.typo1:after, h3.typo1:before{
   width: 50px;
@@ -4136,7 +4138,7 @@ ul.loan-col1 li.loan-list-top {
 }
 /*--typo--*/
 .page-header h3 {
-  font-size: 2em; 
+  font-size: 2em;
 }
 button.btn.btn-lg {
   font-size: 1em;
@@ -4300,15 +4302,15 @@ i.buy,i.rent,i.pg,i.sell,i.loan,i.apart ,i.deal{
 .dealers h3,.top-grid h3,.future h3,h3.typo1{
   font-size: 1.4em;
 }
-.content-grid h3:after, .content-grid h3:before, .service-top h3:after, 
-.service-top h3:before, .project h3:after, .project h3:before, 
-.content-bottom h3:after, .content-bottom h3:before, .content-bottom1 h3:after, 
-.content-bottom1 h3:before,.about-head h3:after, .about-head h3:before, .choose-us h3:after, 
+.content-grid h3:after, .content-grid h3:before, .service-top h3:after,
+.service-top h3:before, .project h3:after, .project h3:before,
+.content-bottom h3:after, .content-bottom h3:before, .content-bottom1 h3:after,
+.content-bottom1 h3:before,.about-head h3:after, .about-head h3:before, .choose-us h3:after,
 .choose-us h3:before, .content-events h3:after, .content-events h3:before ,
 .blog h3:after, .blog h3:before,.privacy h3:after, .privacy h3:before,
-.contact h3:after, .contact h3:before,.career h3:after, .career h3:before 
+.contact h3:after, .contact h3:before,.career h3:after, .career h3:before
 ,.home-loan h3:after,.home-loan h3:before,.bank-bottom1 h3:after,
-.bank-bottom1 h3:before ,.loan-col h3:after, .loan-col h3:before ,.dealers h3:after, 
+.bank-bottom1 h3:before ,.loan-col h3:after, .loan-col h3:before ,.dealers h3:after,
 .dealers h3:before,.top-grid h3:after, .top-grid h3:before,h3.typo1:after, h3.typo1:before{
   width: 45px;
 }
@@ -4977,7 +4979,7 @@ h3.typo1 {
 }
 .page-header h3 {
   font-size: 1.8em;
-} 
+}
 h1.typo1 {
   font-size: 1.7em;
   margin: 0 0 0.5em;

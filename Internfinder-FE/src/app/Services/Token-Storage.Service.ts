@@ -2,59 +2,53 @@ import {Injectable} from '@angular/core';
 
 const TOKEN_KEY = 'auth-token';
 const USER_KEY = 'auth-user';
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class TokenStorageService {
 
   constructor() {
   }
 
-  // tslint:disable-next-line:typedef
   signOut() {
     window.localStorage.clear();
     window.sessionStorage.clear();
   }
 
-  // tslint:disable-next-line:typedef
   public saveTokenLocal(token: string) {
     window.localStorage.removeItem(TOKEN_KEY);
     window.localStorage.setItem(TOKEN_KEY, token);
   }
 
-  // tslint:disable-next-line:typedef
   public saveTokenSession(token: string) {
     window.sessionStorage.removeItem(TOKEN_KEY);
     window.sessionStorage.setItem(TOKEN_KEY, token);
   }
 
   public getToken(): string {
-    if (localStorage.getItem(TOKEN_KEY) !== null){
-      return localStorage.getItem(TOKEN_KEY) as string;
+    if(localStorage.getItem(TOKEN_KEY)!==null){
+      return <string>localStorage.getItem(TOKEN_KEY);
     }else {
-      return sessionStorage.getItem(TOKEN_KEY) as string;
+      return <string>sessionStorage.getItem(TOKEN_KEY);
     }
   }
 
-  // tslint:disable-next-line:typedef
   public saveUserLocal(user: any) {
     window.localStorage.removeItem(USER_KEY);
     window.localStorage.setItem(USER_KEY, JSON.stringify(user));
   }
-  // tslint:disable-next-line:typedef
   public saveUserSession(user: any) {
     window.sessionStorage.removeItem(USER_KEY);
     window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
   }
 
-  // tslint:disable-next-line:typedef
   public getUser() {
-    if (localStorage.getItem(USER_KEY) !== null){
-      return JSON.parse(localStorage.getItem(USER_KEY) as string);
+    if(localStorage.getItem(USER_KEY) !== null){
+      return JSON.parse(<string>localStorage.getItem(USER_KEY));
     }else {
-      return JSON.parse(sessionStorage.getItem(USER_KEY) as string);
+      return JSON.parse(<string>sessionStorage.getItem(USER_KEY));
     }
   }
 }
-
-
