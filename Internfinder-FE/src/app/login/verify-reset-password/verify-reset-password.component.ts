@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {AuthService} from "../../Services/auth.service";
 import {ToastrService} from "ngx-toastr";
@@ -18,6 +18,11 @@ export class VerifyResetPasswordComponent implements OnInit {
 
   // @ts-ignore
   formGroup: FormGroup;
+  // @ts-ignore
+  private newPassword: FormControl;
+
+  // @ts-ignore
+  private repeatNewPassword: FormControl;
 
   constructor(private route: ActivatedRoute,
               private authService: AuthService,
@@ -26,9 +31,11 @@ export class VerifyResetPasswordComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit(): void {
+    this.newPassword = new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(32)]);
+    this.repeatNewPassword = new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(32)]);
     this.formGroup = this.formBuilder.group({
-      newPassword: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(32)]],
-      repeatNewPassword: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(32)]],
+      newPassword: this.newPassword,
+      repeatNewPassword: this.repeatNewPassword,
     });
     this.route.queryParams.subscribe(params => {
       let code = params['code'];
