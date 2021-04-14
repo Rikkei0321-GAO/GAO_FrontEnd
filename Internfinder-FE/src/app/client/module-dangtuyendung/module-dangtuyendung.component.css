@@ -1,11 +1,4 @@
-*{
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-}
 
-
-.bg-light {
-    background-color: #ffffff!important;
-}
 .navbar a {
     display: block;
     padding: 0 10px;
@@ -18,7 +11,7 @@
     align-items: center;
 }
 .navbar a:hover{
-    border-bottom: 3px solid #4fedf0;
+    border-bottom: 3px solid #28a745;
 }
 
 
@@ -43,14 +36,13 @@
 }
 .btn:not(:disabled) {
     cursor: pointer;
-    color: rgb(224, 230, 238);
 }
 .btn.btn-orange-46:before {
     content: "";
     position: relative;
 }
 .btn{
-    background: linear-gradient(0deg, rgb(96 127 150) 0%, rgb(73 25 222) 100%);
+    background:linear-gradient(0deg, rgb(31 125 52) 0%, rgb(40 167 69) 100%);
     border: none;
     font-weight: bold;
     color: white;
@@ -63,8 +55,8 @@
 .btn:hover {
     box-shadow:  4px 4px 6px 0 rgb(252, 255, 236);
     background: white;
-    border: 1px solid rgb(0, 132, 255);
-    color: rgb(0, 140, 255);
+    border: 1px solid #28a745;
+    color: #28a745;
 }
 
 
@@ -90,7 +82,7 @@
 .create-paper .box{
   /*border: 1px solid #757575;*/
   border-radius: 5px;
-  -webkit-box-shadow: 0 1px 46px -13px rgb(0 0 0.48);
+  -webkit-box-shadow: 0 1px 46px -13px rgb(41 187 47);;
   -moz-box-shadow: 0 1px 46px -13px rgba(0,0,0,.48);
   box-shadow: 0 1px 46px -13px rgb(0 0 0.48 );
 }
@@ -111,7 +103,7 @@
 }
 .header-box-list .title1 {
   display: inline-flex;
-  color: #2d82c4;
+  color: #207d36;
 }
 .header-box-list .line {
   background-color: #d7d7d7;
@@ -132,6 +124,7 @@
 }
 .create-paper label{
   padding-top: 10px;
+  padding-bottom: 10px;
   font-weight: bold;
 }
 .create-paper .box textarea {
@@ -149,7 +142,7 @@
   margin-top:0px;
 }
 .totalcv-search-form {
-  background: #2d82c3;
+  background: #28a745;
   position: relative;
   border: none!important;
   margin-top: -11px;
@@ -159,7 +152,7 @@
   background-color: #eee;
   max-width: 650px;
   margin: auto;
-  background: #2d82c3;
+  background: #28a745;
 }
 .box-cv .row {
   margin-right: 5px;
@@ -180,7 +173,7 @@
 }
 .box-cv .row button{
   background: rgb(66, 89, 240);
-  background: linear-gradient(0deg, rgb(40, 75, 240) 0%, rgb(173, 240, 229) 100%);
+  background: linear-gradient(291deg, rgb(70 198 101) -10%, rgb(40 167 69) 100%);
   border: none;
   font-weight: bold;
   color: white;
@@ -211,7 +204,7 @@ button, input, optgroup, select, textarea {
   text-align: center;
 }
 .text-primary {
-  color: #007bff!important;
+  color: #28a745!important;
   font-size: 20px;
 }
 
@@ -257,7 +250,7 @@ button, input, optgroup, select, textarea {
   border: none;
 }
 .status--process {
-  color: #00ad5f;
+  color: #28a745;
 }
 .table-data-feature {
   display: -webkit-box;
@@ -320,7 +313,7 @@ button, input, optgroup, select, textarea {
 .content-word .link h3{
   margin: 0;
   padding: 5px;
-  color: #2d82c4;
+  color: #28a745;
 }
 .content-word .link .tags{
   border: rgba(30, 47, 35, 0.28);
@@ -352,7 +345,7 @@ button, input, optgroup, select, textarea {
     color: #adada5c2;
 } */
 .fa:hover{
-  color: #0A3284;
+  color: #28a745;
 }
 /* .glyphicon:before{
     color: #a99d9d;
@@ -369,7 +362,7 @@ button, input, optgroup, select, textarea {
   color: black;
 }
 .content-new h5,h4:hover{
-  color: #2d82c4;
+  color: #28a745;
 }
 .tags span{
   background: #A3B1B6;
@@ -379,7 +372,7 @@ button, input, optgroup, select, textarea {
 }
 .tags span:hover{
   background: #A3B1B6;
-  color: #2d82c4;
+  color: #28a745;
 }
 
 
@@ -400,7 +393,7 @@ button, input, optgroup, select, textarea {
 }
 /* thiết lập style cho class active */
 .pagination a.active {
-  background-color: dodgerblue;
+  background-color: #28a745;
   color: white;
 }
 /* thêm màu nền khi người dùng hover vào class không active */

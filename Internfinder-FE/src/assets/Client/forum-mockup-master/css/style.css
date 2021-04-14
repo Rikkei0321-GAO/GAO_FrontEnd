@@ -45,7 +45,7 @@ figcaption {
 }
 
 .list-title {
-    background-color: #263959;
+    background-color: #18a21d;
     border-bottom-left-radius: 20px;
     color: #f5f8fe;
     font-weight: 100;
@@ -822,7 +822,7 @@ span.offline::before {
 }
 
 span.online {
-    color: #57AD8D;
+    color: #28a745;
 }
 
 span.online::before {
@@ -832,14 +832,13 @@ span.online::before {
     margin-right: 5px;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /*background: #263959;*/
-    height: 80px;
-    padding: 0 20px;
-}
+/*.header {*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    !*background: #263959;*!*/
+/*    height: 80px;*/
+/*    padding: 0 20px;*/
+/*}*/
 
 @media (min-width: 240px) and (max-width: 720px) {
     .header {
@@ -1274,12 +1273,12 @@ header > a.logo {
     display: block;
 }
 
-.dropdown-menu, #user-dropdown > .dropdown-menu {
-    display: block;
-    background: white;
-    padding: 20px;
-    position: relative;
-}
+/*.dropdown-menu, #user-dropdown > .dropdown-menu {*/
+/*    display: block;*/
+/*    background: white;*/
+/*    padding: 20px;*/
+/*    position: relative;*/
+/*}*/
 
 .dropdown-menu-item, #user-dropdown > .dropdown-menu > .dropdown-menu-item {
     margin-bottom: 5px;
@@ -1706,8 +1705,9 @@ button {
 }
 
 .btn-green {
-    color: white;
-    background: #57AD8D;
+  border-radius: 40px;
+  color: white;
+  background: #0f9a2e;
 }
 
 .btn-green:hover:not(:disabled):not(.btn-disabled) {

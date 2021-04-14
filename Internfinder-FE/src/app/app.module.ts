@@ -39,6 +39,9 @@ import {JwPaginationModule} from "jw-angular-pagination";
 import { QuanlythongtinTaikhoanComponent } from './client/quanlythongtin-taikhoan/quanlythongtin-taikhoan.component';
 import {ToastrModule, ToastrService} from "ngx-toastr";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { ModuleTimkiemTrangchuComponent } from './client/module-timkiem-trangchu/module-timkiem-trangchu.component';
+import {NgxPaginationModule} from "ngx-pagination";
+import { PapeBaidangtuyenComponent } from './client/pape-baidangtuyen/pape-baidangtuyen.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +77,9 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     ModuleDangtuyendungComponent,
     ModuleXemvcNtdComponent,
     QuanlythongtinTaikhoanComponent,
+    ModuleTimkiemTrangchuComponent,
+    HeaderComponent,
+    PapeBaidangtuyenComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,6 +91,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     JwPaginationModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
