@@ -1,1 +1,53 @@
-<p>quanlybaidang-edit works!</p>
+<div class="d-flex flex-column" >
+  <div id="content">
+
+    <form [formGroup]="contactForm" id="contactForm"  class="form-horizontal" role="form">
+      <h2>Thêm Mới Bài Đăng</h2>
+      <div class="form-group">
+        <label for="decriptions" class="col-sm-3 control-label">Nội Dung</label>
+        <div class="col-sm-9">
+          <input formControlName="decriptions" [(ngModel)]="account.decriptions" name="decriptions" type="text" id="decriptions" placeholder=""  class="form-control" autofocus>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="title" class="col-sm-3 control-label">Tiêu Đề</label>
+        <div class="col-sm-9">
+          <input formControlName="title" [(ngModel)]="account.title" name="title" type="text" id="title" placeholder="" class="form-control" autofocus>
+        </div>
+      </div>
+        <div class="form-group">
+          <label for="idAccount" class="col-sm-3 control-label">ID Account</label>
+          <div class="col-sm-9">
+            <input formControlName="idAccount" [(ngModel)]="account.account.username" name="idAccount" type="text" id="idAccount" placeholder="" class="form-control" autofocus>
+          </div>
+          <div class="form-group">
+            <label for="idCategory" class="col-sm-3 control-label">ID Category</label>
+            <div class="col-sm-9">
+              <input formControlName="idCategory" [(ngModel)]="account.category.name" name="idCategory" type="text" id="idCategory" placeholder="" class="form-control" autofocus>
+            </div>
+          <div class="form-group">
+            <label id="status" class="col-sm-3 control-label">Trạng Thái</label>
+            <div class="col-sm-9">
+              <label class="switch">
+                <input type="checkbox" [(ngModel)]="account.status" [ngModelOptions]="{standalone: true}">
+                <span class="slider round"></span>
+              </label><td>
+            </div>
+          </div>
+
+            <div class="col-sm-9">
+              <button   type="submit" class="btn btn-primary btn-block" (click)="OnEdit()">Cập Nhật</button>
+            </div>
+          </div>
+        </div>
+    </form> <!-- /form -->
+    <footer class="sticky-footer bg-white">
+      <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+          <span>Copyright &copy; Your Website 2020</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+

@@ -32,13 +32,6 @@ export class QuanlybaidangIndexComponent implements OnInit {
   }
   constructor(private quanlytaikhoanService: NewService , private  router: Router) {
   }
-  // delete data
-  Ondelete(idAccount: number){
-    this.Subscription = this.quanlytaikhoanService.delete(idAccount).subscribe(data=>{
-    })
-    console.log(alert("Xóa Thành Công !"))
-    this.router.navigate(['/admin/quanlytaikhoan/index']);
-  }
   reloadData() {
     this.quanlytaikhoanService.getAll().subscribe(data => {
       // @ts-ignore
@@ -57,6 +50,9 @@ export class QuanlybaidangIndexComponent implements OnInit {
   }
   //get id
   OnEdit(idaccount: number){
-    this.router.navigate(['/admin/quanlytaikhoan/edit',idaccount])
+    this.router.navigate(['/admin/quanlybaidang/edit',idaccount])
+  }
+  OnDetails(idaccount: number){
+    this.router.navigate(['/admin/quanlybaidang/create',idaccount])
   }
 }

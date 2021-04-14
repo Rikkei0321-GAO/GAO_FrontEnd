@@ -33,9 +33,10 @@ const routes: Routes = [
         {path: 'quanlytaikhoan/index', component: QuanlytaikhoanIndexComponent},
         {path: 'quanlytaikhoan/create', component: QuanlytaikhoanCreateComponent},
         {path: 'quanlytaikhoan/edit/:id', component: QuanlytaikhoanEditComponent},
+        //
         {path: 'quanlybaidang/index', component: QuanlybaidangIndexComponent},
-        {path: 'quanlybaidang/create', component: QuanlybaidangCreateComponent},
-        {path: 'quanlybaidang/edit', component: QuanlybaidangEditComponent },
+        {path: 'quanlybaidang/create/:id', component: QuanlybaidangCreateComponent},
+        {path: 'quanlybaidang/edit/:id', component: QuanlybaidangEditComponent },
         {path: 'quanlymaucv/index', component: QuanlymaucvIndexComponent},
         {path: 'quanlymaucv/create', component: QuanlymaucvCreateComponent},
         {path: 'quanlymaucv/detail', component: QuanlymaucvDetailComponent},
@@ -51,7 +52,7 @@ const routes: Routes = [
         {path: 'dangbaichiase', component: DangbaivietForumComponent},
         {path: 'dangtuyendung', component: ModuleDangtuyendungComponent},
         {path: 'xemcv-ntd', component: ModuleXemvcNtdComponent},
-        {path: 'quanlythongtin-taikhoan', component: QuanlythongtinTaikhoanComponent}
+        {path: 'quanlythongtin-taikhoan/:id', component: QuanlythongtinTaikhoanComponent}
       ]
   },
   {

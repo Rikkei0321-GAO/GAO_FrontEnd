@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {AccountService} from "../../../Services/Account.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Subscription} from "rxjs";
@@ -38,8 +38,24 @@ export class QuanlybaidangEditComponent implements OnInit {
       console.log(data);
       // this.router.navigate(['list']);
       console.log(alert("Cập nhật thành công !"))
-      this.router.navigate(['/admin/quanlytaikhoan/index']);
+      this.router.navigate(['/admin/quanlybaidang/index']);
     },error => console.log(error));
   }
-
+  contactForm = new FormGroup({
+    decriptions: new FormControl(''),
+    title: new FormControl('' ),
+    // createDate: new FormControl(''),
+    status: new  FormControl(''),
+    idAccount:new FormControl('' ),
+    idCategory:new FormControl('')
+    // fullName:new  FormControl(''),
+    // brithday:new  FormControl(''),
+    // address:new  FormControl(''),
+    // email:new  FormControl(''),
+    // companyName:new  FormControl(''),
+    // taxtCode:new  FormControl(''),
+    // link:new  FormControl(''),
+    // nameContact:new  FormControl(''),
+    // sex:new  FormControl('')
+  });
 }

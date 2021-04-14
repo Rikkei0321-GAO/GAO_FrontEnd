@@ -75,15 +75,15 @@
         <div class="form-group">
           <label for="idAccount" class="col-sm-3 control-label">ID Account</label>
           <div class="col-sm-9">
-            <input formControlName="idAccount" [(ngModel)]="account.account.idAccount" name="idAccount" type="text" id="idAccount" placeholder="" class="form-control" autofocus>
+            <input formControlName="idAccount" [(ngModel)]="account.account.username" name="idAccount" type="text" id="idAccount" placeholder="" class="form-control" autofocus>
           </div>
           <div class="form-group">
             <label for="idCategory" class="col-sm-3 control-label">ID Category</label>
             <div class="col-sm-9">
-              <input formControlName="idCategory" [(ngModel)]="account.category.idCategory" name="idCategory" type="text" id="idCategory" placeholder="" class="form-control" autofocus>
+              <input formControlName="idCategory" [(ngModel)]="account.category.name" name="idCategory" type="text" id="idCategory" placeholder="" class="form-control" autofocus>
             </div>
       <div class="col-sm-9">
-        <button   type="submit" class="btn btn-primary btn-block" (click)="onSubmit()">Thêm mới</button>
+        <button   type="submit" class="btn btn-primary btn-block" (click)="onSubmit()">Quay Lại</button>
       </div>
       </div>
         </div>
