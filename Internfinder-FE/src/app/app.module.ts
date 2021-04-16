@@ -42,6 +42,11 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { ModuleTimkiemTrangchuComponent } from './client/module-timkiem-trangchu/module-timkiem-trangchu.component';
 import {NgxPaginationModule} from "ngx-pagination";
 import { PapeBaidangtuyenComponent } from './client/pape-baidangtuyen/pape-baidangtuyen.component';
+import { ResetPasswordComponent } from './login/reset-password/reset-password.component';
+import { VerifyResetPasswordComponent } from './login/verify-reset-password/verify-reset-password.component';
+import { QuanlycvNtdComponent } from './client/quanlycv-ntd/quanlycv-ntd.component';
+import { QuanlycvComponent } from './client/quanlycv-sinhvien/quanlycv/quanlycv.component';
+import { CvAcceptComponent } from './client/quanlycv-sinhvien/cv-accept/cv-accept.component';
 
 @NgModule({
   declarations: [
@@ -80,6 +85,11 @@ import { PapeBaidangtuyenComponent } from './client/pape-baidangtuyen/pape-baida
     ModuleTimkiemTrangchuComponent,
     HeaderComponent,
     PapeBaidangtuyenComponent,
+    ResetPasswordComponent,
+    VerifyResetPasswordComponent,
+    QuanlycvNtdComponent,
+    QuanlycvComponent,
+    CvAcceptComponent,
   ],
   imports: [
     BrowserModule,

@@ -27,6 +27,11 @@ import {ModuleXemvcNtdComponent} from "./client/module-xemvc-ntd/module-xemvc-nt
 import {QuanlythongtinTaikhoanComponent} from "./client/quanlythongtin-taikhoan/quanlythongtin-taikhoan.component";
 import {ModuleTimkiemTrangchuComponent} from "./client/module-timkiem-trangchu/module-timkiem-trangchu.component";
 import {PapeBaidangtuyenComponent} from "./client/pape-baidangtuyen/pape-baidangtuyen.component";
+import {ResetPasswordComponent} from "./login/reset-password/reset-password.component";
+import {VerifyResetPasswordComponent} from "./login/verify-reset-password/verify-reset-password.component";
+import {QuanlycvNtdComponent} from "./client/quanlycv-ntd/quanlycv-ntd.component";
+import {QuanlycvComponent} from "./client/quanlycv-sinhvien/quanlycv/quanlycv.component";
+import {CvAcceptComponent} from "./client/quanlycv-sinhvien/cv-accept/cv-accept.component";
 
 const routes: Routes = [
 
@@ -56,6 +61,9 @@ const routes: Routes = [
         {path: 'quanlythongtin-taikhoan', component: QuanlythongtinTaikhoanComponent},
         {path: 'timkiem-trangchu', component: ModuleTimkiemTrangchuComponent},
         {path: 'xembaidangtuyen', component: PapeBaidangtuyenComponent},
+        {path: 'quanlycv-ntd', component: QuanlycvNtdComponent},
+        {path: 'quanlycv-sv', component: QuanlycvComponent},
+        {path: 'cv-accept', component: CvAcceptComponent},
 
       ]
   },
@@ -66,6 +74,8 @@ const routes: Routes = [
         {path: 'dangnhap/client', component: ClientLoginComponent},
         {path: 'dangky/sinhvien', component: DangkysinhvienComponent},
         {path: 'dangky/nhatuyendung', component: DangkyNTTComponent},
+        {path: 'reset-password', component: ResetPasswordComponent},
+        {path: 'verify-reset-password', component: VerifyResetPasswordComponent}
 
       ]
   }
