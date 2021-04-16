@@ -27,7 +27,7 @@
                    *ngIf="formRegCompany.get('re_password')!.hasError(validation.type) && formRegCompany.get('re_password')!.touched">
               {{validation.message}}</small>
           </div>
-          <label style="margin-bottom: 10px;">Thông Tin Công Ty</label>
+          <label style="margin-bottom: 10px;font-size: 150%">Thông Tin Công Ty</label>
 
           <input formControlName="name_company" type="text"  placeholder="Tên Công Ty ">
           <div *ngFor="let validation of validation_messages.name_company">
@@ -78,10 +78,13 @@
           <!--							<label class="custom-control-label" for="customCheck1">Tôi đồng ý với điều khoản và dịch vụ</label>-->
           <!--						</div>-->
           <label class="hvr-sweep-to-right">
-            <input type="submit" value="Sign Up">
+            <input type="submit" value="Đăng ký">
+          </label>
+          <label class="hvr-sweep-to-right">
+            <input type="submit" value="Hủy" routerLink="/login/dangnhap/client">
           </label>
         </form>
-        <p>Bạn đã có tài khoản? <a href="dangnhap/client">Đăng nhập</a></p>
+        <p>Bạn đã có tài khoản? <a href="dangnhap/client" routerLink="/login/dangnhap/client">Đăng nhập</a></p>
       </div>
 
     </div>

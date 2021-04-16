@@ -21,10 +21,11 @@ export class AuthService {
     };
   }
 
-  login(obj: { username: any; password: any; }): Observable<any> {
+  login(obj: { username: any; password: any;email:any }): Observable<any> {
     return this.http.post(AUTH_API + 'login', {
       username: obj.username,
-      password: obj.password
+      password: obj.password,
+      email: obj.email
     }, this.httpOptions);
   }
 
@@ -55,9 +56,9 @@ export class AuthService {
     }, this.httpOptions);
   }
 
-  resetPassword(username:string): Observable<any> {
+  resetPassword(email:string): Observable<any> {
     return this.http.post(AUTH_API + 'reset-password', {
-      username: username,
+      email: email,
     }, this.httpOptions);
   }
 
