@@ -1,1 +1,100 @@
-<p>quanlybaidang-create works!</p>
+<div class="d-flex flex-column" >
+  <div id="content">
+
+    <form [formGroup]="contactForm" id="contactForm"  class="form-horizontal" role="form">
+      <h2>Thêm Mới Bài Đăng</h2>
+      <div class="form-group">
+        <label for="decriptions" class="col-sm-3 control-label">Nội Dung</label>
+        <div class="col-sm-9">
+          <input formControlName="decriptions" [(ngModel)]="account.decriptions" name="decriptions" type="text" id="decriptions" placeholder=""  class="form-control" autofocus>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="title" class="col-sm-3 control-label">Tiêu Đề</label>
+        <div class="col-sm-9">
+          <input formControlName="title" [(ngModel)]="account.title" name="title" type="text" id="title" placeholder="" class="form-control" autofocus>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="salary" class="col-sm-3 control-label">Mức Lương</label>
+        <div class="col-sm-9">
+          <input formControlName="salary" [(ngModel)]="account.salary" name="salary" type="text" id="salary" placeholder="" class="form-control" autofocus>
+        </div>
+      </div> <div class="form-group">
+      <label for="name_nd" class="col-sm-3 control-label">Tên Người Đăng</label>
+      <div class="col-sm-9">
+        <input formControlName="name_nd" [(ngModel)]="account.name_nd" name="name_nd" type="text" id="name_nd" placeholder="" class="form-control" autofocus>
+      </div>
+    </div> <div class="form-group">
+      <label for="major" class="col-sm-3 control-label">Chuyên Ngành</label>
+      <div class="col-sm-9">
+        <input formControlName="major" [(ngModel)]="account.major" name="major" type="text" id="major" placeholder="" class="form-control" autofocus>
+      </div>
+    </div> <div class="form-group">
+      <label for="benefit" class="col-sm-3 control-label">Quyền Lợi</label>
+      <div class="col-sm-9">
+        <input formControlName="benefit" [(ngModel)]="account.benefit" name="benefit" type="text" id="benefit" placeholder="" class="form-control" autofocus>
+      </div>
+    </div> <div class="form-group">
+      <label for="work_loaction" class="col-sm-3 control-label">Nơi Làm Việc</label>
+      <div class="col-sm-9">
+        <input formControlName="work_loaction" [(ngModel)]="account.work_loaction" name="work_loaction" type="text" id="work_loaction" placeholder="" class="form-control" autofocus>
+      </div>
+    </div> <div class="form-group">
+      <label for="address_nd" class="col-sm-3 control-label">Địa Chỉ Liên Hệ</label>
+      <div class="col-sm-9">
+        <input formControlName="address_nd" [(ngModel)]="account.address_nd" name="address_nd" type="text" id="address_nd" placeholder="" class="form-control" autofocus>
+      </div>
+    </div> <div class="form-group">
+      <label for="email_nd" class="col-sm-3 control-label">Email</label>
+      <div class="col-sm-9">
+        <input formControlName="email_nd" [(ngModel)]="account.email_nd" name="email_nd" type="text" id="email_nd" placeholder="" class="form-control" autofocus>
+      </div>
+    </div> <div class="form-group">
+      <label for="profile_language" class="col-sm-3 control-label">Trình Độ Ngoại Ngữ</label>
+      <div class="col-sm-9">
+        <input formControlName="profile_language" [(ngModel)]="account.profile_language" name="profile_language" type="text" id="profile_language" placeholder="" class="form-control" autofocus>
+      </div>
+    </div> <div class="form-group">
+      <label for="sex" class="col-sm-3 control-label">Giới Tính</label>
+      <div class="col-sm-9">
+        <input formControlName="sex" [(ngModel)]="account.sex" name="sex" type="text" id="sex" placeholder="" class="form-control" autofocus>
+      </div>
+    </div>
+      <div class="form-group">
+      <label for="phone" class="col-sm-3 control-label">Số Điện Thoại</label>
+      <div class="col-sm-9">
+        <input formControlName="phone" [(ngModel)]="account.phone" name="phone" type="text" id="phone" placeholder="" class="form-control" autofocus>
+      </div>
+    </div>
+      <div class="form-group">
+      <label for="degree" class="col-sm-3 control-label">Trình Độ</label>
+      <div class="col-sm-9">
+        <input formControlName="degree" [(ngModel)]="account.degree" name="degree" type="text" id="degree" placeholder="" class="form-control" autofocus>
+      </div>
+        <div class="form-group">
+          <label for="idAccount" class="col-sm-3 control-label">ID Account</label>
+          <div class="col-sm-9">
+            <input formControlName="idAccount" [(ngModel)]="account.account.idAccount" name="idAccount" type="text" id="idAccount" placeholder="" class="form-control" autofocus>
+          </div>
+          <div class="form-group">
+            <label for="idCategory" class="col-sm-3 control-label">ID Category</label>
+            <div class="col-sm-9">
+              <input formControlName="idCategory" [(ngModel)]="account.category.idCategory" name="idCategory" type="text" id="idCategory" placeholder="" class="form-control" autofocus>
+            </div>
+      <div class="col-sm-9">
+        <button   type="submit" class="btn btn-primary btn-block" (click)="onSubmit()">Thêm mới</button>
+      </div>
+      </div>
+        </div>
+      </div>
+    </form> <!-- /form -->
+    <footer class="sticky-footer bg-white">
+      <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+          <span>Copyright &copy; Your Website 2020</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>

@@ -9,7 +9,7 @@
       <!--				</ul>-->
       <div class="form-info">
         <form [formGroup]="formRegCompany" (ngSubmit)="onSubmit()">
-          <input formControlName="username" type="text"   placeholder="Tên Đăng Nhập"  >
+          <input formControlName="username" type="text" placeholder="Tên Đăng Nhập"  >
           <div *ngFor="let validation of validation_messages.username">
             <small class="text-danger"
                    *ngIf="formRegCompany.get('username')!.hasError(validation.type) && formRegCompany.get('username')!.touched">
@@ -54,15 +54,9 @@
               {{validation.message}}</small>
           </div>
           <input formControlName="phone" type="text"  placeholder="Số Điện thoại" >
-          <div *ngFor="let validation of validation_messages.username">
+          <div *ngFor="let validation of validation_messages.phone">
             <small class="text-danger"
                    *ngIf="formRegCompany.get('phone')!.hasError(validation.type) && formRegCompany.get('phone')!.touched">
-              {{validation.message}}</small>
-          </div>
-          <input formControlName="contact" type="text"   placeholder="Tên người liên hệ">
-          <div *ngFor="let validation of validation_messages.username">
-            <small class="text-danger"
-                   *ngIf="formRegCompany.get('contact')!.hasError(validation.type) && formRegCompany.get('contact')!.touched">
               {{validation.message}}</small>
           </div>
           <input formControlName="email" type="text"   placeholder="Email liên hệ" >

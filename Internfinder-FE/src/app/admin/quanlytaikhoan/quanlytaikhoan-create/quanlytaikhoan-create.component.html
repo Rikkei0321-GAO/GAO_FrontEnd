@@ -1,18 +1,18 @@
 <div class="d-flex flex-column" >
   <div id="content">
 
-    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" id="contactForm"  class="form-horizontal" role="form">
+    <form [formGroup]="contactForm" id="contactForm"  class="form-horizontal" role="form">
       <h2>Thêm Tài Khoản</h2>
       <div class="form-group">
-        <label for="userName" class="col-sm-3 control-label">Tên Đăng Nhập</label>
+        <label for="username" class="col-sm-3 control-label">Tên Đăng Nhập</label>
         <div class="col-sm-9">
-          <input formControlName="userName" [(ngModel)]="account.userName" name="userName" type="text" id="userName" placeholder="Tên Đăng Nhập" class="form-control" autofocus>
+          <input formControlName="username" [(ngModel)]="account.username" name="username" type="text" id="username" placeholder="Tên Đăng Nhập" class="form-control" autofocus>
         </div>
       </div>
       <div class="form-group">
         <label for="passWord" class="col-sm-3 control-label">Mật Khẩu</label>
         <div class="col-sm-9">
-          <input formControlName="passWord" [(ngModel)]="account.passWord" name="passWord" type="password" id="passWord" placeholder="Mật khẩu" class="form-control">
+          <input formControlName="password" [(ngModel)]="account.password" name="password" type="password" id="password" placeholder="Mật khẩu" class="form-control">
 <!--          <div *ngIf="!contactForm.controls.passWord?.valid && (contactForm.controls.passWord?.dirty) || contactForm.controls.passWord?.touched" >-->
 <!--            <span style="color:red">Vui Lòng nhập Tên Mật khẩu</span>-->
 <!--          </div>-->
@@ -25,20 +25,7 @@
 
         </div>
       </div>
-      <div class="form-group">
-        <label for="roleID" class="col-sm-3 control-label">Cấp Quyền</label>
-        <div class="col-sm-9">
-        <select class="form-select" aria-label="Default select example" [(ngModel)]="account.roleID" formControlName="roleID" name="roleID" type="text" id="roleID">
-          <option value=admin>Admin</option>
-          <option value=ntd>Nhà Tuyển Dụng</option>
-          <option value=sv>Sinh Viên</option>
-        </select>
-<!--          <div *ngIf="!contactForm.controls.roleID?.valid && (contactForm.controls.roleID?.dirty) || contactForm.controls.roleID?.touched" >-->
-<!--            <span style="color:red">Vui Lòng Chọn Nhóm Role</span>-->
-<!--          </div>-->
-        </div>
-<!--          <input formControlName="roleID" name="roleID" type="text" id="roleID" placeholder="Role ID" class="form-control">-->
-      </div>
+
       <div class="form-group">
         <label for="fullName" class="col-sm-3 control-label">Họ Và Tên</label>
         <div class="col-sm-9">
@@ -110,7 +97,7 @@
         </div>
       </div>
       <div class="col-sm-9">
-        <button [disabled]="!contactForm.valid"  type="submit" class="btn btn-primary btn-block">Thêm mới</button>
+        <button [disabled]="!contactForm.valid"  type="submit" class="btn btn-primary btn-block" (click)="onSubmit()">Thêm mới</button>
       </div>
 
     </form> <!-- /form -->

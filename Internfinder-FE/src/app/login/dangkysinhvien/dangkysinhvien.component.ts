@@ -20,12 +20,12 @@ export class DangkysinhvienComponent implements OnInit {
               private route: ActivatedRoute) {
     //define form
     this.formRegStudent = this.formBuild.group({
-        username: ['',[Validators.required]],
-        password: ['',[Validators.required]],
-        re_password:['',[Validators.required]],
-        address:['',[Validators.required]],
-        phone:['',[Validators.required]],
-        email:['',[Validators.required]]
+      username: ['',[Validators.required,Validators.minLength(5) ,Validators.maxLength(50),Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')]],
+      password:['',[Validators.required,Validators.minLength(6),Validators.maxLength(20)]],
+      re_password:['',[Validators.required]],
+      address:['',[Validators.required]],
+      phone:['',[Validators.required,Validators.maxLength(10)]],
+      email:['',[Validators.required,Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')]]
       }
     );
   }
@@ -33,10 +33,14 @@ export class DangkysinhvienComponent implements OnInit {
   validation_messages = {
     'username': [
       {type: 'required',message: 'Trường này không được để trống!'},
-
+      {type:'pattern',message: 'Tên không chứa các ký tự đặc biệt' },
+      {type:'pattern',message: 'Tên đăng nhập nhiều hơn 5 ký tự' },
+      {type: 'maxlength', message: 'Tên đăng nhập ít hơn 50 ký tự'},
     ],
     'password': [
       {type: 'required',message: 'Trường này không được để trống!'},
+      {type: 'minlength', message: 'Mật khẩu nhiều hơn 6 ký tự'},
+      {type: 'maxlength', message: 'Mật khẩu ít hơn 20 ký tự'},
     ],
     're_password':[
       {type: 'required',message: 'Trường này không được để trống!'},
@@ -46,9 +50,11 @@ export class DangkysinhvienComponent implements OnInit {
     ],
     'phone':[
       {type: 'required',message: 'Trường này không được để trống!'},
+      {type: 'maxlength', message: 'Số điện thoại 10 số'},
     ],
     'email':[
       {type: 'required',message: 'Trường này không được để trống!'},
+      {type:'pattern',message: 'Email sai định dạng' }
     ]
   };
 

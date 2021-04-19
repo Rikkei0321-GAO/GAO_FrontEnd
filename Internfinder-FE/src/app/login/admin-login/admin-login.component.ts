@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
-import {ToastrService} from "ngx-toastr";
 import {AuthService} from "../../Services/auth.service";
 import {TokenStorageService} from "../../Services/token-storage.service";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-admin-login',
@@ -11,72 +10,59 @@ import {TokenStorageService} from "../../Services/token-storage.service";
   styleUrls: ['./admin-login.component.css']
 })
 export class AdminLoginComponent implements OnInit {
-  formLogin: FormGroup;
-  username: string | undefined;
+  form: any = {};
   isLoggedIn = false;
   isLoginFailed = false;
   errorMessage = '';
   roles: string[] = [];
-  token: string | undefined;
+  // @ts-ignore
+  formRegCompany: FormGroup;
 
-
-  constructor(private formBuild: FormBuilder,
-              private tokenStorageService: TokenStorageService,
-              private authService: AuthService,
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService,
               private router: Router,
-              private toastr: ToastrService,
-              private route: ActivatedRoute,) {
-    //define form
-    this.formLogin = this.formBuild.group({
-        username: [''],
-        password: [''],
-        remember_me: ['']
+              private formBuild: FormBuilder) {
+    this.formRegCompany = this.formBuild.group({
+        username: ['',[Validators.required,Validators.minLength(5),Validators.maxLength(50),Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')]],
+        password:['',[Validators.required,Validators.minLength(6),Validators.maxLength(20)]],
       }
     );
+  }
+  validation_messages = {
+    'username': [
+      {type: 'required',message: 'Trường này không được để trống!'},
+      {type:'pattern',message: 'Tên không chứa các ký tự đặc biệt' },
+      {type:'pattern',message: 'Tên đăng nhập nhiều hơn 5 ký tự' },
+      {type: 'maxlength', message: 'Tên đăng nhập ít hơn 50 ký tự'},
+    ],
+    'password': [
+      {type: 'required',message: 'Trường này không được để trống!'},
+      {type: 'minlength', message: 'Mật khẩu nhiều hơn 6 ký tự'},
+      {type: 'maxlength', message: 'Mật khẩu ít hơn 20 ký tự'},
+    ]
+  };
 
-    //  check status login or not by Trang
-    if (this.tokenStorageService.getToken()) {
-      const user = this.tokenStorageService.getUser();
+  ngOnInit(): void {
+    if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
-      this.roles = this.tokenStorageService.getUser().roles;
-      this.username = this.tokenStorageService.getUser().username;
+      this.roles = this.tokenStorage.getUser().roles;
     }
   }
 
-  ngOnInit(): void {
-  }
-
-  onSubmit() {
-    console.log(this.formLogin.value);
-    this.authService.login(this.formLogin.value).subscribe(
+  onSubmit(): void {
+    this.authService.login(this.form).subscribe(
       data => {
-        if(data.roles.includes("ROLE_ADMIN")){
-          if (this.formLogin.value.remember_me) {
-            this.tokenStorageService.saveTokenLocal(data.accessToken);
-            this.tokenStorageService.saveUserLocal(data);
-          } else {
-            this.tokenStorageService.saveTokenSession(data.accessToken);
-            this.tokenStorageService.saveUserLocal(data);
-          }
-          this.isLoginFailed = false;
-          this.isLoggedIn = true;
-          this.username = this.tokenStorageService.getUser().username;
-          this.roles = this.tokenStorageService.getUser().roles;
-          this.formLogin.reset();
-          this.router.navigateByUrl("");
-        }else{
-          this.toastr.error("Bạn không phải là quản trị viên","Lỗi xác thực")
-        }
-
+        this.tokenStorage.saveTokenLocal(data.accessToken);
+        this.tokenStorage.saveUserLocal(data);
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+        this.roles = this.tokenStorage.getUser().roles;
       },
       err => {
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
-        this.toastr.error("Sai tên đăng nhập hoặc mật khẩu hoặc tài khoản chưa được kích hoạt", "Đăng nhập thất bại: ", {
-          timeOut: 3000,
-          extendedTimeOut: 1500
-        });
       }
     );
   }
+
+
 }

@@ -21,16 +21,16 @@ export class DangkyNTTComponent implements OnInit {
               private route: ActivatedRoute,) {
     //define form
     this.formRegCompany = this.formBuild.group({
-      username: ['',[Validators.required]],
-      password: ['',[Validators.required]],
+      username: ['',[Validators.required,Validators.minLength(5),Validators.maxLength(50),Validators.pattern('^[a-z0-9._-]{3,15}$')]],
+      password:['',[Validators.required,Validators.minLength(6),Validators.maxLength(20)]],
       re_password:['',[Validators.required]],
       name_company:['',[Validators.required]],
       address_company:['',[Validators.required]],
-      tax:['',[Validators.required]],
-      website:['',[Validators.required]],
-      phone:['',[Validators.required]],
+      tax:['',[Validators.required,Validators.pattern('^[0-9]{10}$')]],
+      website:['',[Validators.required,Validators.pattern("[-a-zA-Z0-9@:%_+.~#?&//=]{2,256}(.[a-z]{2,4})?\\b(/[-a-zA-Z0-9@:%_+.~#?&//=]*)?")]],
+      phone:['',[Validators.required,Validators.pattern('^[0-9]{10}$')]],
       contact:['',[Validators.required]],
-      email:['',[Validators.required]]
+      email:['',[Validators.required,Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')]]
       }
     );
   }
@@ -38,10 +38,14 @@ export class DangkyNTTComponent implements OnInit {
   validation_messages = {
     'username': [
       {type: 'required',message: 'Trường này không được để trống!'},
-
+      {type:'pattern',message: 'Tên không chứa các ký tự đặc biệt' },
+      {type:'minlength',message: 'Tên đăng nhập nhiều hơn 5 ký tự' },
+      {type: 'maxlength', message: 'Tên đăng nhập ít hơn 50 ký tự'},
     ],
     'password': [
       {type: 'required',message: 'Trường này không được để trống!'},
+      {type: 'minlength', message: 'Mật khẩu nhiều hơn 6 ký tự'},
+      {type: 'maxlength', message: 'Mật khẩu ít hơn 20 ký tự'},
     ],
     're_password':[
       {type: 'required',message: 'Trường này không được để trống!'},
@@ -54,18 +58,23 @@ export class DangkyNTTComponent implements OnInit {
     ],
     'tax':[
       {type: 'required',message: 'Trường này không được để trống!'},
+      {type: 'pattern',message: 'Số và 10 kí tự!'},
+
     ],
     'website':[
       {type: 'required',message: 'Trường này không được để trống!'},
+      {type: 'pattern',message: 'Sai định dạng website!'}
     ],
     'phone':[
       {type: 'required',message: 'Trường này không được để trống!'},
+      {type: 'pattern', message: 'Số điện thoại 10 số'},
     ],
     'contact':[
       {type: 'required',message: 'Trường này không được để trống!'},
     ],
     'email':[
       {type: 'required',message: 'Trường này không được để trống!'},
+      {type:'pattern',message: 'Email sai định dạng' }
     ]
   };
 
