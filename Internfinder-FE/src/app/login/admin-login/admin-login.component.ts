@@ -1,8 +1,11 @@
+// @ts-ignore
 import { Component, OnInit } from '@angular/core';
+// @ts-ignore
 import {ActivatedRoute, Router} from "@angular/router";
-import {AuthService} from "../../Services/auth.service";
-import {TokenStorageService} from "../../Services/token-storage.service";
+// @ts-ignore
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {TokenStorageService} from "../../_services/token-storage.service";
+import {AuthService} from "../../_services/auth.service";
 
 @Component({
   selector: 'app-admin-login',
@@ -51,8 +54,8 @@ export class AdminLoginComponent implements OnInit {
   onSubmit(): void {
     this.authService.login(this.form).subscribe(
       data => {
-        this.tokenStorage.saveTokenLocal(data.accessToken);
-        this.tokenStorage.saveUserLocal(data);
+        this.tokenStorage.saveToken(data.accessToken);
+        this.tokenStorage.saveUser(data);
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;

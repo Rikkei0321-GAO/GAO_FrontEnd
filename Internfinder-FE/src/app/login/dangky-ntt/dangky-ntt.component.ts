@@ -84,12 +84,7 @@ export class DangkyNTTComponent implements OnInit {
 
   onSubmit() {
     console.log(this.formRegCompany.value);
-    if(this.formRegCompany.invalid){
-      this.toastr.warning("Form phải được điền đúng định dạng","Warning:",{
-        timeOut: 1500,
-        extendedTimeOut:1500
-      })
-    }else {
+    {
           if(this.checkPasswords(this.formRegCompany)){
             this.toastr.warning("Mật khẩu và xác nhận mật khẩu không giống nhau","Warning:",{
               timeOut: 1500,
@@ -98,7 +93,7 @@ export class DangkyNTTComponent implements OnInit {
           }else{
             this.authService.register(this.formRegCompany.value).subscribe(
               data => {
-                this.toastr.success(data.message, "Hoàn tất: ", {
+                this.toastr.success(data.message, "Hoàn tất ", {
                   timeOut: 3500,
                   extendedTimeOut: 1500
                 });

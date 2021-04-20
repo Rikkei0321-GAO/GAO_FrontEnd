@@ -24,7 +24,7 @@ export class DangkysinhvienComponent implements OnInit {
       password:['',[Validators.required,Validators.minLength(6),Validators.maxLength(20)]],
       re_password:['',[Validators.required]],
       address:['',[Validators.required]],
-      phone:['',[Validators.required,Validators.maxLength(10)]],
+      phone:['',[Validators.required,Validators.pattern('^[0-9]{10}$')]],
       email:['',[Validators.required,Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')]]
       }
     );
@@ -50,7 +50,7 @@ export class DangkysinhvienComponent implements OnInit {
     ],
     'phone':[
       {type: 'required',message: 'Trường này không được để trống!'},
-      {type: 'maxlength', message: 'Số điện thoại 10 số'},
+      {type: 'pattern', message: 'Số điện thoại 10 số'},
     ],
     'email':[
       {type: 'required',message: 'Trường này không được để trống!'},
@@ -63,12 +63,7 @@ export class DangkysinhvienComponent implements OnInit {
 
   onSubmit() {
     console.log(this.formRegStudent.value);
-    if(this.formRegStudent.invalid){
-      this.toastr.warning("Form phải được điền đúng định dạng","Warning:",{
-        timeOut: 1500,
-        extendedTimeOut:1500
-      })
-    }else {
+   {
       if(this.checkPasswords(this.formRegStudent)){
         this.toastr.warning("Mật khẩu và xác nhận mật khẩu không giống nhau","Warning:",{
           timeOut: 1500,
@@ -77,7 +72,7 @@ export class DangkysinhvienComponent implements OnInit {
       }else {
         this.authService.register(this.formRegStudent.value).subscribe(
           data => {
-            this.toastr.success(data.message, "Hoàn tất: ", {
+            this.toastr.success(data.message, "Hoàn tất ", {
               timeOut: 3500,
               extendedTimeOut: 1500
             });

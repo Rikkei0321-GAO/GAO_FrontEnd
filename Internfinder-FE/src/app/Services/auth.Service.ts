@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
-const AUTH_API = 'http://localhost:8080/api/public/';
+const AUTH_API = 'http://localhost:8080/api/auth/';
 
 
 @Injectable({
@@ -29,7 +29,7 @@ export class AuthService {
   }
 
   register(obj:any): Observable<any> {
-    return this.http.post(AUTH_API + 'signup', {
+    return this.http.post(AUTH_API + 'signupSinhVien', {
       username:obj.username,
       password:obj.password,
       nameCompany:obj.name_company,

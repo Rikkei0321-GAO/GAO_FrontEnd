@@ -25,7 +25,7 @@ export class AuthService {
 
   // @ts-ignore
   register(user): Observable<any> {
-    return this.http.post(AUTH_API + 'signup', {
+    return this.http.post(AUTH_API + '/signupSinhVien', {
       username: user.username,
       email: user.email,
       password: user.password

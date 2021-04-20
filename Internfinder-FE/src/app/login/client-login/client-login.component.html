@@ -4,9 +4,9 @@
     <div class="login-top">
 
       <div class="form-info" style="">
-        <form [formGroup]="formLogin" (ngSubmit)="onSubmit()" >
-          <input formControlName="username" type="text" class="text" placeholder="Tên Đăng Nhập" >
-          <input formControlName="password" type="password"  placeholder="Mật Khẩu" >
+        <form name="form" (ngSubmit)="onSubmit()" >
+          <input name="username" [(ngModel)]="form.username" type="text" class="text" placeholder="Tên Đăng Nhập" >
+          <input name="password" [(ngModel)]="form.password" type="password"  placeholder="Mật Khẩu" >
           <div class="custom-control custom-checkbox" style="margin-bottom: 10px;">
             <input formControlName="remember_me" type="checkbox" class="custom-control-input" id="customCheck1">
             <label class="custom-control-label" for="customCheck1" style="margin-left: 10px;">Lưu tài khoản</label>
@@ -32,8 +32,8 @@
 
       <div class="create">
 
-        <a class="hvr-sweep-to-right" href="dangky/sinhvien">Đăng Ký Tài Khoản Sinh viên</a>
-        <a class="hvr-sweep-to-right" href="dangky/nhatuyendung">Đăng Ký Tài Khoản Nhà Tuyển Dụng</a>
+        <a class="hvr-sweep-to-right" href="login/dangky/  sinhvien">Đăng Ký Tài Khoản Sinh viên</a>
+        <a class="hvr-sweep-to-right" href="login/dangky/nhatuyendung">Đăng Ký Tài Khoản Nhà Tuyển Dụng</a>
         <div class="clearfix"> </div>
       </div>
     </div>

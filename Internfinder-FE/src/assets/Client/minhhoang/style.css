@@ -612,7 +612,7 @@ button:focus {
 .header_container .Post-Jobs:hover {
     border: 1px solid;
     transition: all .5s ease 0s;
-    background-color: #fff
+    background-color: #0cbd2f;
 }
 
 .header_container .Post-Jobs a {

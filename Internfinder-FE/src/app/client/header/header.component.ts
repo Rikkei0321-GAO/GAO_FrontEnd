@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {LoadcssServices} from "../../Services/loadcss.services";
+import {TokenStorageService} from "../../Services/token-storage.service";
+
 
 @Component({
   selector: 'app-header',
@@ -7,8 +9,8 @@ import {LoadcssServices} from "../../Services/loadcss.services";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor(private  loadcssServices: LoadcssServices) {
+  constructor(private  loadcssServices: LoadcssServices,
+              private tokenStorage: TokenStorageService) {
 
     this.loadcssServices.loaddCss('assets/Client/minhhoang/style.css');
     this.loadcssServices.loaddCss('assets/Client/minhhoang/matrialize.css');
@@ -19,7 +21,17 @@ export class HeaderComponent implements OnInit {
     this.loadcssServices.loadScript('assets/Client/minhhoang/js/custom.js');
   }
 
+  isLoggedIn = false;
+
+
   ngOnInit(): void {
+    this.isLoggedIn = !!this.tokenStorage.getToken();
+
+  }
+
+  logout(){
+    this.tokenStorage.signOut();
+    window.location.reload();
   }
 
 }
