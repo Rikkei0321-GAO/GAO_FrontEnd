@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-// @ts-ignore
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
@@ -56,9 +55,9 @@ export class AuthService {
     }, this.httpOptions);
   }
 
-  resetPassword(email:string): Observable<any> {
+  resetPassword(username:string): Observable<any> {
     return this.http.post(AUTH_API + 'reset-password', {
-      email: email,
+      username: username,
     }, this.httpOptions);
   }
 

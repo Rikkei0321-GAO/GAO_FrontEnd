@@ -29,11 +29,6 @@ import {ModuleTimkiemTrangchuComponent} from "./client/module-timkiem-trangchu/m
 import {PapeBaidangtuyenComponent} from "./client/pape-baidangtuyen/pape-baidangtuyen.component";
 import {AdminAuthService} from "./_services/admin.service";
 import {CustomerAuthService} from "./_services/customer.service";
-import {ResetPasswordComponent} from "./login/reset-password/reset-password.component";
-import {VerifyResetPasswordComponent} from "./login/verify-reset-password/verify-reset-password.component";
-import {QuanlycvNtdComponent} from "./client/quanlycv-ntd/quanlycv-ntd.component";
-import {QuanlycvSvComponent} from "./client/quanlycv/quanlycv-sv/quanlycv-sv.component";
-import {CvAcceptComponent} from "./client/quanlycv/cv-accept/cv-accept.component";
 
 const routes: Routes = [
 
@@ -63,9 +58,6 @@ const routes: Routes = [
         {path: 'quanlythongtin-taikhoan', component: QuanlythongtinTaikhoanComponent},
         {path: 'timkiem-trangchu', component: ModuleTimkiemTrangchuComponent},
         {path: 'xembaidangtuyen', component: PapeBaidangtuyenComponent},
-        {path: 'quanlycv-ntd', component: QuanlycvNtdComponent},
-        {path: 'quanlycv-sv', component: QuanlycvSvComponent},
-        {path: 'cv-accept', component: CvAcceptComponent},
 
       ]
   },
@@ -76,8 +68,6 @@ const routes: Routes = [
         {path: 'dangnhap/client', component: ClientLoginComponent},
         {path: 'dangky/sinhvien', component: DangkysinhvienComponent},
         {path: 'dangky/nhatuyendung', component: DangkyNTTComponent},
-        {path: 'reset-password', component: ResetPasswordComponent},
-        {path: 'verify-reset-password', component: VerifyResetPasswordComponent}
 
       ]
   }

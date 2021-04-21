@@ -1781,7 +1781,7 @@ html .ui-button.ui-state-disabled:active {
 }
 
 #resent-job-post .detail .part-full-time {
-    width: 105px;
+    width: 148px;
     height: 38px;
     border: 1px solid #2fde4a;
     color: #437d45;
@@ -1810,8 +1810,7 @@ html .ui-button.ui-state-disabled:active {
     font-size: 17px;
     font-family: proxima nova alt rg;
     font-weight: 400;
-    font-style: normal;
-  margin-top: 50px;
+    font-style: normal
 }
 
 #resent-job-post .detail .margin-top {
