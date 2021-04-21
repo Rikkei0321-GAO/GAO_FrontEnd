@@ -11,6 +11,7 @@ export class LoginComponent implements OnInit {
   constructor(private  loadcssServices: LoadcssServices) {
     this.loadcssServices.loaddCss('assets/login/css/bootstrap.css');
     this.loadcssServices.loaddCss('assets/login/css/style.css');
+    this.loadcssServices.loaddCss('assets/login/css/login.css');
   }
 
   ngOnInit(): void {
