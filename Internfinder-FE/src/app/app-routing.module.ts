@@ -27,6 +27,8 @@ import {ModuleXemvcNtdComponent} from "./client/module-xemvc-ntd/module-xemvc-nt
 import {QuanlythongtinTaikhoanComponent} from "./client/quanlythongtin-taikhoan/quanlythongtin-taikhoan.component";
 import {ModuleTimkiemTrangchuComponent} from "./client/module-timkiem-trangchu/module-timkiem-trangchu.component";
 import {PapeBaidangtuyenComponent} from "./client/pape-baidangtuyen/pape-baidangtuyen.component";
+import {AdminAuthService} from "./_services/admin.service";
+import {CustomerAuthService} from "./_services/customer.service";
 
 const routes: Routes = [
 
@@ -49,7 +51,7 @@ const routes: Routes = [
         {path: '', component: PageComponent},
         {path: 'create_cv', component: ModuleCreateCvComponent  },
         {path: 'forum', component: TrangchuForumComponent},
-        {path: 'baiviet', component: BaivietForumComponent},
+        {path: 'forum/index/:id', component: BaivietForumComponent,},
         {path: 'dangbaichiase', component: DangbaivietForumComponent},
         {path: 'dangtuyendung', component: ModuleDangtuyendungComponent},
         {path: 'xemcv-ntd', component: ModuleXemvcNtdComponent},

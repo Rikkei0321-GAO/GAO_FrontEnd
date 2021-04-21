@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {LoadcssServices} from "../../../Services/loadcss.services";
+import {Router} from "@angular/router";
+import {ShareService} from "../../../Services/Share.Service";
+import {ShareClass} from "../../../model/Share.Class";
 
 @Component({
   selector: 'app-trangchu-forum',
@@ -8,14 +11,38 @@ import {LoadcssServices} from "../../../Services/loadcss.services";
 })
 export class TrangchuForumComponent implements OnInit {
 
-  constructor( private  loadcssServices: LoadcssServices) {
+  constructor( private  loadcssServices: LoadcssServices, private quanlytaikhoanService: ShareService, private  router: Router) {
     this.loadcssServices.loaddCss('assets/Client/fontawesome-free-5.15.2-web/css/all.css');
     this.loadcssServices.loaddCss('assets/Client/forum-mockup-master/css/style.css');
-    // this.loadcssServices.loadScript('assets/Client/CSS/stylesMH.css');
+    this.loadcssServices.loadScript('assets/Client/CSS/stylesMH.css');
 
   }
 
+  items = []
+  // @ts-ignore
+  pageOfItems : Array<any>
+  // @ts-ignore
+  private  Subscription: Subscription;
+  // @ts-ignore
+  public quanlytaikhoans: ShareClass[];
+  // @ts-ignore
+  share: ShareClass
+  // @ts-ignore
+  getAll(){
+    this.Subscription = this.quanlytaikhoanService.getAll().subscribe(data=>{
+      this.quanlytaikhoans = data;
+      console.log(data)
+    }, error => {
+      console.log(error)
+    })
+  }
   ngOnInit(): void {
+    // @ts-ignore
+    this.share = new ShareClass()
+    this.getAll()
+  }
+  OnEdit(idshare: number){
+    this.router.navigate(['/forum/index/',idshare])
   }
 
 }

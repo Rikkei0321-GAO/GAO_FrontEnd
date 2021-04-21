@@ -34,7 +34,7 @@
                    *ngIf="formRegStudent.get('password')!.hasError(validation.type) && formRegStudent.get('password')!.touched">
               {{validation.message}}</small>
           </div>
-          <input formControlName="re_password" type="password"  placeholder="Mật lại khẩu ">
+          <input formControlName="re_password" type="password"  placeholder="Nhập lại Mật khẩu ">
           <div *ngFor="let validation of validation_messages.re_password">
             <small class="text-danger"
                    *ngIf="formRegStudent.get('re_password')!.hasError(validation.type) && formRegStudent.get('re_password')!.touched">

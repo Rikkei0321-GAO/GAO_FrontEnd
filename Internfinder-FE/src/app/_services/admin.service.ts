@@ -14,11 +14,11 @@ export class AdminAuthService implements CanActivate{
     const token = this.tokenStorageService.getToken();
 
     if (token == null) {
-      this.router.navigateByUrl('/admin/login');
+      this.router.navigateByUrl('/login/dangnhap/admin');
 
       return false;
     } else if (!this.isRole()) {
-      this.router.navigateByUrl('/admin/login');
+      this.router.navigateByUrl('/login/dangnhap/admin');
       return false;
     }  else {
       return true;

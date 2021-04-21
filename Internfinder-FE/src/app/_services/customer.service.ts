@@ -13,24 +13,11 @@ export class CustomerAuthService implements CanActivate{
 
   canActivate(route: ActivatedRouteSnapshot): boolean {
     const token = this.tokenStorageService.getToken();
-
     if (token == null) {
-      this.router.navigateByUrl('/dangnhap');
+      this.router.navigateByUrl('/login/dangnhap/admin');
       return false;
-    } else if (!this.isRole()) {
-      this.router.navigateByUrl('/dangnhap');
-      return false;
-    }  else {
+    }else {
       return true;
     }
-  }
-  isRole() {
-    const tokenPayload = this.tokenStorageService.getUser().roles;
-    for (const role of tokenPayload) {
-      if (role === 'ROLE_USER' || role === 'ROLE_ADMIN') {
-        return true;
-      }
-    }
-    return false;
   }
 }

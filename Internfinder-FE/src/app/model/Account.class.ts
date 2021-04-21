@@ -1,5 +1,5 @@
 export class AccountClass {
-  idAccount: number;
+  id_account: number; //cái ni idAccount nó k trùng tên là nó k nhận diện đc oke roi tks you
   username: string;
   password: string;
   createDate: Date;
@@ -17,8 +17,8 @@ export class AccountClass {
   image: string;
 
 
-  constructor(idAccount: number, username: string, password: string, createDate: Date, fullName: string, brithday: Date, sex: boolean, phone: string, address: string, email: string, compyName: string, taxtCode: string, link: string, nameContact: string, status: boolean, image: string) {
-    this.idAccount = idAccount;
+  constructor(id_account: number, username: string, password: string, createDate: Date, fullName: string, brithday: Date, sex: boolean, phone: string, address: string, email: string, compyName: string, taxtCode: string, link: string, nameContact: string, status: boolean, image: string) {
+    this.id_account = id_account;
     this.username = username;
     this.password = password;
     this.createDate = createDate;

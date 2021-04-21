@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+// @ts-ignore
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {TokenStorageService} from "../../Services/token-storage.service";
 import {AuthService} from "../../Services/auth.service";
@@ -20,7 +21,7 @@ export class DangkysinhvienComponent implements OnInit {
               private route: ActivatedRoute) {
     //define form
     this.formRegStudent = this.formBuild.group({
-      username: ['',[Validators.required,Validators.minLength(5) ,Validators.maxLength(50),Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')]],
+      username: ['',[Validators.required,Validators.minLength(5) ,Validators.maxLength(50),Validators.pattern('^[a-z0-9._-]{3,15}$')]],
       password:['',[Validators.required,Validators.minLength(6),Validators.maxLength(20)]],
       re_password:['',[Validators.required]],
       address:['',[Validators.required]],
