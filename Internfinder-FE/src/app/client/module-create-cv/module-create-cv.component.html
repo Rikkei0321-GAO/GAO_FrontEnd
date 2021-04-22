@@ -1,1 +1,463 @@
-<p>module-create-cv works!</p>
+<div class="dealers">
+  <div class="container">
+    <h3>Tạo CV</h3>
+  </div>
+
+  <div class="native-grid custom">
+    <div class="interFD-content_tao">
+
+      <div class="rows gap16">
+        <div class="colg-8">
+          <div class="inTitle">
+            <span class="mr3">Điền thông tin của bạn vào ô bên dưới</span>
+          </div>
+          <div class="blockttcn">
+              <div class="userinfo">
+                <div class="user-img is-edit">
+                  <div class="profile-picture">
+                    <img id="blah" [src]="imageSrc ||'https://firebasestorage.googleapis.com/v0/b/fir-angular-66583.appspot.com/o/avatar-1577909_1280.png?alt=media&token=d7eeaf14-9686-48ee-b313-973b26c57435'" width="140" height="145"  alt="your image"  />
+                    <div class="upload-image"  style="align-items: center">
+                      <input type="file" id="file"  class="imgInp" (change)="saveimg($event); readURL($event)"  data-id="image">
+                    </div>
+                  </div>
+                </div>
+              <div class="editing-info">
+                <div class="input-fields">
+                  <div class="input-area">
+                    <div class="input-label">
+                      <span style="color: #f85a5a">*</span> Họ
+                    </div>
+                    <div>
+                      <div style="position: relative">
+                        <input class="input-module_input" [(ngModel)]="firstName" type="text" maxlength="50">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-area">
+                    <div class="input-label">
+                      <span style="color: #f85a5a">*</span> Tên
+                    </div>
+                    <div>
+                      <div style="position: relative">
+                        <input class="input-module_input" type="text" [(ngModel)]="cv_created.lastName" maxlength="50">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-area">
+                    <div class="input-label">
+                      <span style="color: #f85a5a">*</span> Ngành học
+                    </div>
+                    <div>
+                      <div style="position: relative">
+                        <select class="input-drop">
+                          <option>Hiện tại đang hoạt động trong ngành ...</option>
+                          <option>Công nghệ thông tin </option>
+                          <option>Điện tử viễn thông</option>
+                          <option>Kinh tế</option><option>Tài chính ngân hàng</option><option>Du lịch lữ hành</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-area">
+                    <div class="input-label">
+                      <span style="color: #f85a5a">*</span> Trình độ học vấn
+                    </div>
+                    <div>
+                      <div style="position: relative">
+                        <select class="input-drop">
+                          <option>Hiện tại đang ...</option>
+                          <option>Sinh viên năm 3 </option>
+                          <option>Sinh viên năm 4</option>
+                          <option>Sinh viên mới tốt nghiệp</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="blockttcn">
+            <div class="contact_CV">
+              <h2 class="block-title">Thông tin Chung </h2>
+              <div class="content-content">
+                <div class="row" style="margin-bottom: 16px">
+                  <div class="col-12 col-lg-6">
+                    <div>
+                      <span class="content-span">
+                        <span style="color: #f85a5a">*</span>
+                        Email
+                      </span>
+                      <div>
+                        <div style="position: relative">
+                          <input type="email" [(ngModel)]="cv_created.email" class="input-module_input">
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <div>
+                      <span class="content-span">
+                        <span style="color: #f85a5a">*</span>
+                        Số Điện Thoại
+                      </span>
+                      <div>
+                        <div style="position: relative">
+                          <input class="input-module_input" type="number" [(ngModel)]="cv_created.phone">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row" style="margin-bottom: 16px">
+                  <div class="col-12 col-lg-6">
+                    <div>
+                      <span class="content-span">
+                                                <span style="color: #f85a5a">*</span>
+                                                Ngày Sinh
+                                            </span>
+                      <div>
+                        <div style="position: relative">
+                          <input type="date" [(ngModel)]="cv_created.dayOfBirth" class="datetime">
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <div>
+                      <span class="content-span">
+                                                <span style="color: #f85a5a">*</span>
+                                                Quốc Tịch
+                                            </span>
+                      <div>
+                        <select class="input-drop">
+                          <option>Quốc Tịch</option>
+                          <option>Việt Nam</option>
+                          <option>Nước Ngoài</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row" style="margin-bottom: 16px">
+                  <div class="col-12 col-lg-6">
+                    <div>
+                      <span class="content-span">
+                                               Giới Tính
+                                            </span>
+                      <div class="contact-radioGroup">
+                        <div class="radio-position">
+                          <input type="radio" id="male" name="gender" [(ngModel)]="cv_created.gender" value="male">
+                          <label for="male"> Nam</label>
+                        </div>
+                        <div class="radio-position">
+                          <input type="radio" id="female" name="gender" [(ngModel)]="cv_created.gender" value="female">
+                          <label for="male"> Nữ</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <div>
+                      <span class="content-span">
+                                               Hôn nhân
+                                            </span>
+                      <div class="contact-radioGroup">
+                        <div class="radio-position">
+                          <input type="radio" id="alone" name="honnhan" value="alone">
+                          <label for="male">Độc Thân</label>
+                        </div>
+                        <div class="radio-position">
+                          <input type="radio" id="double" name="honnhan" value="double">
+                          <label for="male">Đã kết hôn</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row" style="margin-bottom: 16px">
+                  <div class="col-12 col-lg-12">
+                    <div>
+                      <span class="content-span">
+                                                Quốc gia
+                                            </span>
+                      <div style="position: relative; margin-top: 5px">
+                        <select class="input-drop">
+                          <option>Quốc gia</option>
+                          <option>Afghanistan</option>
+                          <option>Albania</option>
+                          <option>Algeria</option>
+                          <option>American Samoa</option>
+                          <option>Andorra</option>
+                          <option>Angola</option>
+                          <option>Anguilla</option>
+                          <option>Antarctica</option>
+                          <option>Antigua And Barbuda</option>
+                          <option>Argentina</option>
+                          <option>Armenia</option>
+                          <option>Aruba</option>
+                          <option>Úc</option>
+                          <option>Áo</option>
+                          <option>Azerbaijan</option>
+                          <option>Bahamas</option>
+                          <option>Bahrain</option>
+                          <option>Bangladesh</option>
+                          <option>Barbados</option>
+                          <option>Belarus</option>
+                          <option>Bỉ</option>
+                          <option>Belize</option>
+                          <option>Benin</option>
+                          <option>Bermuda</option>
+                          <option>Bhutan</option>
+                          <option>Bolivia</option>
+                          <option>Bosnia And Herzegowina</option>
+                          <option>Botswana</option>
+                          <option>Bouvet Island</option>
+                          <option>British Indian Ocean Territory</option>
+                          <option>Brazil</option>
+                          <option>Brunei Darussalam</option>
+                          <option>Cambodia</option>
+                          <option>Cameroon</option>
+                          <option>Canada</option>
+                          <option>Cape Verde</option>
+                          <option>Cayman Islands</option>
+                          <option>Central African Republic</option>
+                          <option>Chile</option>
+                          <option>Trung Quốc</option>
+                          <option>Colombia</option>
+                          <option>Cuba</option>
+                          <option>Dominican Republic</option>
+                          <option>Dominica</option>
+                          <option>France</option>
+                          <option>Hong Kong</option>
+                          <option>Hungary</option>
+                          <option>Iceland</option>
+                          <option>India</option>
+                          <option>Iran</option>
+                          <option>Indonesia</option>
+                          <option>Italy</option>
+                          <option>Jamaica</option>
+                          <option>Japan</option>
+                          <option>Jordan</option>
+                          <option>North Korea (People's Republic Of Korea)</option>
+                          <option>South Korea (Republic Of Korea)</option>
+                          <option>Lao People's Republic</option>
+                          <option>Macau</option>
+                          <option>Malaysia</option>
+                          <option>Mexico</option>
+                          <option>Myanmar</option>
+                          <option>Nepal</option>
+                          <option>Việt Nam</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row" style="margin-bottom: 16px">
+                  <div class="col-12 col-lg-6">
+                    <div>
+                      <span class="content-span">
+                                                 Tỉnh/Thành Phố
+                                            </span>
+                      <div>
+                        <select class="input-drop">
+                          <option>Vui lòng chọn thành phố</option>
+                          <option>Đà nẵng</option>
+                          <option>TPHCM</option>
+                          <option>Huế</option>
+                          <option>Hà Nội</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <div>
+                      <span class="content-span">
+                        Quận/Huyện
+                      </span>
+                      <div>
+                        <select class="input-drop">
+                          <option>Vui lòng chọn</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row" style="margin-bottom: 16px">
+                  <div class="col-12 col-lg-12">
+                    <div>
+                      <span class="content-span">
+                        Địa chỉ
+                      </span>
+                      <div>
+                        <div style="position: relative">
+                          <input class="input-module_input" type="text" [(ngModel)]="cv_created.adress">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="blockttcn">
+            <div class="summary">
+              <h2 class="edtitle">Thông tin chung</h2>
+              <div class="editing-summary animate animate_fadein">
+                <div class="TextEdittor">
+                  <div class="TextEdittor_toolbar">
+                    <span>
+                      <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8,17 L8,7 L11.7707948,7 C13.0770244,7 14.0677723,7.23236947 14.7430684,7.69711538 C15.4183644,8.1618613 15.7560074,8.84294423 15.7560074,9.74038462 C15.7560074,10.2303138 15.6204573,10.6618571 15.349353,11.0350275 C15.0782488,11.4081978 14.7011731,11.6817757 14.2181146,11.8557692 C14.7701814,11.983975 15.205174,12.242672 15.5231054,12.6318681 C15.8410367,13.0210642 16,13.4972499 16,14.0604396 C16,15.0219828 15.6697507,15.7499975 15.0092421,16.2445055 C14.3487336,16.7390135 13.4072766,16.9908424 12.1848429,17 L8,17 Z M10.2181146,12.6456044 L10.2181146,15.3447802 L12.1182994,15.3447802 C12.6407913,15.3447802 13.0486738,15.2291678 13.3419593,14.9979396 C13.6352448,14.7667113 13.7818854,14.4473464 13.7818854,14.0398352 C13.7818854,13.1240797 13.2717241,12.6593407 12.2513863,12.6456044 L10.2181146,12.6456044 Z M10.2181146,11.1895604 L11.8595194,11.1895604 C12.9784406,11.1712453 13.5378928,10.7568722 13.5378928,9.94642857 C13.5378928,9.4931296 13.3961813,9.1668966 13.1127542,8.96771978 C12.829327,8.76854296 12.3820117,8.66895604 11.7707948,8.66895604 L10.2181146,8.66895604 L10.2181146,11.1895604 Z"></path>
+                      </svg>
+                    </span>
+                    <span>
+                      <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10.1737981,15.5714286 L11.5584135,8.42857143 L9.95714286,8.42857143 C9.7598983,8.42857143 9.6,8.26867312 9.6,8.07142857 L9.6,7.35714286 C9.6,7.1598983 9.7598983,7 9.95714286,7 L15.6428571,7 C15.8401017,7 16,7.1598983 16,7.35714286 L16,8.07142857 C16,8.26867312 15.8401017,8.42857143 15.6428571,8.42857143 L13.7330228,8.42857143 L12.3484075,15.5714286 L14.0428571,15.5714286 C14.2401017,15.5714286 14.4,15.7313269 14.4,15.9285714 L14.4,16.6428571 C14.4,16.8401017 14.2401017,17 14.0428571,17 L8.35714286,17 C8.1598983,17 8,16.8401017 8,16.6428571 L8,15.9285714 C8,15.7313269 8.1598983,15.5714286 8.35714286,15.5714286 L10.1737981,15.5714286 Z"></path>
+                                            </svg>
+                    </span>
+                    <span>
+                      <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.3453125,7 L16.3453125,13.402819 C16.3453125,14.4666225 15.951127,15.3078604 15.1627441,15.9265579 C14.3743613,16.5452553 13.2972725,16.8545994 11.9314453,16.8545994 C10.586712,16.8545994 9.51885161,16.5541573 8.72783203,15.9532641 C7.93681245,15.3523709 7.53339852,14.5267115 7.51757812,13.4762611 L7.51757812,7 L9.890625,7 L9.890625,13.4161721 C9.890625,14.0526738 10.0712384,14.5166899 10.4324707,14.8082344 C10.793703,15.0997789 11.2933562,15.245549 11.9314453,15.245549 C13.2656317,15.245549 13.9432616,14.6535668 13.9643555,13.4695846 L13.9643555,7 L16.3453125,7 Z M7.87982196,17.4807122 L16.120178,17.4807122 C16.3299479,17.4807122 16.5,17.6507642 16.5,17.8605341 L16.5,18.620178 C16.5,18.8299479 16.3299479,19 16.120178,19 L7.87982196,19 C7.67005208,19 7.5,18.8299479 7.5,18.620178 L7.5,17.8605341 C7.5,17.6507642 7.67005208,17.4807122 7.87982196,17.4807122 Z"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="DraftEditor">
+                    <div class="DraftEditorContainer">
+                      <div class="public-DraftEditor-content"  [(ngModel)]="cv_created.objective" contenteditable="true" role="textbox" spellcheck="false" style="outline: none; user-select: text;-webkit-user-select: text;white-space: pre-wrap; word-wrap: break-word">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="blockttcn">
+            <div class="globalBlock">
+              <div class="globalBlockHeader">
+                <h2 class="globalBlockTitle">Kinh nghiệm làm việc</h2>
+                <div class="globalBlockSubTitle">
+                  <i>
+                    Mô tả kinh nghiệm làm việc của bạn càng chi tiết càng tốt (bao gồm các công việc làm thêm trong lúc học hay công việc thực tập)
+                  </i>
+                  <div>
+                    <div class="examples">
+                      <input type="text" id="#inputTag" value="Amsterdam,Washington,Sydney,Beijing,Cairo" data-role="tagsinput">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="blockttcn">
+            <div class="globalBlock">
+              <div class="globalBlockHeader">
+                <h2 class="globalBlockTitle">Học vấn </h2>
+                <div class="globalBlockSubTitle">
+                  <i>
+                    Mô tả kinh nghiệm làm việc của bạn càng chi tiết càng tốt (bao gồm các công việc làm thêm trong lúc học hay công việc thực tập)
+                  </i>
+                </div>
+              </div>
+              <div class="globalBlockHistory">
+                <button class="globalBlockHistory_button">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 50 50" class="" style="fill: rgb(0, 185, 242);">
+                    <path d="M25 2C12.264 2 2 12.264 2 25s10.264 23 23 23 23-10.264 23-23S37.736 2 25 2zm0 2c11.664 0 21 9.336 21 21s-9.336 21-21 21S4 36.664 4 25 13.336 4 25 4zm-1 9v11H13v2h11v11h2V26h11v-2H26V13h-2z">
+                    </path>
+                  </svg> Thêm Kinh Trình độ học vấn
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="blockttcn">
+            <div class="globalBlock">
+              <div class="globalBlockHeader">
+                <h2 class="globalBlockTitle">Trình độ ngoại ngữ</h2>
+                <div class="globalBlockSubTitle">
+                  <i>
+                    Mô tả trình độ ngoại ngữ của bạn
+                  </i>
+                </div>
+              </div>
+              <div class="globalBlockHistory">
+                <button class="globalBlockHistory_button">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 50 50" class="" style="fill: rgb(0, 185, 242);">
+                    <path d="M25 2C12.264 2 2 12.264 2 25s10.264 23 23 23 23-10.264 23-23S37.736 2 25 2zm0 2c11.664 0 21 9.336 21 21s-9.336 21-21 21S4 36.664 4 25 13.336 4 25 4zm-1 9v11H13v2h11v11h2V26h11v-2H26V13h-2z">
+                    </path>
+                  </svg> Thêm Kinh Nghiệm Làm Việc
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="colg-4">
+          <div class="previewContent">
+            <div class="previewContent_toolbar">
+              <div>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 50 50" class=""><path fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="M5 5h17v17H5zm23 0h17v17H28zM5 28h17v17H5zm23 0h17v17H28z"></path>
+                  </svg>
+                  <span>Chọn Mẫu</span>
+                </a>
+              </div>
+              <div class="previewContent_toolbar_middle">
+                <span class="truoc">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="9" height="15" viewBox="0 0 9 15" class=""><path d="M6.82324 14.1943C6.96436 14.3354 7.14697 14.4185 7.36279 14.4185C7.79443 14.4185 8.11816 14.0947 8.11816 13.6631C8.11816 13.4556 8.03516 13.2646 7.90234 13.1235L1.85938 7.21338L7.90234 1.30322C8.03516 1.16211 8.11816 0.962891 8.11816 0.763672C8.11816 0.332031 7.79443 0 7.36279 0C7.14697 0 6.96436 0.0830078 6.82324 0.224121L0.249023 6.65723C0.0913086 6.79004 0 6.99756 0 7.21338C0 7.4209 0.0830078 7.61182 0.240723 7.76953L6.82324 14.1943Z"></path></svg>
+                                </span>
+                <span><strong>1</strong>/1</span>
+                <span class="sau">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="9" height="15" viewBox="0 0 9 15" class=""><path d="M2.17676 0.805663C2.03565 0.66455 1.85303 0.581542 1.63721 0.581542C1.20557 0.581542 0.881837 0.905273 0.881837 1.33691C0.881837 1.54443 0.964845 1.73535 1.09766 1.87646L7.14063 7.78662L1.09766 13.6968C0.964844 13.8379 0.881836 14.0371 0.881836 14.2363C0.881836 14.668 1.20557 15 1.63721 15C1.85303 15 2.03564 14.917 2.17676 14.7759L8.75098 8.34277C8.90869 8.20996 9 8.00244 9 7.78662C9 7.5791 8.91699 7.38818 8.75928 7.23047L2.17676 0.805663Z"></path></svg>
+                                </span>
+              </div>
+
+            </div>
+            <div class="pdfViewer" style="height: 226px; margin-top: 8px">
+              <div class="pdfViewer">
+                <span class="CvPreview_showFullScreen__1RIOr">
+                                    <svg width="32" height="32" viewBox="0 0 26 26" version="1.1">
+                                        <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="cc/wowcv/preview-cv" transform="translate(-420.000000, -58.000000)">
+                                                <g id="Group-23" transform="translate(433.000000, 71.000000) scale(-1, 1) translate(-433.000000, -71.000000) translate(420.000000, 58.000000)">
+                                                    <circle class="circle" stroke="#CCCCCC" fill="#F8F8F8" cx="13" cy="13" r="12.5"></circle>
+                                                    <g class="innerPolygons" transform="translate(13.000000, 13.000000) scale(-1, 1) translate(-13.000000, -13.000000) translate(3.000000, 3.000000)" stroke="#777777" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                                                        <g id="Group" transform="translate(8.807238, 2.121372)">
+                                                            <g id="icons/nav/icon-back-outline/size-lg" transform="translate(4.500000, 4.482878) scale(-1, -1) rotate(-45.000000) translate(-4.500000, -4.482878) ">
+                                                                <polyline id="Stroke-718" transform="translate(4.500000, 4.482878) scale(-1, 1) translate(-4.500000, -4.482878) " points="3.15 1.79315116 5.85 4.4828779 3.15 7.17260464"></polyline>
+                                                            </g>
+                                                        </g>
+                                                        <g id="Group" transform="translate(2.140571, 8.762673)">
+                                                            <g id="icons/nav/icon-back-outline/size-lg" transform="translate(4.500000, 4.482878) rotate(-45.000000) translate(-4.500000, -4.482878) ">
+                                                                <polyline id="Stroke-718" transform="translate(4.500000, 4.482878) scale(-1, 1) translate(-4.500000, -4.482878) " points="3.15 1.79315116 5.85 4.4828779 3.15 7.17260464"></polyline>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </span>
+                <div class="pdfDocument">
+                  <div class="react-pdf-document">
+                    <div class="react-pdf animate animate_fadein" style="position: relative">
+                      <canvas class="react-pdf-page-canvas" dir="ltr" width="159" height="226" style="display: block; user-select: none; width: 159px; height: 266px"></canvas>
+                      <div class="react-pdf-page_context" style="position: absolute; top: 50%; left: 50%; width: 159.83px;height: 226.044px; color: transparent;transform: translate(-50%, -50%) rotate(0deg); pointer-events: none"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="previewDownloadBTN animate animate_fadein">
+                <button class="cikpxU btn-primarycv btn-md clickable" (click)="add()">Tải Xuống</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
