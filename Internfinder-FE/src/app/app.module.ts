@@ -47,7 +47,36 @@ import { VerifyResetPasswordComponent } from './login/verify-reset-password/veri
 import { QuanlycvNtdComponent } from './client/quanlycv-ntd/quanlycv-ntd.component';
 import { QuanlycvSvComponent } from './client/quanlycv/quanlycv-sv/quanlycv-sv.component';
 import { CvAcceptComponent } from './client/quanlycv/cv-accept/cv-accept.component';
+import { PayPackageComponent } from './client/pay/pay-package/pay-package.component';
+import { PasswordComponent } from './client/password/password.component';
+import { LoginGgComponent } from './login/login-gg/login-gg.component';
+import {
+  GoogleLoginProvider,
+  SocialAuthServiceConfig,
+  SocialLoginModule
+} from "angularx-social-login";
+import { PaypalComponent } from './client/pay/paypal/paypal.component';
+import {NgxPayPalModule} from "ngx-paypal";
 
+
+
+// @ts-ignore
+// const config = new SocialAuthServiceConfig(
+//   [
+//     {
+//       id: GoogleLoginProvider.PROVIDER_ID,
+//       provider: new GoogleLoginProvider('945091947446-e1c6rc1celc2au5t8ingi0cd8pjp5di1.apps.googleusercontent.com')
+//
+//     }
+//   ]);
+// export function provideConfig() {
+//   return config;
+//
+// }
+
+const google_client_id: string = '945091947446-e1c6rc1celc2au5t8ingi0cd8pjp5di1.apps.googleusercontent.com';
+
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
@@ -90,6 +119,10 @@ import { CvAcceptComponent } from './client/quanlycv/cv-accept/cv-accept.compone
     QuanlycvNtdComponent,
     QuanlycvSvComponent,
     CvAcceptComponent,
+    PayPackageComponent,
+    PasswordComponent,
+    LoginGgComponent,
+    PaypalComponent,
   ],
   imports: [
     BrowserModule,
@@ -101,9 +134,28 @@ import { CvAcceptComponent } from './client/quanlycv/cv-accept/cv-accept.compone
     JwPaginationModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    SocialLoginModule,
+    NgxPayPalModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      // useFactory: provideConfig,
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              'google_client_id'
+            )
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    }
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

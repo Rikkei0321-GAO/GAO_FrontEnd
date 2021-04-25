@@ -38,7 +38,6 @@ export class ResetPasswordComponent implements OnInit {
         this.toastr.success("Email đã được gửi!", "Thành công: ", {
         });
         // alert("Gửi email thành công, vui lòng check email!");
-
         this.router.navigateByUrl("/verify-reset-password");
       },
       err => {

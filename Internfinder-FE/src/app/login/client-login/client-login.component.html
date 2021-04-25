@@ -12,7 +12,7 @@
             <label class="custom-control-label" for="customCheck1" style="margin-left: 10px;">Lưu tài khoản</label>
           </div>
           <div class="text-right p-t-8 p-b-31" >
-            <a href="quenmk.html">
+            <a href="quenmk.html" routerLink="/login/reset-password">
               Quên mật khẩu?
             </a>
           </div>
@@ -24,7 +24,7 @@
         <ul class="login-icons">
           <li><a href="#" ><i class="fa fa-facebook-square" aria-hidden="true" style="padding: 15px"></i>
             <span>Facebook</span></a></li>
-          <li><a href="#" class="go"><i class="fa fa-google-plus-square" aria-hidden="true" style="padding: 15px"></i>
+          <li><a href="#" class="go" (click)="loginWithGoogle('Google')"><i class="fa fa-google-plus-square" aria-hidden="true" style="padding: 15px"></i>
             <span>Google +</span></a></li>
           <div class="clearfix"> </div>
         </ul>

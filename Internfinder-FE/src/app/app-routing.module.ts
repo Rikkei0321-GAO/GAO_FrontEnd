@@ -34,6 +34,10 @@ import {VerifyResetPasswordComponent} from "./login/verify-reset-password/verify
 import {QuanlycvNtdComponent} from "./client/quanlycv-ntd/quanlycv-ntd.component";
 import {QuanlycvSvComponent} from "./client/quanlycv/quanlycv-sv/quanlycv-sv.component";
 import {CvAcceptComponent} from "./client/quanlycv/cv-accept/cv-accept.component";
+import {PayPackageComponent} from "./client/pay/pay-package/pay-package.component";
+import {PasswordComponent} from "./client/password/password.component";
+import {LoginGgComponent} from "./login/login-gg/login-gg.component";
+import {PaypalComponent} from "./client/pay/paypal/paypal.component";
 
 const routes: Routes = [
 
@@ -66,6 +70,9 @@ const routes: Routes = [
         {path: 'quanlycv-ntd', component: QuanlycvNtdComponent},
         {path: 'quanlycv-sv', component: QuanlycvSvComponent},
         {path: 'cv-accept', component: CvAcceptComponent},
+        {path: 'pay-package', component: PayPackageComponent},
+        {path: 'password', component: PasswordComponent},
+        {path: 'paypal', component: PaypalComponent},
 
       ]
   },
@@ -77,7 +84,8 @@ const routes: Routes = [
         {path: 'dangky/sinhvien', component: DangkysinhvienComponent},
         {path: 'dangky/nhatuyendung', component: DangkyNTTComponent},
         {path: 'reset-password', component: ResetPasswordComponent},
-        {path: 'verify-reset-password', component: VerifyResetPasswordComponent}
+        {path: 'verify-reset-password', component: VerifyResetPasswordComponent},
+        {path: 'login-gg', component: LoginGgComponent}
 
       ]
   }

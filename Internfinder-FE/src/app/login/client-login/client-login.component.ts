@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
-import {ToastrService} from "ngx-toastr";
 import {TokenStorageService} from "../../Services/token-storage.service";
 import {AuthService} from "../../_services/auth.service";
+import {GoogleLoginProvider, SocialAuthService, SocialUser} from "angularx-social-login";
 
 @Component({
   selector: 'app-client-login',
@@ -11,6 +11,13 @@ import {AuthService} from "../../_services/auth.service";
   styleUrls: ['./client-login.component.css']
 })
 export class ClientLoginComponent implements OnInit {
+
+  // @ts-ignore
+  loginForm: FormGroup;
+  // @ts-ignore
+  socialUser: SocialUser;
+  // @ts-ignore
+  isLoggein: boolean;
   form: any = {};
   isLoggedIn = false;
   isLoginFailed = false;
@@ -18,7 +25,8 @@ export class ClientLoginComponent implements OnInit {
   roles: string[] = [];
 
   constructor(private authService: AuthService, private tokenStorage: TokenStorageService,
-              private router: Router) { }
+              private router: Router,private formBuilder: FormBuilder,
+              private socialAuthService: SocialAuthService) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -42,6 +50,19 @@ export class ClientLoginComponent implements OnInit {
         this.isLoginFailed = true;
       }
     );
+  }
+  loginWithGoogle(flatform: string): void {
+    flatform = GoogleLoginProvider.PROVIDER_ID;
+
+    this.socialAuthService.signIn(flatform).then((respone)=>{
+      console.log(flatform + "logged in user is=", respone)
+      }
+    )
+
+  }
+
+  logOut(): void {
+    this.socialAuthService.signOut();
   }
 
 }
