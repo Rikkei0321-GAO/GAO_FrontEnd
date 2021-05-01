@@ -6,6 +6,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {TokenStorageService} from "../../_services/token-storage.service";
 import {AuthService} from "../../_services/auth.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-admin-login',
@@ -23,24 +24,22 @@ export class AdminLoginComponent implements OnInit {
 
   constructor(private authService: AuthService, private tokenStorage: TokenStorageService,
               private router: Router,
-              private formBuild: FormBuilder) {
+              private formBuild: FormBuilder,
+              private toastr: ToastrService) {
+
     this.formRegCompany = this.formBuild.group({
-        username: ['',[Validators.required,Validators.minLength(5),Validators.maxLength(50),Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')]],
-        password:['',[Validators.required,Validators.minLength(6),Validators.maxLength(20)]],
+        username: ['',[Validators.required]],
+        password:['',[Validators.required]],
+
       }
     );
   }
   validation_messages = {
     'username': [
       {type: 'required',message: 'Trường này không được để trống!'},
-      {type:'pattern',message: 'Tên không chứa các ký tự đặc biệt' },
-      {type:'pattern',message: 'Tên đăng nhập nhiều hơn 5 ký tự' },
-      {type: 'maxlength', message: 'Tên đăng nhập ít hơn 50 ký tự'},
     ],
     'password': [
       {type: 'required',message: 'Trường này không được để trống!'},
-      {type: 'minlength', message: 'Mật khẩu nhiều hơn 6 ký tự'},
-      {type: 'maxlength', message: 'Mật khẩu ít hơn 20 ký tự'},
     ]
   };
 
@@ -48,10 +47,12 @@ export class AdminLoginComponent implements OnInit {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getUser().roles;
+
     }
   }
 
   onSubmit(): void {
+    console.log(this.form);
     this.authService.login(this.form).subscribe(
       data => {
         this.tokenStorage.saveToken(data.accessToken);
@@ -59,10 +60,17 @@ export class AdminLoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
+        this.router.navigateByUrl('/admin').then(()=>{
+          this.toastr.success('', "Đăng nhập thành công  ");
+        });
       },
       err => {
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
+        this.toastr.error("Sai tên đăng nhập hoặc mật khẩu hoặc tài khoản chưa được kích hoạt", "Đăng nhập thất bại: ", {
+          timeOut: 3000,
+          extendedTimeOut: 1500
+        });
       }
     );
   }

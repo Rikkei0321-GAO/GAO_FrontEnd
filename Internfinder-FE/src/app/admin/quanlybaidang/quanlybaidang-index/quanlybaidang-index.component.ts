@@ -9,45 +9,29 @@ import {NewService} from "../../../Services/NewService";
   styleUrls: ['./quanlybaidang-index.component.css']
 })
 export class QuanlybaidangIndexComponent implements OnInit {
-
+  pageOfItems : number = 1
   items = []
-  // @ts-ignore
-  pageOfItems : Array<any>
-  // @ts-ignore
-  private  Subscription: Subscription;
+  keyword: any
   // @ts-ignore
   public quanlybaidangs: NewsClass[];
   // @ts-ignore
-  public  account: NewsClass;
-  onChangePage(pageOfItems: Array<any>) {
-    // update current page of items
-    this.pageOfItems = pageOfItems;
-  }
+  public  news: NewsClass;
   ngOnInit(): void {
     this.getAllQuanlytaikhoan();
     // @ts-ignore
-    this.account = new NewsClass();
-    // @ts-ignore
-    this.items = Array(5).fill(0).map((x, i) => ({ id: (i + 1), account: `item ${i + 1}`}));
-  }
-  constructor(private quanlytaikhoanService: NewService , private  router: Router) {
-  }
-  // delete data
-  Ondelete(idAccount: number){
-    this.Subscription = this.quanlytaikhoanService.delete(idAccount).subscribe(data=>{
-    })
-    console.log(alert("Xóa Thành Công !"))
-    this.router.navigate(['/admin/quanlytaikhoan/index']);
+    this.news = new NewsClass();
+    }
+  constructor(private newService: NewService , private  router: Router) {
   }
   reloadData() {
-    this.quanlytaikhoanService.getAll().subscribe(data => {
+    this.newService.getAll().subscribe(data => {
       // @ts-ignore
       this.quanlybaidangs = data;
     });
   }
   //index data
   getAllQuanlytaikhoan(){
-    this.Subscription = this.quanlytaikhoanService.getAll().subscribe(data=>{
+     this.newService.getAll().subscribe(data=>{
       // @ts-ignore
       this.quanlybaidangs = data;
       console.log(data)
@@ -55,8 +39,22 @@ export class QuanlybaidangIndexComponent implements OnInit {
       console.log(error)
     })
   }
+
   //get id
   OnEdit(idaccount: number){
-    this.router.navigate(['/admin/quanlytaikhoan/edit',idaccount])
+    this.router.navigate(['/admin/quanlybaidang/edit',idaccount])
+  }
+  OnDetails(idaccount: number){
+    this.router.navigate(['/admin/quanlybaidang/create',idaccount])
+  }
+  search(){
+    if(this.keyword == ""){
+      location.reload()
+    }else {
+      this.newService.seach(this.keyword).subscribe(data=>{
+        this.quanlybaidangs = data
+      });
+      console.log(this.quanlybaidangs);
+    }
   }
 }

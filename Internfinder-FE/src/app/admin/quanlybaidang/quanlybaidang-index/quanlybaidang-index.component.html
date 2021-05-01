@@ -1,53 +1,61 @@
 <!-- Main Content -->
 <div id="content">
+  <div class="col-md-3">
+    <h1 class="h3 mb-2 text-gray-800">Danh Sách Bài Đăng</h1>
+    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+      <div class="input-group">
+        <input type="text" class="form-control" name="keyword" [(ngModel)]="keyword"  placeholder="Tìm Kiếm">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button" (click)="search()">
+            <i class="fas fa-search fa-sm"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
   <!-- Begin Page Content -->
   <div class="container-fluid">
     <!-- Pagasde Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Danh Sách Tài Khoản</h1>
     <!-- DataTales Example -->
     <div class="card mb-4">
       <div class="card-header py-3">
       </div>
       <div class="card-body">
-        <div *ngFor="let item of pageOfItems"></div>
         <div class="table-responsive">
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
             <tr>
               <th>ID</th>
-              <th>ID Tài Khoản</th>
-              <th>ID Category</th>
+              <th>Tài Khoản</th>
+              <th>Category</th>
               <th>Chủ Đề</th>
               <th>Quyền Lợi</th>
-              <th>Chuyên Môn</th>
-              <th>Lương</th>
               <th>Vị trí</th>
-              <th>Địa Chỉ</th>
+              <th>Mô Tả</th>
               <th>Email</th>
               <th>Trạng Thái</th>
               <th>Hành Động</th>
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let item of quanlybaidangs">
+            <tr *ngFor="let item of quanlybaidangs| paginate: {itemsPerPage: 5, currentPage: pageOfItems}">
               <td>{{item.idNews}}</td>
-              <td>{{item.account.idAccount}}</td>
-              <td>{{item.category.idCategory}}</td>
+              <td>{{item.account.username}}</td>
+              <td>{{item.category.name}}</td>
               <td>{{item.title}}</td>
               <td>{{item.benefit}}</td>
-              <td>{{item.degree}}</td>
-              <td>{{item.salary}}</td>
               <td>{{item.position}}</td>
-              <td>{{item.address_nd}}</td>
+              <td>{{item.decriptions}}</td>
               <td>{{item.email_nd}}</td>
               <td>
                 <label class="switch">
                   <input type="checkbox" [checked]="item.status">
                   <span class="slider round"></span>
-                </label><td>
-              <a class="btn btn-primary">Sửa</a>
-              <a href="admin/quanlybaidang/index" class="btn btn-primary btn-red">Xóa</a>
-            </td>
+                </label>
+              <td>
+                <button class="btn btn-primary " (click)="OnEdit(item.idNews)">Cập Nhật</button>
+                <button type="button" class="btn btn-warning" (click)="OnDetails(item.idNews)">Chi Tiết</button>
+              </td>
             </tr>
             </tbody>
           </table>
@@ -55,7 +63,7 @@
       </div>
     </div>
     <div class="card-footer pb-0 pt-3">
-      <jw-pagination [items]="items" (changePage)="onChangePage($event)"></jw-pagination>
+      <pagination-controls (pageChange)="pageOfItems = $event"></pagination-controls>
     </div>
   </div>
   <!-- /.container-fluid -->
@@ -63,11 +71,4 @@
 <!-- End of Main Content -->
 
 <!-- Footer -->
-<footer class="sticky-footer bg-white">
-  <div class="container my-auto">
-    <div class="copyright text-center my-auto">
-      <span>Copyright &copy; Your Website 2020</span>
-    </div>
-  </div>
-</footer>
 <!-- End of Footer -->

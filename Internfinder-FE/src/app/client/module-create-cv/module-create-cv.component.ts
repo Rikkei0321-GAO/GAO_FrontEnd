@@ -28,7 +28,7 @@ export class ModuleCreateCvComponent implements OnInit {
   ngOnInit(): void {
     this.cv_created = new CvCreated();
   }
-
+ // cái nay la save len firebase khi m chon anh la save luon
   saveimg(event: any) {
     this.selectImg = event.target.files[0];
     const nameimg = this.selectImg.name;
@@ -54,9 +54,10 @@ export class ModuleCreateCvComponent implements OnInit {
       reader.readAsDataURL(this.selectImg);
     }
   }
+  //cácánay la dua vo server
   add(){
     console.log('st_add');
-    this.cv_created.avatar=this.imageSrc;   
+    this.cv_created.avatar=this.imageSrc; // gán ccái url của img vao avart của dto roi gan vo thoi y la
     console.log('abc: '+this.cv_created.avatar );
     console.log(',ten'+ this.firstName+ ' '+ this.cv_created.lastName);
     console.log(',email ' + this.cv_created.email);

@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {AccountService} from "../../../Services/Account.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Subscription} from "rxjs";
-import {AccountClass} from "../../../model/Account.class";
 import {NewsClass} from "../../../model/News.class";
 import {NewService} from "../../../Services/NewService";
 
@@ -14,28 +12,27 @@ import {NewService} from "../../../Services/NewService";
 })
 export class QuanlybaidangCreateComponent implements OnInit {
 
-  constructor(private  fb: FormBuilder, private  accountservice: NewService, private  route: ActivatedRoute, private  router: Router) {
+  constructor(private  fb: FormBuilder, private  accountservice: NewService, private  activatedRouteService: ActivatedRoute, private  router: Router) {
   }
 // @ts-ignore
+  public id: number;
+  // @ts-ignore
   public  sub: Subscription;
   // @ts-ignore
-  account: NewsClass;
-  create(){
-    this.sub = this.accountservice.create(this.account).subscribe(data=>{
-      console.log(alert("Thêm mới Thành Công"));
-      this.router.navigate(['/admin/quanlybaidang/index']);
-    })
-
-  }
+  public  subpram: Subscription;
+  // @ts-ignore
+  account: NewsClass=new NewsClass();
+  // @ts-ignore
 
   onSubmit() {
-    this.create();
-    // console.log(this.contactForm.value);
+    this.router.navigate(['/admin/quanlybaidang/index']).then(()=>{
+      location.reload()
+    })
   }
   contactForm = new FormGroup({
     decriptions: new FormControl('',[Validators.required, Validators.maxLength(255)]),
     title: new FormControl('', [Validators.required, Validators.maxLength(500)]),
-    // createDate: new FormControl(''),
+    createDate: new FormControl(''),
     salary: new FormControl(''),
     name_nd: new FormControl(''),
     major: new FormControl(''),
@@ -51,9 +48,11 @@ export class QuanlybaidangCreateComponent implements OnInit {
     idCategory: new  FormControl(''),
   });
   ngOnInit(): void {
-    // @ts-ignore
-    this.account = new NewsClass();
-
+    this.id=this.activatedRouteService.snapshot.params['id'];
+    this.accountservice.getOne(this.id).subscribe(data=>{
+      this.account=data
+      console.log(data)
+    },error => console.log(error))
   }
 
 }

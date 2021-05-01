@@ -22,11 +22,12 @@ export class PageComponent implements OnInit {
     this.loadcssServices.loadScript('assets/Client/minhhoang/js/jquery-ui.min.js');
     // this.loadcssServices.loadScript('assets/Client/minhhoang/js/custom.js');
   }
+  id_now: number = 0;
   ngOnInit(): void {
     // @ts-ignore
-    let userName = JSON.parse(sessionStorage.getItem("auth-user"));
-    this.us.username = userName['username'];
-    this.logName = userName['username'];
+    // let userName = JSON.parse(sessionStorage.getItem("auth-user"));
+    // this.us.username = userName['username'];
+    // this.logName = userName['username'];
   }
 
 }

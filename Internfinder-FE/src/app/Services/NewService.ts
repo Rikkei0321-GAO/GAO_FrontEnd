@@ -33,17 +33,17 @@ export class NewService {
 
   edit(id: number, data: NewsClass): Observable<NewsClass> {
     // @ts-ignore
-    return this.httpClient.put(`${'http://localhost:8080/quanlytaikhoan'}/${data.idNews}`, data)
+    return this.httpClient.put(`${'http://localhost:8080/quanlybaidang'}/${data.idNews}`, data)
   }
 
   delete(idaccount: number): Observable<any> {
     // @ts-ignore
-    return this.httpClient.delete(`${'http://localhost:8080/quanlytaikhoan/delete'}/${idaccount}`);
+    return this.httpClient.delete(`${'http://localhost:8080/quanlybaidang/delete'}/${idaccount}`);
   }
 
   getOne(id: number): Observable<any> {
     // @ts-ignore
-    return this.httpClient.get(`${'http://localhost:8080/quanlytaikhoan'}/${id}`);
+    return this.httpClient.get(`${'http://localhost:8080/quanlybaidang'}/${id}`);
   }
 
   get Accountlist() {
@@ -52,5 +52,9 @@ export class NewService {
 
   set Accountlist(value) {
     this._Accountlist = value;
+  }
+  seach(searchtext: any): Observable<NewsClass[]>{
+    // @ts-ignore
+    return this.httpClient.get<NewsClass[]>(`${'http://localhost:8080/quanlybaidang/seach'}/${searchtext}`);
   }
 }

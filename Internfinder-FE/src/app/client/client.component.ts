@@ -9,18 +9,16 @@ import {TokenStorageService} from "../_services/token-storage.service";
 })
 export class ClientComponent implements OnInit {
 
-    constructor( private  loadcssServices: LoadcssServices) {
+    constructor( private  loadcssServices: LoadcssServices,
+                 private  token: TokenStorageService) {
       this.loadcssServices.loaddCss('assets/page/css/bootstrap.css');
       this.loadcssServices.loaddCss('assets/page/css/style.css');
-      this.loadcssServices.loaddCss('assets/page/css/styles.css');
-      this.loadcssServices.loaddCss('assets/page/css/default');
+      this.loadcssServices.loaddCss('assets/page/css/default.css');
       this.loadcssServices.loadScript('assets/page/js/jquery.min.js');
       this.loadcssServices.loadScript('assets/page/js/scripts.js');
       this.loadcssServices.loadScript('assets/page/js/easyResponsiveTabs.js');
-      this.loadcssServices.loaddCss('assets/Client/CSS/stylesMH.css');
 
     }
-
   ngOnInit(): void {
 
   }

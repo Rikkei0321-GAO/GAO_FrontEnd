@@ -24,25 +24,40 @@ import {BaivietForumComponent} from "./client/module-forum/baiviet-forum/baiviet
 import {DangbaivietForumComponent} from "./client/module-forum/dangbaiviet-forum/dangbaiviet-forum.component";
 import {ModuleDangtuyendungComponent} from "./client/module-dangtuyendung/module-dangtuyendung.component";
 import {ModuleXemvcNtdComponent} from "./client/module-xemvc-ntd/module-xemvc-ntd.component";
-import {QuanlythongtinTaikhoanComponent} from "./client/quanlythongtin-taikhoan/quanlythongtin-taikhoan.component";
+import {QuanlythongtinTaikhoanComponent} from "./client/Quanlythongtin-taikhoanall/quanlythongtin-taikhoan/quanlythongtin-taikhoan.component";
 import {ModuleTimkiemTrangchuComponent} from "./client/module-timkiem-trangchu/module-timkiem-trangchu.component";
 import {PapeBaidangtuyenComponent} from "./client/pape-baidangtuyen/pape-baidangtuyen.component";
+import {QuanlybaichiaseIndexComponent} from "./admin/quanlybaichiase/quanlybaichiase-index/quanlybaichiase-index.component";
+import {QuanlybaichiaseCreateComponent} from "./admin/quanlybaichiase/quanlybaichiase-create/quanlybaichiase-create.component";
+import {QuanlybaichiaseEditComponent} from "./admin/quanlybaichiase/quanlybaichiase-edit/quanlybaichiase-edit.component";
+import {QuanlybinhluanIndexComponent} from "./admin/quanlybinhluan/quanlybinhluan-index/quanlybinhluan-index.component";
+import {QuanlybinhluanDetailsComponent} from "./admin/quanlybinhluan/quanlybinhluan-details/quanlybinhluan-details.component";
+import {QuanlythongtinTaikhoanEditComponent} from "./client/Quanlythongtin-taikhoanall/quanlythongtin-taikhoan-edit/quanlythongtin-taikhoan-edit.component";
 import {AdminAuthService} from "./_services/admin.service";
 import {CustomerAuthService} from "./_services/customer.service";
 
 const routes: Routes = [
 
-  {   path: 'admin', component: AdminComponent, children :
+  {   path: 'admin', component: AdminComponent, canActivate:[AdminAuthService], children :
       [
         {path: 'quanlytaikhoan/index', component: QuanlytaikhoanIndexComponent},
         {path: 'quanlytaikhoan/create', component: QuanlytaikhoanCreateComponent},
         {path: 'quanlytaikhoan/edit/:id', component: QuanlytaikhoanEditComponent},
+        //
         {path: 'quanlybaidang/index', component: QuanlybaidangIndexComponent},
-        {path: 'quanlybaidang/create', component: QuanlybaidangCreateComponent},
-        {path: 'quanlybaidang/edit', component: QuanlybaidangEditComponent },
+        {path: 'quanlybaidang/create/:id', component: QuanlybaidangCreateComponent},
+        {path: 'quanlybaidang/edit/:id', component: QuanlybaidangEditComponent },
+        //
         {path: 'quanlymaucv/index', component: QuanlymaucvIndexComponent},
         {path: 'quanlymaucv/create', component: QuanlymaucvCreateComponent},
         {path: 'quanlymaucv/detail', component: QuanlymaucvDetailComponent},
+        //
+        {path: 'quanlybaichiase/index', component: QuanlybaichiaseIndexComponent},
+        {path: 'quanlybaichiase/create', component: QuanlybaichiaseCreateComponent},
+        {path: 'quanlybaichiase/edit/:id', component: QuanlybaichiaseEditComponent},
+        //
+        {path:'quanlybinhluan/index', component: QuanlybinhluanIndexComponent},
+        {path: 'quanlybinhluan/details/:id', component: QuanlybinhluanDetailsComponent}
       ]
   },
   {
@@ -50,12 +65,13 @@ const routes: Routes = [
       [
         {path: '', component: PageComponent},
         {path: 'create_cv', component: ModuleCreateCvComponent  },
-        {path: 'forum', component: TrangchuForumComponent},
-        {path: 'forum/index/:id', component: BaivietForumComponent,},
-        {path: 'dangbaichiase', component: DangbaivietForumComponent},
+        {path: 'forum', component: TrangchuForumComponent, canActivate:[CustomerAuthService]},
+        {path: 'forum/index/:id', component: BaivietForumComponent,canActivate:[CustomerAuthService]},
+        {path: 'dangbaichiase', component: DangbaivietForumComponent, canActivate:[CustomerAuthService]},
         {path: 'dangtuyendung', component: ModuleDangtuyendungComponent},
         {path: 'xemcv-ntd', component: ModuleXemvcNtdComponent},
-        {path: 'quanlythongtin-taikhoan', component: QuanlythongtinTaikhoanComponent},
+        {path: 'profile/:id', component: QuanlythongtinTaikhoanComponent, canActivate:[CustomerAuthService]},
+        {path: 'profile/edit/:id', component: QuanlythongtinTaikhoanEditComponent, canActivate:[CustomerAuthService]    },
         {path: 'timkiem-trangchu', component: ModuleTimkiemTrangchuComponent},
         {path: 'xembaidangtuyen', component: PapeBaidangtuyenComponent},
 

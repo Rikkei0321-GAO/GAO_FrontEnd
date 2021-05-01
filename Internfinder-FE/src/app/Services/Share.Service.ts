@@ -3,22 +3,15 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {ShareClass} from "../model/Share.Class";
 import {CommentClass} from "../model/Comment.Class";
-import {AccountClass} from "../model/Account.class";
 import {TokenStorageService} from "./token-storage.service";
-import {CommentDTO} from "../dto/commentDTO";
+import {ShareDTO} from "../dto/ShareDTO";
+import {AccountClass} from "../model/Account.class";
 
 
 @Injectable({
   providedIn: 'root'
 })
 export  class ShareService{
-  get ShareClass(): ShareClass[] {
-    return this._Accountlist;
-  }
-
-  set ShareClass(value: ShareClass[]) {
-    this._Accountlist = value;
-  }
   baseURL ='http://localhost:8080/dangbaichiase';
   httpOptions: any;
   constructor(private  httpClient: HttpClient, token:TokenStorageService) {
@@ -35,31 +28,19 @@ export  class ShareService{
   getAll():Observable<any>{
     return this.httpClient.get<ShareClass[]>(this.baseURL + '/index',this.httpOptions)
   }
-  getAllComment(idshare: number):Observable<any>{
-    return this.httpClient.get<CommentClass[]>(`${'http://localhost:8080/comment'}/${idshare}`, this.httpOptions)
-  }
-  createComment(data: any) :Observable<any>{
-    return  this.httpClient.post( 'http://localhost:8080/comment/create-comment', data, this.httpOptions )
-  }
-  private _CommentDTO: CommentDTO[] = []
-
-  private _Commentlist: CommentClass[] = []
-
-  get CommentClass(): CommentClass[] {
-    return this._Commentlist;
+  onEditsharepost(id: number, data: ShareClass):Observable<any>{
+    return this.httpClient.put(`${'http://localhost:8080/dangbaichiase'}/${id}`,data, this.httpOptions)
   }
 
-  get CommentDTO(): CommentDTO[] {
-    return this._CommentDTO;
+  createSharepost(data: ShareDTO, id: number): Observable<any>{
+    return this.httpClient.post(this.baseURL +"/create-share",
+      {id_account: id, title: data.title, content: data.content, create_date: data.create_date}, this.httpOptions)
   }
-
-  set CommentDTO(value: CommentDTO[]) {
-    this._CommentDTO = value;
+  seach(searchtext: any): Observable<ShareClass[]>{
+    // @ts-ignore
+    return this.httpClient.get<ShareClass[]>(`${'http://localhost:8080/dangbaichiase/seach'}/${searchtext}`);
   }
-
-  set CommentClass(value: CommentClass[]) {
-    this._Commentlist = value;
+  delete(id: any) {
+    return this.httpClient.delete(`${'http://localhost:8080/dangbaichiase/delete'}/${id}`,this.httpOptions)
   }
-
-  private _Accountlist : ShareClass[]= [];
 }

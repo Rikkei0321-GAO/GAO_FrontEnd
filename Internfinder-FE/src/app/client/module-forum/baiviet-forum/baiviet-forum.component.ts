@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {LoadcssServices} from "../../../Services/loadcss.services";
 import {ShareClass} from "../../../model/Share.Class";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -7,9 +7,10 @@ import {Subscription} from "rxjs";
 import {CommentClass} from "../../../model/Comment.Class";
 import {TokenStorageService} from "../../../Services/token-storage.service";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {news} from "../../../model/news";
 import {CommentDTO} from "../../../dto/commentDTO";
-
+import {CommentService} from "../../../Services/Comment.Service";
+import {ToastrService} from "ngx-toastr";
+import {ShareDTO} from "../../../dto/ShareDTO";
 
 @Component({
   selector: 'app-baiviet-forum',
@@ -17,80 +18,120 @@ import {CommentDTO} from "../../../dto/commentDTO";
   styleUrls: ['./baiviet-forum.component.css']
 })
 export class BaivietForumComponent implements OnInit {
-  // @ts-ignore
-   id_now: number;//id ng dung dang nhap
   constructor(
     private fb: FormBuilder,
-    private  loadcssServices: LoadcssServices, private  accountservice: ShareService,
-    private  activatedRouteService: ActivatedRoute, private router: Router,
+    private  toastr: ToastrService,
+    private  loadcssServices: LoadcssServices,
+    private  accountservice: ShareService,
+    private commentService: CommentService,
+    private  activatedRouteService: ActivatedRoute,
+    private router: Router,
     private token: TokenStorageService) {
+    this.loadcssServices.loadScript('assets/Client/Datdt/js.js')
     this.loadcssServices.loaddCss('assets/Client/fontawesome-free-5.15.2-web/css/all.css');
     this.loadcssServices.loaddCss('assets/Client/forum-mockup-master/css/style.css');
-    this.loadcssServices.loadScript('assets/Client/CSS/stylesMH.css');
+    this.loadcssServices.loaddCss('assets/Client/CSS/stylesMH.css');
+
+
+
   }
 
+  flagEdit = false;
   // @ts-ignore
-  public  id: number;
-  // @ts-ignore
-  public sub: Subscription;
-  // @ts-ignore
-  private Subscription: Subscription;
-  // @ts-ignore
-  public shareClasses: ShareClass[];
+    idCommentEdit: number;
+  id_now: number = 0;
+  public id: number = 0;
+  public shareClasses: ShareClass[] = [];
   public commentlist: CommentClass[] = [];
-  public  commentDto : CommentDTO[] = []
   // @ts-ignore
-  share: ShareClass;
+  public  commentclass : CommentClass;
   // @ts-ignore
+  comment: CommentDTO;
+  // @ts-ignore
+  account;
+  // @ts-ignore
+  sharedto: ShareDTO = new ShareDTO();
+  // @ts-ignore
+  share: ShareClass = new ShareClass();
+  @Output() onDeleteComment = new EventEmitter();
   commentForm = new FormGroup({
-    content: new FormControl('')
+    content: new FormControl('', [Validators.required, Validators.maxLength(255)]),
   })
 
   ngOnInit(): void {
     this.id = this.activatedRouteService.snapshot.params['id'];
-    // @ts-ignore
     this.accountservice.getOne(this.id).subscribe(data => {
       this.share = data
-      console.log(this.share);
     }, error => console.log(error))
     // @ts-ignore
-    this.share = new ShareClass();
-    // @ts-ignore
-    this.comment = new CommentDTO()
-    // @ts-ignore
+    this.comment = new CommentDTO();
     this.getAllComment()
+    this.account = this.token.getUser();
   }
 
   getAllComment() {
-    // @ts-ignore
-    this.accountservice = this.accountservice.getAllComment(this.id).subscribe(data => {
-      this.commentlist = data;
-      console.log(data);
-      console.log(this.commentlist);
+    this.commentService.getAllComment(this.id).subscribe(data => {
+      console.log(data)
+      this.commentlist = data.content;
     }, error => {
       console.log(error)
     });
   }
-  // @ts-ignore
-  comment: CommentDTO;
+
   onSubmit() {
-    //@ts-ignore
-    let id_user = JSON.parse(localStorage.getItem("auth-user"));
+    let id_user = JSON.parse(<string>localStorage.getItem("auth-user"));
     this.id_now = id_user['id'];
+    console.log(this.id_now)
     this.comment.id_account = this.id_now;
     this.comment.id_share = this.share.idshare
     this.comment.create_date = new Date();
-    console.log(this.comment);
-
-     this.accountservice.createComment(this.comment).subscribe(data => {
-      console.log(data)
+    this.comment.content = this.commentForm.value.content;
+    this.commentService.createComment(this.comment).subscribe(data => {
+      this.getAllComment();
     })
+    this.toastr.success('Bình luận thành công', 'Thông báo')
   }
-  // postComment() {
-  //   // @ts-ignore
-  //   this.accountservice = this.accountservice.createComment(this.comment).subscribe(data => {
-  //     console.log(data);
-  //   })
-  // }
+
+  getEditComments(idcm: number) {
+    if (this.commentForm.invalid) {
+      return;
+    } else {
+     // @ts-ignore
+     this.commentService.getbyIdComment(idcm)
+      console.log(this.commentForm.value, idcm)
+      this.commentService.updateComment(idcm,this.commentForm.value).subscribe(data => {
+        this.flagEdit = false;
+        this.ngOnInit();
+        this.toastr.success('Sửa bình luận thành công!', 'Thông báo')
+      })
+    }
+  }
+
+  getCommentDeleteById(idComment: number) {
+    if (idComment == null) {
+      this.toastr.warning('Xoá không thành công', 'Thông báo')
+    } else {
+      this.commentService.deleteComment(idComment).subscribe(data => {
+      })
+      this.toastr.success('Xóa bình luận thành công!', 'Thông báo')
+      this.refresh()
+    }
+  }
+
+  refresh(): void {
+    window.location.reload();
+  }
+
+  onClickShowComment() {
+    // this.size = this.size + 2;
+    // this.getCommentDeleteById();
+    // this.ngOnInit();
+  }
+
+  onClickHideComment() {
+    // this.size = 1;
+    // this.getAllListCommentSizeInPost();
+    // this.ngOnInit();
+  }
 
 }

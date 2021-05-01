@@ -36,13 +36,20 @@ import { ModuleDangtuyendungComponent } from './client/module-dangtuyendung/modu
 import { ModuleXemvcNtdComponent } from './client/module-xemvc-ntd/module-xemvc-ntd.component';
 import {HttpClientModule} from "@angular/common/http";
 import {JwPaginationModule} from "jw-angular-pagination";
-import { QuanlythongtinTaikhoanComponent } from './client/quanlythongtin-taikhoan/quanlythongtin-taikhoan.component';
+import { QuanlythongtinTaikhoanComponent } from './client/Quanlythongtin-taikhoanall/quanlythongtin-taikhoan/quanlythongtin-taikhoan.component';
 import {ToastrModule, ToastrService} from "ngx-toastr";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { ModuleTimkiemTrangchuComponent } from './client/module-timkiem-trangchu/module-timkiem-trangchu.component';
 import {NgxPaginationModule} from "ngx-pagination";
 import { PapeBaidangtuyenComponent } from './client/pape-baidangtuyen/pape-baidangtuyen.component';
-
+import {CommentService} from "./Services/Comment.Service";
+import {ShareService} from "./Services/Share.Service";
+import { QuanlybinhluanIndexComponent } from './admin/quanlybinhluan/quanlybinhluan-index/quanlybinhluan-index.component';
+import { QuanlybinhluanDetailsComponent } from './admin/quanlybinhluan/quanlybinhluan-details/quanlybinhluan-details.component';
+import { QuanlythongtinTaikhoanEditComponent } from './client/Quanlythongtin-taikhoanall/quanlythongtin-taikhoan-edit/quanlythongtin-taikhoan-edit.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import {AngularFireModule} from "@angular/fire";
+import {environment} from "../environments/environment";
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,6 +87,9 @@ import { PapeBaidangtuyenComponent } from './client/pape-baidangtuyen/pape-baida
     ModuleTimkiemTrangchuComponent,
     HeaderComponent,
     PapeBaidangtuyenComponent,
+    QuanlybinhluanIndexComponent,
+    QuanlybinhluanDetailsComponent,
+    QuanlythongtinTaikhoanEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -91,9 +101,14 @@ import { PapeBaidangtuyenComponent } from './client/pape-baidangtuyen/pape-baida
     JwPaginationModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    Ng2SearchPipeModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
-  providers: [],
+  providers: [
+    CommentService,
+    ShareService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,100 +1,114 @@
 <div class="d-flex flex-column" >
   <div id="content">
 
-    <form [formGroup]="contactForm" id="contactForm"  class="form-horizontal" role="form">
-      <h2>Thêm Mới Bài Đăng</h2>
+    <form  class="form-horizontal" role="form">
+      <h2>Chi Tiết Bài Đăng</h2>
       <div class="form-group">
-        <label for="decriptions" class="col-sm-3 control-label">Nội Dung</label>
+        <label  class="col-sm-3 control-label">Nội Dung</label>
         <div class="col-sm-9">
-          <input formControlName="decriptions" [(ngModel)]="account.decriptions" name="decriptions" type="text" id="decriptions" placeholder=""  class="form-control" autofocus>
+          <textarea [(ngModel)]="account.decriptions" name="decriptions" type="text"    class="form-control"></textarea>
         </div>
       </div>
       <div class="form-group">
-        <label for="title" class="col-sm-3 control-label">Tiêu Đề</label>
+        <label  class="col-sm-3 control-label">Tiêu Đề</label>
         <div class="col-sm-9">
-          <input formControlName="title" [(ngModel)]="account.title" name="title" type="text" id="title" placeholder="" class="form-control" autofocus>
+          <label  class="form-control" autofocus>{{account.title}}</label>
         </div>
       </div>
       <div class="form-group">
-        <label for="salary" class="col-sm-3 control-label">Mức Lương</label>
+        <label  class="col-sm-3 control-label">Mức Lương</label>
         <div class="col-sm-9">
-          <input formControlName="salary" [(ngModel)]="account.salary" name="salary" type="text" id="salary" placeholder="" class="form-control" autofocus>
+          <label   class="form-control" autofocus>{{account.salary}}</label>
         </div>
       </div> <div class="form-group">
-      <label for="name_nd" class="col-sm-3 control-label">Tên Người Đăng</label>
+      <label  class="col-sm-3 control-label">Tên Người Đăng</label>
       <div class="col-sm-9">
-        <input formControlName="name_nd" [(ngModel)]="account.name_nd" name="name_nd" type="text" id="name_nd" placeholder="" class="form-control" autofocus>
+        <label   class="form-control" autofocus>{{account.name_nd}}</label>
       </div>
     </div> <div class="form-group">
-      <label for="major" class="col-sm-3 control-label">Chuyên Ngành</label>
+      <label  class="col-sm-3 control-label">Chuyên Ngành</label>
       <div class="col-sm-9">
-        <input formControlName="major" [(ngModel)]="account.major" name="major" type="text" id="major" placeholder="" class="form-control" autofocus>
+        <label   class="form-control" autofocus>{{account.major}}</label>
       </div>
     </div> <div class="form-group">
-      <label for="benefit" class="col-sm-3 control-label">Quyền Lợi</label>
+      <label  class="col-sm-3 control-label">Quyền Lợi</label>
       <div class="col-sm-9">
-        <input formControlName="benefit" [(ngModel)]="account.benefit" name="benefit" type="text" id="benefit" placeholder="" class="form-control" autofocus>
+        <label   class="form-control" autofocus>{{account.benefit}}</label>
       </div>
     </div> <div class="form-group">
-      <label for="work_loaction" class="col-sm-3 control-label">Nơi Làm Việc</label>
+      <label  class="col-sm-3 control-label">Nơi Làm Việc</label>
       <div class="col-sm-9">
-        <input formControlName="work_loaction" [(ngModel)]="account.work_loaction" name="work_loaction" type="text" id="work_loaction" placeholder="" class="form-control" autofocus>
+        <label   class="form-control" autofocus>{{account.work_loaction}}</label>
       </div>
     </div> <div class="form-group">
-      <label for="address_nd" class="col-sm-3 control-label">Địa Chỉ Liên Hệ</label>
+      <label  class="col-sm-3 control-label">Địa Chỉ Liên Hệ</label>
       <div class="col-sm-9">
-        <input formControlName="address_nd" [(ngModel)]="account.address_nd" name="address_nd" type="text" id="address_nd" placeholder="" class="form-control" autofocus>
+        <label  class="form-control" autofocus>{{account.address_nd}}</label>
       </div>
     </div> <div class="form-group">
-      <label for="email_nd" class="col-sm-3 control-label">Email</label>
+      <label  class="col-sm-3 control-label">Email</label>
       <div class="col-sm-9">
-        <input formControlName="email_nd" [(ngModel)]="account.email_nd" name="email_nd" type="text" id="email_nd" placeholder="" class="form-control" autofocus>
+        <label  class="form-control" autofocus>{{account.email_nd}}</label>
       </div>
     </div> <div class="form-group">
-      <label for="profile_language" class="col-sm-3 control-label">Trình Độ Ngoại Ngữ</label>
+      <label class="col-sm-3 control-label">Trình Độ Ngoại Ngữ</label>
       <div class="col-sm-9">
-        <input formControlName="profile_language" [(ngModel)]="account.profile_language" name="profile_language" type="text" id="profile_language" placeholder="" class="form-control" autofocus>
+        <label    class="form-control" autofocus>{{account.profile_language}}</label>
       </div>
     </div> <div class="form-group">
-      <label for="sex" class="col-sm-3 control-label">Giới Tính</label>
+      <label  class="col-sm-3 control-label">Giới Tính</label>
       <div class="col-sm-9">
-        <input formControlName="sex" [(ngModel)]="account.sex" name="sex" type="text" id="sex" placeholder="" class="form-control" autofocus>
+        <label class="form-control" autofocus>{{account.sex}}</label>
       </div>
     </div>
       <div class="form-group">
-      <label for="phone" class="col-sm-3 control-label">Số Điện Thoại</label>
-      <div class="col-sm-9">
-        <input formControlName="phone" [(ngModel)]="account.phone" name="phone" type="text" id="phone" placeholder="" class="form-control" autofocus>
+        <label  class="col-sm-3 control-label">Số Điện Thoại</label>
+        <div class="col-sm-9">
+          <label  class="form-control" autofocus>{{account.phone}}</label>
+        </div>
       </div>
-    </div>
       <div class="form-group">
-      <label for="degree" class="col-sm-3 control-label">Trình Độ</label>
-      <div class="col-sm-9">
-        <input formControlName="degree" [(ngModel)]="account.degree" name="degree" type="text" id="degree" placeholder="" class="form-control" autofocus>
-      </div>
+        <label  class="col-sm-3 control-label">Trình Độ</label>
+        <div class="col-sm-9">
+          <label  class="form-control" autofocus>{{account.degree}}</label>
+        </div>
         <div class="form-group">
-          <label for="idAccount" class="col-sm-3 control-label">ID Account</label>
+          <label  class="col-sm-3 control-label">ID Account</label>
           <div class="col-sm-9">
-            <input formControlName="idAccount" [(ngModel)]="account.account.id_account" name="idAccount" type="text" id="idAccount" placeholder="" class="form-control" autofocus>
+            <label class="form-control" autofocus>{{account.account.fullName}}</label>
           </div>
           <div class="form-group">
-            <label for="idCategory" class="col-sm-3 control-label">ID Category</label>
+            <label for="idCategory" class="col-sm-3 control-label">Category</label>
             <div class="col-sm-9">
-              <input formControlName="idCategory" [(ngModel)]="account.category.idCategory" name="idCategory" type="text" id="idCategory" placeholder="" class="form-control" autofocus>
+              <label id="idCategory" class="form-control" autofocus>{{account.category.name}}</label>
             </div>
-      <div class="col-sm-9">
-        <button   type="submit" class="btn btn-primary btn-block" (click)="onSubmit()">Thêm mới</button>
-      </div>
-      </div>
+            <div class="col-sm-9">
+              <button   type="submit" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModalCenter">Quay Lại</button>
+              <div>
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Thông Báo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        Bạn muốn quay lại trang danh sách bài đăng
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                        <button type="button" class="btn btn-primary" (click)="onSubmit()">Quay Lại</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </form> <!-- /form -->
-    <footer class="sticky-footer bg-white">
-      <div class="container my-auto">
-        <div class="copyright text-center my-auto">
-          <span>Copyright &copy; Your Website 2020</span>
-        </div>
-      </div>
-    </footer>
   </div>
 </div>

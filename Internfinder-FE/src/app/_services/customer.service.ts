@@ -14,7 +14,7 @@ export class CustomerAuthService implements CanActivate{
   canActivate(route: ActivatedRouteSnapshot): boolean {
     const token = this.tokenStorageService.getToken();
     if (token == null) {
-      this.router.navigateByUrl('/login/dangnhap/admin');
+      this.router.navigateByUrl('/login/dangnhap/client');
       return false;
     }else {
       return true;

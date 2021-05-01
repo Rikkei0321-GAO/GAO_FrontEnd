@@ -19,11 +19,12 @@
               </ul>
               <div class=" ml-auto ">
                 <ul class="top_bar_contact_list">
-                  <li>
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <div class="contact-no">
-                      <a href="login/dangnhap/client" style="color: white">&nbsp;Đăng nhập</a>
-                    </div>
+                  <li class="dropdown ">
+                    <a class="dropdown-toggle" style="color: white" data-toggle="dropdown" >Đăng Nhập</a>
+                    <ul class="dropdown-menu">
+                      <li><a style="color: white" href="/login/dangnhap/client">Đăng Nhập</a></li>
+                      <li><a style="color: white" (click)="getOneByID()">Thông tin tài khoản</a></li>
+                    </ul>
                   </li>
                   <li class="dropdown ">
                     <a class="dropdown-toggle" style="color: white" data-toggle="dropdown" >Đăng kí</a>

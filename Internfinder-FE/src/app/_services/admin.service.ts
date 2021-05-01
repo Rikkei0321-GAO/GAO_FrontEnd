@@ -27,7 +27,7 @@ export class AdminAuthService implements CanActivate{
   isRole() {
     const tokenPayload = this.tokenStorageService.getUser().roles;
     for (const role of tokenPayload) {
-      if (role === 'ROLE_ADMIN') {
+      if (role === "admin") {
         return true;
       }
     }

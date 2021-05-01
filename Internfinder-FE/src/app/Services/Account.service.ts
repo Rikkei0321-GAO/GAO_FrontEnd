@@ -15,7 +15,6 @@ export class AccountService{
       , 'Access-Control-Allow-Origin': 'http://localhost:4200', 'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS'
     };
   }
-  private _Accountlist : AccountClass[]= [];
   getAll():Observable<AccountClass[]>{
     return this.httpClient.get<AccountClass[]>(baseURL + '/index')
   }
@@ -26,7 +25,7 @@ export class AccountService{
 
   edit(id: number, data: AccountClass):Observable<AccountClass>{
     // @ts-ignore
-    return  this.httpClient.put(`${'http://localhost:8080/quanlytaikhoan'}/${data.idAccount}`, data)
+    return  this.httpClient.put(`${`http://localhost:8080/quanlytaikhoan`}/${data.id_account}`, data)
   }
   delete(idaccount: number): Observable<any>{
       // @ts-ignore
@@ -37,12 +36,14 @@ export class AccountService{
     // @ts-ignore
     return this.httpClient.get(`${'http://localhost:8080/quanlytaikhoan'}/${id}`);
   }
-
-  get Accountlist() {
-    return this._Accountlist;
+  editA(id: number, data: AccountClass):Observable<AccountClass>{
+    // @ts-ignore
+    return  this.httpClient.put('http://localhost:8080/quanlytaikhoan/'+id, data, this.httpOptions)
+  }
+  // @ts-ignore
+  seach(searchtext: any): Observable<AccountClass[]>{
+    // @ts-ignore
+    return this.httpClient.get<AccountClass[]>(`${'http://localhost:8080/quanlytaikhoan/seach'}/${searchtext}`);
   }
 
-  set Accountlist(value) {
-    this._Accountlist = value;
-  }
 }

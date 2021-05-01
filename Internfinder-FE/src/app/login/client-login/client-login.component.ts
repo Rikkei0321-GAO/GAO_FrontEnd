@@ -18,7 +18,7 @@ export class ClientLoginComponent implements OnInit {
   roles: string[] = [];
 
   constructor(private authService: AuthService, private tokenStorage: TokenStorageService,
-              private router: Router) { }
+              private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -35,11 +35,18 @@ export class ClientLoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
-        this.router.navigate(['']);
+        this.router.navigate(['']).then(()=>{
+          this.toastr.success('', "Đăng nhập thành công  ");
+        });
       },
+
       err => {
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
+        this.toastr.error("Sai tên đăng nhập hoặc mật khẩu hoặc tài khoản chưa được kích hoạt", "Đăng nhập thất bại: ", {
+          timeOut: 3000,
+          extendedTimeOut: 1500
+        });
       }
     );
   }
