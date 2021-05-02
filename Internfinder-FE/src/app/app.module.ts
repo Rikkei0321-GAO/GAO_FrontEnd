@@ -42,6 +42,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { ModuleTimkiemTrangchuComponent } from './client/module-timkiem-trangchu/module-timkiem-trangchu.component';
 import {NgxPaginationModule} from "ngx-pagination";
 import { PapeBaidangtuyenComponent } from './client/pape-baidangtuyen/pape-baidangtuyen.component';
+import {environment} from "../environments/environment";
+import {AngularFireModule} from "@angular/fire";
 
 @NgModule({
   declarations: [
@@ -89,6 +91,7 @@ import { PapeBaidangtuyenComponent } from './client/pape-baidangtuyen/pape-baida
     HttpClientModule,
     ReactiveFormsModule,
     JwPaginationModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
     NgxPaginationModule

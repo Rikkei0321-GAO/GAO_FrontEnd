@@ -28,7 +28,7 @@
             </thead>
             <tbody>
             <tr *ngFor="let item of quanlytaikhoans">
-              <td>{{item.idAccount}}</td>
+<!--              <td>{{item.idAccount}}</td>-->
               <td>{{item.username}}</td>
               <td>{{item.fullName}}</td>
               <td>{{item.createDate}}</td>
@@ -41,8 +41,8 @@
                   <input type="checkbox" [checked]="item.status">
                   <span class="slider round"></span>
                   </label><td>
-              <a class="btn btn-primary" (click)="OnEdit(item.idAccount)">Sửa</a>
-              <a href="admin/quanlytaikhoan/index" class="btn btn-primary btn-red" (click)="Ondelete(item.idAccount)">Xóa</a>
+<!--              <a class="btn btn-primary" (click)="OnEdit(item.idAccount)">Sửa</a>-->
+<!--              <a href="admin/quanlytaikhoan/index" class="btn btn-primary btn-red" (click)="Ondelete(item.idAccount)">Xóa</a>-->
             </td>
             </tr>
             </tbody>

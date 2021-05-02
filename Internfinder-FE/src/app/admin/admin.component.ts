@@ -1,6 +1,8 @@
+// @ts-ignore
 import { Component, OnInit } from '@angular/core';
 import { LoadcssServices} from '../Services/loadcss.services';
 
+// @ts-ignore
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
