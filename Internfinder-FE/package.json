@@ -29,6 +29,7 @@
     "jw-angular-pagination": "^1.2.0",
     "mongoose-paginate": "^5.0.3",
     "ngx-pagination": "^5.0.0",
+    "ngx-paypal": "^7.0.0",
     "ngx-toastr": "^13.2.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

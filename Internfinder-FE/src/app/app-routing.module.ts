@@ -37,6 +37,11 @@ import {AdminAuthService} from "./_services/admin.service";
 import {CustomerAuthService} from "./_services/customer.service";
 import {QuanlybaidangtuyenNvdComponent} from "./client/quanlybaidang-nvd-mrdat/quanlybaidangtuyen-nvd/quanlybaidangtuyen-nvd.component";
 import {QuanlybaidangNvdMrdatDetailsComponent} from "./client/quanlybaidang-nvd-mrdat/quanlybaidang-nvd-mrdat-details/quanlybaidang-nvd-mrdat-details.component";
+import {ResetPasswordComponent} from "./login/reset-password/reset-password.component";
+import {VerifyResetPasswordComponent} from "./login/verify-reset-password/verify-reset-password.component";
+import {PaypalComponent} from "./client/pay/paypal/paypal.component";
+import {PayPackageComponent} from "./client/pay/pay-package/pay-package.component";
+import {QuanlycvSvComponent} from "./client/quanlycv/quanlycv-sv/quanlycv-sv.component";
 
 const routes: Routes = [
 
@@ -78,6 +83,10 @@ const routes: Routes = [
         {path: 'quanlybaidangtuyen/details/:id', component: QuanlybaidangNvdMrdatDetailsComponent, canActivate:[CustomerAuthService]},
         {path: 'timkiem-trangchu', component: ModuleTimkiemTrangchuComponent},
         {path: 'xembaidangtuyen', component: PapeBaidangtuyenComponent},
+        {path: 'pay-package', component: PayPackageComponent, canActivate:[CustomerAuthService]},
+        {path: 'paypal', component: PaypalComponent,canActivate:[CustomerAuthService]},
+        {path: 'quanlycv-sv', component: QuanlycvSvComponent,canActivate:[CustomerAuthService]},
+
 
       ]
   },
@@ -88,6 +97,9 @@ const routes: Routes = [
         {path: 'dangnhap/client', component: ClientLoginComponent},
         {path: 'dangky/sinhvien', component: DangkysinhvienComponent},
         {path: 'dangky/nhatuyendung', component: DangkyNTTComponent},
+        {path: 'reset-password', component: ResetPasswordComponent},
+        {path: 'verify-reset-password', component: VerifyResetPasswordComponent},
+
 
       ]
   }

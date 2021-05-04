@@ -52,6 +52,12 @@ import {AngularFireModule} from "@angular/fire";
 import {environment} from "../environments/environment";
 import { QuanlybaidangtuyenNvdComponent } from './client/quanlybaidang-nvd-mrdat/quanlybaidangtuyen-nvd/quanlybaidangtuyen-nvd.component';
 import { QuanlybaidangNvdMrdatDetailsComponent } from './client/quanlybaidang-nvd-mrdat/quanlybaidang-nvd-mrdat-details/quanlybaidang-nvd-mrdat-details.component';
+import { ResetPasswordComponent } from './login/reset-password/reset-password.component';
+import { VerifyResetPasswordComponent } from './login/verify-reset-password/verify-reset-password.component';
+import { PayPackageComponent } from './client/pay/pay-package/pay-package.component';
+import { PaypalComponent } from './client/pay/paypal/paypal.component';
+import {NgxPayPalModule} from "ngx-paypal";
+import { QuanlycvSvComponent } from './client/quanlycv/quanlycv-sv/quanlycv-sv.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -94,6 +100,11 @@ import { QuanlybaidangNvdMrdatDetailsComponent } from './client/quanlybaidang-nv
     QuanlythongtinTaikhoanEditComponent,
     QuanlybaidangtuyenNvdComponent,
     QuanlybaidangNvdMrdatDetailsComponent,
+    ResetPasswordComponent,
+    VerifyResetPasswordComponent,
+    PayPackageComponent,
+    PaypalComponent,
+    QuanlycvSvComponent,
   ],
   imports: [
     BrowserModule,
@@ -107,7 +118,8 @@ import { QuanlybaidangNvdMrdatDetailsComponent } from './client/quanlybaidang-nv
     BrowserAnimationsModule,
     NgxPaginationModule,
     Ng2SearchPipeModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    NgxPayPalModule
   ],
   providers: [
     CommentService,

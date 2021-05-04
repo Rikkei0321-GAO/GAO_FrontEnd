@@ -3,6 +3,9 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Cv_apply} from "../model/Cv_apply";
 
+
+const baseURL = 'http://localhost:8080/quanlycvapply';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -20,4 +23,13 @@ export  class cvapplyService {
   deleteId(id: number):Observable<any>{
     return  this.httpClient.delete('http://localhost:8080/quanlycvapply/delete/'+id, this.httpOptions)
   }
+  getOne(id: number): Observable<any>{
+    // @ts-ignore
+    return this.httpClient.get<CV[]>(`${'http://localhost:8080/quanlycvapply/file'}/${id}`,this.httpOptions);
+  }
+
+  getAll(): Observable<Cv_apply[]> {
+    return this.httpClient.get<Cv_apply[]>(baseURL + '/index')
+  }
+
 }
