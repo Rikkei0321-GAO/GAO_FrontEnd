@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="box-content" *ngIf="id_now != null; else disableform">
+    <div class="col-lg-8">
+      <hr>
+      <div class="box-group-body">
+        <a class="text-orange" style="text-align: center">Danh Sảnh các CV Ứng tuyển vào bài đăng của bạn</a>
+        <div id="cv-list" *ngFor="let item of Cv_list |paginate: {itemsPerPage: 3, currentPage: pageOfItems}">
+          <div class="box box-white cv no-gutter clearfix">
+            <div class="hidden-xs col-sm-3 col-cv-thumb"><a
+              target="_blank"
+              class="avatar-small"><img
+              [src]="item.account.image"
+              class="img-responsive"></a>
+            </div>
+            <div class="col-xs-12 col-sm-9 col-cv-data">
+              <div class="clearfix"><h4 class="cv-title pull-left"><!----> <a
+                [href]="item.url"
+                class="text-highlight bold">{{item.account.fullName}}</a></h4> <span
+                class="cv-date text-gray pull-right"><i
+                aria-hidden="true"
+                class="fa fa-clock-o text-highlight"></i>{{item.create_date |date :'dd/mm/yyyy'}}</span>
+              </div>
+              <div class="cv-url text-gray"><input type="text" [ngModel]="item.url" readonly="readonly"></div>
+              <ul class="cv-action text-dark-gray">
+                <li><a target="_blank" [href]="item.url"
+                       class="btn btn-sm bold"><i class="fa fa-eye"></i> Xem</a></li>
+                <li><a href="javascript:void(true)" data-id="8d19ecc1d387f77a8643e8435662bc99"
+                       class="btn btn-sm bold btn-download-cv"><i class="fa fa-download"></i> Tải xuống</a></li>
+                <li><a data-toggle="modal" data-cv-id="8d19ecc1d387f77a8643e8435662bc99" data-target="#confirmDelete"
+                       class="btn btn-sm bold" (click)="deletebyid(item.id_apply)"><i class="fa fa-trash"></i> Xóa</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="box box-white cv no-gutter clearfix box-no-padding"></div>
+        </div>
+      </div>
+      <div class="card-footer pb-0 pt-3">
+        <pagination-controls (pageChange)="pageOfItems = $event"></pagination-controls>
+      </div>
+    </div>
+    <div class="col-lg-4" style="margin-top: 20px">
+        <div class="row">
+            <div class="" style="font-size: 14px">
+              <div class="col-lg-12" style="text-align: center">
+                <a class="btn btn-sm btn-topcv-primary" style="text-align: center">Nâng cấp tài
+                  khoản</a>
+              </div>
+
+            </div>
+
+        <div class="row"></div>
+          <input type="hidden" id="currentStatus" value="">
+
+        </div>
+      </div>
+    </div>
+  <ng-template #disableform>
+    <h1>Thông tin mang tính bảo mật vui lòng xin cấp quyền</h1>
+  </ng-template>
+  </div>
+
+
+

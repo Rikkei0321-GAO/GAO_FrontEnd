@@ -35,6 +35,8 @@ import {QuanlybinhluanDetailsComponent} from "./admin/quanlybinhluan/quanlybinhl
 import {QuanlythongtinTaikhoanEditComponent} from "./client/Quanlythongtin-taikhoanall/quanlythongtin-taikhoan-edit/quanlythongtin-taikhoan-edit.component";
 import {AdminAuthService} from "./_services/admin.service";
 import {CustomerAuthService} from "./_services/customer.service";
+import {QuanlybaidangtuyenNvdComponent} from "./client/quanlybaidang-nvd-mrdat/quanlybaidangtuyen-nvd/quanlybaidangtuyen-nvd.component";
+import {QuanlybaidangNvdMrdatDetailsComponent} from "./client/quanlybaidang-nvd-mrdat/quanlybaidang-nvd-mrdat-details/quanlybaidang-nvd-mrdat-details.component";
 
 const routes: Routes = [
 
@@ -71,7 +73,9 @@ const routes: Routes = [
         {path: 'dangtuyendung', component: ModuleDangtuyendungComponent},
         {path: 'xemcv-ntd', component: ModuleXemvcNtdComponent},
         {path: 'profile/:id', component: QuanlythongtinTaikhoanComponent, canActivate:[CustomerAuthService]},
-        {path: 'profile/edit/:id', component: QuanlythongtinTaikhoanEditComponent, canActivate:[CustomerAuthService]    },
+        {path: 'profile/edit/:id', component: QuanlythongtinTaikhoanEditComponent, canActivate:[CustomerAuthService]},
+        {path: 'quanlybaidangtuyen', component: QuanlybaidangtuyenNvdComponent, canActivate:[CustomerAuthService]},
+        {path: 'quanlybaidangtuyen/details/:id', component: QuanlybaidangNvdMrdatDetailsComponent, canActivate:[CustomerAuthService]},
         {path: 'timkiem-trangchu', component: ModuleTimkiemTrangchuComponent},
         {path: 'xembaidangtuyen', component: PapeBaidangtuyenComponent},
 

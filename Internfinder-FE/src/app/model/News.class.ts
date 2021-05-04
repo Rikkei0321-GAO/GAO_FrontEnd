@@ -22,8 +22,9 @@ export class NewsClass {
   profile_requirement:string
   phone:string
   status: boolean
+  create_date: Date
 
-  constructor(idNews: number, account: AccountClass, category: Category, decriptions: string, title: string, image: string, position: string, salary: string, work_loaction: string, degree: string, major: string, benefit: string, sex: string, name_nd: string, address_nd: string, email_nd: string, profile_language: string, profile_requirement: string, phone: string, status: boolean) {
+  constructor(idNews: number, create_date: Date, account: AccountClass, category: Category, decriptions: string, title: string, image: string, position: string, salary: string, work_loaction: string, degree: string, major: string, benefit: string, sex: string, name_nd: string, address_nd: string, email_nd: string, profile_language: string, profile_requirement: string, phone: string, status: boolean) {
     this.idNews = idNews;
     this.account = account;
     this.category = category;
@@ -44,5 +45,6 @@ export class NewsClass {
     this.profile_requirement = profile_requirement;
     this.phone = phone;
     this.status = status;
+    this.create_date = create_date;
   }
 }

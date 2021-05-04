@@ -35,7 +35,7 @@ export class BaivietForumComponent implements OnInit {
 
 
   }
-
+  pageOfItems: number = 1
   flagEdit = false;
   // @ts-ignore
     idCommentEdit: number;

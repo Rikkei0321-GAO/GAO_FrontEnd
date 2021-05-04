@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {LoadcssServices} from "../../../Services/loadcss.services";
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ShareDTO} from "../../../dto/ShareDTO";
 import {ShareService} from "../../../Services/Share.Service";
 import {Subscription} from "rxjs";
 import {Router} from "@angular/router";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-dangbaiviet-forum',
@@ -15,17 +16,17 @@ export class DangbaivietForumComponent implements OnInit {
 
   constructor( private  loadcssServices: LoadcssServices,
                private  ShareService: ShareService,
-               private  router: Router
+               private  router: Router,
+               private  toaser: ToastrService
                ) {
     this.loadcssServices.loaddCss('assets/Client/fontawesome-free-5.15.2-web/css/all.css');
     this.loadcssServices.loaddCss('assets/Client/forum-mockup-master/css/style.css');
-
   }
   // @ts-ignore
   sharedto: ShareDTO
   sharepostform = new FormGroup({
-    title: new FormControl(''),
-    content: new FormControl(''),
+    title: new FormControl('',[Validators.required]),
+    content: new FormControl('',[Validators.required]),
     create_date: new FormControl('')
   })
   ngOnInit(): void {
@@ -38,9 +39,9 @@ export class DangbaivietForumComponent implements OnInit {
     // @ts-ignore
     let id_user = JSON.parse(localStorage.getItem("auth-user"));
     this.id_now = id_user['id'];
-    this.sharepostform.value.create_date = new Date()
+    this.sharepostform.value.create_date = new Date().getDate()
     this.ShareService.createSharepost(this.sharepostform.value, id_user.id).subscribe(data=>{
-      console.log(alert("Thêm mới Thành Công"));
+      this.toaser.success('Thêm mới thành công')
       this.router.navigate(['/forum']);
     }, error => {
       console.log(error);

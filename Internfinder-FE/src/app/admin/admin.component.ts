@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadcssServices} from '../Services/loadcss.services';
+import {Route, Router} from "@angular/router";
+import {TokenStorageService} from "../_services/token-storage.service";
 
 @Component({
   selector: 'app-admin',
@@ -8,9 +10,10 @@ import { LoadcssServices} from '../Services/loadcss.services';
 })
 export class AdminComponent implements OnInit {
 
-  constructor(private  loadcssServices: LoadcssServices) {
+  constructor(private  loadcssServices: LoadcssServices,
+              private  tokenStorage: TokenStorageService,
+              private  router: Router) {
     this.loadcssServices.loaddCss('assets/admin/css/sb-admin-2.min.css');
-    this.loadcssServices.loaddCss('assets/admin/vendor/fontawesome-free/css/all.min.css');
     this.loadcssServices.loaddCss('assets/admin/vendor/datatables/dataTables.bootstrap4.min.css');
     this.loadcssServices.loaddCss('assets/admin/css/switch-btn.css');
     this.loadcssServices.loaddCss('assets/admin/css/choosetemplate.min.css')
@@ -22,7 +25,24 @@ export class AdminComponent implements OnInit {
     }, 300);
   }
 
+  // @ts-ignore
+  account;
+  isLoggedIn = false;
+  id_now :number=0
   ngOnInit(): void {
+
+    if(this.tokenStorage.getUser()!=null){
+      this.isLoggedIn=true;
+    }
+
+  }
+  logout(){
+    this.tokenStorage.signOut();
+    window.location.reload();
+  }
+
+  getOneByID(){
+    this.router.navigate(['/profile',this.tokenStorage.getUser().id])
   }
 
 }

@@ -5,13 +5,13 @@
 export const environment = {
   production: false,
   firebaseConfig : {
-    apiKey: "AIzaSyDZ6TO2svcVQTBp1h_3kDB3AjfLHy1SrPg",
-    authDomain: "internfinder-gao.firebaseapp.com",
-    projectId: "internfinder-gao",
-    storageBucket: "internfinder-gao.appspot.com",
-    messagingSenderId: "711294962009",
-    appId: "1:711294962009:web:b2c087b0d34bf50006a448",
-    measurementId: "G-9TRV891KW3"
+    apiKey: "AIzaSyBexzj1WqONXYyTM76IGndC_ySJbyNx9ZA",
+    authDomain: "gao-internfinder-d778c.firebaseapp.com",
+    projectId: "gao-internfinder-d778c",
+    storageBucket: "gao-internfinder-d778c.appspot.com",
+    messagingSenderId: "106656489271",
+    appId: "1:106656489271:web:9f232d056bab2cc803c4b2",
+    measurementId: "G-03X2E3DF4H"
   }
 };
 

@@ -17,13 +17,12 @@
                   </div>
                 </li>
               </ul>
-              <div class=" ml-auto ">
+              <div *ngIf="!isLoggedIn;else loggout" class=" ml-auto ">
                 <ul class="top_bar_contact_list">
                   <li class="dropdown ">
                     <a class="dropdown-toggle" style="color: white" data-toggle="dropdown" >Đăng Nhập</a>
                     <ul class="dropdown-menu">
                       <li><a style="color: white" href="/login/dangnhap/client">Đăng Nhập</a></li>
-                      <li><a style="color: white" (click)="getOneByID()">Thông tin tài khoản</a></li>
                     </ul>
                   </li>
                   <li class="dropdown ">
@@ -35,19 +34,25 @@
                   </li>
                 </ul>
               </div>
-              <div class=" ml-auto ">
-                <ul class="top_bar_contact_list">
-                  <li>
+              <ng-template #loggout class=" ml-auto ">
+                <ul style="margin-left: auto!important;" class="top_bar_contact_list">
+                  <li >
+                    <i class="fa fa-edit" aria-hidden="true"></i>
+                    <div class="contact-no">
+                      <a style="color: white;cursor: pointer" (click)="getOneByID()">Thông tin tài khoản</a>
+                    </div>
+                  <li><a style="color: white;cursor: pointer" routerLink="/quanlybaidangtuyen">Quản lý bài đăng</a></li>
+                  <li >
                     <i class="fa fa-edit" aria-hidden="true"></i>
                     <div class="contact-no">
                       <a (click)="logout()" style="color: white;cursor: pointer">&nbsp; Đăng xuất</a>
                     </div>
                   </li>
                 </ul>
-              </div>
+              </ng-template>
               <div class="menu-ml">
                 <div class="hamburger menu_mm  search_button transparent search display"><i
-                  class="large material-icons font-color-white  search-icone  menu_mm ">menu</i>
+                  class="large material-icons font-color-white  search-icone  menu_mm " ></i>
                 </div>
               </div>
             </div>
@@ -57,51 +62,6 @@
     </div>
   </div>
 
-  <!--  <div class="header_container background-color-orange-light">-->
-  <!--    <div class="container">-->
-  <!--      <div class="row">-->
-  <!--        <div class="col">-->
-  <!--          <div class="header_content d-flex flex-row align-items-center justify-content-start">-->
-  <!--            <div class="logo_container">-->
-  <!--              <a href="index.html">-->
-  <!--                <img src="../../../assets/Client/minhhoang/imags/interfinder.jpg" style="max-width: 170px;" class="logo-text" alt="">-->
-  <!--              </a>-->
-  <!--            </div>-->
-  <!--            <nav class="main_nav_contaner ml-auto">-->
-  <!--              <ul class="main_nav">-->
-  <!--                <li class="dropdown active ">-->
-  <!--                  <a class="dropdown-toggle" data-toggle="dropdown">Trang chủ</a>-->
-  <!--                  <ul class="dropdown-menu">-->
-  <!--                    <li><a href="index.html">Nhà tuyển dụng</a></li>-->
-  <!--                    <li><a href="index2.html">Người tìm việc</a></li>-->
-  <!--                  </ul>-->
-  <!--                </li>-->
-  <!--                <li class="dropdown ">-->
-  <!--                  <a class="dropdown-toggle" data-toggle="dropdown" >Kĩ năng</a>-->
-  <!--                  <ul class="dropdown-menu">-->
-  <!--                    <li><a href="job_category.html">Khóa Học</a></li>-->
-  <!--                    <li><a href="job_detail.html">Phỏng Vấn</a></li>-->
-  <!--                  </ul>-->
-  <!--                </li>-->
-  <!--                <li><a href="blog_page.html">Việc làm</a></li>-->
-  <!--                <li><a href="blog_page.html">Diễn đàn</a></li>-->
-  <!--                <li><a href="about_us.html">Công ty</a></li>-->
-  <!--                <li><a href="contact.html">Liên hệ</a></li>-->
-  <!--              </ul>-->
-  <!--              <div class=" Post-Jobs">-->
-  <!--                <a href="post_job.html" class="">-->
-  <!--                  Mẫu CV-->
-  <!--                </a>-->
-  <!--              </div>-->
-  <!--              <div class="hamburger menu_mm menu-vertical">-->
-  <!--                <i class="large material-icons font-color-white menu_mm menu-vertical">menu</i>-->
-  <!--              </div>-->
-  <!--            </nav>-->
-  <!--          </div>-->
-  <!--        </div>-->
-  <!--      </div>-->
-  <!--    </div>-->
-  <!--  </div>-->
 
   <div class="header_container background-color-orange-light">
     <div class="container">
@@ -134,7 +94,6 @@
                 <li><a href="/timkiemtra">Việc làm</a></li>
                 <li><a routerLink="/xembaidangtuyen">Công ty</a></li>
                 <li><a routerLink="/forum">Diễn đàn</a></li>
-                <li><a href="#">Liên hệ</a></li>
               </ul>
               <div class=" Post-Jobs">
                 <a routerLink="/dangtuyendung" style="color: white;">Đăng bài</a>
@@ -184,6 +143,7 @@
         <li><a href="blog_page.html">Diễn đàn</a></li>
         <li><a href="about_us.html">Công ty</a></li>
         <li><a href="contact.html">Liên hệ</a></li>
+
       </ul>
     </nav>
   </div>

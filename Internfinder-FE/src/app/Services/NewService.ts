@@ -20,7 +20,6 @@ export class NewService {
     };
   }
 
-  private _Accountlist: NewsClass[] = [];
 
   getAll(): Observable<NewsClass[]> {
     return this.httpClient.get<NewsClass[]>(baseURL + '/index')
@@ -46,15 +45,13 @@ export class NewService {
     return this.httpClient.get(`${'http://localhost:8080/quanlybaidang'}/${id}`);
   }
 
-  get Accountlist() {
-    return this._Accountlist;
-  }
-
-  set Accountlist(value) {
-    this._Accountlist = value;
-  }
   seach(searchtext: any): Observable<NewsClass[]>{
     // @ts-ignore
     return this.httpClient.get<NewsClass[]>(`${'http://localhost:8080/quanlybaidang/seach'}/${searchtext}`);
+  }
+  getAllbyIdAccount(id: number):Observable<any>{
+
+    return this.httpClient.get(baseURL+'/mybaidang/'+ id, this.httpOptions)
+
   }
 }
