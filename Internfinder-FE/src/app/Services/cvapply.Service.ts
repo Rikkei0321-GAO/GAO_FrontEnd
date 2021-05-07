@@ -2,6 +2,7 @@ import {Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Cv_apply} from "../model/Cv_apply";
+import {newdto} from "../model/Newdto";
 
 
 const baseURL = 'http://localhost:8080/quanlycvapply';
@@ -32,4 +33,8 @@ export  class cvapplyService {
     return this.httpClient.get<Cv_apply[]>(baseURL + '/index')
   }
 
+  addApply(data: any): Observable<any>{
+    console.log("kaka:" + data);
+    return this.httpClient.post<Cv_apply>('http://localhost:8080/apply/create-apply', data);
+  }
 }

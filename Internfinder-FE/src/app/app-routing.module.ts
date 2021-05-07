@@ -42,6 +42,7 @@ import {VerifyResetPasswordComponent} from "./login/verify-reset-password/verify
 import {PaypalComponent} from "./client/pay/paypal/paypal.component";
 import {PayPackageComponent} from "./client/pay/pay-package/pay-package.component";
 import {QuanlycvSvComponent} from "./client/quanlycv/quanlycv-sv/quanlycv-sv.component";
+import {EditbaidangComponent} from "./client/editbaidang/editbaidang.component";
 
 const routes: Routes = [
 
@@ -75,18 +76,18 @@ const routes: Routes = [
         {path: 'forum', component: TrangchuForumComponent, canActivate:[CustomerAuthService]},
         {path: 'forum/index/:id', component: BaivietForumComponent,canActivate:[CustomerAuthService]},
         {path: 'dangbaichiase', component: DangbaivietForumComponent, canActivate:[CustomerAuthService]},
-        {path: 'dangtuyendung', component: ModuleDangtuyendungComponent},
+        {path: 'dangtuyendung', component: ModuleDangtuyendungComponent,canActivate: [CustomerAuthService]},
         {path: 'xemcv-ntd', component: ModuleXemvcNtdComponent},
         {path: 'profile/:id', component: QuanlythongtinTaikhoanComponent, canActivate:[CustomerAuthService]},
         {path: 'profile/edit/:id', component: QuanlythongtinTaikhoanEditComponent, canActivate:[CustomerAuthService]},
         {path: 'quanlybaidangtuyen', component: QuanlybaidangtuyenNvdComponent, canActivate:[CustomerAuthService]},
         {path: 'quanlybaidangtuyen/details/:id', component: QuanlybaidangNvdMrdatDetailsComponent, canActivate:[CustomerAuthService]},
         {path: 'timkiem-trangchu', component: ModuleTimkiemTrangchuComponent},
-        {path: 'xembaidangtuyen', component: PapeBaidangtuyenComponent},
+        {path: 'xembaidangtuyen/:idNew', component: PapeBaidangtuyenComponent},
         {path: 'pay-package', component: PayPackageComponent, canActivate:[CustomerAuthService]},
         {path: 'paypal', component: PaypalComponent,canActivate:[CustomerAuthService]},
         {path: 'quanlycv-sv', component: QuanlycvSvComponent,canActivate:[CustomerAuthService]},
-
+        {path: 'editbaidang/:idNews', component: EditbaidangComponent,canActivate: [CustomerAuthService]}
 
       ]
   },

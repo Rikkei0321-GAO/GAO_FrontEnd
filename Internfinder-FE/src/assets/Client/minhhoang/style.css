@@ -2661,11 +2661,11 @@ html .ui-button.ui-state-disabled:active {
 
 #job-Details {
     position: relative;
-    margin-bottom: 1079px
+    /*margin-bottom: 1079px*/
 }
 
 #job-Details .job-Details {
-    position: absolute;
+    /*position: absolute;*/
     box-shadow: 0 6px 22px 0 #eaeaea;
     left: 0;
     right: 0;
@@ -2676,7 +2676,7 @@ html .ui-button.ui-state-disabled:active {
 }
 
 #job-Details .job-Details .Exclusive-Product {
-    padding: 70px 85px 55px 45px
+    padding: 70px 85px 20px 45px
 }
 
 #job-Details .job-Details .Exclusive-Product h3 {

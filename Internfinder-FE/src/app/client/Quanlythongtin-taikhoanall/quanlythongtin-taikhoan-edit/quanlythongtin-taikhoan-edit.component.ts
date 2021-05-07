@@ -86,7 +86,5 @@ export class QuanlythongtinTaikhoanEditComponent implements OnInit {
       })
     ).subscribe();
   }
-
-
 }
 

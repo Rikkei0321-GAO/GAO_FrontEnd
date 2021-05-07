@@ -58,6 +58,10 @@ import { PayPackageComponent } from './client/pay/pay-package/pay-package.compon
 import { PaypalComponent } from './client/pay/paypal/paypal.component';
 import {NgxPayPalModule} from "ngx-paypal";
 import { QuanlycvSvComponent } from './client/quanlycv/quanlycv-sv/quanlycv-sv.component';
+import { EditbaidangComponent } from './client/editbaidang/editbaidang.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatSelectModule} from "@angular/material/select";
 @NgModule({
   declarations: [
     AppComponent,
@@ -105,6 +109,7 @@ import { QuanlycvSvComponent } from './client/quanlycv/quanlycv-sv/quanlycv-sv.c
     PayPackageComponent,
     PaypalComponent,
     QuanlycvSvComponent,
+    EditbaidangComponent,
   ],
   imports: [
     BrowserModule,
@@ -119,7 +124,13 @@ import { QuanlycvSvComponent } from './client/quanlycv/quanlycv-sv/quanlycv-sv.c
     NgxPaginationModule,
     Ng2SearchPipeModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    NgxPayPalModule
+    NgxPayPalModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule
+
   ],
   providers: [
     CommentService,
