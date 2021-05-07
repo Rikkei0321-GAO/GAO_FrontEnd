@@ -7,8 +7,18 @@
     padding-bottom: 10px;
   }
 </style>
-<section class="inner-header-title" style="background-image:url('/src/assets/Client/minhhoang/imags/banner-10.jpg')">
+<section id="intro" style="height: 335px">
+  <div class="carousel-item active"style="height: 335px">
+    <div class="carousel-background">
+      <img src="../../../assets/Client/minhhoang/imags/slider/slider1.jpg" alt=""style="height: 335px"></div>
+    <div class="carousel-container"style="height: 335px">
+      <div class="carousel-content">
+        <h2 class="font-color-white" style="margin-bottom: 91px;">Thông tin chi tiết</h2>
+      </div>
+    </div>
+  </div>
 </section>
+<div class="clearfix"></div>
 <section class="detail-desc" style="height: 430px">
   <div class="container white-shadow">
 
@@ -34,19 +44,19 @@
             <li>Địa chỉ: {{new.account.address}}</li>
             <li><i class="fa fa-briefcase"></i><span>{{new.type_of_work}}</span></li>
             <li><i class="fa fa-flask"></i><span>{{new.position}}</span></li>
+            <li><i class="fa fa-money"></i><span>từ {{new.salary}} tr/tháng</span></li>
           </ul>
         </div>
       </div>
 
       <div class="col-md-4 col-sm-4">
         <div class="get-touch">
-          <h4>Thông tin</h4>
+          <h4>Thông tin liên hệ</h4>
           <ul>
             <li><i class="fa fa-map-marker"></i><span>{{new.work_loaction}}</span></li>
             <li><i class="fa fa-envelope"></i><span>{{new.account.email}}</span></li>
             <li><i class="fa fa-globe"></i><span>{{new.account.email_contact}}</span></li>
             <li><i class="fa fa-phone"></i><span>{{new.account.phone}}</span></li>
-            <li><i class="fa fa-money"></i><span>từ {{new.salary}} tr/tháng</span></li>
           </ul>
         </div>
       </div>
@@ -74,9 +84,10 @@
                 </a>
                 <ng-container *ngIf="show">
                   <div style="float: right" [formGroup]="formApply">
-                    <div style="padding: 20px">
-                      <input type="file" class="footer-btn grn-btn" formControlName="url"
-                             (change)="showPreview($event)">
+                    <div class="fileUpload">
+<!--                      <input type="file" class="upload">-->
+                      <input type="file" class="upload" formControlName="url" (change)="showPreview($event)">
+                      <span>Upload CV</span>
                     </div>
                     <a (click)="save()" class="footer-btn grn-btn" type="submit">Xác nhận</a>
                     <a (click)="add()" class="footer-btn grn-btn" type="submit">Gửi CV</a>

@@ -58,11 +58,6 @@ a, a:active, a:focus, a:hover {
   margin-right: 15px;
   margin-left: 15px
 }
-
-section {
-  padding: 70px 0 60px
-}
-
 section.gray {
   background: #eef5f9
 }
@@ -1080,63 +1075,12 @@ span.job-num {
   background: #fff
 }
 
-.manage-resume-box {
-  background: #fff;
-  display: table;
-  width: 100%;
-  padding: 15px 20px;
-  border-radius: 4px;
-  overflow: hidden;
-  margin-bottom: 30px;
-  border-left: 4px solid #fff;
-  transition: all ease-in-out .4s;
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, .01);
-  -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, .01);
-  -moz-box-shadow: 0 0 10px 2px rgba(0, 0, 0, .01)
-}
-
-.manage-resume-picbox, .manage-resume-picbox img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%
-}
-
-.manage-resume-box:focus, .manage-resume-box:hover {
-  border-color: #11b719;
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, .05);
-  -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, .05);
-  -moz-box-shadow: 0 0 10px 2px rgba(0, 0, 0, .05);
-  border-left: 3px solid #11b719
-}
-
-.manage-resume-box:focus i, .manage-resume-box:hover i {
-  color: #11b719
-}
-
-.manage-resume-picbox {
-  overflow: hidden
-}
-
-.manage-resume-box h4 {
-  margin-bottom: 5px;
-  color: #35434E;
-  font-family: Raleway, sans-serif
-}
 
 .detail-desc-caption h4, .detail-desc-caption span.designation, .manage-resume-box span {
   font-family: Montserrat, sans-serif
 
 }
 
-.manage-resume-box span {
-  color: #636d75
-}
-
-.manage-resume-box a i {
-  font-size: 20px;
-  color: #636d75;
-  margin-top: 1.4em
-}
 
 .detail-desc-caption h4 {
   color: #35434E;
@@ -1832,5 +1776,31 @@ ul.detail-footer-social li a i:hover {
   .tab .nav-tabs li a {
     padding: 15px 5px
   }
+}
+
+.fileUpload input.upload {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.fileUpload {
+  position: relative;
+  overflow: hidden;
+  margin: 10px 0;
+  border: 1px solid #d7dfea;
+}
+.fileUpload span {
+  background: #11b719;
+  padding: 11px 20px;
+  color: #fff;
+  display: inline-block;
+  min-width: 120px;
+  text-align: center;
 }
 

@@ -26,7 +26,7 @@
         <span class="large fa fa-pen-square search"></span>
         <input class="search-box_search_input" [(ngModel)]="titleNew" name="titleNew" placeholder="Nhập vào đây">
         <span class="fa fa-tools large search "></span>
-        <select placeholder="chọn ngành nghề" class=" search-box_search_input " name="nganh"  required [(ngModel)]="nganh" (change)='onOptionsSelected($event)'>
+        <select class=" search-box_search_input " name="nganh"  required [(ngModel)]="nganh" (change)='onOptionsSelected($event)'>
           <option value="">Chọn ngành nghề</option>
           <option *ngFor='let option of lisstnganh' [value]="option.idCategory">{{option.name}}</option>
         </select>
