@@ -28,18 +28,35 @@ export class QuanlythongtinTaikhoanEditComponent implements OnInit {
   public  id_now :number=0
   public id: number=0
   // @ts-ignore
+  isLoggedIn = false;
+  isnhatuyendung = false;
+  // @ts-ignore
+  roles: string
+  // @ts-ignore
   account: AccountClass=new AccountClass();
   // @ts-ignore
   ngOnInit(): void {
     this.id = this.activatedRouteService.snapshot.params['id'];
     this.accountservice.getOne(this.id).subscribe(data=>{
       this.account=data
-      console.log(data)
     },error => console.log(error))
     let id_user = JSON.parse(<string>localStorage.getItem("auth-user"));
     this.id_now = id_user['id'];
+    this.roles = this.token.getUser().roles;
+    if(this.isRole(this.roles) == true){
+      this.isnhatuyendung = true;
+    }
     this.uploadFileService.getImageDetailList();
 
+  }
+  isRole(  tokenPayload : any) {
+    tokenPayload = this.token.getUser().roles;
+    for (const role of tokenPayload) {
+      if (role === "nhatuyendung") {
+        return true;
+      }
+    }
+    return false;
   }
   editForm = new FormGroup({
     fullName: new FormControl('',[Validators.required]),
@@ -47,16 +64,20 @@ export class QuanlythongtinTaikhoanEditComponent implements OnInit {
     phone: new FormControl('',[Validators.required]),
     birthday: new FormControl('',[Validators.required]),
     address: new FormControl('',[Validators.required]),
-    createDate: new FormControl('',[Validators.required]),
-    email_contact: new FormControl('',[Validators.required]),
-    sex: new FormControl('',[Validators.required]),
-    companyName: new FormControl('',[Validators.required]),
+    createDate: new FormControl(''),
+    email_contact: new FormControl(''),
+    sex: new FormControl(''),
+    companyName: new FormControl(''),
     link: new FormControl('',[Validators.required]),
-    image: new FormControl('',[Validators.required]),
+    image: new FormControl(''),
+    taxCode:new FormControl(''),
+    website:new FormControl(''),
+    company_address:new FormControl(''),
+    postion:new FormControl(''),
 
   })
   OnEdit(){
-    console.log(this.id_now)
+    console.log(this.editForm.value)
        this.editForm.value.createDate = new Date();
         this.editForm.value.image =this.imgaconvert;
        this.accountservice.editA(this.id_now,this.editForm.value).subscribe(data=>{
@@ -72,6 +93,9 @@ export class QuanlythongtinTaikhoanEditComponent implements OnInit {
   showPreview(event: any) {
     this.selectedImage = event.target.files[0];
   }
+
+
+
   save() {
     this.id = this.activatedRouteService.snapshot.params['id'];
     const name = this.selectedImage.name;

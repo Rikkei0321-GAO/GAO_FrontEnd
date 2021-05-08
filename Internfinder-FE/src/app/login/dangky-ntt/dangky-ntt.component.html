@@ -29,22 +29,22 @@
           </div>
           <label style="margin-bottom: 10px;">Thông Tin Công Ty</label>
 
-          <input formControlName="name_company" type="text"  placeholder="Tên Công Ty ">
-          <div *ngFor="let validation of validation_messages.name_company">
+          <input formControlName="companyName" type="text"  placeholder="Tên Công Ty ">
+          <div *ngFor="let validation of validation_messages.companyName">
             <small class="text-danger"
-                   *ngIf="formRegCompany.get('name_company')!.hasError(validation.type) && formRegCompany.get('name_company')!.touched">
+                   *ngIf="formRegCompany.get('companyName')!.hasError(validation.type) && formRegCompany.get('companyName')!.touched">
               {{validation.message}}</small>
           </div>
-          <input formControlName="address_company" type="text"  placeholder="Địa Chỉ Công Ty " >
-          <div *ngFor="let validation of validation_messages.address_company">
+          <input formControlName="company_address" type="text"  placeholder="Địa Chỉ Công Ty " >
+          <div *ngFor="let validation of validation_messages.company_address">
             <small class="text-danger"
-                   *ngIf="formRegCompany.get('address_company')!.hasError(validation.type) && formRegCompany.get('address_company')!.touched">
+                   *ngIf="formRegCompany.get('company_address')!.hasError(validation.type) && formRegCompany.get('company_address')!.touched">
               {{validation.message}}</small>
           </div>
-          <input formControlName="tax" type="text"  placeholder="Mã Số Thuế " >
-          <div *ngFor="let validation of validation_messages.tax">
+          <input formControlName="taxCode" type="text"  placeholder="Mã Số Thuế " >
+          <div *ngFor="let validation of validation_messages.taxCode">
             <small class="text-danger"
-                   *ngIf="formRegCompany.get('tax')!.hasError(validation.type) && formRegCompany.get('tax')!.touched">
+                   *ngIf="formRegCompany.get('taxCode')!.hasError(validation.type) && formRegCompany.get('taxCode')!.touched">
               {{validation.message}}</small>
           </div>
           <input formControlName="website" type="text"  placeholder="Website " >

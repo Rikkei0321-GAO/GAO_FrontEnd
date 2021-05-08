@@ -72,8 +72,8 @@ const routes: Routes = [
       [
         {path: '', component: PageComponent},
         {path: 'create_cv', component: ModuleCreateCvComponent  },
-        {path: 'forum', component: TrangchuForumComponent, canActivate:[CustomerAuthService]},
-        {path: 'forum/index/:id', component: BaivietForumComponent,canActivate:[CustomerAuthService]},
+        {path: 'forum', component: TrangchuForumComponent},
+        {path: 'forum/index/:id', component: BaivietForumComponent},
         {path: 'dangbaichiase', component: DangbaivietForumComponent, canActivate:[CustomerAuthService]},
         {path: 'dangtuyendung', component: ModuleDangtuyendungComponent},
         {path: 'xemcv-ntd', component: ModuleXemvcNtdComponent},

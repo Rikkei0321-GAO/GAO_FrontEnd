@@ -16,9 +16,11 @@ export class AccountClass {
   nameContact: string;
   status: boolean;
   image: string;
-
-
-  constructor(id_account: number, username: string, password: string, createDate: Date, fullName: string, birthday: Date, sex: boolean, phone: string, address: string, email: string, email_contact: string, companyName: string, taxCode: string, link: string, nameContact: string, status: boolean, image: string) {
+  verificationCode: string;
+  website: string;
+  company_address: string
+  postion: string
+  constructor(id_account: number, username: string, password: string, createDate: Date, fullName: string, birthday: Date, sex: boolean, phone: string, address: string, email: string, email_contact: string, companyName: string, taxCode: string, link: string, nameContact: string, status: boolean, image: string, verificationCode: string, website: string, company_address: string, postion: string) {
     this.id_account = id_account;
     this.username = username;
     this.password = password;
@@ -36,5 +38,9 @@ export class AccountClass {
     this.nameContact = nameContact;
     this.status = status;
     this.image = image;
+    this.verificationCode = verificationCode;
+    this.website = website;
+    this.company_address = company_address;
+    this.postion = postion;
   }
 }

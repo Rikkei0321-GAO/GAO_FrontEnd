@@ -25,7 +25,7 @@
           <div class="forum-details">
             <a href="#" class="forum-name">Công nghệ thông tin</a>
 
-            <p class="forum-description ">Những bài đăng hot  nhất</p>
+            <p class="forum-description ">Những bài đăng hot nhất</p>
           </div>
 
 
@@ -67,38 +67,34 @@
   <!--cac bai dang-->
   <div class="col-full">
     <h2 class="list-title">Bài đăng</h2>
-    <div class="thread-list" *ngFor="let item of quanlytaikhoans | paginate: {itemsPerPage: 5, currentPage: pageOfItems}">
-      <div class="thread">
-        <div>
-          <p>
-            <a (click)="OnEdit(item.idshare)" >
-              {{item.title}}</a>
-          </p>
-          <p class="text-faded text-xsmall">By <a href="profile.html">{{item.account.username}}</a>, {{item.create_date}}</p>
-        </div>
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+      <div class="thread-list" *ngFor="let item of quanlytaikhoans | paginate: {itemsPerPage: 4, currentPage: pageOfItems}">
+        <div class="thread">
+          <div>
+            <p>
+              <a (click)="OnEdit(item.idshare)">
+                {{item.title}}</a>
+            </p>
+            <p class="text-faded text-xsmall">By <a
+              href="profile.html">{{item.account.username}}</a>, {{item.create_date}}</p>
+          </div>
+          <div class="activity">
+            <p class="replies-count">
+              3 replies
+            </p>
 
-        <div class="activity">
-          <p class="replies-count">
-            3 replies
-          </p>
-
-          <img class="avatar-medium"
-               src="{{item.account.image}}"
-               alt="">
-          <span>
+            <img class="avatar-medium"
+                 src="{{item.account.image}}"
+                 alt="">
+            <span>
               <a class="text-xsmall" href="profile.html">{{item.account.username}}</a>
               <p class="text-faded text-xsmall">{{item.create_date|date:'dd/mm/yyyy'}}</p>
           </span>
+          </div>
         </div>
       </div>
 
-    </div>
-
-    <div class="pagination">
-      <button class="btn-circle" disabled><i class="fa fa-angle-left"></i></button>
-      <pagination-controls (pageChange)="pageOfItems = $event"></pagination-controls>
-      <button class="btn-circle"><i class="fa fa-angle-right"></i></button>
-    </div>
+    </table>
+    <pagination-controls  (pageChange)="pageOfItems = $event"></pagination-controls>
   </div>
-
 </div>

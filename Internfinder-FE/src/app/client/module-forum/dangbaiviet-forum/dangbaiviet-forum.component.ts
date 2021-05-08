@@ -22,6 +22,7 @@ export class DangbaivietForumComponent implements OnInit {
     this.loadcssServices.loaddCss('assets/Client/fontawesome-free-5.15.2-web/css/all.css');
     this.loadcssServices.loaddCss('assets/Client/forum-mockup-master/css/style.css');
   }
+
   // @ts-ignore
   sharedto: ShareDTO
   sharepostform = new FormGroup({
@@ -39,7 +40,7 @@ export class DangbaivietForumComponent implements OnInit {
     // @ts-ignore
     let id_user = JSON.parse(localStorage.getItem("auth-user"));
     this.id_now = id_user['id'];
-    this.sharepostform.value.create_date = new Date().getDate()
+    this.sharepostform.value.create_date = new Date()
     this.ShareService.createSharepost(this.sharepostform.value, id_user.id).subscribe(data=>{
       this.toaser.success('Thêm mới thành công')
       this.router.navigate(['/forum']);

@@ -34,6 +34,9 @@ export class AdminComponent implements OnInit {
     if(this.tokenStorage.getUser()!=null){
       this.isLoggedIn=true;
     }
+    setTimeout(()=>{
+      location.reload()
+    }, 30000)
 
   }
   logout(){

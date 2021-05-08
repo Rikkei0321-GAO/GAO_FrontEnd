@@ -1,11 +1,11 @@
+
 <div class="container" style="max-width: 980px">
   <div class="col-large push-top">
     <ul class="breadcrumbs">
       <li><a href="#"><i class="fa fa-home fa-btn"></i>Trang chủ</a></li>
+      <li><a href="#">{{share.account?.fullName}}</a></li>
       <li><a href="#">{{share.title}}</a></li>
-      <li class="active"><a href="#">{{share.title}}</a></li>
     </ul>
-    <h1>{{share.title}}</h1>
     <div class="post-list">
       <div class="post">
 
@@ -13,7 +13,7 @@
           <a class="user-name">{{share.account?.username}}</a>
 
           <a href="profile.html#profile-details">
-            <img class="avatar-large" [src]="share.account.image  " alt="">
+            <img class="avatar-large" [src]="share.account?.image  " alt="">
           </a>
 
           <p class="desktop-only text-small">107 posts</p>
@@ -53,23 +53,24 @@
           <div class="insert-comment" style=" width: 931px;">
          <textarea class="input-comment" formControlName="content" type="text"
                    style="width: 100%; height: 40px;">
-
          </textarea>
-            <div
-              *ngIf="!commentForm.controls.content?.valid && (commentForm.controls.content?.dirty) || commentForm.controls.content?.touched">
-              <span style="color:red">Vui nhập nội dung</span>
-            </div>
           </div>
-          <button [disabled]="!commentForm.valid" class="btn-comment btn-success">Bình luận</button>
+          <div *ngIf="this.id_now != this.account?.id; else ngcheckaccount" >
+            <button class="btn-comment btn-succ ess" routerLink="/login/dangnhap/client">Thêm Bình luận</button>
+          </div>
+          <ng-template #ngcheckaccount >
+            <button [disabled]="!commentForm.valid" class="btn-comment btn-success">Bình luận</button>
+          </ng-template>
         </div>
 
       </form>
     </div>
   </div>
+  <div class="col-md-12">
     <div class="card">
       <div class="card-body">
         <div class="row" *ngFor="let item of commentlist| paginate: {itemsPerPage: 5, currentPage: pageOfItems}">
-          <a href="profile.html#profile-details">
+          <a>
             <img class="avatar-small" [src]="item.account.image" alt="">
           </a>
           <div class="col-md-10">
@@ -84,12 +85,9 @@
             <div class="clearfix"></div>
             <p>{{item.content}}<p>
             <p>{{item.create_date | date:'dd/mm/yyyy'}}</p>
-            <p>
-              <a class="float-right btn btn-outline-primary ml-2"> <i class="fa fa-reply"></i> Trả lời</a>
-              <a class="float-right btn btn-blue"> <i class="fa fa-thumbs-up"></i>Thích</a>
-            </p>
-          <div class="meta-line">
+            <div class="meta-line">
               <div *ngIf="account.id != item.account?.id_account; else checkAccountComment">
+                <hr>
               </div>
             </div>
             <ng-template #checkAccountComment>
@@ -117,12 +115,14 @@
                 </div>
               </div>
             </ng-template>
+            <hr>
           </div>
 
         </div>
         <pagination-controls (pageChange)="pageOfItems = $event"></pagination-controls>
       </div>
     </div>
+  </div>
     <!-- comments -->
   </div>
 <br>

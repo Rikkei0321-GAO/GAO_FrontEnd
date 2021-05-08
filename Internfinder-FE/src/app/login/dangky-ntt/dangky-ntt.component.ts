@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {TokenStorageService} from "../../Services/token-storage.service";
-import {AuthService} from "../../Services/auth.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
+import {AuthService} from "../../_services/auth.service";
 
 @Component({
   selector: 'app-dangky-ntt',
@@ -24,9 +24,9 @@ export class DangkyNTTComponent implements OnInit {
       username: ['',[Validators.required,Validators.minLength(5),Validators.maxLength(50),Validators.pattern('^[a-z0-9._-]{3,15}$')]],
       password:['',[Validators.required,Validators.minLength(6),Validators.maxLength(20)]],
       re_password:['',[Validators.required]],
-      name_company:['',[Validators.required]],
-      address_company:['',[Validators.required]],
-      tax:['',[Validators.required,Validators.pattern('^[0-9]{10}$')]],
+      companyName:['',[Validators.required]],
+      company_address:['',[Validators.required]],
+      taxCode:['',[Validators.required,Validators.pattern('^[0-9]{10}$')]],
       website:['',[Validators.required,Validators.pattern("[-a-zA-Z0-9@:%_+.~#?&//=]{2,256}(.[a-z]{2,4})?\\b(/[-a-zA-Z0-9@:%_+.~#?&//=]*)?")]],
       phone:['',[Validators.required,Validators.pattern('^[0-9]{10}$')]],
       contact:['',[Validators.required]],
@@ -50,13 +50,13 @@ export class DangkyNTTComponent implements OnInit {
     're_password':[
       {type: 'required',message: 'Trường này không được để trống!'},
     ],
-    'name_company':[
+    'companyName':[
       {type: 'required',message: 'Trường này không được để trống!'},
     ],
-    'address_company':[
+    'company_address':[
       {type: 'required',message: 'Trường này không được để trống!'},
     ],
-    'tax':[
+    'taxCode':[
       {type: 'required',message: 'Trường này không được để trống!'},
       {type: 'pattern',message: 'Số và 10 kí tự!'},
 
@@ -91,7 +91,7 @@ export class DangkyNTTComponent implements OnInit {
               extendedTimeOut:1500
             })
           }else{
-            this.authService.register(this.formRegCompany.value).subscribe(
+            this.authService.registerntd(this.formRegCompany.value).subscribe(
               data => {
                 this.toastr.success(data.message, "Hoàn tất ", {
                   timeOut: 3500,

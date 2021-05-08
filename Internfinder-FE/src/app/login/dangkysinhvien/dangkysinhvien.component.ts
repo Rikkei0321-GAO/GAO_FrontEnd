@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-// @ts-ignore
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {TokenStorageService} from "../../Services/token-storage.service";
-import {AuthService} from "../../Services/auth.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
+import {AuthService} from "../../_services/auth.service";
 
 @Component({
   selector: 'app-dangkysinhvien',
@@ -63,16 +62,17 @@ export class DangkysinhvienComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.formRegStudent.value);
    {
       if(this.checkPasswords(this.formRegStudent)){
         this.toastr.warning("Mật khẩu và xác nhận mật khẩu không giống nhau","Warning:",{
           timeOut: 1500,
           extendedTimeOut:1500
         })
-      }else {
+      }
+      else {
         this.authService.register(this.formRegStudent.value).subscribe(
           data => {
+            console.log(this.formRegStudent.value);
             this.toastr.success(data.message, "Hoàn tất ", {
               timeOut: 3500,
               extendedTimeOut: 1500

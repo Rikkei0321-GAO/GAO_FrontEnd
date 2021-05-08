@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder} from "@angular/forms";
 import {AccountService} from "../../../Services/Account.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {Subscription} from "rxjs";
 import {AccountClass} from "../../../model/Account.class";
 import {TokenStorageService} from "../../../_services/token-storage.service";
 
@@ -20,21 +19,35 @@ export class QuanlythongtinTaikhoanComponent implements OnInit {
               private  router: Router) {
   }
   public  id_now :number=0
-  public id: number=0
+  public id: number=0;
+  isLoggedIn = false;
+  isnhatuyendung = false;
+  // @ts-ignore
+  roles: string
   // @ts-ignore
   account: AccountClass=new AccountClass();
   // @ts-ignore
   ngOnInit(): void {
     this.id = this.activatedRouteService.snapshot.params['id'];
-    console.log(this.id)
     this.accountservice.getOne(this.id).subscribe(data=>{
       this.account=data
-      console.log(data)
     },error => console.log(error))
     let id_user = JSON.parse(<string>localStorage.getItem("auth-user"));
     this.id_now = id_user['id'];
-    console.log(this.id_now)
+      this.roles = this.token.getUser().roles;
+      if(this.isRole(this.roles) == true){
+        this.isnhatuyendung = true;
+    }
 
+  }
+  isRole(  tokenPayload : any) {
+    tokenPayload = this.token.getUser().roles;
+    for (const role of tokenPayload) {
+      if (role === "nhatuyendung") {
+        return true;
+      }
+    }
+    return false;
   }
   getOne(){
     this.router.navigate(['/profile/edit',this.id_now])

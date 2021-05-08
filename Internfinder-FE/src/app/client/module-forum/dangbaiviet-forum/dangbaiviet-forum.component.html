@@ -6,43 +6,15 @@
       <li><a href="/forum">Chủ đề</a></li>
     </ul>
   </div>
-  <form class="col-full push-top" [formGroup]="sharepostform" (ngSubmit)="onSubmit()">
+  <form class="col-full push-top" [formGroup]="sharepostform">
     <label>Tiêu đề</label>
     <textarea name="title" id="title"  formControlName="title" placeholder="nhập vào tiêu đề bài đăng" style="width: 100%; max-width: 1170px; max-height: 50px;
     height: 50px;
     margin-bottom: 20px;"></textarea>
-    <label>Ngày tạo</label>
-    <input name="create_date" id="create_date"  formControlName="create_date" type="date" style="width: 100%; max-width: 1170px; max-height: 50px;
-    height: 50px;
-    margin-bottom: 20px;">
-<!--    <label>Ngày tạo</label>-->
-<!--    <input type="datetime-local" id="create_date"  formControlName="create_date"  style="width: 100%; max-width: 1170px; max-height: 50px;-->
-<!--    height: 50px;-->
-<!--    margin-bottom: 20px;">-->
     <label>Nội dung</label>
-    <ckeditor formControlName="content" ></ckeditor>
-    <button class="btn-green btn-small"[disabled]="sharepostform.valid"  (click)="createsharepost()"> Đăng bài</button>
-<!--    <div>-->
-<!--      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">-->
-<!--        <div class="modal-dialog modal-dialog-centered" role="document">-->
-<!--          <div class="modal-content">-->
-<!--            <div class="modal-header">-->
-<!--              <h5 class="modal-title" id="exampleModalCenterTitle">Thông Báo</h5>-->
-<!--              <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-<!--                <span aria-hidden="true">&times;</span>-->
-<!--              </button>-->
-<!--            </div>-->
-<!--            <div class="modal-body">-->
-<!--              Bạn muốn xóa bình luận ra khỏi Dữ liệu-->
-<!--            </div>-->
-<!--            <div class="modal-footer">-->
-<!--              <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>-->
-<!--              <button type="button" class="btn btn-danger" >Xoá tài khoản</button>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
+    <ckeditor formControlName="content"></ckeditor>
+    
+    <button class="btn-green btn-small"  (click)="createsharepost()"> Đăng bài</button>
   </form>
 
 </div>

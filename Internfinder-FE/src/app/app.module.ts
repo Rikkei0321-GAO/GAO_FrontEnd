@@ -56,8 +56,8 @@ import { ResetPasswordComponent } from './login/reset-password/reset-password.co
 import { VerifyResetPasswordComponent } from './login/verify-reset-password/verify-reset-password.component';
 import { PayPackageComponent } from './client/pay/pay-package/pay-package.component';
 import { PaypalComponent } from './client/pay/paypal/paypal.component';
-import {NgxPayPalModule} from "ngx-paypal";
 import { QuanlycvSvComponent } from './client/quanlycv/quanlycv-sv/quanlycv-sv.component';
+import { NgxPayPalModule } from 'ngx-paypal';
 @NgModule({
   declarations: [
     AppComponent,

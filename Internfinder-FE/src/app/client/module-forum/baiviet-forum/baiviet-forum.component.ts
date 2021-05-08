@@ -27,7 +27,9 @@ export class BaivietForumComponent implements OnInit {
     private  activatedRouteService: ActivatedRoute,
     private router: Router,
     private token: TokenStorageService) {
-    this.loadcssServices.loadScript('assets/Client/Datdt/js.js')
+    setInterval(()=>{
+      this.loadcssServices.loadScript('assets/Client/Datdt/js.js')
+    }, 1000)
     this.loadcssServices.loaddCss('assets/Client/fontawesome-free-5.15.2-web/css/all.css');
     this.loadcssServices.loaddCss('assets/Client/forum-mockup-master/css/style.css');
     this.loadcssServices.loaddCss('assets/Client/CSS/stylesMH.css');
@@ -66,7 +68,9 @@ export class BaivietForumComponent implements OnInit {
     // @ts-ignore
     this.comment = new CommentDTO();
     this.getAllComment()
-    this.account = this.token.getUser();
+    this.account = this.token.getUser();let id_user = JSON.parse(<string>localStorage.getItem("auth-user"));
+    this.id_now = id_user['id'];
+
   }
 
   getAllComment() {

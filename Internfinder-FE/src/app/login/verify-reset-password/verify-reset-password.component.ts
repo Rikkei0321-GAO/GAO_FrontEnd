@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
+import {AuthService} from "../../_services/auth.service";
 // @ts-ignore
-import {AuthService} from "../../Services/auth.Service";
 
 @Component({
   selector: 'app-verify-reset-password',

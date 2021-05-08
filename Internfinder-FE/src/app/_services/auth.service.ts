@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 const AUTH_API = 'http://localhost:8080/api/auth/';
+const AUTH_API_Hai = 'http://localhost:8080/api/public/';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -12,8 +13,17 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
+  httpOptions: any;
+  constructor(private http: HttpClient) {
+    this.httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      }),
+      'Access-Control-Allow-Origin': 'http://localhost:4200',
+      'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS'
+    };
+  }
 
-  constructor(private http: HttpClient) { }
 
   // @ts-ignore
   login(credentials): Observable<any> {
@@ -23,12 +33,57 @@ export class AuthService {
     }, httpOptions);
   }
 
+  checkLogin(username:string){
+    return this.http.post('http://localhost:8080/api/auth/checkstatus/', username)
+  }
+
+
   // @ts-ignore
   register(user): Observable<any> {
-    return this.http.post(AUTH_API + '/signupSinhVien', {
+    return this.http.post(AUTH_API + 'signupSinhVien', {
       username: user.username,
       email: user.email,
+      address: user.address,
       password: user.password
     }, httpOptions);
+  }
+  // @ts-ignore
+  registerntd(user): Observable<any> {
+    return this.http.post(AUTH_API + 'signup', {
+      username: user.username,
+      email: user.email,
+      address: user.address,
+      password: user.password,
+      companyName: user.companyName,
+      company_address: user.company_address,
+      verificationCode:user.verificationCode,
+      website:user.website,
+      phone:user.phone,
+    }, httpOptions);
+  }
+  verify(code:string): Observable<any> {
+    console.log(code);
+    return this.http.post(AUTH_API + 'verify', {
+      code: code
+    }, this.httpOptions);
+  }
+
+  verifyPassword(code: string): Observable<any> {
+    return this.http.post(AUTH_API_Hai + 'verify-password', {
+      code: code
+    }, this.httpOptions);
+  }
+
+  resetPassword(email:string): Observable<any> {
+    return this.http.post(AUTH_API_Hai + 'reset-password', {
+      email: email,
+    }, this.httpOptions);
+  }
+
+  doResetPassword(password: string, code: string): Observable<any> {
+    return this.http.post(AUTH_API_Hai + 'do-reset-password', {
+      password: password,
+      code: code
+    }, this.httpOptions);
   }
 }

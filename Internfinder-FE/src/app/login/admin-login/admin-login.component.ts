@@ -62,6 +62,7 @@ export class AdminLoginComponent implements OnInit {
         this.roles = this.tokenStorage.getUser().roles;
         this.router.navigateByUrl('/admin').then(()=>{
           this.toastr.success('', "Đăng nhập thành công  ");
+          location.reload()
         });
       },
       err => {

@@ -47,9 +47,9 @@ body {
 
 #email,
 #password {
-    width: 350px;
+    /*width: 350px;*/
     height: 1px;
-    position: relative;
+    /*position: relative;*/
     top: -5px;
     left: 25%;
     border-radius: 5px;
