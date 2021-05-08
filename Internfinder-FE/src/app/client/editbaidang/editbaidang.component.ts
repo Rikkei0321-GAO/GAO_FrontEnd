@@ -1,47 +1,50 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {NewsClass} from "../../model/News.class";
 import {LoadcssServices} from "../../Services/loadcss.services";
 import {ActivatedRoute, Router} from "@angular/router";
-import {newdto} from "../../model/Newdto";
+import {TokenStorageService} from "../../_services/token-storage.service";
+import {ToastrService} from "ngx-toastr";
 import {baidangservice} from "../../Services/baidangservice.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {newdto} from "../../model/Newdto";
 import {Category} from "../../model/Category";
-import {ToastrService} from "ngx-toastr";
-import {TimkiemService} from "../../Services/timkiem.service";
+providers: [baidangservice  ]
 
-// @ts-ignore
 @Component({
-  selector: 'app-module-dangtuyendung',
-  templateUrl: './module-dangtuyendung.component.html',
-  styleUrls: ['./module-dangtuyendung.component.css'],
-  providers:[baidangservice]
+  selector: 'app-editbaidang',
+  templateUrl: './editbaidang.component.html',
+  styleUrls: ['./editbaidang.component.css']
 })
-export class ModuleDangtuyendungComponent implements OnInit {
-  constructor(private  loadcssServices: LoadcssServices, private route: ActivatedRoute, private router: Router,private  toast: ToastrService,
-              private tim:TimkiemService,  private newServiceService: baidangservice,private formBuild: FormBuilder) {
+export class EditbaidangComponent implements OnInit {
+  // @ts-ignore
+  private idNews: number;
 
+  constructor(private  loadcssServices: LoadcssServices, private route: ActivatedRoute,
+              private  token: TokenStorageService, private router: Router,private  toast: ToastrService,
+              private newServiceService: baidangservice,private formBuild: FormBuilder) {
+    this.loadcssServices.loaddCss('assets/Client/CCS/stylesMH.css');
     this.loadcssServices.loaddCss('assets/Client/fontawesome-free-5.15.2-web/css/all.css');
-
-    this.formDangtuyendung = this.formBuild.group({
-        title: ['',[Validators.required]],
-        major: ['',[Validators.required]],
-        salary: ['',[Validators.required]],
-        quanlity: ['',[Validators.required]],
-        work_loaction: ['',[Validators.required]],
-        position: ['',[Validators.required]],
-        category_idCategory: ['',[Validators.required]],
-        type_of_work: ['',[Validators.required]],
-        decriptions: ['',[Validators.required]],
-        benefit: ['',[Validators.required]],
-        sex: ['',[Validators.required]],
-        degree: ['',[Validators.required]],
-        working_time: ['',[Validators.required]],
-        profile_language: ['',[Validators.required]],
-        job_requirements: ['',[Validators.required]],
-        profile_requirement: ['',[Validators.required]],
-        name_nd: ['',[Validators.required]],
-        sdt_nd:['',[Validators.required,Validators.pattern('^[0-9]{10}$')]],
-        address_nd: ['',[Validators.required]],
-        email_nd:['',[Validators.required,Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')]]
+    this.formUpload = this.formBuild.group({
+      title: ['',[Validators.required]],
+      major: ['',[Validators.required]],
+      salary: ['',[Validators.required]],
+      quanlity: ['',[Validators.required]],
+      work_loaction: ['',[Validators.required]],
+      position: ['',[Validators.required]],
+      category_idCategory: ['',[Validators.required]],
+      type_of_work: ['',[Validators.required]],
+      decriptions: ['',[Validators.required]],
+      benefit: ['',[Validators.required]],
+      sex: ['',[Validators.required]],
+      degree: ['',[Validators.required]],
+      working_time: ['',[Validators.required]],
+      profile_language: ['',[Validators.required]],
+      job_requirements: ['',[Validators.required]],
+      profile_requirement: ['',[Validators.required]],
+      name_nd: ['',[Validators.required]],
+      sdt_nd:['',[Validators.required,Validators.pattern('^[0-9]{10}$')]],
+      address_nd: ['',[Validators.required]],
+      email_nd:['',[Validators.required,Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')]]
       }
     );
   }
@@ -109,38 +112,37 @@ export class ModuleDangtuyendungComponent implements OnInit {
     ]
   };
   // @ts-ignore
-  addBaidang: newdto;
+  editBai: newdto;
   // @ts-ignore
   private idCata:string;
-  // @ts-ignore
-  lisstnganh: Category[]=[];
-  // @ts-ignore
-  formDangtuyendung: FormGroup;
-
-
   ngOnInit(): void {
     // @ts-ignore
-    this.addBaidang = new newdto();
-    this.tim.getIdCategory(this.idCata).subscribe(item => {
-      this.lisstnganh = item;
-      console.log( " "+this.lisstnganh);
+    this.editBai = new newdto();
+    this.idNews=this.route.snapshot.params['idNews'];
+    this.newServiceService.getNews(this.idNews).subscribe(data=>{
+      this.editBai=data
+    },error => console.log(error));
+    // @ts-ignore
+    this.newServiceService.getIdCategory().subscribe(item=>{
+      this.lisstnganh=item;
+      console.log(this.lisstnganh)
     })
   }
-
-  add() {
+  Update() {
     // @ts-ignore
     let id_user = JSON.parse(localStorage.getItem("auth-user"));
-    this.addBaidang.id_account=id_user['id'];
-    this.addBaidang.create_date = new Date();
-    this.addBaidang.status = false;
-    console.log("hang ve: "+ this.addBaidang);
-    this.newServiceService.addNews(this.addBaidang)
+    this.editBai.id_account=id_user['id'];
+    this.newServiceService.updateNews(this.idNews,this.editBai).subscribe(data=>{
+      console.log(data);
+      this.router.navigate(['list']);
+    },error => console.log(error));
+    console.log("hang ve: "+ this.editBai);
+    this.newServiceService.addNews(this.editBai)
       .subscribe(
         response => {
-          console.log(this.addBaidang.title);
+          console.log(this.editBai.title);
           this.router.navigate(['/timkiem-trangchu']);
-          this.toast.success('Đăng thành thành công');
-          alert("đăng tin thành công")
+          this.toast.success('Update thành công');
         },
         (error: any) => {
           console.log(error);
@@ -148,9 +150,13 @@ export class ModuleDangtuyendungComponent implements OnInit {
         });
   }
   onSubmit() {
-    console.log(this.addBaidang);
-    this.add();
+    console.log(this.editBai);
+    this.Update();
   }
+
+  lisstnganh: Category[]=[];
+  // @ts-ignore
+  formUpload: FormGroup;
 
   // @ts-ignore
   public onOptionsSelected(event) {
@@ -160,3 +166,4 @@ export class ModuleDangtuyendungComponent implements OnInit {
     console.log(value);
   }
 }
+

@@ -1,4 +1,3 @@
-
 <section id="demo" class="carousel slide" data-ride="carousel">
   <ul class="carousel-indicators">
     <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -7,7 +6,8 @@
   </ul>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="../../../assets/page/images/RK_SLIDER_20191004045611000000_thumbnail.jpg" alt="RIKKEISOFT" style="height: 500px">
+      <img src="../../../assets/page/images/RK_SLIDER_20191004045611000000_thumbnail.jpg" alt="RIKKEISOFT"
+           style="height: 500px">
       <div class="carousel-caption">
         <h3 style="font-size: 50px">RIKKEISOFT ĐÀ NẴNG</h3>
         <p style="font-size: 20px">Where the dream begins.</p>
@@ -39,33 +39,103 @@
     <form action="#" id="search-box_search_form_3"
           class="search-box_search_form d-flex flex-lg-row flex-column align-items-center justify-content-between ">
       <div class="d-flex flex-row align-items-center justify-content-start inline-block">
-        <span class="large fa fa-pen-square search"></span>
-        <input class="search-box_search_input"   placeholder="Nhập vào từ khóa cần tìm" required="required" type="search">
-        <span class="fa fa-tools large search "></span>
-        <select  class="dropdown_item_select search-box_search_input">
-          <option value="1">Tất cả ngành nghề</option>
-          <option value="1">Công nghệ thông tin</option>
-          <option value="2">Ngân Hàng</option>
-          <option value="3">Hàng tiêu dùng</option>
-          <option value="4">Hóa dược</option>
-          <option value="5">Bác sĩ</option>
-          <option value="6">Hành chính/ Văn phòng</option>
-        </select>
-        <span class="large material-icons search">place</span>
-        <select  class="dropdown_item_select search-box_search_input" >
-          <option value="1">Tất cả địa điểm</option>
-          <option value="2">Đà Nẵng</option>
-          <option value="3">Hà Nội</option>
-          <option value="4">TP. Hồ Chí Minh</option>
-          <option value="5">Quảng Nam</option>
-          <option value="6">Hội An</option>
-          <option value="7">Vũng Tàu</option>
-          <option value="8">Hải Phòng</option>
-          <option value="9">Lào Cai</option>
-          <option value="10">Đà Lạt</option>
-        </select>
+        <div class="form-control" class=" search-box_search_input">
+          <label class="mh">Nhập từ khoá</label>
+          <div>
+            <span class="large fa fa-pen-square search"></span>
+            <input class="search-box_search_input" [(ngModel)]="titleNew" name="titleNew" placeholder="Nhập vào đây">
+          </div>
+        </div>
+        <div class="form-control" class=" search-box_search_input">
+          <label class="mh">Chọn ngành</label>
+          <div>
+            <span class="fa fa-tools large search "></span>
+            <select class=" search-box_search_input " name="nganh" required [(ngModel)]="nganh"
+                    (change)='onOptionsSelected($event)'>
+              <option value="">Chọn ngành nghề</option>
+              <option *ngFor='let option of lisstnganh' [value]="option.idCategory">{{option.name}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-control" class="search-box_search_input">
+          <label class="mh">Điểm đến</label>
+          <div>
+            <span class="fa fa-map-marker-alt large search"></span>
+            <select class=" search-box_search_input " [ngModel]="" name="college2_name" required>
+              <option value="">Địa điểm làm việc</option>
+              <option value="An Giang">An Giang</option>
+              <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu</option>
+              <option value="Bắc Giang">Bắc Giang</option>
+              <option value="Bắc Kạn">Bắc Kạn</option>
+              <option value="Bạc Liêu">Bạc Liêu</option>
+              <option value="Bắc Ninh">Bắc Ninh</option>
+              <option value="Bến Tre">Bến Tre</option>
+              <option value="Bình Định">Bình Định</option>
+              <option value="Bình Dương">Bình Dương</option>
+              <option value="Bình Phước">Bình Phước</option>
+              <option value="Bình Thuận">Bình Thuận</option>
+              <option value="Bình Thuận">Bình Thuận</option>
+              <option value="Cà Mau">Cà Mau</option>
+              <option value="Cao Bằng">Cao Bằng</option>
+              <option value="Đắk Lắk">Đắk Lắk</option>
+              <option value="Đắk Nông">Đắk Nông</option>
+              <option value="Điện Biên">Điện Biên</option>
+              <option value="Đồng Nai">Đồng Nai</option>
+              <option value="Đồng Tháp">Đồng Tháp</option>
+              <option value="Đồng Tháp">Đồng Tháp</option>
+              <option value="Gia Lai">Gia Lai</option>
+              <option value="Hà Giang">Hà Giang</option>
+              <option value="Hà Nam">Hà Nam</option>
+              <option value="Hà Tĩnh">Hà Tĩnh</option>
+              <option value="Hải Dương">Hải Dương</option>
+              <option value="Hậu Giang">Hậu Giang</option>
+              <option value="Hòa Bình">Hòa Bình</option>
+              <option value="Hưng Yên">Hưng Yên</option>
+              <option value="Khánh Hòa">Khánh Hòa</option>
+              <option value="Kiên Giang">Kiên Giang</option>
+              <option value="Kon Tum">Kon Tum</option>
+              <option value="Lai Châu">Lai Châu</option>
+              <option value="Lâm Đồng">Lâm Đồng</option>
+              <option value="Lạng Sơn">Lạng Sơn</option>
+              <option value="Lào Cai">Lào Cai</option>
+              <option value="Long An">Long An</option>
+              <option value="Nam Định">Nam Định</option>
+              <option value="Nghệ An">Nghệ An</option>
+              <option value="Ninh Bình">Ninh Bình</option>
+              <option value="Ninh Thuận">Ninh Thuận</option>
+              <option value="Phú Thọ">Phú Thọ</option>
+              <option value="Quảng Bình">Quảng Bình</option>
+              <option value="Quảng Bình">Quảng Bình</option>
+              <option value="Quảng Ngãi">Quảng Ngãi</option>
+              <option value="Quảng Ninh">Quảng Ninh</option>
+              <option value="Quảng Trị">Quảng Trị</option>
+              <option value="Sóc Trăng">Sóc Trăng</option>
+              <option value="Sơn La">Sơn La</option>
+              <option value="Tây Ninh">Tây Ninh</option>
+              <option value="Thái Bình">Thái Bình</option>
+              <option value="Thái Nguyên">Thái Nguyên</option>
+              <option value="Thanh Hóa">Thanh Hóa</option>
+              <option value="Thừa Thiên Huế">Thừa Thiên Huế</option>
+              <option value="Tiền Giang">Tiền Giang</option>
+              <option value="Trà Vinh">Trà Vinh</option>
+              <option value="Tuyên Quang">Tuyên Quang</option>
+              <option value="Vĩnh Long">Vĩnh Long</option>
+              <option value="Vĩnh Phúc">Vĩnh Phúc</option>
+              <option value="Yên Bái">Yên Bái</option>
+              <option value="Phú Yên">Phú Yên</option>
+              <option value="Tp.Cần Thơ">Tp.Cần Thơ</option>
+              <option value="Tp.Đà Nẵng">Tp.Đà Nẵng</option>
+              <option value="Tp.Hải Phòng">Tp.Hải Phòng</option>
+              <option value="Tp.Hà Nội">Tp.Hà Nội</option>
+              <option value="TP  HCM">TP HCM</option>
+            </select>
+          </div>
+        </div>
+        <button [routerLink]="['/timkiem-trangchu']"
+                [queryParams]="{extitle:titleNew, exnganh: nganh , exdiadiem: noilam}" class="search-box_search_button">
+          Tìm kiếm
+        </button>
       </div>
-      <button routerLink="timkiem-trangchu" type="submit" class="search-box_search_button" >Tìm kiếm</button>
     </form>
   </div>
 </div>
@@ -86,7 +156,7 @@
         <div class="vertical-space-30"></div>
         <ul>
           <li class="list-item1 ">Hàng ngàn tin tuyển dụng chất lượng cao được cập nhật
-            <br /> thường xuyên để đáp ứng nhu cầu tìm việc của ứng viên.
+            <br/> thường xuyên để đáp ứng nhu cầu tìm việc của ứng viên.
           </li>
           <li class="list-item1 ">Hệ thống thông minh tự động gợi ý các công việc phù hợp theo CV của bạn
           </li>
@@ -115,85 +185,90 @@
         <div class="col-sm-6">
           <div class="detail">
             <div class="media display-inline text-align-center">
-              <img src="../../../assets/Client/minhhoang/imags/copy_765593473.png" alt="John Doe" class="mr-3 " style="width: 85px">
+              <img src="../../../assets/Client/minhhoang/imags/copy_765593473.png" alt="John Doe" class="mr-3 "
+                   style="width: 85px">
               <div class="media-body text-left  text-align-center">
                 <h6>Tuyển lập trình viên PHP</h6>
                 <i class="large material-icons">account_balance</i>
                 <span class="text">BAP</span>
-                <br />
+                <br/>
                 <i class="large material-icons">place</i>
                 <span class="text font-size">Đà Nẵng</span>
                 <div class="float-right margin-top text-align-center">
                   <a href="#" class="part-full-time">Bán thời gian</a>
-                  <p class="date-time">Hạn cuối:  04/08/2021</p>
+                  <p class="date-time">Hạn cuối: 04/08/2021</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="detail">
             <div class="media display-inline text-align-center">
-              <img src="../../../assets/Client/minhhoang/imags/copy_rikkei.png" alt="John Doe" class="mr-3 " style="width: 85px">
+              <img src="../../../assets/Client/minhhoang/imags/copy_rikkei.png" alt="John Doe" class="mr-3 "
+                   style="width: 85px">
               <div class="media-body text-left  text-align-center">
                 <h6>Tuyển lập trình viên JAVA</h6>
                 <i class="large material-icons">account_balance</i>
                 <span class="text">RIKKEI</span>
-                <br />
+                <br/>
                 <i class="large material-icons">place</i>
                 <span class="text font-size">Đà Nẵng</span>
                 <div class="float-right margin-top text-align-center">
                   <a href="#" class="part-full-time">Bán thời gian</a>
-                  <p class="date-time">Hạn cuối:  04/08/2021</p>
+                  <p class="date-time">Hạn cuối: 04/08/2021</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="detail">
             <div class="media display-inline text-align-center">
-              <img src="../../../assets/Client/minhhoang/imags/novaio-copy.png" alt="John Doe" class="mr-3 " style="width: 85px">
+              <img src="../../../assets/Client/minhhoang/imags/novaio-copy.png" alt="John Doe" class="mr-3 "
+                   style="width: 85px">
               <div class="media-body text-left  text-align-center">
                 <h6>Tuyển lập trình PHP</h6>
                 <i class="large material-icons">account_balance</i>
                 <span class="text">NOVAIO</span>
-                <br />
+                <br/>
                 <i class="large material-icons">place</i>
                 <span class="text font-size">Hà Nội</span>
                 <div class="float-right margin-top text-align-center">
                   <a href="#" class="part-full-time">Bán thời gian</a>
-                  <p class="date-time">Hạn cuối:  04/08/2021</p>
+                  <p class="date-time">Hạn cuối: 04/08/2021</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="detail">
             <div class="media display-inline text-align-center">
-              <img src="../../../assets/Client/minhhoang/imags/copy_mgm.png" alt="John Doe" class="mr-3 " style="width: 85px">
+              <img src="../../../assets/Client/minhhoang/imags/copy_mgm.png" alt="John Doe" class="mr-3 "
+                   style="width: 85px">
               <div class="media-body text-left  text-align-center">
                 <h6>Kĩ sư bảo mật hệ thống </h6>
                 <i class="large material-icons">account_balance</i>
                 <span class="text">MGM</span>
-                <br />
+                <br/>
                 <i class="large material-icons">place</i>
                 <span class="text font-size">Đà Nẵng</span>
                 <div class="float-right margin-top text-align-center">
                   <a href="#" class="part-full-time">Bán thời gian</a>
-                  <p class="date-time">Hạn cuối:  04/08/2021</p>
+                  <p class="date-time">Hạn cuối: 04/08/2021</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="detail">
             <div class="media display-inline text-align-center">
-              <img src="../../../assets/Client/minhhoang/imags/copy_rikkei.png" alt="John Doe" class="mr-3 " style="width: 85px">
+              <img src="../../../assets/Client/minhhoang/imags/copy_rikkei.png" alt="John Doe" class="mr-3 "
+                   style="width: 85px">
               <div class="media-body text-left  text-align-center">
                 <h6>Tuyển lập trình viên PHP</h6>
                 <i class="large material-icons">account_balance</i>
                 <span class="text">RIKKEI</span>
-                <br />
+                <br/>
                 <i class="large material-icons">place</i>
                 <span class="text font-size">Hà Nội</span>
                 <div class="float-right margin-top text-align-center">
                   <a href="#" class="part-full-time">Bán thời gian</a>
-                  <p class="date-time">Hạn cuối:  04/08/2021</p>
+                  <p class="date-time">Hạn cuối: 04/08/2021</p>
                 </div>
               </div>
             </div>
@@ -202,85 +277,90 @@
         <div class="col-sm-6">
           <div class="detail">
             <div class="media display-inline text-align-center">
-              <img src="../../../assets/Client/minhhoang/imags/copy_mgm.png" alt="John Doe" class="mr-3 " style="width: 85px">
+              <img src="../../../assets/Client/minhhoang/imags/copy_mgm.png" alt="John Doe" class="mr-3 "
+                   style="width: 85px">
               <div class="media-body text-left  text-align-center">
                 <h6>Tuyển lập trình viên PHP</h6>
                 <i class="large material-icons">account_balance</i>
                 <span class="text">MGM</span>
-                <br />
+                <br/>
                 <i class="large material-icons">place</i>
                 <span class="text font-size">Đà Nẵng</span>
                 <div class="float-right margin-top text-align-center">
                   <a href="#" class="part-full-time">Bán thời gian</a>
-                  <p class="date-time">Hạn cuối:  04/08/2021</p>
+                  <p class="date-time">Hạn cuối: 04/08/2021</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="detail">
             <div class="media display-inline text-align-center">
-              <img src="../../../assets/Client/minhhoang/imags/copy_fpt.png" alt="John Doe" class="mr-3 " style="width: 85px">
+              <img src="../../../assets/Client/minhhoang/imags/copy_fpt.png" alt="John Doe" class="mr-3 "
+                   style="width: 85px">
               <div class="media-body text-left  text-align-center">
                 <h6>Tuyển lập trình viên JAVA</h6>
                 <i class="large material-icons">account_balance</i>
                 <span class="text">FPT</span>
-                <br />
+                <br/>
                 <i class="large material-icons">place</i>
                 <span class="text font-size">TP.Hồ Chí Minh</span>
                 <div class="float-right margin-top text-align-center">
                   <a href="#" class="part-full-time">Bán thời gian</a>
-                  <p class="date-time">Hạn cuối:  04/08/2021</p>
+                  <p class="date-time">Hạn cuối: 04/08/2021</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="detail">
             <div class="media display-inline text-align-center">
-              <img src="../../../assets/Client/minhhoang/imags/about_copy.png" alt="John Doe" class="mr-3 " style="width: 85px">
+              <img src="../../../assets/Client/minhhoang/imags/about_copy.png" alt="John Doe" class="mr-3 "
+                   style="width: 85px">
               <div class="media-body text-left  text-align-center">
                 <h6>Tuyển lập trình Java</h6>
                 <i class="large material-icons">account_balance</i>
                 <span class="text">JAPAN QUALITY</span>
-                <br />
+                <br/>
                 <i class="large material-icons">place</i>
                 <span class="text font-size">Hà Nội</span>
                 <div class="float-right margin-top text-align-center">
                   <a href="#" class="part-full-time">Bán thời gian</a>
-                  <p class="date-time">Hạn cuối:  04/08/2021</p>
+                  <p class="date-time">Hạn cuối: 04/08/2021</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="detail">
             <div class="media display-inline text-align-center">
-              <img src="../../../assets/Client/minhhoang/imags/copy_fpt.png" alt="John Doe" class="mr-3 " style="width: 85px">
+              <img src="../../../assets/Client/minhhoang/imags/copy_fpt.png" alt="John Doe" class="mr-3 "
+                   style="width: 85px">
               <div class="media-body text-left  text-align-center">
                 <h6>Kĩ sư bảo mật hệ thống </h6>
                 <i class="large material-icons">account_balance</i>
                 <span class="text">FPT</span>
-                <br />
+                <br/>
                 <i class="large material-icons">place</i>
                 <span class="text font-size">Đà Nẵng</span>
                 <div class="float-right margin-top text-align-center">
                   <a href="#" class="part-full-time">Bán thời gian</a>
-                  <p class="date-time">Hạn cuối:  04/08/2021</p>
+                  <p class="date-time">Hạn cuối: 04/08/2021</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="detail">
             <div class="media display-inline text-align-center">
-              <img src="../../../assets/Client/minhhoang/imags/novaio-copy.png" alt="John Doe" class="mr-3 " style="width: 85px">
+              <img src="../../../assets/Client/minhhoang/imags/novaio-copy.png" alt="John Doe" class="mr-3 "
+                   style="width: 85px">
               <div class="media-body text-left  text-align-center">
                 <h6>Tuyển lập trình viên PHP</h6>
                 <i class="large material-icons">account_balance</i>
                 <span class="text">NOVAIO</span>
-                <br />
+                <br/>
                 <i class="large material-icons">place</i>
                 <span class="text font-size">Đà Nẵng</span>
                 <div class="float-right margin-top text-align-center">
                   <a href="#" class="part-full-time">Bán thời gian</a>
-                  <p class="date-time">Hạn cuối:  04/08/2021</p>
+                  <p class="date-time">Hạn cuối: 04/08/2021</p>
                 </div>
               </div>
             </div>
@@ -314,7 +394,7 @@
     <div class="vertical-space-30"></div>
     <p class="max-width">Khám phá ngay 30.000+ việc làm tốt nhất trên interfinder
     </p>
-    <div class="vertical-space-60"> </div>
+    <div class="vertical-space-60"></div>
     <div class="row">
       <div class="col-lg-3 col-md-6 max-width-50">
         <div class="box background-color-white-light">
@@ -396,8 +476,6 @@
 </section>
 
 
-
-
 <!--//header-bottom-->
 <!--//header-->
 <!--content-->
@@ -407,28 +485,18 @@
     <h3>ĐỐI TÁC</h3>
     <div class="container">
       <ul>
-        <li><a href="#"><img class="img-responsive" src="../../../assets/Client/minhhoang/imags/copy_rikkei.png" alt=""></a></li>
-        <li><a href="#"><img class="img-responsive" src="../../../assets/Client/minhhoang/imags/copy_fpt.png" alt=""></a></li>
-        <li><a href="#"><img class="img-responsive" src="../../../assets/Client/minhhoang/imags/copy_mgm.png" alt=""></a></li>
-        <li><a href="#"><img class="img-responsive" src="../../../assets/Client/minhhoang/imags/about_copy.png" alt=""></a></li>
-        <!--        <li><a href="#"><img class="img-responsive" src="../../../assets/Client/minhhoang/imags/novaio-copy.png" alt=""></a></li>-->
-        <li><a href="#"><img class="img-responsive" src="../../../assets/Client/minhhoang/imags/copy_765593473.png" alt=""></a></li>
-        <div class="clearfix"> </div>
+        <li><a href="#"><img class="img-responsive" src="../../../assets/Client/minhhoang/imags/copy_rikkei.png" alt=""></a>
+        </li>
+        <li><a href="#"><img class="img-responsive" src="../../../assets/Client/minhhoang/imags/copy_fpt.png"
+                             alt=""></a></li>
+        <li><a href="#"><img class="img-responsive" src="../../../assets/Client/minhhoang/imags/copy_mgm.png"
+                             alt=""></a></li>
+        <li><a href="#"><img class="img-responsive" src="../../../assets/Client/minhhoang/imags/about_copy.png" alt=""></a>
+        </li>
+        <li><a href="#"><img class="img-responsive" src="../../../assets/Client/minhhoang/imags/copy_765593473.png"
+                             alt=""></a></li>
+        <div class="clearfix"></div>
       </ul>
-      <!--      <ul>-->
-      <!--        <li><a href="#"><img class="img-responsive" src="../../../assets/Client/minhhoang/imags/about_copy.png" alt=""></a></li>-->
-      <!--        <li><a href="#"><img class="img-responsive" src="../../../assets/Client/minhhoang/imags/novaio-copy.png" alt=""></a></li>-->
-      <!--        <li><a href="#"><img class="img-responsive" src="../../../assets/Client/minhhoang/imags/copy_765593473.png" alt=""></a></li>-->
-      <!--&lt;!&ndash;        <li><a href="#"><img class="img-responsive" src="../../../assets/page/images/lg6.png" alt=""></a></li>&ndash;&gt;-->
-      <!--&lt;!&ndash;        <li><a href="#"><img class="img-responsive" src="../../../assets/page/images/lg7.png" alt=""></a></li>&ndash;&gt;-->
-      <!--&lt;!&ndash;        <li><a href="#"><img class="img-responsive" src="../../../assets/page/images/lg8.png" alt=""></a></li>&ndash;&gt;-->
-      <!--&lt;!&ndash;        <li><a href="#"><img class="img-responsive" src="../../../assets/page/images/lg9.png" alt=""></a></li>&ndash;&gt;-->
-      <!--        <div class="clearfix"> </div>-->
-      <!--      </ul>-->
-      <!--    </div>-->
     </div>
-    <!--//partners-->
   </div>
-  <!--footer-->
-  <!--//footer-->
-
+</div>

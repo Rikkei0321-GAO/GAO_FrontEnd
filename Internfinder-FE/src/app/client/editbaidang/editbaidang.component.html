@@ -20,7 +20,7 @@
       <a target="_blank" href="/quy-dinh-dang-tin-tuyen-dung">Quy định duyệt tin trên Intership »</a>
     </div>
   </div>
-  <form class="create-paper" [formGroup]="formDangtuyendung" (ngSubmit)="onSubmit()" style="padding-top: 0px;">
+  <form class="create-paper" [formGroup]="formUpload" style="padding-top: 0px;">
     <div class="row box">
       <div class="col-md-12">
         <h3 class="header-box-list d-none d-md-block">
@@ -29,26 +29,26 @@
       </div>
       <div class="col-md-12">
         <label for="id_tt" class="form-label">Tiêu đề bài đăng</label>
-        <textarea type="text" class="form-control" formControlName="title" id="id_tt"  [(ngModel)]="addBaidang.title"  title="Nhập vào tiêu đề bài đăng" placeholder="VD: Nhân Viên Kinh Doanh (Thiết Kế Website Và Marketing Online)" style=" min-height: 50px;
+        <textarea type="text" class="form-control" formControlName="title" id="id_tt"  [(ngModel)]="editBai.title"  title="Nhập vào tiêu đề bài đăng" placeholder="VD: Nhân Viên Kinh Doanh (Thiết Kế Website Và Marketing Online)" style=" min-height: 50px;
 				max-height: 50px;"></textarea>
         <div *ngFor="let validation of validation_messages.title">
           <small class="text-danger"
-                 *ngIf="formDangtuyendung.get('title')!.hasError(validation.type) && formDangtuyendung.get('title')!.touched">
+                 *ngIf="formUpload.get('title')!.hasError(validation.type) && formUpload.get('title')!.touched">
             {{validation.message}}</small>
         </div>
       </div>
       <div class="col-md-6">
         <label for="id_cd" class="form-label">Chức danh</label>
-        <input type="text" class="form-control" id="id_cd" formControlName="major" [(ngModel)]="addBaidang.major" required placeholder="VD: Nhân viên kinh doanh" >
+        <input type="text" class="form-control" id="id_cd" formControlName="major" [(ngModel)]="editBai.major" required placeholder="VD: Nhân viên kinh doanh" >
         <div *ngFor="let validation of validation_messages.major">
           <small class="text-danger"
-                 *ngIf="formDangtuyendung.get('major')!.hasError(validation.type) && formDangtuyendung.get('major')!.touched">
+                 *ngIf="formUpload.get('major')!.hasError(validation.type) && formUpload.get('major')!.touched">
             {{validation.message}}</small>
         </div>
       </div>
       <div class="col-md-6">
         <label for="ml" class="form-label">Mức lương</label>
-        <select class="form-select form-control" [(ngModel)]="addBaidang.salary"  formControlName="salary" aria-label="Default select example" id="ml">
+        <select class="form-select form-control" [(ngModel)]="editBai.salary"  formControlName="salary" aria-label="Default select example" id="ml">
           <option selected>Mức lương</option>
           <option value="5 đến 7">5 triệu -> 7 triệu đồng</option>
           <option value="7 đến 10">7 triệu -> 10 triệu đồng</option>
@@ -59,16 +59,16 @@
       </div>
       <div class="col-md-6">
         <label for="id_sl" class="form-label">Số lượng cần tuyển</label>
-        <input type="number" [(ngModel)]="addBaidang.quanlity" formControlName="quanlity" class="form-control" id="id_sl" placeholder="0" required>
+        <input type="number" [(ngModel)]="editBai.quanlity" formControlName="quanlity" class="form-control" id="id_sl" placeholder="0" required>
         <div *ngFor="let validation of validation_messages.quanlity">
           <small class="text-danger"
-                 *ngIf="formDangtuyendung.get('quanlity')!.hasError(validation.type) && formDangtuyendung.get('quanlity')!.touched">
+                 *ngIf="formUpload.get('quanlity')!.hasError(validation.type) && formUpload.get('quanlity')!.touched">
             {{validation.message}}</small>
         </div>
       </div>
       <div class="col-md-6">
         <label for="id_add" class="form-label">Địa điểm làm việc</label>
-        <select class="form-select form-control" [(ngModel)]="addBaidang.work_loaction" formControlName="work_loaction" aria-label="Default select example" id="id_add">
+        <select class="form-select form-control" [(ngModel)]="editBai.work_loaction" formControlName="work_loaction" aria-label="Default select example" id="id_add">
           <option selected>Địa điểm làm việc</option>
           <option value="An Giang">An Giang</option>
           <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu</option>
@@ -138,13 +138,13 @@
         </select>
         <div *ngFor="let validation of validation_messages.work_loaction">
           <small class="text-danger"
-                 *ngIf="formDangtuyendung.get('work_loaction')!.hasError(validation.type) && formDangtuyendung.get('work_loaction')!.touched">
+                 *ngIf="formUpload.get('work_loaction')!.hasError(validation.type) && formUpload.get('work_loaction')!.touched">
             {{validation.message}}</small>
         </div>
       </div>
       <div class="col-md-6">
         <label for="id_capbac" class="form-label">Cấp bậc</label>
-        <select class="form-select form-control" [(ngModel)]="addBaidang.position" formControlName="position" aria-label="Default select example" id="id_capbac">
+        <select class="form-select form-control" [(ngModel)]="editBai.position" formControlName="position" aria-label="Default select example" id="id_capbac">
           <option >Cấp bậc</option>
           <option value="Mới tốt nghiệp/ Thực tập sinh">Mới tốt nghiệp/ Thực tập sinh</option>
           <option value="Sinh Viên">Sinh viên</option>
@@ -153,50 +153,50 @@
         </select>
         <div *ngFor="let validation of validation_messages.position">
           <small class="text-danger"
-                 *ngIf="formDangtuyendung.get('position')!.hasError(validation.type) && formDangtuyendung.get('position')!.touched">
+                 *ngIf="formUpload.get('position')!.hasError(validation.type) && formUpload.get('position')!.touched">
             {{validation.message}}</small>
         </div>
       </div>
 
       <div class="col-md-6">
         <label for="ntd" class="form-label">Ngành tuyển dụng</label>
-        <select id="ntd" class="form-select form-control" formControlName="category_idCategory"  [(ngModel)]="addBaidang.id_category" (change)='onOptionsSelected($event)'>
-          <option *ngFor='let option of lisstnganh' [value]="option.idCategory">{{option.name}}</option>
+        <select id="ntd" class="form-select form-control" formControlName="category_idCategory" required [(ngModel)]="editBai.id_category" (change)='onOptionsSelected($event)'>
+          <option  *ngFor='let option of lisstnganh' [value]=option.idCategory.toString()>{{option.name}}</option>
         </select>
         <div *ngFor="let validation of validation_messages.category_idCategory">
           <small class="text-danger"
-                 *ngIf="formDangtuyendung.get('category_idCategory')!.hasError(validation.type) && formDangtuyendung.get('category_idCategory')!.touched">
+                 *ngIf="formUpload.get('category_idCategory')!.hasError(validation.type) && formUpload.get('category_idCategory')!.touched">
             {{validation.message}}</small>
         </div>
       </div>
       <div class="col-md-6">
         <label for="lhcv" class="form-label">Loại hình công việc</label>
-        <select class="form-select form-control"  [(ngModel)]="addBaidang.type_of_work" formControlName="type_of_work" aria-label="Default select example" id="lhcv">
+        <select class="form-select form-control"  [(ngModel)]="editBai.type_of_work" formControlName="type_of_work" aria-label="Default select example" id="lhcv">
           <option selected>Loại hình công việc</option>
           <option value="Bán thời gian ">Bán thời gian</option>
           <option value="Toàn thời gian ">Toàn thời gian</option>
         </select>
         <div *ngFor="let validation of validation_messages.type_of_work">
           <small class="text-danger"
-                 *ngIf="formDangtuyendung.get('type_of_work')!.hasError(validation.type) && formDangtuyendung.get('type_of_work')!.touched">
+                 *ngIf="formUpload.get('type_of_work')!.hasError(validation.type) && formUpload.get('type_of_work')!.touched">
             {{validation.message}}</small>
         </div>
       </div>
       <div class="col-md-12">
         <label for="mtcv" class="form-label">Mô tả công việc</label>
-        <textarea type="text" class="form-control" [(ngModel)]="addBaidang.decriptions" formControlName="decriptions" id="mtcv" placeholder="Nhập vào mô tả công việc"required></textarea>
+        <textarea type="text" class="form-control" [(ngModel)]="editBai.decriptions" formControlName="decriptions" id="mtcv" placeholder="Nhập vào mô tả công việc"required></textarea>
         <div *ngFor="let validation of validation_messages.decriptions">
           <small class="text-danger"
-                 *ngIf="formDangtuyendung.get('decriptions')!.hasError(validation.type) && formDangtuyendung.get('decriptions')!.touched">
+                 *ngIf="formUpload.get('decriptions')!.hasError(validation.type) && formUpload.get('decriptions')!.touched">
             {{validation.message}}</small>
         </div>
       </div>
       <div class="col-md-12">
         <label for="ql" class="form-label">Quyền lợi</label>
-        <textarea type="text" class="form-control" id="ql"  [(ngModel)]="addBaidang.benefit" formControlName="benefit" placeholder="Nhập vào quyền lợi"required></textarea>
+        <textarea type="text" class="form-control" id="ql"  [(ngModel)]="editBai.benefit" formControlName="benefit" placeholder="Nhập vào quyền lợi"required></textarea>
         <div *ngFor="let validation of validation_messages.benefit">
           <small class="text-danger"
-                 *ngIf="formDangtuyendung.get('benefit')!.hasError(validation.type) && formDangtuyendung.get('benefit')!.touched">
+                 *ngIf="formUpload.get('benefit')!.hasError(validation.type) && formUpload.get('benefit')!.touched">
             {{validation.message}}</small>
         </div>
       </div>
@@ -210,7 +210,7 @@
       </div>
       <div class="col-md-6">
         <label for="gt" class="form-label">Giới tính</label>
-        <select class="form-select form-control"  [(ngModel)]="addBaidang.sex" formControlName="sex" aria-label="Default select example" id="gt">
+        <select class="form-select form-control"  [(ngModel)]="editBai.sex" formControlName="sex" aria-label="Default select example" id="gt">
           <option selected>Giới tính</option>
           <option value="Nam">Nam</option>
           <option value="Nữ">Nữ</option>
@@ -218,13 +218,13 @@
         </select>
         <div *ngFor="let validation of validation_messages.sex">
           <small class="text-danger"
-                 *ngIf="formDangtuyendung.get('sex')!.hasError(validation.type) && formDangtuyendung.get('sex')!.touched">
+                 *ngIf="formUpload.get('sex')!.hasError(validation.type) && formUpload.get('sex')!.touched">
             {{validation.message}}</small>
         </div>
       </div>
       <div class="col-md-6">
         <label for="id_sl" class="form-label">Bằng cấp</label>
-        <select class="form-select form-control"   [(ngModel)]="addBaidang.degree" formControlName="degree" aria-label="Default select example" id="id_bc">
+        <select class="form-select form-control"   [(ngModel)]="editBai.degree" formControlName="degree" aria-label="Default select example" id="id_bc">
           <option selected>Kiểu bằng cấp</option>
           <option value="Đại học">Đại học</option>
           <option value="Cao Đẳng">Cao đẳng</option>
@@ -233,22 +233,22 @@
         </select>
         <div *ngFor="let validation of validation_messages.degree">
           <small class="text-danger"
-                 *ngIf="formDangtuyendung.get('degree')!.hasError(validation.type) && formDangtuyendung.get('degree')!.touched">
+                 *ngIf="formUpload.get('degree')!.hasError(validation.type) && formUpload.get('degree')!.touched">
             {{validation.message}}</small>
         </div>
       </div>
       <div class="col-md-6">
         <label for="time" class="form-label">Hạn nạp hồ sơ</label>
-        <input type="Date" min="today"  [(ngModel)]="addBaidang.working_time" formControlName="working_time" class="form-control" id="time"required>
+        <input type="Date" min="today"  [(ngModel)]="editBai.working_time" formControlName="working_time" class="form-control" id="time"required>
         <div *ngFor="let validation of validation_messages.working_time">
           <small class="text-danger"
-                 *ngIf="formDangtuyendung.get('working_time')!.hasError(validation.type) && formDangtuyendung.get('working_time')!.touched">
+                 *ngIf="formUpload.get('working_time')!.hasError(validation.type) && formUpload.get('working_time')!.touched">
             {{validation.message}}</small>
         </div>
       </div>
       <div class="col-md-6">
         <label for="nn" class="form-label">Ngôn ngữ hồ sơ</label>
-        <select class="form-select form-control"   [(ngModel)]="addBaidang.profile_language"  formControlName="profile_language" aria-label="Default select example" id="nn">
+        <select class="form-select form-control"   [(ngModel)]="editBai.profile_language"  formControlName="profile_language" aria-label="Default select example" id="nn">
           <option selected>Cấp bậc</option>
           <option value="Tiếng Anh">Tiếng Anh</option>
           <option value="Tiếng Việt">Tiếng Việt</option>
@@ -257,25 +257,25 @@
         </select>
         <div *ngFor="let validation of validation_messages.profile_language">
           <small class="text-danger"
-                 *ngIf="formDangtuyendung.get('profile_language')!.hasError(validation.type) && formDangtuyendung.get('profile_language')!.touched">
+                 *ngIf="formUpload.get('profile_language')!.hasError(validation.type) && formUpload.get('profile_language')!.touched">
             {{validation.message}}</small>
         </div>
       </div>
       <div class="col-md-12">
         <label for="yccv" class="form-label">Yêu cầu công việc</label>
-        <textarea type="text" class="form-control" id="yccv"   [(ngModel)]="addBaidang.job_requirements" formControlName="job_requirements" placeholder="Nhập vào yêu cầu công việc"required></textarea>
+        <textarea type="text" class="form-control" id="yccv"   [(ngModel)]="editBai.job_requirements" formControlName="job_requirements" placeholder="Nhập vào yêu cầu công việc"required></textarea>
         <div *ngFor="let validation of validation_messages.job_requirements">
           <small class="text-danger"
-                 *ngIf="formDangtuyendung.get('job_requirements')!.hasError(validation.type) && formDangtuyendung.get('job_requirements')!.touched">
+                 *ngIf="formUpload.get('job_requirements')!.hasError(validation.type) && formUpload.get('job_requirements')!.touched">
             {{validation.message}}</small>
         </div>
       </div>
       <div class="col-md-12">
         <label for="ychs" class="form-label">Yêu cầu hồ sơ</label>
-        <textarea type="text" class="form-control" id="ychs"  [(ngModel)]="addBaidang.profile_requirement" formControlName="profile_requirement" placeholder="Nhập vào yêu cầu hồ sơ lý lịch" required></textarea>
+        <textarea type="text" class="form-control" id="ychs"  [(ngModel)]="editBai.profile_requirement" formControlName="profile_requirement" placeholder="Nhập vào yêu cầu hồ sơ lý lịch" required></textarea>
         <div *ngFor="let validation of validation_messages.profile_requirement">
           <small class="text-danger"
-                 *ngIf="formDangtuyendung.get('profile_requirement')!.hasError(validation.type) && formDangtuyendung.get('profile_requirement')!.touched">
+                 *ngIf="formUpload.get('profile_requirement')!.hasError(validation.type) && formUpload.get('profile_requirement')!.touched">
             {{validation.message}}</small>
         </div>
       </div>
@@ -288,45 +288,45 @@
       </div>
       <div class="col-md-6">
         <label for="tnll" class="form-label">Họ và tên</label>
-        <input type="text" class="form-control" id="tnll"  [(ngModel)]="addBaidang.name_nd" formControlName="name_nd" placeholder="Nguyễn Văn A" required>
+        <input type="text" class="form-control" id="tnll"  [(ngModel)]="editBai.name_nd" formControlName="name_nd" placeholder="Nguyễn Văn A" required>
         <div *ngFor="let validation of validation_messages.name_nd">
           <small class="text-danger"
-                 *ngIf="formDangtuyendung.get('name_nd')!.hasError(validation.type) && formDangtuyendung.get('name_nd')!.touched">
+                 *ngIf="formUpload.get('name_nd')!.hasError(validation.type) && formUpload.get('name_nd')!.touched">
             {{validation.message}}</small>
         </div>
       </div>
       <div class="col-md-6">
         <label for="id_mumber" class="form-label">Số điện thoại</label>
-        <input type="text" class="form-control" id="id_mumber"  [(ngModel)]="addBaidang.phone" formControlName="sdt_nd" placeholder="Nhập vào số điện thoại" required>
+        <input type="text" class="form-control" id="id_mumber"  [(ngModel)]="editBai.phone" formControlName="sdt_nd" placeholder="Nhập vào số điện thoại" required>
         <div *ngFor="let validation of validation_messages.sdt_nd">
           <small class="text-danger"
-                 *ngIf="formDangtuyendung.get('sdt_nd')!.hasError(validation.type) && formDangtuyendung.get('sdt_nd')!.touched">
+                 *ngIf="formUpload.get('sdt_nd')!.hasError(validation.type) && formUpload.get('sdt_nd')!.touched">
             {{validation.message}}</small>
         </div>
       </div>
       <div class="col-md-6">
         <label for="id_add1" class="form-label">Địa chỉ</label>
-        <input type="text" class="form-control" id="id_add1"  [(ngModel)]="addBaidang.address_nd" formControlName="address_nd" placeholder="VD: Nhập vào địa chỉ" required>
+        <input type="text" class="form-control" id="id_add1"  [(ngModel)]="editBai.address_nd" formControlName="address_nd" placeholder="VD: Nhập vào địa chỉ" required>
         <div *ngFor="let validation of validation_messages.address_nd">
           <small class="text-danger"
-                 *ngIf="formDangtuyendung.get('address_nd')!.hasError(validation.type) && formDangtuyendung.get('address_nd')!.touched">
+                 *ngIf="formUpload.get('address_nd')!.hasError(validation.type) && formUpload.get('address_nd')!.touched">
             {{validation.message}}</small>
         </div>
       </div>
       <div class="col-md-6">
         <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email"  [(ngModel)]="addBaidang.email_nd" formControlName="email_nd" placeholder="Nhập vào email" required>
+        <input type="email" class="form-control" id="email"  [(ngModel)]="editBai.email_nd" formControlName="email_nd" placeholder="Nhập vào email" required>
         <div *ngFor="let validation of validation_messages.email_nd">
           <small class="text-danger"
-                 *ngIf="formDangtuyendung.get('email_nd')!.hasError(validation.type) && formDangtuyendung.get('email_nd')!.touched">
+                 *ngIf="formUpload.get('email_nd')!.hasError(validation.type) && formUpload.get('email_nd')!.touched">
             {{validation.message}}</small>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12 upload">
-        <button type="submit" class="btn form-control " >
-          <i class="fa fa-upload"></i>&nbsp; Đăng Tin</button>
+        <button type="submit" (click)="Update()"class="btn form-control " >
+          <i class="fa fa-upload"></i> Cập nhật </button>
       </div>
     </div>
   </form>

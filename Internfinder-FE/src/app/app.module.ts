@@ -58,6 +58,7 @@ import { PayPackageComponent } from './client/pay/pay-package/pay-package.compon
 import { PaypalComponent } from './client/pay/paypal/paypal.component';
 import { QuanlycvSvComponent } from './client/quanlycv/quanlycv-sv/quanlycv-sv.component';
 import { NgxPayPalModule } from 'ngx-paypal';
+import {EditbaidangComponent} from "./client/editbaidang/editbaidang.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -105,6 +106,7 @@ import { NgxPayPalModule } from 'ngx-paypal';
     PayPackageComponent,
     PaypalComponent,
     QuanlycvSvComponent,
+    EditbaidangComponent
   ],
   imports: [
     BrowserModule,

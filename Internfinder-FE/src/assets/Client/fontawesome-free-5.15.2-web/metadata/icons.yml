@@ -13241,7 +13241,7 @@ newspaper:
       - headline
       - journal
       - journalism
-      - news
+      - newdto
       - press
   styles:
     - solid
@@ -15710,7 +15710,7 @@ rss:
       - blog
       - feed
       - journal
-      - news
+      - newdto
       - writing
   styles:
     - solid
@@ -15726,7 +15726,7 @@ rss-square:
       - blog
       - feed
       - journal
-      - news
+      - newdto
       - writing
   styles:
     - solid
