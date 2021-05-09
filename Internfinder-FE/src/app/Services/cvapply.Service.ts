@@ -31,5 +31,8 @@ export  class cvapplyService {
   getAll(): Observable<Cv_apply[]> {
     return this.httpClient.get<Cv_apply[]>(baseURL + '/index')
   }
-
+  addApply(data: any): Observable<any>{
+    console.log("kaka:" + data);
+    return this.httpClient.post<Cv_apply>('http://localhost:8080/apply/create-apply', data);
+  }
 }
