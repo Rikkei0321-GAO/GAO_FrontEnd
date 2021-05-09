@@ -1,0 +1,51 @@
+<div id="nextbackFixed" class="wizard-header sticky-wrapper" style="top: 0px;">
+  <div class="cb-container">
+    <div class="wizard-title"><img src="https://static.careerbuilder.vn/themes/cv_tool/images/symbol-cvhay.png"></div>
+    <div class="pull-right">
+      <button type="button" class="btn btn-previous" style="display: none;">Quay Lại</button>
+      <button type="button" class="btn btn-preview btn-wd mar_left5" style="display: none;">Xem trước</button>
+      <button type="button" class="btn btn-next btn-wd mar_left5" style="display: inline;">Tiếp Theo</button>
+      <button type="button" class="btn btn-finish btn-wd mar_left5" style="display: none;">Về CV Hay</button>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  var steps = {};
+  steps[0] = [0,1];
+  steps[1] = [0,2];
+  steps[2] = [1,2];
+  steps[3] = [2,3];
+  steps[4] = [3,0];
+
+  var workflow = {};
+  workflow[1] = 'wl-step1';
+  workflow[2] = 'wl-step2';
+  workflow[3] = 'wl-step3';
+
+</script>
+<script>
+  var topcvhay = $('#nextbackFixed').offset().top;
+  var paddingTop = 0;
+  if(DOMAIN == 'thanhnien')
+    paddingTop = 50;
+  topcvhay = topcvhay - paddingTop;
+  $(window).scroll(function() {
+    if($(window).scrollTop()  >= topcvhay ) {
+      $('#nextbackFixed').addClass('is-sticky').css('top',paddingTop);
+      $('#wizard-navigation').css('margin-top', 80);
+    }else
+    {
+      $('#nextbackFixed').removeClass('is-sticky').css('top',0);
+      $('#wizard-navigation').css('margin-top', 15);
+    }
+  });
+</script>
+<div class="col-xs-12 wizard-navigation" id="wizard-navigation" style="margin-top: 15px;">
+  <ul class="row workflow wl-step1" id="workflow_step" style="display: block;">
+    <li class="text1"><a href="javascript:void(0);" data-step="1" class="select-step active">Chọn mẫu CV</a></li>
+    <li class="text2"><a href="javascript:void(0);" data-step="2" class="select-step">Thiết kế của bạn</a></li>
+    <li class="text3"><a href="javascript:void(0);" data-step="3" class="select-step">Thông tin</a></li>
+  </ul>
+  <div class="row workflow wl-step1" id="workflow_finish" style="display:none;"><span>Hoàn Thành</span></div>
+  <div class="row workflow wl-step1" id="workflow_success" style="display:none;"><span>Tải CV thành công</span></div>
+</div>

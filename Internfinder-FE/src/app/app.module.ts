@@ -44,6 +44,10 @@ import {NgxPaginationModule} from "ngx-pagination";
 import { PapeBaidangtuyenComponent } from './client/pape-baidangtuyen/pape-baidangtuyen.component';
 import {environment} from "../environments/environment";
 import {AngularFireModule} from "@angular/fire";
+import { CreateCvHeaderComponent } from './client/module-create-cv/create-cv-header/create-cv-header.component';
+import { CreateCvFooterComponent } from './client/module-create-cv/create-cv-footer/create-cv-footer.component';
+import { CreateCvFormComponent } from './client/module-create-cv/create-cv-form/create-cv-form.component';
+import { ModuleCvComponent } from './client/module-cv/module-cv.component';
 
 @NgModule({
   declarations: [
@@ -82,6 +86,10 @@ import {AngularFireModule} from "@angular/fire";
     ModuleTimkiemTrangchuComponent,
     HeaderComponent,
     PapeBaidangtuyenComponent,
+    CreateCvHeaderComponent,
+    CreateCvFooterComponent,
+    CreateCvFormComponent,
+    ModuleCvComponent,
   ],
   imports: [
     BrowserModule,

@@ -18,9 +18,12 @@ export class ClientComponent implements OnInit {
       this.loadcssServices.loadScript('assets/page/js/scripts.js');
       this.loadcssServices.loadScript('assets/page/js/easyResponsiveTabs.js');
       this.loadcssServices.loaddCss('assets/Client/CSS/stylesMH.css');
-      this.loadcssServices.loaddCss('assets/page/css/choosetemplate.css');
-      this.loadcssServices.loaddCss('assets/page/css/choosetemplate.min.css');
-      this.loadcssServices.loaddCss('assets/page/css/css-style-cv.css');
+      // this.loadcssServices.loaddCss('assets/page/css/choosetemplate.css');
+      // this.loadcssServices.loaddCss('assets/page/css/choosetemplate.min.css');
+      // this.loadcssServices.loaddCss('assets/page/css/css-style-cv.css');
+      this.loadcssServices.loaddCss('assets/page/css/from.css');
+      this.loadcssServices.loaddCss('assets/page/css/formtotal.css');
+      this.loadcssServices.loaddCss('assets/page/css/formCV.css');
       this.loadcssServices.loadScript('assets/page/js/create_cv.js');
     }
 

@@ -29,6 +29,8 @@ import {ModuleTimkiemTrangchuComponent} from "./client/module-timkiem-trangchu/m
 import {PapeBaidangtuyenComponent} from "./client/pape-baidangtuyen/pape-baidangtuyen.component";
 import {AdminAuthService} from "./_services/admin.service";
 import {CustomerAuthService} from "./_services/customer.service";
+import {CreateCvFormComponent} from "./client/module-create-cv/create-cv-form/create-cv-form.component";
+import {ModuleCvComponent} from "./client/module-cv/module-cv.component";
 
 const routes: Routes = [
 
@@ -49,7 +51,8 @@ const routes: Routes = [
     path: '', component: ClientComponent, children :
       [
         {path: '', component: PageComponent},
-        {path: 'create_cv', component: ModuleCreateCvComponent  },
+        {path: 'create_cv', component: ModuleCvComponent },
+
         {path: 'forum', component: TrangchuForumComponent},
         {path: 'forum/index/:id', component: BaivietForumComponent,},
         {path: 'dangbaichiase', component: DangbaivietForumComponent},
@@ -58,7 +61,6 @@ const routes: Routes = [
         {path: 'quanlythongtin-taikhoan', component: QuanlythongtinTaikhoanComponent},
         {path: 'timkiem-trangchu', component: ModuleTimkiemTrangchuComponent},
         {path: 'xembaidangtuyen', component: PapeBaidangtuyenComponent},
-
       ]
   },
   {
