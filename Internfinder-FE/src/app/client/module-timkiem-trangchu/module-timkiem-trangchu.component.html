@@ -126,17 +126,17 @@
     <div class="vertical-space-30"></div>
     <div class="row">
       <div class="col-lg-8 col-md-12"  *ngIf="baidang.length !=0;else elseBlock">
-        <div *ngFor="let list of baidang|filter:titleNew  | paginate: { id: 'listing_pagination',
+        <div *ngFor="let list of baidang|filter:titleNew|filter:nganh  | paginate: { id: 'listing_pagination',
                                                 itemsPerPage: 10,
                                                 currentPage: page,
                                                 totalItems: totalRec}; let i = index">
           <div class="detail width-100 ">
             <div class="media display-inline text-align-center">
-              <img src="../../../assets/Client/minhhoang/imags/job-post-icone-1.png" alt="John Doe" class="mr-3 ">
+              <img src="{{list.account.image}}" class="mr-3 " style=" height: 105px;" alt="">
               <div class="media-body text-left  text-align-center">
-                <h6><a class="font-color-black" (click)="details(list.idNews)">{{list.title}}</a></h6>
+                <h6><a class="font-color-black" (click)="details(list.idNews)">{{list.title.toUpperCase()}}</a></h6>
                 <i class="large material-icons">account_balance</i>
-                <span class="text">{{list.name_nd}}</span>
+                <span class="text">{{list.account.companyName}}</span>
                 <br>
                 <i class="large material-icons">place</i>
                 <span class="text font-size">{{list.work_loaction}}</span>

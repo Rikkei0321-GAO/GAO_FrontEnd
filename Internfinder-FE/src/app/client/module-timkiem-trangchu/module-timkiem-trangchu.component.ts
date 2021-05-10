@@ -25,9 +25,9 @@ export class ModuleTimkiemTrangchuComponent implements OnInit {
   // @ts-ignore
   private _titleNew: string | '';
   // @ts-ignore
-  private _noilam: string = "";
+  private _noilam: string | ''  ;
   // @ts-ignore
-  private _nganh: string= "";
+  private _nganh: string| '';
   // @ts-ignore
   totalRec: string;
 
@@ -38,6 +38,12 @@ export class ModuleTimkiemTrangchuComponent implements OnInit {
   get titleNew(): string {
     return this._titleNew;
   }
+
+
+  get nganh(): string {
+    return this._nganh;
+  }
+
 
   ngOnInit(): void {
     this.idNew=this.route.snapshot.params['idNew'];
@@ -56,9 +62,7 @@ export class ModuleTimkiemTrangchuComponent implements OnInit {
     //Lay dữ liệu từ trang tìm kiếm
     this.route.queryParams.subscribe(data => {
         this._titleNew = data.extitle;
-        console.log(+this._titleNew);
         this._nganh = data.exnganh;
-        console.log(+this._titleNew);
         this._noilam = data.exnoilam;
       }
     );
@@ -77,14 +81,12 @@ export class ModuleTimkiemTrangchuComponent implements OnInit {
   set nganh(value: string) {
     this._nganh = value;
     this.search();
-    console.log("the selected value is " + value);
   }
   // @ts-ignore
   public onOptionsSelected(event) {
     // @ts-ignore
     const value = event.target.value;
     this.idCata = value;
-    console.log(value);
   }
   constructor(private _timkiemService: TimkiemService, private  loadcssServices: LoadcssServices, private route: ActivatedRoute, private router: Router) {
     this.loadcssServices.loaddCss('/assets/Client/minhhoang/style.css');
@@ -109,10 +111,11 @@ export class ModuleTimkiemTrangchuComponent implements OnInit {
     if (this._nganh) {
       this.baidang = this.baidang.filter(item => {
         // @ts-ignore
-        return item.category.idCategory.toString().toLocaleLowerCase().includes(this._nganh.toString().toLocaleLowerCase());
+        return item.category.idCategory.toString().toLocaleLowerCase().includes(this._nganh.toLocaleLowerCase());
       });
       dem++;
     }
+
     if (dem == 0) {
       this.baidang = this.xemlichsulist;
     }

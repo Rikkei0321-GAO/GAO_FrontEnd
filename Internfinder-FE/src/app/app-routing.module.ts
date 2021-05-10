@@ -88,7 +88,6 @@ const routes: Routes = [
         {path: 'paypal', component: PaypalComponent,canActivate:[CustomerAuthService]},
         {path: 'quanlycv-sv', component: QuanlycvSvComponent,canActivate:[CustomerAuthService]},
         {path: 'editbaidang/:idNews', component: EditbaidangComponent,canActivate: [CustomerAuthService]}
-
       ]
   },
   {

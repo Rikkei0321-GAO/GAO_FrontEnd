@@ -20,9 +20,6 @@ export class ClientComponent implements OnInit {
         // this.loadcssServices.loadScript('assets/page/js/jquery.min.js');
       // this.loadcssServices.loadScript('assets/page/js/scripts.js');
       // this.loadcssServices.loadScript('assets/page/js/easyResponsiveTabs.js');
-      this.loadcssServices.loaddCss('assets/page/css/form.css');
-      this.loadcssServices.loaddCss('assets/page/css/formtotal.css');
-      this.loadcssServices.loaddCss('assets/page/css/formCV.css');
     }
   ngOnInit(): void {
 
