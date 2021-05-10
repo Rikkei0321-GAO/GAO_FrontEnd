@@ -2,6 +2,9 @@ import {Component, Inject, Injectable, OnInit} from '@angular/core';
 import {AngularFireStorage} from '@angular/fire/storage';
 import {finalize} from "rxjs/operators";
 import {CvCreated} from "../../dto/CvCreated";
+import {FormArray, FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {CvCreatedService} from "../../Services/cv-created.service";
+
 
 @Component({
   selector: 'app-module-create-cv',
@@ -9,7 +12,13 @@ import {CvCreated} from "../../dto/CvCreated";
   styleUrls: ['./module-create-cv.component.css']
 })
 export class ModuleCreateCvComponent implements OnInit {
-
+  // @ts-ignore
+  idtemplate: number;
+  isLinear = false;
+  // @ts-ignore
+  firstFormGroup: FormGroup;
+  // @ts-ignore
+  secondFormGroup: FormGroup;
   selectImg: any = null;
   // @ts-ignore
   idImg: string;
@@ -17,18 +26,60 @@ export class ModuleCreateCvComponent implements OnInit {
   imageSrc: string;
   // @ts-ignore
   firstName: string;
-
   // @ts-ignore
   cv_created: CvCreated;
-
   // @ts-ignore
-  constructor(@Inject(AngularFireStorage) private storage: AngularFireStorage) {
+  formKinhNghiem: FormGroup;
+  // @ts-ignore
+  quan: string;
+  // @ts-ignore
+  diachi:string;
+
+  constructor(@Inject(AngularFireStorage) private storage: AngularFireStorage, private  fb: FormBuilder, private cvCreated: CvCreatedService) {
+
+    // @ts-ignore
+    this.formKinhNghiem = this.fb.group({
+      kinhnghiems: this.fb.array([
+        this.fb.control('')
+      ])
+    });
+  }
+  get kinhnghiems() : FormArray {
+    {
+      return this.formKinhNghiem.get('kinhnghiems') as FormArray;
+    }
+  }
+
+
+  newKinhNghiem(): FormGroup {
+    return this.fb.group({
+      lbNamKN: 'Kinh nghiêm',
+      lbCapBac: 'Cấp bậc hiện tại',
+      lbChucDanh: 'Vị trí/Chức danh',
+      lbCongTy: 'Công ty',
+      lbThoiGian: 'Thời gian làm việc',
+      lbMoTa: 'Mô tả công việc',
+      tbNamKN: '',
+      tbCapbac: '',
+      tbViTri: '',
+      tbCongTy: '',
+      monthStart:'',
+      yearStart: '',
+      monthEnd: '',
+      yearEnd: '',
+    })
   }
 
   ngOnInit(): void {
     this.cv_created = new CvCreated();
+    this.firstFormGroup = this.fb.group({
+      firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this.fb.group({
+      secondCtrl: ['', Validators.required]
+    });
   }
- // cái nay la save len firebase khi m chon anh la save luon
+
   saveimg(event: any) {
     this.selectImg = event.target.files[0];
     const nameimg = this.selectImg.name;
@@ -54,15 +105,19 @@ export class ModuleCreateCvComponent implements OnInit {
       reader.readAsDataURL(this.selectImg);
     }
   }
-  //cácánay la dua vo server
   add(){
-    console.log('st_add');
-    this.cv_created.avatar=this.imageSrc; // gán ccái url của img vao avart của dto roi gan vo thoi y la
-    console.log('abc: '+this.cv_created.avatar );
-    console.log(',ten'+ this.firstName+ ' '+ this.cv_created.lastName);
-    console.log(',email ' + this.cv_created.email);
-    console.log(this.cv_created.gender);
-    console.log( 'phone' + this.cv_created.phone);
-    console.log('ngaysinh ' +this.cv_created.dayOfBirth);
+    this.cv_created.address = this.diachi+' '+this.quan ;
+    this.cv_created.avatar=this.imageSrc;
+    console.log(this.cv_created);
+    this.cvCreated.createCV(this.cv_created).subscribe(data=>{
+      // @ts-ignore
+      this.template= data;
+      // @ts-ignore
+      this.cv_created = new CvCreated();
+    })
+  }
+  download(){
+    this.cvCreated.download().subscribe();
   }
 }
+
