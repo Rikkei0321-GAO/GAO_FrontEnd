@@ -60,6 +60,7 @@ import { NgxPayPalModule } from 'ngx-paypal';
 import {EditbaidangComponent} from "./client/editbaidang/editbaidang.component";
 import {MatStepperModule} from "@angular/material/stepper";
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import {MatFormFieldModule} from "@angular/material/form-field";
 @NgModule({
   declarations: [
     AppComponent,
@@ -109,22 +110,22 @@ import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
     QuanlycvSvComponent,
     EditbaidangComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    CKEditorModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    JwPaginationModule,
-    ToastrModule.forRoot(),
-    BrowserAnimationsModule,
-    NgxPaginationModule,
-    Ng2SearchPipeModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    NgxPayPalModule,
-    MatStepperModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        CKEditorModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        JwPaginationModule,
+        ToastrModule.forRoot(),
+        BrowserAnimationsModule,
+        NgxPaginationModule,
+        Ng2SearchPipeModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        NgxPayPalModule,
+        MatStepperModule
+    ],
   providers: [
     CommentService,
     ShareService

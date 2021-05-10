@@ -1,3 +1,6 @@
+<head>
+  <title>Trang chủ</title>
+</head>>
 <section id="demo" class="carousel slide" data-ride="carousel">
   <ul class="carousel-indicators">
     <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -43,17 +46,17 @@
           <label class="mh">Nhập từ khoá</label>
           <div>
             <span class="large fa fa-pen-square search"></span>
-            <input class="search-box_search_input" [(ngModel)]="titleNew" name="titleNew" placeholder="Nhập vào đây">
+            <input class="search-box_search_input" [(ngModel)]="_titleNew" name="titleNew" placeholder="Nhập vào đây">
           </div>
         </div>
         <div class="form-control" class=" search-box_search_input">
           <label class="mh">Chọn ngành</label>
           <div>
             <span class="fa fa-tools large search "></span>
-            <select class=" search-box_search_input " name="nganh" required [(ngModel)]="nganh"
+            <select class=" search-box_search_input " name="nganh" required [(ngModel)]="_nganh"
                     (change)='onOptionsSelected($event)'>
               <option value="">Chọn ngành nghề</option>
-              <option *ngFor='let option of lisstnganh' [value]="option.idCategory">{{option.name}}</option>
+              <option *ngFor='let option of lisstnganh' [value]=option.idCategory>{{option.name}}</option>
             </select>
           </div>
         </div>
@@ -61,7 +64,7 @@
           <label class="mh">Điểm đến</label>
           <div>
             <span class="fa fa-map-marker-alt large search"></span>
-            <select class=" search-box_search_input " [ngModel]="" name="college2_name" required>
+            <select class=" search-box_search_input " [ngModel]="_noilam" name="college2_name" required>
               <option value="">Địa điểm làm việc</option>
               <option value="An Giang">An Giang</option>
               <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu</option>
@@ -132,7 +135,7 @@
           </div>
         </div>
         <button [routerLink]="['/timkiem-trangchu']"
-                [queryParams]="{extitle:titleNew, exnganh: nganh , exdiadiem: noilam}" class="search-box_search_button">
+                [queryParams]="{extitle:_titleNew, exnganh: _nganh , exdiadiem: _noilam}" class="search-box_search_button">
           Tìm kiếm
         </button>
       </div>
@@ -182,209 +185,45 @@
     <div class="vertical-space-60"></div>
     <div class="container">
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-6" *ngFor="let list of baidang|filter:titleNew  | paginate: { id: 'listing_pagination',
+                                                itemsPerPage: 10,
+                                                currentPage: page,
+                                                totalItems: totalRec}; let i = index">
           <div class="detail">
             <div class="media display-inline text-align-center">
-              <img src="../../../assets/Client/minhhoang/imags/copy_765593473.png" alt="John Doe" class="mr-3 "
-                   style="width: 85px">
+              <img src="{{list.account.image}}" class="mr-3 " style=" height: 100px;" alt="">
               <div class="media-body text-left  text-align-center">
-                <h6>Tuyển lập trình viên PHP</h6>
+                <h6><a class="font-color-black" (click)="details(list.idNews)">{{list.title.toUpperCase()}}</a></h6>
                 <i class="large material-icons">account_balance</i>
-                <span class="text">BAP</span>
-                <br/>
+                <span class="text">{{list.account.companyName}}</span>
+                <br>
                 <i class="large material-icons">place</i>
-                <span class="text font-size">Đà Nẵng</span>
-                <div class="float-right margin-top text-align-center">
-                  <a href="#" class="part-full-time">Bán thời gian</a>
-                  <p class="date-time">Hạn cuối: 04/08/2021</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="detail">
-            <div class="media display-inline text-align-center">
-              <img src="../../../assets/Client/minhhoang/imags/copy_rikkei.png" alt="John Doe" class="mr-3 "
-                   style="width: 85px">
-              <div class="media-body text-left  text-align-center">
-                <h6>Tuyển lập trình viên JAVA</h6>
-                <i class="large material-icons">account_balance</i>
-                <span class="text">RIKKEI</span>
+                <span class="text font-size">{{list.work_loaction}}</span>
                 <br/>
-                <i class="large material-icons">place</i>
-                <span class="text font-size">Đà Nẵng</span>
+                <i class="fa fa-tools large "></i>
+                <span class="textn">Ngành {{list.category.name}}</span>
                 <div class="float-right margin-top text-align-center">
-                  <a href="#" class="part-full-time">Bán thời gian</a>
-                  <p class="date-time">Hạn cuối: 04/08/2021</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="detail">
-            <div class="media display-inline text-align-center">
-              <img src="../../../assets/Client/minhhoang/imags/novaio-copy.png" alt="John Doe" class="mr-3 "
-                   style="width: 85px">
-              <div class="media-body text-left  text-align-center">
-                <h6>Tuyển lập trình PHP</h6>
-                <i class="large material-icons">account_balance</i>
-                <span class="text">NOVAIO</span>
-                <br/>
-                <i class="large material-icons">place</i>
-                <span class="text font-size">Hà Nội</span>
-                <div class="float-right margin-top text-align-center">
-                  <a href="#" class="part-full-time">Bán thời gian</a>
-                  <p class="date-time">Hạn cuối: 04/08/2021</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="detail">
-            <div class="media display-inline text-align-center">
-              <img src="../../../assets/Client/minhhoang/imags/copy_mgm.png" alt="John Doe" class="mr-3 "
-                   style="width: 85px">
-              <div class="media-body text-left  text-align-center">
-                <h6>Kĩ sư bảo mật hệ thống </h6>
-                <i class="large material-icons">account_balance</i>
-                <span class="text">MGM</span>
-                <br/>
-                <i class="large material-icons">place</i>
-                <span class="text font-size">Đà Nẵng</span>
-                <div class="float-right margin-top text-align-center">
-                  <a href="#" class="part-full-time">Bán thời gian</a>
-                  <p class="date-time">Hạn cuối: 04/08/2021</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="detail">
-            <div class="media display-inline text-align-center">
-              <img src="../../../assets/Client/minhhoang/imags/copy_rikkei.png" alt="John Doe" class="mr-3 "
-                   style="width: 85px">
-              <div class="media-body text-left  text-align-center">
-                <h6>Tuyển lập trình viên PHP</h6>
-                <i class="large material-icons">account_balance</i>
-                <span class="text">RIKKEI</span>
-                <br/>
-                <i class="large material-icons">place</i>
-                <span class="text font-size">Hà Nội</span>
-                <div class="float-right margin-top text-align-center">
-                  <a href="#" class="part-full-time">Bán thời gian</a>
-                  <p class="date-time">Hạn cuối: 04/08/2021</p>
+                  <a class="part-full-time" (click)="details(list.idNews)">Xem chi tiết</a>
+                  <p class="date-time">Deadline: {{list.working_time.substr(0, 10)}}</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-sm-6">
-          <div class="detail">
-            <div class="media display-inline text-align-center">
-              <img src="../../../assets/Client/minhhoang/imags/copy_mgm.png" alt="John Doe" class="mr-3 "
-                   style="width: 85px">
-              <div class="media-body text-left  text-align-center">
-                <h6>Tuyển lập trình viên PHP</h6>
-                <i class="large material-icons">account_balance</i>
-                <span class="text">MGM</span>
-                <br/>
-                <i class="large material-icons">place</i>
-                <span class="text font-size">Đà Nẵng</span>
-                <div class="float-right margin-top text-align-center">
-                  <a href="#" class="part-full-time">Bán thời gian</a>
-                  <p class="date-time">Hạn cuối: 04/08/2021</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="detail">
-            <div class="media display-inline text-align-center">
-              <img src="../../../assets/Client/minhhoang/imags/copy_fpt.png" alt="John Doe" class="mr-3 "
-                   style="width: 85px">
-              <div class="media-body text-left  text-align-center">
-                <h6>Tuyển lập trình viên JAVA</h6>
-                <i class="large material-icons">account_balance</i>
-                <span class="text">FPT</span>
-                <br/>
-                <i class="large material-icons">place</i>
-                <span class="text font-size">TP.Hồ Chí Minh</span>
-                <div class="float-right margin-top text-align-center">
-                  <a href="#" class="part-full-time">Bán thời gian</a>
-                  <p class="date-time">Hạn cuối: 04/08/2021</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="detail">
-            <div class="media display-inline text-align-center">
-              <img src="../../../assets/Client/minhhoang/imags/about_copy.png" alt="John Doe" class="mr-3 "
-                   style="width: 85px">
-              <div class="media-body text-left  text-align-center">
-                <h6>Tuyển lập trình Java</h6>
-                <i class="large material-icons">account_balance</i>
-                <span class="text">JAPAN QUALITY</span>
-                <br/>
-                <i class="large material-icons">place</i>
-                <span class="text font-size">Hà Nội</span>
-                <div class="float-right margin-top text-align-center">
-                  <a href="#" class="part-full-time">Bán thời gian</a>
-                  <p class="date-time">Hạn cuối: 04/08/2021</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="detail">
-            <div class="media display-inline text-align-center">
-              <img src="../../../assets/Client/minhhoang/imags/copy_fpt.png" alt="John Doe" class="mr-3 "
-                   style="width: 85px">
-              <div class="media-body text-left  text-align-center">
-                <h6>Kĩ sư bảo mật hệ thống </h6>
-                <i class="large material-icons">account_balance</i>
-                <span class="text">FPT</span>
-                <br/>
-                <i class="large material-icons">place</i>
-                <span class="text font-size">Đà Nẵng</span>
-                <div class="float-right margin-top text-align-center">
-                  <a href="#" class="part-full-time">Bán thời gian</a>
-                  <p class="date-time">Hạn cuối: 04/08/2021</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="detail">
-            <div class="media display-inline text-align-center">
-              <img src="../../../assets/Client/minhhoang/imags/novaio-copy.png" alt="John Doe" class="mr-3 "
-                   style="width: 85px">
-              <div class="media-body text-left  text-align-center">
-                <h6>Tuyển lập trình viên PHP</h6>
-                <i class="large material-icons">account_balance</i>
-                <span class="text">NOVAIO</span>
-                <br/>
-                <i class="large material-icons">place</i>
-                <span class="text font-size">Đà Nẵng</span>
-                <div class="float-right margin-top text-align-center">
-                  <a href="#" class="part-full-time">Bán thời gian</a>
-                  <p class="date-time">Hạn cuối: 04/08/2021</p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div>
         </div>
       </div>
     </div>
-    <div class="vertical-space-20"></div>
-    <div class="job-list">
-      <a href="#" class="Open-Jobs-Page margin-auto">Nhiều hơn<i
-        class="large material-icons float-right">trending_flat</i></a>
-      <ul class="pagination justify-content-end margin-auto">
-        <li class="page-item"><a class="page-link pdding-none" href="javascript:void(0);"><i
-          class=" material-icons keyboard_arrow_left_right">keyboard_arrow_left</i></a></li>
-        <li class="page-item"><a class="page-link active" href="javascript:void(0);">1</a></li>
-        <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
-        <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
-        <li class="page-item"><a class="page-link" href="javascript:void(0);">4</a></li>
-        <li class="page-item">
-          <a class="page-link pdding-none" href="javascript:void(0);"> <i
-            class=" material-icons keyboard_arrow_left_right">keyboard_arrow_right</i></a>
-        </li>
-      </ul>
-    </div>
+  </div>
+  <div class="vertical-space-20"></div>
+  <div class="job-list">
+    <a href="#" class="Open-Jobs-Page margin-auto">Nhiều hơn<i
+      class="large material-icons float-right">trending_flat</i></a>
+    <ul class="pagination justify-content-end margin-auto">
+      <li class="page-item">
+        <pagination-controls id="listing_pagination" (pageChange)="page = $event"></pagination-controls>
+      </li>
+    </ul>
   </div>
   <div class="vertical-space-60"></div>
 </section>

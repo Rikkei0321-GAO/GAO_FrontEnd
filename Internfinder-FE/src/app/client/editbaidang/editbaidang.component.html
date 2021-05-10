@@ -1,5 +1,5 @@
 <head>
-  <title>Đăng tuyển dụng</title>;
+  <title>Sửa bài</title>;
 </head>
 <div style="height: 10px"></div>
 <section>>
@@ -325,7 +325,7 @@
     </div>
     <div class="row">
       <div class="col-md-12 upload">
-        <button type="submit" (click)="Update()"class="btn form-control " >
+        <button type="submit" (click)="Update()" [disabled]="!formUpload.valid" class="btn form-control " >
           <i class="fa fa-upload"></i> Cập nhật </button>
       </div>
     </div>

@@ -3,6 +3,9 @@ import {LoadcssServices} from "../../Services/loadcss.services";
 import {AccountClass} from "../../model/Account.class";
 import {Category} from "../../model/Category";
 import {baidangservice} from "../../Services/baidangservice.service";
+import {TimkiemService} from "../../Services/timkiem.service";
+import {NewsClass} from "../../model/News.class";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-page',
@@ -11,11 +14,12 @@ import {baidangservice} from "../../Services/baidangservice.service";
 })
 export class PageComponent implements OnInit {
   // @ts-ignore
-  us: AccountClass
+  us: AccountClass;
   // @ts-ignore
   public logName: string;
 
-  constructor(private  loadcssServices: LoadcssServices,private baidangser:baidangservice) {
+  constructor(private _timkiemService:TimkiemService, private loadcssServices: LoadcssServices,private baidangser:baidangservice,
+              private route: ActivatedRoute, private router: Router) {
     this.loadcssServices.loaddCss('assets/Client/minhhoang/style.css');
     this.loadcssServices.loaddCss('assets/Client/minhhoang/matrialize.css');
     this.loadcssServices.loaddCss('assets/Client/fontawesome-free-5.15.2-web/css/all.css');
@@ -27,19 +31,42 @@ export class PageComponent implements OnInit {
   id_now: number = 0;
   // @ts-ignore
   private idCata: string;
+  baidang: NewsClass[] = [];
   lisstnganh: Category[] = [];
   // @ts-ignore
-  private _titleNew: string | '';
+  _titleNew: string;
   // @ts-ignore
-  private _noilam: string = "";
+  _noilam: string;
   // @ts-ignore
-  private _nganh;
+  _nganh: string;
+  // @ts-ignore
+  totalRec: string;
+
+  // @ts-ignore
+  idNew: number;
+  page: number = 1;
+
+  get titleNew(): string {
+    return this._titleNew;
+  }
+  get nganh(): string {
+    return this._nganh;
+  }
+
   ngOnInit(): void {
+    this.idNew=this.route.snapshot.params['idNew'];
     this.baidangser.getIdCategory().subscribe(data => {
       this.lisstnganh = data;
       console.log('loi' + this.lisstnganh);
     }, error => {
       console.log('loi' + error);
+    });
+    // @ts-ignore
+    this._timkiemService.getNewsAllDay().subscribe(data => {
+      this.baidang = data;
+    },(error: string)=>{
+      console.log('loi roi: '+error)
+
     });
   }
   // @ts-ignore
@@ -51,31 +78,7 @@ export class PageComponent implements OnInit {
     this.idCata = value;
     console.log(value);
   }
-
-  get titleNew(): string | "" {
-    return this._titleNew;
+  details(idNew: number){
+    this.router.navigate(['/xembaidangtuyen/',idNew])
   }
-
-  get noilam(): string {
-    return this._noilam;
-  }
-
-  get nganh() {
-    return this._nganh;
-  }
-
-  @Input()
-  set titleNew(value: string) {
-    this._titleNew = value;
-  }
-  @Input()
-  set noilam(value: string) {
-    this._noilam = value;
-  }
-  @Input()
-  set nganh(value: string) {
-    this._nganh = value;
-    console.log("the selected value is " + value);
-  }
-
 }

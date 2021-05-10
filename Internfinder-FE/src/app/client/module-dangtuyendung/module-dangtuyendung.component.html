@@ -59,7 +59,7 @@
       </div>
       <div class="col-md-6">
         <label for="id_sl" class="form-label">Số lượng cần tuyển</label>
-        <input type="number" [(ngModel)]="addBaidang.quanlity" formControlName="quanlity" class="form-control" id="id_sl" placeholder="0" required>
+        <input type="number" [(ngModel)]="addBaidang.quanlity" min="0" formControlName="quanlity" class="form-control" id="id_sl" placeholder="0" required>
         <div *ngFor="let validation of validation_messages.quanlity">
           <small class="text-danger"
                  *ngIf="formDangtuyendung.get('quanlity')!.hasError(validation.type) && formDangtuyendung.get('quanlity')!.touched">
@@ -69,7 +69,6 @@
       <div class="col-md-6">
         <label for="id_add" class="form-label">Địa điểm làm việc</label>
         <select class="form-select form-control" [(ngModel)]="addBaidang.work_loaction" formControlName="work_loaction" aria-label="Default select example" id="id_add">
-          <option selected>Địa điểm làm việc</option>
           <option value="An Giang">An Giang</option>
           <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu</option>
           <option value="Bắc Giang">Bắc Giang</option>
@@ -145,7 +144,6 @@
       <div class="col-md-6">
         <label for="id_capbac" class="form-label">Cấp bậc</label>
         <select class="form-select form-control" [(ngModel)]="addBaidang.position" formControlName="position" aria-label="Default select example" id="id_capbac">
-          <option >Cấp bậc</option>
           <option value="Mới tốt nghiệp/ Thực tập sinh">Mới tốt nghiệp/ Thực tập sinh</option>
           <option value="Sinh Viên">Sinh viên</option>
           <option value="Nhân Viên">Nhân Viên</option>
@@ -172,7 +170,6 @@
       <div class="col-md-6">
         <label for="lhcv" class="form-label">Loại hình công việc</label>
         <select class="form-select form-control"  [(ngModel)]="addBaidang.type_of_work" formControlName="type_of_work" aria-label="Default select example" id="lhcv">
-          <option selected>Loại hình công việc</option>
           <option value="Bán thời gian ">Bán thời gian</option>
           <option value="Toàn thời gian ">Toàn thời gian</option>
         </select>
@@ -209,7 +206,6 @@
           <span class="line"></span></h3>
       </div>
       <div class="col-md-6">
-        <label for="gt" class="form-label">Giới tính</label>
         <select class="form-select form-control"  [(ngModel)]="addBaidang.sex" formControlName="sex" aria-label="Default select example" id="gt">
           <option selected>Giới tính</option>
           <option value="Nam">Nam</option>
@@ -225,7 +221,6 @@
       <div class="col-md-6">
         <label for="id_sl" class="form-label">Bằng cấp</label>
         <select class="form-select form-control"   [(ngModel)]="addBaidang.degree" formControlName="degree" aria-label="Default select example" id="id_bc">
-          <option selected>Kiểu bằng cấp</option>
           <option value="Đại học">Đại học</option>
           <option value="Cao Đẳng">Cao đẳng</option>
           <option value="THPT">THPT</option>
@@ -249,7 +244,6 @@
       <div class="col-md-6">
         <label for="nn" class="form-label">Ngôn ngữ hồ sơ</label>
         <select class="form-select form-control"   [(ngModel)]="addBaidang.profile_language"  formControlName="profile_language" aria-label="Default select example" id="nn">
-          <option selected>Cấp bậc</option>
           <option value="Tiếng Anh">Tiếng Anh</option>
           <option value="Tiếng Việt">Tiếng Việt</option>
           <option value="Tiếng Trung">Tiếng Trung</option>
@@ -325,7 +319,7 @@
     </div>
     <div class="row">
       <div class="col-md-12 upload">
-        <button type="submit" class="btn form-control " >
+        <button type="submit" [disabled]="!formDangtuyendung.valid" class="btn form-control " >
           <i class="fa fa-upload"></i>&nbsp; Đăng Tin</button>
       </div>
     </div>

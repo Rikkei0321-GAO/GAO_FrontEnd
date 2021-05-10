@@ -7,6 +7,9 @@
     padding-bottom: 10px;
   }
 </style>
+<head>
+  <title>Chi tiết bài đăng</title>
+</head>
 <section id="intro" style="height: 335px">
   <div class="carousel-item active"style="height: 335px">
     <div class="carousel-background">
@@ -27,7 +30,6 @@
       <div class="detail-pic">
         <img src="{{new.account.image}}" class="img" alt=""/>
       </div>
-
       <div class="detail-status">
         <span>{{new.working_time.substr(0, 10)}}</span>
       </div>
@@ -37,7 +39,7 @@
     <div class="row bottom-mrg">
       <div class="col-md-8 col-sm-8">
         <div class="detail-desc-caption">
-          <h4>{{new.title}}</h4>
+          <h4>{{new.title.toUpperCase()}}</h4>
           <ul>
             <li><span class="designation">{{new.account.companyName}}</span>
             </li>
