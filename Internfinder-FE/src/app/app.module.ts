@@ -1,4 +1,3 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -59,6 +58,8 @@ import { PaypalComponent } from './client/pay/paypal/paypal.component';
 import { QuanlycvSvComponent } from './client/quanlycv/quanlycv-sv/quanlycv-sv.component';
 import { NgxPayPalModule } from 'ngx-paypal';
 import {EditbaidangComponent} from "./client/editbaidang/editbaidang.component";
+import {MatStepperModule} from "@angular/material/stepper";
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -121,12 +122,14 @@ import {EditbaidangComponent} from "./client/editbaidang/editbaidang.component";
     NgxPaginationModule,
     Ng2SearchPipeModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    NgxPayPalModule
+    NgxPayPalModule,
+    MatStepperModule
   ],
   providers: [
     CommentService,
     ShareService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
