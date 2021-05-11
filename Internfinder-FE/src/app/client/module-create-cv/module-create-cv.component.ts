@@ -90,7 +90,6 @@ export class ModuleCreateCvComponent implements OnInit {
           console.log(url);
         });
       })).subscribe();
-
   }
 
   readURL(event: any): void {
