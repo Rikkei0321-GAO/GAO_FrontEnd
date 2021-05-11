@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { QuanlycvSvComponent } from './quanlycv-sv.component';
+import { ProfileSvComponent } from './profile-sv.component';
 
-describe('QuanlycvSvComponent', () => {
-  let component: QuanlycvSvComponent;
-  let fixture: ComponentFixture<QuanlycvSvComponent>;
+describe('ProfileSvComponent', () => {
+  let component: ProfileSvComponent;
+  let fixture: ComponentFixture<ProfileSvComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ QuanlycvSvComponent ]
+      declarations: [ ProfileSvComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(QuanlycvSvComponent);
+    fixture = TestBed.createComponent(ProfileSvComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

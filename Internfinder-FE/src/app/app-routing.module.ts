@@ -41,8 +41,8 @@ import {ResetPasswordComponent} from "./login/reset-password/reset-password.comp
 import {VerifyResetPasswordComponent} from "./login/verify-reset-password/verify-reset-password.component";
 import {PaypalComponent} from "./client/pay/paypal/paypal.component";
 import {PayPackageComponent} from "./client/pay/pay-package/pay-package.component";
-import {QuanlycvSvComponent} from "./client/quanlycv/quanlycv-sv/quanlycv-sv.component";
 import {EditbaidangComponent} from "./client/editbaidang/editbaidang.component";
+import {ProfileSvComponent} from "./client/profile-sv/profile-sv.component";
 
 const routes: Routes = [
 
@@ -86,8 +86,8 @@ const routes: Routes = [
         {path: 'xembaidangtuyen/:idNew', component: PapeBaidangtuyenComponent},
         {path: 'pay-package', component: PayPackageComponent, canActivate:[CustomerAuthService]},
         {path: 'paypal', component: PaypalComponent,canActivate:[CustomerAuthService]},
-        {path: 'quanlycv-sv', component: QuanlycvSvComponent,canActivate:[CustomerAuthService]},
-        {path: 'editbaidang/:idNews', component: EditbaidangComponent,canActivate: [CustomerAuthService]}
+        {path: 'editbaidang/:idNews', component: EditbaidangComponent,canActivate: [CustomerAuthService]},
+        {path: 'profile-sv/:id', component: ProfileSvComponent, canActivate:[CustomerAuthService]},
 
       ]
   },

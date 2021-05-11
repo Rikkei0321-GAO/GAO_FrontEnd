@@ -55,11 +55,11 @@ import { ResetPasswordComponent } from './login/reset-password/reset-password.co
 import { VerifyResetPasswordComponent } from './login/verify-reset-password/verify-reset-password.component';
 import { PayPackageComponent } from './client/pay/pay-package/pay-package.component';
 import { PaypalComponent } from './client/pay/paypal/paypal.component';
-import { QuanlycvSvComponent } from './client/quanlycv/quanlycv-sv/quanlycv-sv.component';
 import { NgxPayPalModule } from 'ngx-paypal';
 import {EditbaidangComponent} from "./client/editbaidang/editbaidang.component";
 import {MatStepperModule} from "@angular/material/stepper";
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import { ProfileSvComponent } from './client/profile-sv/profile-sv.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -106,8 +106,8 @@ import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
     VerifyResetPasswordComponent,
     PayPackageComponent,
     PaypalComponent,
-    QuanlycvSvComponent,
-    EditbaidangComponent
+    EditbaidangComponent,
+    ProfileSvComponent
   ],
   imports: [
     BrowserModule,
