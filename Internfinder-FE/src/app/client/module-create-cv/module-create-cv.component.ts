@@ -4,6 +4,7 @@ import {finalize} from "rxjs/operators";
 import {CvCreated} from "../../dto/CvCreated";
 import {FormArray, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {CvCreatedService} from "../../Services/cv-created.service";
+import {ShareClass} from "../../model/Share.Class";
 
 
 @Component({
@@ -27,7 +28,7 @@ export class ModuleCreateCvComponent implements OnInit {
   // @ts-ignore
   firstName: string;
   // @ts-ignore
-  cv_created: CvCreated;
+  cv_created: CvCreated = new CvCreated();
   // @ts-ignore
   formKinhNghiem: FormGroup;
   // @ts-ignore
@@ -69,9 +70,7 @@ export class ModuleCreateCvComponent implements OnInit {
       yearEnd: '',
     })
   }
-
   ngOnInit(): void {
-    this.cv_created = new CvCreated();
     this.firstFormGroup = this.fb.group({
       firstCtrl: ['', Validators.required]
     });
@@ -107,16 +106,17 @@ export class ModuleCreateCvComponent implements OnInit {
   add(){
     this.cv_created.address = this.diachi+' '+this.quan ;
     this.cv_created.avatar=this.imageSrc;
-    console.log(this.cv_created);
-    this.cvCreated.createCV(this.cv_created).subscribe(data=>{
-      // @ts-ignore
-      this.template= data;
-      // @ts-ignore
-      this.cv_created = new CvCreated();
+    this.cvCreated.createCV(this.cv_created).subscribe(data => {
+      this.cv_created = data
+      console.log(data)
     })
   }
+  id_now: any;
   download(){
-    this.cvCreated.download().subscribe();
+    let id_user = JSON.parse(<string>localStorage.getItem("auth-user"));
+    this.id_now = id_user['id'];
+    console.log(this.idtemplate)
+    this.cvCreated.download(this.id_now,1);
   }
 }
 
