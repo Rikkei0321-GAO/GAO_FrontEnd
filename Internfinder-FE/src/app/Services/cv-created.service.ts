@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {CvCreated} from "../dto/CvCreated";
 
 // @ts-ignore
 @Injectable({
@@ -12,17 +13,19 @@ export class CvCreatedService {
   constructor(private  httpClient: HttpClient) {
     this.httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': `Bearer ` })
-      , 'Access-Control-Allow-Origin': 'http://localhost:4200', 'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS'
+      , 'Access-Control-Allow-Origin': 'http://localhost:4200',
+      'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+
     };
   }
-  createCV(value: any): Observable<any>{
+  createCV(data: CvCreated): Observable<any>{
     console.log("vo service");
-    console.log(value);
-    // @ts-ignore
-    return this.httpClient.post('http://localhost:8080/cv/postdata', value);
+    console.log(data);
+    return this.httpClient.post('http://localhost:8080/cv/postdata', data);
   }
-  download():Observable<any>{
-    // @ts-ignore
-    return this.httpClient.get('http://localhost:8080/cv/getcv/1/1');
+  download(value: any, idtemplate: any):string{
+
+    return window.location.href = `${'http://localhost:8080/cv/getcv/'}${value}/${idtemplate}`;
   }
 }
+

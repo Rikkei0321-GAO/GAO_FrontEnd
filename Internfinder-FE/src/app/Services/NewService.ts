@@ -1,6 +1,5 @@
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {AccountClass} from "../model/Account.class";
 import {Observable} from "rxjs";
 import {NewsClass} from "../model/News.class";
 
