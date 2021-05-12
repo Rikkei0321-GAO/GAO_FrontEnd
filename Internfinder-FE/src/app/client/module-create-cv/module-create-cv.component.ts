@@ -5,6 +5,7 @@ import {CvCreated} from "../../dto/CvCreated";
 import {FormArray, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {CvCreatedService} from "../../Services/cv-created.service";
 import {ShareClass} from "../../model/Share.Class";
+import {LoadcssServices} from "../../Services/loadcss.services";
 
 
 @Component({
@@ -36,8 +37,11 @@ export class ModuleCreateCvComponent implements OnInit {
   // @ts-ignore
   diachi:string;
 
-  constructor(@Inject(AngularFireStorage) private storage: AngularFireStorage, private  fb: FormBuilder, private cvCreated: CvCreatedService) {
-
+  constructor(@Inject(AngularFireStorage) private storage: AngularFireStorage, private  fb: FormBuilder, private cvCreated: CvCreatedService,
+  private  loadcssServices: LoadcssServices) {
+    this.loadcssServices.loaddCss('assets/page/css/form.css');
+    this.loadcssServices.loaddCss('assets/page/css/formtotal.css');
+    this.loadcssServices.loaddCss('assets/page/css/formCV.css');
     // @ts-ignore
     this.formKinhNghiem = this.fb.group({
       kinhnghiems: this.fb.array([

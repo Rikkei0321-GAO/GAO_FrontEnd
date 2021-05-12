@@ -25,26 +25,26 @@ export class EditbaidangComponent implements OnInit {
     this.loadcssServices.loaddCss('assets/Client/CCS/stylesMH.css');
     this.loadcssServices.loaddCss('assets/Client/fontawesome-free-5.15.2-web/css/all.css');
     this.formUpload = this.formBuild.group({
-      title: ['',[Validators.required]],
-      major: ['',[Validators.required]],
-      salary: ['',[Validators.required]],
-      quanlity: ['',[Validators.required]],
-      work_loaction: ['',[Validators.required]],
-      position: ['',[Validators.required]],
-      category_idCategory: ['',[Validators.required]],
-      type_of_work: ['',[Validators.required]],
-      decriptions: ['',[Validators.required]],
-      benefit: ['',[Validators.required]],
-      sex: ['',[Validators.required]],
-      degree: ['',[Validators.required]],
-      working_time: ['',[Validators.required]],
-      profile_language: ['',[Validators.required]],
-      job_requirements: ['',[Validators.required]],
-      profile_requirement: ['',[Validators.required]],
-      name_nd: ['',[Validators.required]],
-      sdt_nd:['',[Validators.required,Validators.pattern('^[0-9]{10}$')]],
-      address_nd: ['',[Validators.required]],
-      email_nd:['',[Validators.required,Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')]]
+        title: ['',[Validators.required]],
+        major: ['',[Validators.required]],
+        salary: ['',[Validators.required]],
+        quanlity: ['',[Validators.required]],
+        work_loaction: ['',[Validators.required]],
+        position: ['',[Validators.required]],
+        category_idCategory: ['',[Validators.required]],
+        type_of_work: ['',[Validators.required]],
+        decriptions: ['',[Validators.required]],
+        benefit: ['',[Validators.required]],
+        sex: ['',[Validators.required]],
+        degree: ['',[Validators.required]],
+        working_time: ['',[Validators.required]],
+        profile_language: ['',[Validators.required]],
+        job_requirements: ['',[Validators.required]],
+        profile_requirement: ['',[Validators.required]],
+        name_nd: ['',[Validators.required]],
+        sdt_nd:['',[Validators.required,Validators.pattern('^[0-9]{10}$')]],
+        address_nd: ['',[Validators.required]],
+        email_nd:['',[Validators.required,Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')]]
       }
     );
   }
