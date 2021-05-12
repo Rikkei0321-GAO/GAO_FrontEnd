@@ -39,7 +39,8 @@
   });
 </script>
 <div class="col-xs-12 wizard-navigation" id="wizard-navigation" style="margin-top: 15px;">
-  <ul class="row workflow wl-step1" id="workflow_step" style="display: block;">
+  <ul class="row workflow wl-step1" id="workflow_step" style="display: block;
+    margin: auto;">
     <li class="text1"><a href="/create_cv" data-step="1" class="select-step active">Thông tin</a></li>
     <li class="text2"><a href="javascript:void(0);" data-step="2" class="select-step">Chọn mẫu CV</a></li>
   </ul>
@@ -378,7 +379,7 @@
                             <div id="cke_objective_job"
                                  class="cke_1 cke cke_reset cke_chrome cke_editor_objective_job cke_ltr cke_browser_webkit"
                                  dir="ltr" lang="en" role="application" aria-labelledby="cke_objective_job_arialbl">
-                              <span id="cke_objective_job_arialbl" class="cke_voice_label">Rich Text Editor, objective_job</span>
+                              <span id="cke_objective_job_arialbl" class="cke_voice_label" style="display: block;padding: 10px 0 10px 0;">Rich Text Editor, objective_job</span>
                               <div class="cke_inner cke_reset" role="presentation">
                                                 <span id="cke_1_top" class="cke_top cke_reset_all" role="presentation"
                                                       style="height: auto; user-select: none;">
@@ -1364,9 +1365,9 @@
                           <h3>Để CV không chỉ Hay mà còn Đẹp trong mắt Nhà tuyển dụng</h3>
                         </header>
                         <div class="content_fck">
-                          <div id="scroll-cvtips" style="width: 226px; position: relative; height: 247px;">
+                          <div id="scroll-cvtips" style="width: 226px; position: relative; height: 310px;">
                             <p
-                              style="width: 226px; position: absolute; top: 0px; left: 0px; display: none; z-index: 3; opacity: 0; height: 232px;">
+                              style="width: 226px; position: absolute; top: 0px; left: 0px; display: none; z-index: 3; opacity: 0; height: 310px;">
                               Ảnh chân dung trong CV tuy không quyết định tất cả nhưng lại có khả năng gây ấn tượng với
                               Nhà tuyển dụng từ cái nhìn đầu tiên. Nếu CV của bạn có thêm ảnh chân dung, bạn cần nhớ
                               những nguyên tắc cơ bản sau: Mỉm cười vừa đủ tạo thiện cảm; Trang phục trong ảnh nên có
@@ -1497,10 +1498,10 @@
         </mat-form-field>
         <div>
           <p>Go to a different step to see the error state</p>
-          <button type="button"  class="btn btn-next btn-wd mar_left5" (click)="add()"
+          <button type="button" class="btn btn-next btn-wd mar_left5" (click)="add()"
                   style="display: inline; "><a>Tiếp Theo</a></button>
-          <button mat-button (click)="download()">Tải Xuống</button>
-<!--          <input  [(ngModel)]="idtemplate" name="idtemplate" >-->
+          <button mat-button class="btn btn-next btn-wd mar_left5" (click)="download()">Tải Xuống</button>
+          <!--          <input  [(ngModel)]="idtemplate" name="idtemplate" >-->
         </div>
       </form>
     </mat-step>
@@ -1508,14 +1509,20 @@
       <form [formGroup]="secondFormGroup">
         <ng-template matStepLabel>Chọn mẫu CV</ng-template>
         <mat-form-field>
-          <mat-label>Template</mat-label>
-          <input matInput [(ngModel)]="idtemplate" formControlName="secondCtrl"
+          <mat-label style="
+    font-size: 16px;
+    padding: 10px;
+    font-weight: bold;
+">Template
+          </mat-label>
+          <input matInput style="height: 25px;width: 180px;"[(ngModel)]="idtemplate" formControlName="secondCtrl"
                  required>
         </mat-form-field>
         <div>
           <p>Go to a different step to see the error state</p>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext (click)="download()">Tải Xuống</button>
+          <button mat-button class="btn btn-next btn-wd mar_left5" matStepperPrevious>Back</button>
+          <button mat-button matStepperNext class="btn btn-next btn-wd mar_left5" (click)="download()">Tải Xuống
+          </button>
         </div>
       </form>
 

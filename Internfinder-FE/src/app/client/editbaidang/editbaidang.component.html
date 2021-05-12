@@ -1,5 +1,5 @@
 <head>
-  <title>Đăng tuyển dụng</title>;
+  <title>Sửa bài</title>;
 </head>
 <div style="height: 10px"></div>
 <section>>
@@ -49,7 +49,6 @@
       <div class="col-md-6">
         <label for="ml" class="form-label">Mức lương</label>
         <select class="form-select form-control" [(ngModel)]="editBai.salary"  formControlName="salary" aria-label="Default select example" id="ml">
-          <option selected>Mức lương</option>
           <option value="5 đến 7">5 triệu -> 7 triệu đồng</option>
           <option value="7 đến 10">7 triệu -> 10 triệu đồng</option>
           <option value="10 triệu đến 15 triệu đồng">10 triệu -> 15 triệu đồng</option>
@@ -69,7 +68,6 @@
       <div class="col-md-6">
         <label for="id_add" class="form-label">Địa điểm làm việc</label>
         <select class="form-select form-control" [(ngModel)]="editBai.work_loaction" formControlName="work_loaction" aria-label="Default select example" id="id_add">
-          <option selected>Địa điểm làm việc</option>
           <option value="An Giang">An Giang</option>
           <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu</option>
           <option value="Bắc Giang">Bắc Giang</option>
@@ -145,7 +143,6 @@
       <div class="col-md-6">
         <label for="id_capbac" class="form-label">Cấp bậc</label>
         <select class="form-select form-control" [(ngModel)]="editBai.position" formControlName="position" aria-label="Default select example" id="id_capbac">
-          <option >Cấp bậc</option>
           <option value="Mới tốt nghiệp/ Thực tập sinh">Mới tốt nghiệp/ Thực tập sinh</option>
           <option value="Sinh Viên">Sinh viên</option>
           <option value="Nhân Viên">Nhân Viên</option>
@@ -172,7 +169,6 @@
       <div class="col-md-6">
         <label for="lhcv" class="form-label">Loại hình công việc</label>
         <select class="form-select form-control"  [(ngModel)]="editBai.type_of_work" formControlName="type_of_work" aria-label="Default select example" id="lhcv">
-          <option selected>Loại hình công việc</option>
           <option value="Bán thời gian ">Bán thời gian</option>
           <option value="Toàn thời gian ">Toàn thời gian</option>
         </select>
@@ -225,7 +221,6 @@
       <div class="col-md-6">
         <label for="id_sl" class="form-label">Bằng cấp</label>
         <select class="form-select form-control"   [(ngModel)]="editBai.degree" formControlName="degree" aria-label="Default select example" id="id_bc">
-          <option selected>Kiểu bằng cấp</option>
           <option value="Đại học">Đại học</option>
           <option value="Cao Đẳng">Cao đẳng</option>
           <option value="THPT">THPT</option>
@@ -249,7 +244,6 @@
       <div class="col-md-6">
         <label for="nn" class="form-label">Ngôn ngữ hồ sơ</label>
         <select class="form-select form-control"   [(ngModel)]="editBai.profile_language"  formControlName="profile_language" aria-label="Default select example" id="nn">
-          <option selected>Cấp bậc</option>
           <option value="Tiếng Anh">Tiếng Anh</option>
           <option value="Tiếng Việt">Tiếng Việt</option>
           <option value="Tiếng Trung">Tiếng Trung</option>
@@ -325,7 +319,7 @@
     </div>
     <div class="row">
       <div class="col-md-12 upload">
-        <button type="submit" (click)="Update()"class="btn form-control " >
+        <button type="submit" (click)="Update()" [disabled]="!formUpload.valid" class="btn form-control " >
           <i class="fa fa-upload"></i> Cập nhật </button>
       </div>
     </div>
