@@ -22,6 +22,8 @@ export class PaypalComponent implements OnInit {
     this.loadcssServices.loadScript('assets/pay/js/owl.carousel.js');
     this.loadcssServices.loadScript('assets/pay/js/jquery.magnific-popup.min.js');
     this.loadcssServices.loadScript('assets/pay/js/bootstrap.min.js');
+    this.loadcssServices.loaddCss('assets/Client/CSS/paypal.css');
+    this.loadcssServices.loaddCss('assets/Client/CSS/paypal1.css');
   }
 
   ngOnInit(): void {

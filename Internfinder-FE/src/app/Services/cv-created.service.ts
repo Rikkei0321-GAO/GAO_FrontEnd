@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {CvCreated} from "../dto/CvCreated";
+import {Create_CV} from "../model/Create_CV";
+
+const baseURL = 'http://localhost:8080/cv';
 
 // @ts-ignore
 @Injectable({
@@ -27,5 +30,18 @@ export class CvCreatedService {
 
     return window.location.href = `${'http://localhost:8080/cv/getcv/'}${value}/${idtemplate}`;
   }
+
+  deleteId(id: number):Observable<any>{
+    return  this.httpClient.delete(`${'http://localhost:8080/cv/delete'}/${id}`, this.httpOptions)
+  }
+  getOne(id: number): Observable<any>{
+    // @ts-ignore
+    return this.httpClient.get<Create_CV[]>(`${'http://localhost:8080/cv/file'}/${id}`,this.httpOptions);
+  }
+
+  getAll(): Observable<Create_CV[]> {
+    return this.httpClient.get<Create_CV[]>(baseURL + '/index')
+  }
+
 }
 

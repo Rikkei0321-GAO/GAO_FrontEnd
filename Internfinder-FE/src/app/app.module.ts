@@ -60,6 +60,7 @@ import { NgxPayPalModule } from 'ngx-paypal';
 import {EditbaidangComponent} from "./client/editbaidang/editbaidang.component";
 import {MatStepperModule} from "@angular/material/stepper";
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import { SinhvienCvComponent } from './client/sinhvien-cv/sinhvien-cv.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -107,7 +108,8 @@ import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
     PayPackageComponent,
     PaypalComponent,
     QuanlycvSvComponent,
-    EditbaidangComponent
+    EditbaidangComponent,
+    SinhvienCvComponent
   ],
   imports: [
     BrowserModule,
