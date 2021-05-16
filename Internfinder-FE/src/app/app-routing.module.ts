@@ -43,6 +43,7 @@ import {PaypalComponent} from "./client/pay/paypal/paypal.component";
 import {PayPackageComponent} from "./client/pay/pay-package/pay-package.component";
 import {EditbaidangComponent} from "./client/editbaidang/editbaidang.component";
 import {SinhvienCvComponent} from "./client/sinhvien-cv/sinhvien-cv.component";
+import {ModuleTemplateChooseComponent} from "./client/module-template-choose/module-template-choose.component";
 
 const routes: Routes = [
 
@@ -87,8 +88,8 @@ const routes: Routes = [
         {path: 'pay-package', component: PayPackageComponent, canActivate:[CustomerAuthService]},
         {path: 'paypal', component: PaypalComponent,canActivate:[CustomerAuthService]},
         {path: 'quanlycv-sv/:id', component: SinhvienCvComponent,canActivate:[CustomerAuthService]},
-        {path: 'editbaidang/:idNews', component: EditbaidangComponent,canActivate: [CustomerAuthService]}
-
+        {path: 'editbaidang/:idNews', component: EditbaidangComponent,canActivate: [CustomerAuthService]},
+        {path: 'slide_cv', component: ModuleTemplateChooseComponent}
       ]
   },
   {

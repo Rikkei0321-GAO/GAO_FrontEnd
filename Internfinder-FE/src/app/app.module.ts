@@ -61,6 +61,7 @@ import {EditbaidangComponent} from "./client/editbaidang/editbaidang.component";
 import {MatStepperModule} from "@angular/material/stepper";
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import { SinhvienCvComponent } from './client/sinhvien-cv/sinhvien-cv.component';
+import { ModuleTemplateChooseComponent } from './client/module-template-choose/module-template-choose.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -109,7 +110,8 @@ import { SinhvienCvComponent } from './client/sinhvien-cv/sinhvien-cv.component'
     PaypalComponent,
     QuanlycvSvComponent,
     EditbaidangComponent,
-    SinhvienCvComponent
+    SinhvienCvComponent,
+    ModuleTemplateChooseComponent
   ],
   imports: [
     BrowserModule,
