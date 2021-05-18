@@ -46,6 +46,10 @@
             <span for="nganh" class="fa fa-map-marker-alt large search"></span>
             <select style="border-radius: 100px"  id ="nganh" class="form-control" class=" search-box_search_input" type="text" name="noilam" placeholde="Địa chỉ làm việc" [(ngModel)]="noilam">
               <option value="">Địa điểm làm việc</option>
+              <option value="Tp.Đà Nẵng">Tp.Đà Nẵng</option>
+              <option value="Tp.Hải Phòng">Tp.Hải Phòng</option>
+              <option value="Tp.Hà Nội">Tp.Hà Nội</option>
+              <option value="TP  HCM">TP HCM</option>
               <option value="An Giang">An Giang</option>
               <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu</option>
               <option value="Bắc Giang">Bắc Giang</option>
@@ -107,10 +111,6 @@
               <option value="Yên Bái">Yên Bái</option>
               <option value="Phú Yên">Phú Yên</option>
               <option value="Tp.Cần Thơ">Tp.Cần Thơ</option>
-              <option value="Tp.Đà Nẵng">Tp.Đà Nẵng</option>
-              <option value="Tp.Hải Phòng">Tp.Hải Phòng</option>
-              <option value="Tp.Hà Nội">Tp.Hà Nội</option>
-              <option value="TP  HCM">TP HCM</option>
             </select>
           </div>
         </div>
@@ -126,7 +126,7 @@
     <div class="vertical-space-30"></div>
     <div class="row">
       <div class="col-lg-8 col-md-12"  *ngIf="baidang.length !=0;else elseBlock">
-        <div *ngFor="let list of baidang|filter:titleNew  | paginate: { id: 'listing_pagination',
+        <div *ngFor="let list of baidang|filter:titleNew|filter:noilam|filter:nganh | paginate: { id: 'listing_pagination',
                                                 itemsPerPage: 10,
                                                 currentPage: page,
                                                 totalItems: totalRec}; let i = index">
