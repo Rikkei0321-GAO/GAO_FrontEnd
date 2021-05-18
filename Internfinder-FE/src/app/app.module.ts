@@ -55,7 +55,6 @@ import { ResetPasswordComponent } from './login/reset-password/reset-password.co
 import { VerifyResetPasswordComponent } from './login/verify-reset-password/verify-reset-password.component';
 import { PayPackageComponent } from './client/pay/pay-package/pay-package.component';
 import { PaypalComponent } from './client/pay/paypal/paypal.component';
-import { QuanlycvSvComponent } from './client/quanlycv/quanlycv-sv/quanlycv-sv.component';
 import { NgxPayPalModule } from 'ngx-paypal';
 import {EditbaidangComponent} from "./client/editbaidang/editbaidang.component";
 import {MatStepperModule} from "@angular/material/stepper";
@@ -108,7 +107,6 @@ import { ModuleTemplateChooseComponent } from './client/module-template-choose/m
     VerifyResetPasswordComponent,
     PayPackageComponent,
     PaypalComponent,
-    QuanlycvSvComponent,
     EditbaidangComponent,
     SinhvienCvComponent,
     ModuleTemplateChooseComponent

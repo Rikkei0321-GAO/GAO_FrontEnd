@@ -1,8 +1,7 @@
-<hr>
 <div class="container" style="margin-left: 50px;margin-right: 50px; margin-top: 20px">
   <div class="row">
     <div class="card-body">
-      <div class="col-sm-8" style="margin-right: 15px">
+      <div class="col-sm-8">
         <div class="col-md-12">
           <a>
             <img
@@ -15,7 +14,7 @@
           <div class="col-lg-12">
             <hr>
             <div class="box-group-body">
-              <a class="text-orange" style="text-align: center">Danh Sảnh các CV Ứng tuyển vào bài đăng của bạn</a>
+              <a class="text-orange" style="text-align: center; margin-top: 20px; margin-bottom: 20px">Danh Sảnh các CV Ứng tuyển vào bài đăng của bạn</a>
               <div id="cv-list" *ngFor="let item of Cv_list |paginate: {itemsPerPage: 3, currentPage: pageOfItems}">
                 <div class="box box-white cv no-gutter clearfix">
                   <div class="hidden-xs col-sm-3 col-cv-thumb"><a
@@ -36,9 +35,7 @@
                     <ul class="cv-action text-dark-gray">
                       <li><a target="_blank" [href]="item.url"
                              class="btn btn-sm bold"><i class="fa fa-eye"></i> Xem</a></li>
-                      <li><a href="javascript:void(true)" data-id="8d19ecc1d387f77a8643e8435662bc99"
-                             class="btn btn-sm bold btn-download-cv"><i class="fa fa-download"></i> Tải xuống</a></li>
-                      <li><a data-toggle="modal" data-cv-id="8d19ecc1d387f77a8643e8435662bc99"
+                        <li><a data-toggle="modal" data-cv-id="8d19ecc1d387f77a8643e8435662bc99"
                              data-target="#confirmDelete"
                              class="btn btn-sm bold" (click)="deletebyid(item.id_apply)"><i class="fa fa-trash"></i>
                         Xóa</a>
@@ -61,46 +58,50 @@
           <h1>Thông tin mang tính bảo mật vui lòng xin cấp quyền</h1>
         </ng-template>
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm-4" id="sidebar">
         <div class="box box-white text-center-sm">
-          <div class="card">
-            <div class="card-body">
-              <div class="d-flex flex-column align-items-center text-center">
-                <img [src]="account.image" alt="Hình ảnh không tồn tại" class="rounded-circle" width="100" height="100"
-                     style="display: inline-block">
-                <div class="mt-3">
-                  <h4>{{account.fullName}}</h4>
-                  <hr>
-                  <h5 class="text-muted font-size-sm">{{account.companyName}}</h5>
-                  <p class="text-muted font-size-sm">{{account.postion}}</p>
-                  <p class="text-muted font-size-sm">{{account.address}}</p>
+          <div class="card-body">
+            <div class="d-flex flex-column align-items-center text-center">
+              <img [src]="account.image||'https://firebasestorage.googleapis.com/v0/b/fir-angular-66583.appspot.com/o/avatar-1577909_1280.png?alt=media&token=d7eeaf14-9686-48ee-b313-973b26c57435' " class="rounded-circle" width="100" height="100"
+                   style="display: inline-block">
+              <div class="mt-3">
+                <h4>{{account.fullName}}</h4>
+                <hr>
+                <h5 class="text-muted font-size-sm">{{account.companyName}}</h5>
+                <p class="text-muted font-size-sm">{{account.postion}}</p>
+                <p class="text-muted font-size-sm">{{account.address}}</p>
+                <div class="card mt-3">
 
-                  <div class="card mt-3">
-                    <hr>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                        <i class='fas fa-award' style='font-size:30px;color:#e3e311'> Vàng</i>
-                        <span class="text-secondary"> +50</span>
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                        <i class='fas fa-award' style='font-size:30px;color:#cbd3da'> Bạc</i>
-                        <span class="text-secondary"> +30</span>
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                        <i class='fas fa-award' style='font-size:30px;color:#c36f0e'> Đồng</i>
-                        <span class="text-secondary"> +10</span>
-                      </li>
-                    </ul>
-                    <hr>
-                    <a class="btn btn-topcv-primary" routerLink="/pay-package">Nâng Cấp tài khoản</a>
-                  </div>
+                  <button class="btn btn-topcv-primary" routerLink="/profile/{{account.id_account}}">Cập nhật thông tin tài khoản</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
+        <div class="box box-white text-center-sm">
+          <div class="card-body">
+            <div class="text-center cv-count-header">
+              <div class="text-highlight">
+                <strong style="font-size: 20px;">CV của bạn đã đẹp?</strong>
+                <p class="text-gray" style="font-size: 13px">Bao nhiêu NTD đang quan tâm tới Hồ sơ của bạn?</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="cv-count text-center ">
+                <div class="cv-count-number">CV</div>
+                <div>.......</div>
+              </div>
+            </div>
+            <div class="col-md-9" style="padding-top: 5px">
+              <p>Hãy tạo ngay CV đẹp và mới nhất tại đây!</p>
+              <div class="text-center">
+                <a href="#" target="_blank" class="btn btn-sm btn-topcv-primary">Tạo CV ngay</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 </div>

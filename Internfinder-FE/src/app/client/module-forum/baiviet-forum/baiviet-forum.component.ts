@@ -88,7 +88,7 @@ export class BaivietForumComponent implements OnInit {
     console.log(this.id_now)
     this.comment.id_account = this.id_now;
     this.comment.id_share = this.share.idshare
-    this.comment.create_date = new Date();
+    this.comment.create_date = new Date()
     this.comment.content = this.commentForm.value.content;
     this.commentService.createComment(this.comment).subscribe(data => {
       this.getAllComment();

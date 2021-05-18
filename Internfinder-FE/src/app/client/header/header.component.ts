@@ -50,7 +50,9 @@ export class HeaderComponent implements OnInit {
   getOneByID(){
     this.router.navigate(['/profile',this.tokenStorage.getUser().id])
   }
-
+  getOneByID2(){
+    this.router.navigate(['/quanlycv-sv', this.tokenStorage.getUser().id])
+  }
 
 
 

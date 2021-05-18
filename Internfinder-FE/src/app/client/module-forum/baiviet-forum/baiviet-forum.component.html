@@ -3,8 +3,8 @@
   <div class="col-large push-top">
     <ul class="breadcrumbs">
       <li><a href="#"><i class="fa fa-home fa-btn"></i>Trang chủ</a></li>
-      <li><a href="#">{{share.account?.fullName}}</a></li>
-      <li><a href="#">{{share.title}}</a></li>
+      <li><h6 href="#">{{share.account?.fullName}}</h6></li>
+      <li><h6 href="#">{{share.title}}</h6></li>
     </ul>
     <div class="post-list">
       <div class="post">
@@ -13,7 +13,7 @@
           <a class="user-name">{{share.account?.username}}</a>
 
           <a href="profile.html#profile-details">
-            <img class="avatar-large" [src]="share.account?.image  " alt="">
+            <img class="avatar-large" [src]="share.account?.image ||'https://firebasestorage.googleapis.com/v0/b/fir-angular-66583.appspot.com/o/avatar-1577909_1280.png?alt=media&token=d7eeaf14-9686-48ee-b313-973b26c57435' " alt="">
           </a>
 
           <p class="desktop-only text-small">107 posts</p>
@@ -26,17 +26,15 @@
 
         <div class="post-content">
           <div>
-            <h1>{{share.title}}</h1>
+            <h4>{{share.title}}</h4>
             <br>
-            <p>
-              {{share.content}}
+            <p [innerHtml]="share.content">
             </p>
           </div>
-          <!-- <a href="#" style="margin-left: auto;" class="link-unstyled" title="Make a change"><i class="fa fa-pencil"></i></a> -->
         </div>
         <br>
         <div class="post-date text-faded">
-          {{share.create_date|date:'dd/MM/yyyy - HH:mm:ss' }}
+          {{share.create_date|date:'dd/MM/yyyy' }}
         </div>
 
         <div class="reactions">
@@ -71,35 +69,30 @@
       <div class="card-body">
         <div class="row" *ngFor="let item of commentlist| paginate: {itemsPerPage: 5, currentPage: pageOfItems}">
           <a>
-            <img class="avatar-small" [src]="item.account.image" alt="">
+            <img class="avatar-small" [src]="item.account.image ||'https://firebasestorage.googleapis.com/v0/b/fir-angular-66583.appspot.com/o/avatar-1577909_1280.png?alt=media&token=d7eeaf14-9686-48ee-b313-973b26c57435' " alt="">
           </a>
           <div class="col-md-10">
             <p>
               <a class="float-left"><strong>{{item.account?.fullName}}</strong></a>
-<!--              <span class="float-right"><i class="text-warning fa fa-star"></i></span>-->
-<!--              <span class="float-right"><i class="text-warning fa fa-star"></i></span>-->
-<!--              <span class="float-right"><i class="text-warning fa fa-star"></i></span>-->
               <span class="float-right">{{item.create_date | date:'dd/mm/yyyy'}}</span>
             </p>
             <br>
             <div class="clearfix"></div>
             <p>{{item.content}}<p>
-
             <div class="meta-line">
               <div *ngIf="account.id != item.account?.id_account; else checkAccountComment">
-                <hr>
               </div>
             </div>
             <ng-template #checkAccountComment>
               <div class="media-body">
                 <div class="comment-meta">
              <span>
-                  <a role="button" class="btn-lg" (click)="getCommentDeleteById(item.idcoment)">
+                  <a role="button"  class="btn-lg" (click)="getCommentDeleteById(item.idcoment)">
                   Xóa
                 </a>
              </span>
                   <span>
-                <a class="" role="button" data-toggle="collapse" href="#{{item.idcoment}}" aria-expanded="false"
+                <a class="btn-lg" role="button" data-toggle="collapse" href="#{{item.idcoment}}" aria-expanded="false"
                    aria-controls="collapseExample">Sửa</a>
               </span>
                   <div class="collapse" id="{{item.idcoment}}">

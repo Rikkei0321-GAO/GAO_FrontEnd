@@ -6,6 +6,7 @@ import {ShareService} from "../../../Services/Share.Service";
 import {Subscription} from "rxjs";
 import {Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
+import {CKEditor4} from "ckeditor4-angular";
 
 @Component({
   selector: 'app-dangbaiviet-forum',

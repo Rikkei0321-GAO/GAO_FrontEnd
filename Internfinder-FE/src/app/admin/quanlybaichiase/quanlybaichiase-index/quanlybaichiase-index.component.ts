@@ -55,7 +55,7 @@ export class QuanlybaichiaseIndexComponent implements OnInit {
   }
   //get id
   OnEdit(id: number){
-    this.router.navigate(['/admin/quanlybaichiase/edit',id])
+    this.router.navigate(['/admin/quanlybinhluan/details',id])
   }
   Ondelete(){
     if(this.abc == null){

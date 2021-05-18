@@ -6,6 +6,7 @@ import {FormArray, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {CvCreatedService} from "../../Services/cv-created.service";
 import {ShareClass} from "../../model/Share.Class";
 import {LoadcssServices} from "../../Services/loadcss.services";
+import {ActivatedRoute, Router} from "@angular/router";
 
 
 @Component({
@@ -37,8 +38,10 @@ export class ModuleCreateCvComponent implements OnInit {
   // @ts-ignore
   diachi:string;
 
+  // @ts-ignore
   constructor(@Inject(AngularFireStorage) private storage: AngularFireStorage, private  fb: FormBuilder, private cvCreated: CvCreatedService,
-  private  loadcssServices: LoadcssServices) {
+              private  loadcssServices: LoadcssServices,
+              private route: ActivatedRoute, private router: Router) {
     this.loadcssServices.loaddCss('assets/page/css/form.css');
     this.loadcssServices.loaddCss('assets/page/css/formtotal.css');
     this.loadcssServices.loaddCss('assets/page/css/formCV.css');
@@ -115,6 +118,7 @@ export class ModuleCreateCvComponent implements OnInit {
       this.cv_created = data
       console.log(data)
     })
+    this.router.navigate(['/slide_cv']);
   }
   id_now: any;
   download(){

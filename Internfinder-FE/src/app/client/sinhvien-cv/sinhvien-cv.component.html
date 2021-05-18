@@ -6,22 +6,25 @@
           <h4 class="modal-title"></h4>
         </div>
         <div class="modal-body" style="padding: 0px">
-          <a target="_blank" href="https://www.topcv.vn/app"><img src="https://www.topcv.vn/images/app_install/popup.jpg" class="img-responsive" alt="Download APP TOPCV"></a>
+          <a target="_blank" href="https://www.topcv.vn/app"><img
+            src="https://www.topcv.vn/images/app_install/popup.jpg" class="img-responsive" alt="Download APP TOPCV"></a>
         </div>
         <div class="modal-footer">
-          <button type="button" id="btn-close-modal-app-install" class="btn btn-default pull-left" data-dismiss="modal">Đóng</button>
+          <button type="button" id="btn-close-modal-app-install" class="btn btn-default pull-left" data-dismiss="modal">
+            Đóng
+          </button>
         </div>
       </div>
     </div>
   </div>
   <div class="container">
-    <div class="row">
-      <div class="col-sm-8">
+    <div class="row" *ngIf="account.id_account == this.id_now; else checkAccount">
+      <div class="col-sm-8" >
         <div class="box-group">
           <div class="box-group-header">
             <div class="row">
               <div class="box-group-title col-sm-6 col-md-9">
-                <a href="javascript:void(true)">Danh sách CV</a>
+                <a>Danh sách CV</a>
               </div>
               <div class="box-group-toolbox col-sm-6 col-md-3 text-right">
                 <a href="#" class="btn btn-topcv-primary btn-sm"><span class="fa fa-plus-circle"></span> Tạo mới</a>
@@ -33,26 +36,27 @@
               <div class="box box-white cv no-gutter clearfix">
                 <div class="hidden-xs col-sm-3 col-cv-thumb">
                   <a href="https://i.topcv.vn/phanthanhhai?ref=3800738" target="_blank" class="cv-thumb">
-                    <img src="https://www.topcv.vn/images/cv/screenshots/thumbs/cv-template-thumbnails-v1.1/default.png" class="img-responsive"></a></div> <div class="col-xs-12 col-sm-9 col-cv-data">
-                <div class="clearfix">
-                  <h4 class="cv-title pull-left"><!---->
-                    <a [href]="item.path" target="_blank" class="text-highlight bold">CV</a>
-                  </h4>
-                  <span class="cv-date text-gray pull-right">
-                    <i aria-hidden="true" class="fa fa-clock-o text-highlight"></i>{{item.create_date}}</span>
+                    <img src="https://www.topcv.vn/images/cv/screenshots/thumbs/cv-template-thumbnails-v1.1/default.png"
+                         class="img-responsive"></a></div>
+                <div class="col-xs-12 col-sm-9 col-cv-data">
+                  <div class="clearfix">
+                    <h4 class="cv-title pull-left"><!---->
+                      <a [href]="item.path" target="_blank" class="text-highlight bold"></a>
+                    </h4>
+                    <span class="cv-date text-gray pull-right">
+                    <i aria-hidden="true" class="fa fa-clock-o text-highlight"></i>{{item.create_date |date:'dd/MM/yyyy' }}</span>
+                  </div>
+                  <div class="cv-url text-gray"><input type="text" onclick="this.select();" [ngModel]="item.path" readonly="readonly"></div>
+                  <ul class="cv-action text-dark-gray">
+                    <li><a target="_blank" [href]="item.path" class="btn btn-sm bold"><i class="fa fa-eye"></i> Xem</a>
+                    </li>
+                    <li>
+                      <a class="btn btn-sm bold" (click)="deletebyid(item.id_CV)">
+                        <i class="fa fa-trash"></i>
+                        Xóa</a>
+                    </li>
+                  </ul>
                 </div>
-                <div class="cv-url text-gray"><input type="text" onclick="this.select();" readonly="readonly"></div>
-                <ul class="cv-action text-dark-gray">
-                  <li><a target="_blank" [href]="item.path" class="btn btn-sm bold"><i class="fa fa-eye"></i> Xem</a></li>
-                  <li><a href="javascript:void(true)" data-id="bea12ed9dae1ff86ea59b0cdab6bd24c" class="btn btn-sm bold btn-download-cv"><i class="fa fa-download"></i> Tải xuống</a></li>
-                  <li><a href="" class="btn btn-sm bold"><i class="fa fa-pencil"></i> Sửa</a></li>
-                  <li>
-                    <a class="btn btn-sm bold">
-                      <i class="fa fa-trash" (click)="deletebyid(item.id_CV)"></i>
-                      Xóa</a>
-                  </li>
-                </ul>
-              </div>
               </div>
               <div class="text-center">
               </div>
@@ -61,110 +65,24 @@
             </div>
           </div>
         </div>
-
       </div>
       <div class="col-sm-4" id="sidebar">
         <div class="box box-white text-center-sm">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="profile-avatar">
-              </div>
-              <div class="text-center">
-                <input type="file" name="avatar" style="display: none;" id="img-avatar">
-                <form>
-                  <div class="profile-photo-container">
-                    <div class="EntityPhoto-circle-8">
-                      <img id="img_mem_avatar" [src]="account.image" width="160" height="160" class="profile-photo-edit">
-                    </div>
-                    <div class="upload-photo" style="left: 45%">
-                      <label class="fileContainer"><i class="fa fa-edit"></i>
-                        <input (change)="saveimg($event); readURL($event)" type="file" class="file" id="fileAvatar" name="fileAvatar"></label>
-                    </div>
-                    <div class="note">Bạn chỉ dùng được các tập tin dạng *.gif,  *.jpg, *.png, kích thước 160x160 pixel, dung lượng không vượt quá 2MB.</div>
+          <div class="card-body">
+                <div class="d-flex flex-column align-items-center text-center">
+                  <img [src]="account.image||'https://firebasestorage.googleapis.com/v0/b/fir-angular-66583.appspot.com/o/avatar-1577909_1280.png?alt=media&token=d7eeaf14-9686-48ee-b313-973b26c57435' " class="rounded-circle" width="100" height="100"
+                       style="display: inline-block">
+                  <div class="mt-3">
+                    <h4>{{account.fullName}}</h4>
+                    <hr>
+                    <h5 class="text-muted font-size-sm">{{account.companyName}}</h5>
+                    <p class="text-muted font-size-sm">{{account.postion}}</p>
+                    <p class="text-muted font-size-sm">{{account.address}}</p>
+                    <div class="card mt-3">
+                      <button class="btn btn-topcv-primary" routerLink="/profile/{{account.id_account}}">Cập nhật thông tin tài khoản</button>
                   </div>
-                  <script type="text/javascript" src="https://static.careerbuilder.vn/themes/kiemviecv32/jobseekers/js/ajaxfileupload.js"></script>
-                  <script language="javascript" src="https://static.careerbuilder.vn/js/jcrop/jquery.Jcrop.min.js"></script>
-
-                  <script type="text/javascript">
-                    $(document).ready(function(){
-
-                    });
-                    function ajaxFileUpload(){
-                      if($('#fileAvatar').val()){
-                        $.ajaxFileUpload({
-                          url:PATH_CVHAY+'jcropimage?upload=fileAvatar',
-                          fileElementId:'fileAvatar',
-                          dataType: 'json',
-                          success: function (data, status){
-                            if(data.file && data.error=="")
-                            {
-                              $.fancybox({
-                                'type':'iframe',
-                                'width'  : 600,
-                                'height': 520,
-                                'showCloseButton' : false,
-                                'closeClick' : false,
-                                'hideOnOverlayClick' : false,
-                                'hideOnContentClick' : false,
-                                'autoDimensions': true,
-                                'enableEscapeButton': false,
-                                'centerOnScroll':true,
-                                'padding': 0,
-                                'href' : PATH_CVHAY+"jcropimage?file="+encodeURIComponent(data.file),
-                                onComplete:(function(){$("#fancybox-wrap").css({'width':($("#fancybox-content").width()+40)+"px"});})
-                              });
-                              $('#fileAvatar').val('');
-                            }else{
-                              alert(data.error);
-                            }
-                            $('#fileAvatar').bind('change', function() {
-                              //ajaxFileUpload();
-                            })
-                            return false;
-                          },
-                          error: function (data, status, e){
-                            $('#fileAvatar').bind('change', function() {
-                              //ajaxFileUpload();
-                            })
-                          }
-                        });
-                      }
-                    }
-                    function showAvatar(file)
-                    {
-                      if(file)
-                        $("#img_mem_avatar").attr("src",'https://images.careerbuilder.vn/jobseekers/'+file);
-                      $.fancybox.close();
-                    }
-
-                  </script>
-                </form>
               </div>
-              <form action="https://www.topcv.vn/ajax-upload-avatar" method="post" enctype="multipart/form-data" id="upload-avatar-form" style="display: none;">
-                <input type="hidden" name="_token" value="Qwqcc2lwYQ3rzY6MSo5doX4UR64rqn2uayeo0bns">
-                <input type="file" name="avatar" id="avatar-image">
-              </form>
             </div>
-            <div class="col-md-8">
-              <div style="margin-top: 15px;margin-left: 45px">Chào bạn trở lại,</div>
-              <h4 class="profile-fullname" style="margin-left: 45px;">{{account.fullName}}</h4>
-              <h6 class="profile-fullname" style="margin-left: 45px;">{{account.birthday}}</h6>
-            </div>
-          </div>
-          <div class="row" style="margin-top: 15px">
-            <input type="hidden" id="currentStatus" value="">
-            <div id="on-off-job-waiting" class="">
-              <div class="col-xs-12">
-                <input type="checkbox" class="js-switch" value="1" id="btn-job-waiting" data-switchery="true" style="display: none;"><span class="switchery switchery-default" style="box-shadow: rgb(223, 223, 223) 0px 0px 0px 0px inset; border-color: rgb(223, 223, 223); background-color: rgb(255, 255, 255); transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s;"><small style="left: 0px; transition: background-color 0.4s ease 0s, left 0.2s ease 0s;"></small></span>
-                <span class="job-waiting-status-text job-off-show">
-</span>
-              </div>
-              <div class="col-xs-12">
-                <a href="" class="btn btn-topcv-primary btn-sm" routerLink="/profile/{{account.id_account}}">Cập Nhật Thông Tin</a>
-              </div>
-              <p></p>
-            </div>
-
           </div>
         </div>
         <div class="box box-white text-center-sm">
@@ -190,13 +108,14 @@
           </div>
         </div>
       </div>
+    </div >
+     </div>
+  <ng-template #checkAccount>
+    <div class="circles">
+      <p style="color: #0f9a2e"><br>
+      </p>
     </div>
-    <div role="dialog" id="modalOptionWishJob" data-backdrop="static" data-keyboard="false" class="modal fade" aria-hidden="true" style="display: none;"><div action="#" method="post" class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header text-center"><a href="javascript:cancelPopupWishedOption()" class="btn-close text-gray"><span class="fa fa-times"></span></a> <h4 class="modal-title text-highlight">Hãy để TopCV hiểu mong muốn của bạn?</h4> <p class="text-small text-gray italic">TopCV sẽ kết nối bạn với những cơ hội việc làm phù hợp nhất.</p></div> <div class="modal-body"><div><div class="row"><div class="col-xs-12 col-sm-6"><div class="form-group"><label class="text-dark-gray">Chọn Ngành/Nghề bạn quan tâm<span class="text-danger">*</span></label> <select multiple="" id="updateJobWaitingCategoryIds" name="categoryIds[]" class="form-control  select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true"><option value="10001">Kinh doanh / Bán hàng</option><option value="10003">Biên / Phiên dịch</option><option value="10004">Báo chí / Truyền hình</option><option value="10005">Bưu chính - Viễn thông</option><option value="10006">Bảo hiểm</option><option value="10007">Bất động sản</option><option value="10008">Chứng khoán / Vàng / Ngoại tệ</option><option value="10009">Công nghệ cao</option><option value="10010">Cơ khí / Chế tạo / Tự động hóa</option><option value="10011">Du lịch</option><option value="10012">Dầu khí/Hóa chất</option><option value="10013">Dệt may / Da giày</option><option value="10014">Dịch vụ khách hàng</option><option value="10015">Điện tử viễn thông</option><option value="10016">Điện / Điện tử / Điện lạnh</option><option value="10017">Giáo dục / Đào tạo</option><option value="10018">Hoá học / Sinh học</option><option value="10019">Hoạch định/Dự án</option><option value="10020">Hàng gia dụng</option><option value="10021">Hàng hải</option><option value="10022">Hàng không</option><option value="10023">Hành chính / Văn phòng</option><option value="10024">In ấn / Xuất bản</option><option value="10025">IT Phần cứng / Mạng</option><option value="10026">IT phần mềm</option><option value="10027">Khách sạn / Nhà hàng</option><option value="10028">Kế toán / Kiểm toán</option><option value="10029">Marketing / Truyền thông / Quảng cáo</option><option value="10030">Môi trường / Xử lý chất thải</option><option value="10031">Mỹ phẩm / Trang sức</option><option value="10032">Mỹ thuật / Nghệ thuật / Điện ảnh</option><option value="10033">Ngân hàng / Tài chính</option><option value="10034">Nhân sự</option><option value="10035">Nông / Lâm / Ngư nghiệp</option><option value="10036">Luật/Pháp lý</option><option value="10037">Quản lý chất lượng (QA/QC)</option><option value="10038">Quản lý điều hành</option><option value="10039">Thiết kế đồ họa</option><option value="10042">Thời trang</option><option value="10043">Thực phẩm / Đồ uống</option><option value="10045">Tư vấn</option><option value="10046">Tổ chức sự kiện / Quà tặng</option><option value="10047">Vận tải / Kho vận</option><option value="10048">Logistics</option><option value="10049">Xuất nhập khẩu</option><option value="10050">Xây dựng</option><option value="10051">Y tế / Dược</option><option value="10052">Công nghệ Ô tô</option><option value="10101">An toàn lao động</option><option value="10102">Bán hàng kỹ thuật</option><option value="10103">Bán lẻ / bán sỉ</option><option value="10104">Bảo trì / Sữa chữa</option><option value="10110">Dược phẩm / Công nghệ sinh học</option><option value="10111">Địa chất / Khoáng sản</option><option value="10113">Hàng cao cấp</option><option value="10117">Hàng tiêu dùng</option><option value="10120">Kiến trúc</option><option value="10124">Phi chính phủ / Phi lợi nhuận</option><option value="10125">Sản phẩm công nghiệp</option><option value="10126">Sản xuất</option><option value="10127">Tài chính / Đầu tư</option><option value="10128">Thiết kế nội thất</option><option value="10129">Thư ký / Trợ lý</option><option value="10130">Spa / Làm đẹp</option><option value="10131">Công nghệ thông tin</option><option value="10132">NGO / Phi chính phủ / Phi lợi nhuận</option><option value="11000">Ngành nghề khác</option></select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1"><ul class="select2-selection__rendered"><li class="select2-selection__choice" title="Kinh doanh / Bán hàng"><span class="select2-selection__choice__remove" role="presentation">×</span>Kinh doanh / Bán hàng</li><li class="select2-selection__choice" title="Tư vấn"><span class="select2-selection__choice__remove" role="presentation">×</span>Tư vấn</li><li class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list" placeholder="" style="width: 0.75em;"></li></ul></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span> <p class="input-error text-danger italic" style="font-size: 0.9em; margin-top: 5px; display: none;"></p></div> <div class="form-group"><label class="text-dark-gray">Địa điểm làm việc (có thể ghi Quận/Huyện) <span class="text-danger">*</span></label> <select multiple="" id="updateJobWaitingCityIds" name="cityIds[]" class="form-control select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true"><option value="1">Hà Nội</option><option value="2">Hồ Chí Minh</option><option value="3">Bình Dương</option><option value="4">Bắc Ninh</option><option value="5">Đồng Nai</option><option value="6">Hưng Yên</option><option value="7">Hải Dương</option><option value="8">Đà Nẵng</option><option value="9">Hải Phòng</option><option value="10">An Giang</option><option value="11">Bà Rịa-Vũng Tàu</option><option value="12">Bắc Giang</option><option value="13">Bắc Kạn</option><option value="14">Bạc Liêu</option><option value="15">Bến Tre</option><option value="16">Bình Định</option><option value="17">Bình Phước</option><option value="18">Bình Thuận</option><option value="19">Cà Mau</option><option value="20">Cần Thơ</option><option value="21">Cao Bằng</option><option value="22">Cửu Long</option><option value="23">Đắc Lắc</option><option value="24">Đắc Nông</option><option value="25">Điện Biên</option><option value="26">Đồng Tháp</option><option value="27">Gia Lai</option><option value="28">Hà Giang</option><option value="29">Hà Nam</option><option value="30">Hà Tĩnh</option><option value="31">Hậu Giang</option><option value="32">Hoà Bình</option><option value="33">Khánh Hoà</option><option value="34">Kiên Giang</option><option value="35">Kon Tum</option><option value="36">Lai Châu</option><option value="37">Lâm Đồng</option><option value="38">Lạng Sơn</option><option value="39">Lào Cai</option><option value="40">Long An</option><option value="41">Miền Bắc</option><option value="42">Miền Nam</option><option value="43">Miền Trung</option><option value="44">Nam Định</option><option value="45">Nghệ An</option><option value="46">Ninh Bình</option><option value="47">Ninh Thuận</option><option value="48">Phú Thọ</option><option value="49">Phú Yên</option><option value="50">Quảng Bình</option><option value="51">Quảng Nam</option><option value="52">Quảng Ngãi</option><option value="53">Quảng Ninh</option><option value="54">Quảng Trị</option><option value="55">Sóc Trăng</option><option value="56">Sơn La</option><option value="57">Tây Ninh</option><option value="58">Thái Bình</option><option value="59">Thái Nguyên</option><option value="60">Thanh Hoá</option><option value="61">Thừa Thiên Huế</option><option value="62">Tiền Giang</option><option value="63">Toàn Quốc</option><option value="64">Trà Vinh</option><option value="65">Tuyên Quang</option><option value="66">Vĩnh Long</option><option value="67">Vĩnh Phúc</option><option value="68">Yên Bái</option><option value="100">Nước Ngoài</option><option value="101">Ba Đình - Hà Nội</option><option value="102">Hoàn Kiếm - Hà Nội</option><option value="103">Hai Bà Trưng - Hà Nội</option><option value="104">Đống Đa - Hà Nội</option><option value="105">Tây Hồ - Hà Nội</option><option value="106">Cầu Giấy - Hà Nội</option><option value="107">Thanh Xuân - Hà Nội</option><option value="108">Hoàng Mai - Hà Nội</option><option value="109">Long Biên - Hà Nội</option><option value="110">Từ Liêm - Hà Nội</option><option value="111">Thanh Trì - Hà Nội</option><option value="112">Gia Lâm - Hà Nội</option><option value="113">Đông Anh - Hà Nội</option><option value="114">Sóc Sơn - Hà Nội</option><option value="115">Hà Đông - Hà Nội</option><option value="116">Sơn Tây - Hà Nội</option><option value="117">Ba Vì - Hà Nội</option><option value="118">Phúc Thọ - Hà Nội</option><option value="119">Thạch Thất - Hà Nội</option><option value="120">Quốc Oai - Hà Nội</option><option value="121">Chương Mỹ - Hà Nội</option><option value="122">Đan Phượng - Hà Nội</option><option value="123">Hoài Đức - Hà Nội</option><option value="124">Thanh Oai - Hà Nội</option><option value="125">Mỹ Đức - Hà Nội</option><option value="126">Ứng Hoà - Hà Nội</option><option value="127">Thường Tín - Hà Nội</option><option value="128">Phú Xuyên - Hà Nội</option><option value="129">Mê Linh - Hà Nội</option><option value="201">Quận 1 - TP HCM</option><option value="202">Quận 2 - TP HCM</option><option value="203">Quận 3 - TP HCM</option><option value="204">Quận 4 - TP HCM</option><option value="205">Quận 5 - TP HCM</option><option value="206">Quận 6 - TP HCM</option><option value="207">Quận 7 - TP HCM</option><option value="208">Quận 8 - TP HCM</option><option value="209">Quận 9 - TP HCM</option><option value="210">Quận 10 - TP HCM</option><option value="211">Quận 11 - TP HCM</option><option value="212">Quận 12 - TP HCM</option><option value="213">Thủ Đức - TP HCM</option><option value="214">Gò Vấp - TP HCM</option><option value="215">Bình Thạnh - TP HCM</option><option value="216">Tân Bình - TP HCM</option><option value="217">Tân Phú - TP HCM</option><option value="218">Phú Nhuận - TP HCM</option><option value="219">Bình Tân - TP HCM</option><option value="220">Củ Chi - TP HCM</option><option value="221">Hóc Môn - TP HCM</option><option value="222">Bình Chánh - TP HCM</option><option value="223">Nhà Bè - TP HCM</option><option value="224">Cần Giờ - TP HCM</option><option value="301">Dầu Tiếng - Bình Dương</option><option value="401">Lương Tài - Bắc Ninh</option><option value="501">Cẩm Mỹ - Đồng Nai</option><option value="601">Văn Giang - Hưng Yên</option><option value="701">Bình Giang - Hải Dương</option><option value="801">Hải Châu - Đà Nẵng</option><option value="802">Thanh Khê - Đà Nẵng</option><option value="803">Sơn Trà - Đà Nẵng</option><option value="804">Ngũ Hành Sơn - Đà Nẵng</option><option value="805">Liên Chiểu - Đà Nẵng</option><option value="806">Hòa Vang - Đà Nẵng</option><option value="807">Cẩm Lệ - Đà Nẵng</option><option value="808">Hoàng Sa - Đà Nẵng</option><option value="901">Dương Kinh - Hải Phòng</option><option value="3301">TP Nha Trang - Khánh Hoà</option><option value="3302">Vạn Ninh - Khánh Hoà</option><option value="3303">Ninh Hoà - Khánh Hoà</option><option value="3304">Diên Khánh - Khánh Hoà</option><option value="3305">Khánh Vĩnh - Khánh Hoà</option><option value="3306">Cam Ranh - Khánh Hoà</option><option value="3307">Khánh Sơn - Khánh Hoà</option><option value="3308">Trường Sa - Khánh Hoà</option><option value="3309">Cam Lâm - Khánh Hoà</option></select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1"><ul class="select2-selection__rendered"><li class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list" placeholder="Chọn địa điểm" style="width: 417px;"></li></ul></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span> <p class="input-error text-danger italic" style="font-size: 0.9em; margin-top: 5px; display: none;"></p></div> <div class="form-group"><label class="text-dark-gray">Kinh nghiệm ngành/nghề đã chọn<span class="text-danger">*</span></label> <select id="updateJobWaitingExperience" name="experience" class="form-control select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true"><option value="">-- Thời gian làm việc ngành nghề đã chọn --</option> <option value="1">Chưa có kinh nghiệm</option> <option value="2">Dưới 1 năm</option> <option value="3">1 năm</option> <option value="4">2 năm</option> <option value="5">3 năm</option> <option value="6">4 năm</option> <option value="7">5 năm</option> <option value="8">Trên 5 năm</option></select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-updateJobWaitingExperience-container"><span class="select2-selection__rendered" id="select2-updateJobWaitingExperience-container" title="-- Thời gian làm việc ngành nghề đã chọn --">-- Thời gian làm việc ngành nghề đã chọn --</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span> <p class="input-error text-danger italic" style="font-size: 0.9em; margin-top: 5px; display: none;"></p></div></div> <div class="col-xs-12 col-sm-6"><div class="form-group custom-checkbox"><label class="text-dark-gray">Chọn CV bật tìm việc<span class="text-danger">*</span></label> <div class="cv-select-box"><div class="checkbox checkbox-success" style="margin-left: 15px;"><input type="checkbox" id="cvbea12ed9dae1ff86ea59b0cdab6bd24c" value="bea12ed9dae1ff86ea59b0cdab6bd24c"> <label for="cvbea12ed9dae1ff86ea59b0cdab6bd24c" class="text-dark-gray">
-      IT
-    </label> <span class="text-small"><a href="https://www.topcv.vn/xem-cv/bea12ed9dae1ff86ea59b0cdab6bd24c" target="_blank" class="text-highlight">[Xem CV]</a></span></div> <div class="checkbox checkbox-success" style="margin-left: 15px;"><input type="checkbox" id="cv06d98ce05045d7591e9557f8db7c2d00" value="06d98ce05045d7591e9557f8db7c2d00"> <label for="cv06d98ce05045d7591e9557f8db7c2d00" class="text-dark-gray">
-      CV IT
-    </label> <span class="text-small"><a href="https://www.topcv.vn/xem-cv/06d98ce05045d7591e9557f8db7c2d00" target="_blank" class="text-highlight">[Xem CV]</a></span></div></div></div> <p class="input-error text-danger italic" style="font-size: 0.9em; margin-top: 5px;">Hãy chọn ít nhất 1 CV</p></div></div> <div class="modal-footer"><div class="text-center action-turn-on"><a href="javascript:cancelPopupWishedOption()" class="btn btn-no-radius  btn-topcv-default">Không có nhu cầu</a> <a href="javascript:submitOnJob()" class="btn btn-no-radius  btn-topcv-primary">Bật tìm việc ngay</a></div> <div class="text-center action-edit" style="display: none;"><a href="javascript:void(0)" data-dismiss="modal" class="btn btn-no-radius btn-topcv-default">Đóng lại</a> <a href="javascript:submitOnJob()" class="btn btn-no-radius  btn-topcv-primary">Cập nhật</a></div></div> <p class="text-medium text-red italic" style="margin-top: 15px; border: 1px dashed red; padding: 10px;">Lưu ý: Khi bật tính năng này, Nhà tuyển dụng trên TopCV sẽ chủ động liên hệ với bạn, hãy sẵn sàng <b>nghe điện thoại</b> để nhận cơ hội tốt.</p> <p class="text-medium italic">Danh sách các Nhà tuyển dụng trên TopCV, xem <a target="_blank" href="https://www.topcv.vn/cong-ty">tại đây</a>.</p></div></div></div></div></div>
-  </div>
+  </ng-template>
 </div>
 <link rel="stylesheet" href="https://www.topcv.vn/cv-new/css/download-v2.css?v=1.1.1">
 <div id="exportMask" class="non-printable" style="">
@@ -209,7 +128,8 @@
       </div>
       <div class="col-center">
         <div class="col-center-top">
-          <a href="https://www.topcv.vn/brand/topcv/tuyen-dung/chuyen-vien-tu-van-tuyen-dung-j61634.html" target="_blank"><img src="https://www.topcv.vn/images/topcv-nhan-vien-kinh-doanh.jpg" alt=""></a>
+          <a href="https://www.topcv.vn/brand/topcv/tuyen-dung/chuyen-vien-tu-van-tuyen-dung-j61634.html"
+             target="_blank"><img src="https://www.topcv.vn/images/topcv-nhan-vien-kinh-doanh.jpg" alt=""></a>
         </div>
         <div class="col-center-bottom">
           <iframe width="100%" height="276" id="popup-video-iframe" src="" frameborder="0" allowfullscreen=""></iframe>

@@ -28,10 +28,10 @@ export class QuanlythongtinTaikhoanComponent implements OnInit {
   account: AccountClass=new AccountClass();
   // @ts-ignore
   ngOnInit(): void {
-    this.id = this.activatedRouteService.snapshot.params['id'];
-    this.accountservice.getOne(this.id).subscribe(data=>{
-      this.account=data
-    },error => console.log(error))
+      this.id = this.activatedRouteService.snapshot.params['id'];
+      this.accountservice.getOne(this.id).subscribe(data=>{
+        this.account=data
+      },error => console.log(error))
     let id_user = JSON.parse(<string>localStorage.getItem("auth-user"));
     this.id_now = id_user['id'];
       this.roles = this.token.getUser().roles;

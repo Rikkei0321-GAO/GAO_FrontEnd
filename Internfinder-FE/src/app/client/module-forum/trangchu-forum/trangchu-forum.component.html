@@ -68,33 +68,37 @@
   <div class="col-full">
     <h2 class="list-title">Bài đăng</h2>
     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-      <div class="thread-list" *ngFor="let item of quanlytaikhoans | paginate: {itemsPerPage: 4, currentPage: pageOfItems}">
+      <div class="thread-list"
+           *ngFor="let item of quanlytaikhoans | paginate: {itemsPerPage: 4, currentPage: pageOfItems}">
         <div class="thread">
-          <div>
-            <p>
-              <a (click)="OnEdit(item.idshare)">
-                {{item.title}}</a>
-            </p>
-            <p class="text-faded text-xsmall">By <a
-              href="profile.html">{{item.account.username}}</a>, {{item.create_date}}</p>
-          </div>
-          <div class="activity">
-            <p class="replies-count">
-              3 replies
-            </p>
-
-            <img class="avatar-medium"
-                 src="{{item.account.image}}"
-                 alt="">
-            <span>
+         <div class="col-lg-8">
+           <div>
+             <p>
+               <a  (click)="OnEdit(item.idshare)">
+                 {{item.title}}</a>
+             </p>
+             <p class="text-faded text-xsmall">By <a
+               href="profile.html">{{item.account.username}}</a>, {{item.create_date}}</p>
+           </div>
+         </div>
+          <div class="col-lg-3">
+            <div class="activity">
+              <p class="replies-count">
+                3 replies
+              </p>
+              <img class="avatar-medium"
+                   src="{{item.account.image}}"
+                   alt="">
+              <span>
               <a class="text-xsmall" href="profile.html">{{item.account.username}}</a>
-              <p class="text-faded text-xsmall">{{item.create_date|date:'dd/mm/yyyy'}}</p>
+              <p class="text-faded text-xsmall">{{item.modife_date|date:'dd/mm/yyyy'}}</p>
           </span>
+            </div>
           </div>
         </div>
       </div>
 
     </table>
-    <pagination-controls  (pageChange)="pageOfItems = $event"></pagination-controls>
+    <pagination-controls (pageChange)="pageOfItems = $event"></pagination-controls>
   </div>
 </div>
