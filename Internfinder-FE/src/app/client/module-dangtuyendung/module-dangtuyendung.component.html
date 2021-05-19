@@ -68,6 +68,10 @@
       <div class="col-md-6">
         <label for="id_add" class="form-label">Địa điểm làm việc</label>
         <select class="form-select form-control" [(ngModel)]="addBaidang.work_loaction" formControlName="work_loaction" aria-label="Default select example" id="id_add">
+          <option value="Tp.Đà Nẵng">Tp.Đà Nẵng</option>
+          <option value="Tp.Hải Phòng">Tp.Hải Phòng</option>
+          <option value="Tp.Hà Nội">Tp.Hà Nội</option>
+          <option value="TP  HCM">TP HCM</option>
           <option value="An Giang">An Giang</option>
           <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu</option>
           <option value="Bắc Giang">Bắc Giang</option>
@@ -129,10 +133,6 @@
           <option value="Yên Bái">Yên Bái</option>
           <option value="Phú Yên">Phú Yên</option>
           <option value="Tp.Cần Thơ">Tp.Cần Thơ</option>
-          <option value="Tp.Đà Nẵng">Tp.Đà Nẵng</option>
-          <option value="Tp.Hải Phòng">Tp.Hải Phòng</option>
-          <option value="Tp.Hà Nội">Tp.Hà Nội</option>
-          <option value="TP  HCM">TP HCM</option>
         </select>
         <div *ngFor="let validation of validation_messages.work_loaction">
           <small class="text-danger"
@@ -218,7 +218,7 @@
         </div>
       </div>
       <div class="col-md-6">
-        <label for="id_sl" class="form-label">Bằng cấp</label>
+        <label for="id_bc" class="form-label">Bằng cấp</label>
         <select class="form-select form-control"   [(ngModel)]="addBaidang.degree" formControlName="degree" aria-label="Default select example" id="id_bc">
           <option value="Đại học">Đại học</option>
           <option value="Cao Đẳng">Cao đẳng</option>
@@ -318,7 +318,7 @@
     </div>
     <div class="row">
       <div class="col-md-12 upload">
-        <button type="submit" class="btn form-control " >
+        <button type="submit" class="btn form-control" [disabled]="!formDangtuyendung.valid" >
           <i class="fa fa-upload"></i>&nbsp; Đăng Tin</button>
       </div>
     </div>

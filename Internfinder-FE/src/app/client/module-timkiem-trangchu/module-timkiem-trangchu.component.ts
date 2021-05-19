@@ -25,9 +25,9 @@ export class ModuleTimkiemTrangchuComponent implements OnInit {
   // @ts-ignore
   private _titleNew: string | '';
   // @ts-ignore
-  private _noilam: string = "";
+  private _noilam: string | '';
   // @ts-ignore
-  private _nganh: string= "";
+  private _nganh: string | '';
   // @ts-ignore
   totalRec: string;
 
@@ -37,6 +37,14 @@ export class ModuleTimkiemTrangchuComponent implements OnInit {
 
   get titleNew(): string {
     return this._titleNew;
+  }
+
+  get nganh(): string {
+    return this._nganh;
+  }
+
+  get noilam(): string{
+    return this._noilam;
   }
 
   ngOnInit(): void {
@@ -56,10 +64,8 @@ export class ModuleTimkiemTrangchuComponent implements OnInit {
     //Lay dữ liệu từ trang tìm kiếm
     this.route.queryParams.subscribe(data => {
         this._titleNew = data.extitle;
-        console.log(+this._titleNew);
         this._nganh = data.exnganh;
-        console.log(+this._titleNew);
-        this._noilam = data.exnoilam;
+        this._noilam = data.exdiadiem;
       }
     );
   }
