@@ -16,9 +16,9 @@ export class ClientComponent implements OnInit {
       this.loadcssServices.loaddCss('assets/page/css/bootstrap.css');
       this.loadcssServices.loaddCss('assets/page/css/style.css');
       this.loadcssServices.loaddCss('assets/page/css/styles.css');
-      this.loadcssServices.loaddCss('assets/page/css/form.css');
-      this.loadcssServices.loaddCss('assets/page/css/formtotal.css');
-      this.loadcssServices.loaddCss('assets/page/css/formCV.css');
+      // this.loadcssServices.loaddCss('assets/page/css/form.css');
+      // this.loadcssServices.loaddCss('assets/page/css/formtotal.css');
+      // this.loadcssServices.loaddCss('assets/page/css/formCV.css');
 
     }
   ngOnInit(): void {

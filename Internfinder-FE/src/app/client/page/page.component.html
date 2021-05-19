@@ -65,8 +65,12 @@
           <label class="mh">Điểm đến</label>
           <div>
             <span class="fa fa-map-marker-alt large search"></span>
-            <select class=" search-box_search_input " [ngModel]="_noilam" name="college2_name" required>
+            <select class=" search-box_search_input " [(ngModel)]="_noilam" name="college2_name" required>
               <option value="">Địa điểm làm việc</option>
+              <option value="Tp.Đà Nẵng">Tp.Đà Nẵng</option>
+              <option value="Tp.Hải Phòng">Tp.Hải Phòng</option>
+              <option value="Tp.Hà Nội">Tp.Hà Nội</option>
+              <option value="TP  HCM">TP HCM</option>
               <option value="An Giang">An Giang</option>
               <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu</option>
               <option value="Bắc Giang">Bắc Giang</option>
@@ -128,10 +132,6 @@
               <option value="Yên Bái">Yên Bái</option>
               <option value="Phú Yên">Phú Yên</option>
               <option value="Tp.Cần Thơ">Tp.Cần Thơ</option>
-              <option value="Tp.Đà Nẵng">Tp.Đà Nẵng</option>
-              <option value="Tp.Hải Phòng">Tp.Hải Phòng</option>
-              <option value="Tp.Hà Nội">Tp.Hà Nội</option>
-              <option value="TP  HCM">TP HCM</option>
             </select>
           </div>
         </div>
@@ -166,7 +166,7 @@
           </li>
         </ul>
         <div class="vertical-space-30"></div>
-        <a href="#" class="Explore-Employee" routerLink="/create_cv">Tạo CV</a>
+        <a href="#" class="Explore-Employee">Tạo CV</a>
         <a href="#" class="Explore-New-Jobs">Tìm Việc Ngay</a>
       </div>
       <div class="col-lg-3 col-md-6">
@@ -206,25 +206,25 @@
                 <div class="float-right margin-top text-align-center">
                   <a class="part-full-time" (click)="details(list.idNews)">Xem chi tiết</a>
                   <p class="date-time">Deadline: {{list.working_time.substr(0, 10)}}</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div>
+          <div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="vertical-space-20"></div>
-  <div class="job-list">
-    <a href="#" class="Open-Jobs-Page margin-auto">Nhiều hơn<i
-      class="large material-icons float-right">trending_flat</i></a>
-    <ul class="pagination justify-content-end margin-auto">
-      <li class="page-item">
-        <pagination-controls id="listing_pagination" (pageChange)="page = $event"></pagination-controls>
-      </li>
-    </ul>
-  </div>
+    <div class="vertical-space-20"></div>
+    <div class="job-list">
+      <a href="#" class="Open-Jobs-Page margin-auto">Nhiều hơn<i
+        class="large material-icons float-right">trending_flat</i></a>
+      <ul class="pagination justify-content-end margin-auto">
+        <li class="page-item">
+          <pagination-controls id="listing_pagination" (pageChange)="page = $event"></pagination-controls>
+        </li>
+      </ul>
+    </div>
     <div class="vertical-space-60"></div></div>
 </section>
 <section id="Job-Category">
