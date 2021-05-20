@@ -25,7 +25,7 @@ export class AccountService{
 
   edit(id: number, data: AccountClass):Observable<AccountClass>{
     // @ts-ignore
-    return  this.httpClient.put(`${`http://localhost:8080/quanlytaikhoan`}/${data.id_account}`, data)
+    return  this.httpClient.put(`${`http://localhost:8080/quanlytaikhoan/admin`}/${data.id_account}`, data)
   }
   delete(idaccount: number): Observable<any>{
       // @ts-ignore

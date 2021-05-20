@@ -1,8 +1,9 @@
+import {KinhNghiem} from "./KinhNghiem";
+
 export class CvCreated {
   id: number;
   firstName: string;
-  lastname: string;
-  astName: string;
+  lastName: string;
   dayOfBirth: string;
   phone: string;
   email: string;
@@ -10,15 +11,19 @@ export class CvCreated {
   objective: string;
   avatar: string;
   address: string;
-  honnhan: string;
-  quoctich:string;
-  quocgia: string;
+  honNhan: string;
+  quocTich:string;
+  quocGia: string;
+  skills: String;
+  thanhTichs: String[];
+  kinhNghiems: String;
+  hocTap: string;
 
-  constructor(id: number, firstName: string, lastname: string, astName: string, dayOfBirth: string, phone: string, email: string, gender: string, objective: string, avatar: string, address: string, honnhan: string, quoctich: string, quocgia: string) {
+
+  constructor(id: number, firstName: string, lastName: string, dayOfBirth: string, phone: string, email: string, gender: string, objective: string, avatar: string, address: string, honNhan: string, quocTich: string, quocGia: string, skills: String, thanhTichs: String[], kinhNghiems: String, hocTap: string) {
     this.id = id;
     this.firstName = firstName;
-    this.lastname = lastname;
-    this.astName = astName;
+    this.lastName = lastName;
     this.dayOfBirth = dayOfBirth;
     this.phone = phone;
     this.email = email;
@@ -26,8 +31,12 @@ export class CvCreated {
     this.objective = objective;
     this.avatar = avatar;
     this.address = address;
-    this.honnhan = honnhan;
-    this.quoctich = quoctich;
-    this.quocgia = quocgia;
+    this.honNhan = honNhan;
+    this.quocTich = quocTich;
+    this.quocGia = quocGia;
+    this.skills = skills;
+    this.thanhTichs = thanhTichs;
+    this.kinhNghiems = kinhNghiems;
+    this.hocTap = hocTap;
   }
 }

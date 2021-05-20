@@ -2,7 +2,7 @@ import {Component, Inject, Injectable, OnInit} from '@angular/core';
 import {AngularFireStorage} from '@angular/fire/storage';
 import {finalize} from "rxjs/operators";
 import {CvCreated} from "../../dto/CvCreated";
-import {FormArray, FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {CvCreatedService} from "../../Services/cv-created.service";
 import {ShareClass} from "../../model/Share.Class";
 import {LoadcssServices} from "../../Services/loadcss.services";
@@ -18,10 +18,7 @@ export class ModuleCreateCvComponent implements OnInit {
   // @ts-ignore
   idtemplate: number;
   isLinear = false;
-  // @ts-ignore
-  firstFormGroup: FormGroup;
-  // @ts-ignore
-  secondFormGroup: FormGroup;
+
   selectImg: any = null;
   // @ts-ignore
   idImg: string;
@@ -32,11 +29,17 @@ export class ModuleCreateCvComponent implements OnInit {
   // @ts-ignore
   cv_created: CvCreated = new CvCreated();
   // @ts-ignore
-  formKinhNghiem: FormGroup;
-  // @ts-ignore
   quan: string;
   // @ts-ignore
   diachi:string;
+
+  public kinhNghiemForm = new FormGroup({
+    tieuDe: new FormControl(''),
+    dayStart: new FormControl(''),
+    dayEnd: new FormControl('')
+  });
+  skillForm: FormGroup;
+  thanhtichForm: FormGroup;
 
   // @ts-ignore
   constructor(@Inject(AngularFireStorage) private storage: AngularFireStorage, private  fb: FormBuilder, private cvCreated: CvCreatedService,
@@ -45,47 +48,80 @@ export class ModuleCreateCvComponent implements OnInit {
     this.loadcssServices.loaddCss('assets/page/css/form.css');
     this.loadcssServices.loaddCss('assets/page/css/formtotal.css');
     this.loadcssServices.loaddCss('assets/page/css/formCV.css');
-    // @ts-ignore
-    this.formKinhNghiem = this.fb.group({
-      kinhnghiems: this.fb.array([
-        this.fb.control('')
-      ])
-    });
-  }
-  get kinhnghiems() : FormArray {
-    {
-      return this.formKinhNghiem.get('kinhnghiems') as FormArray;
-    }
-  }
 
-
-  newKinhNghiem(): FormGroup {
-    return this.fb.group({
-      lbNamKN: 'Kinh nghiêm',
-      lbCapBac: 'Cấp bậc hiện tại',
-      lbChucDanh: 'Vị trí/Chức danh',
-      lbCongTy: 'Công ty',
-      lbThoiGian: 'Thời gian làm việc',
-      lbMoTa: 'Mô tả công việc',
-      tbNamKN: '',
-      tbCapbac: '',
-      tbViTri: '',
-      tbCongTy: '',
-      monthStart:'',
-      yearStart: '',
-      monthEnd: '',
-      yearEnd: '',
+    this.skillForm = this.fb.group({
+      skills: this.fb.array([this.fb.control(null)])
+    })
+    this.thanhtichForm = this.fb.group({
+      tts: this.fb.array([this.fb.control(null)])
     })
   }
-  ngOnInit(): void {
-    this.firstFormGroup = this.fb.group({
-      firstCtrl: ['', Validators.required]
-    });
-    this.secondFormGroup = this.fb.group({
-      secondCtrl: ['', Validators.required]
-    });
+  addSkill(): void {
+    (this.skillForm.get('skills') as FormArray).push(
+      this.fb.control(null)
+    );
+  }
+  addThanhTich(): void {
+    (this.thanhtichForm.get('tts') as FormArray).push(
+      this.fb.control(null)
+    );
   }
 
+  addKinhNghiem(): void {
+    let kinhNghiemArray = this.kinhNghiemForm.controls.kinhNghiems as FormArray;
+    let arraylen = kinhNghiemArray.length;
+    let newKNgroup: FormGroup = this.fb.group({
+      tieuDe: [''],
+      dayStart: [''],
+      dayEnd: ['']
+    })
+    kinhNghiemArray.insert(arraylen, newKNgroup);
+  }
+
+  getSkillsFormControls(): any {
+    return (<FormArray> this.skillForm.get('skills')).controls;
+  }
+
+  getTTsFormControls(): any {
+    return (<FormArray> this.thanhtichForm.get('tts')).controls;
+  }
+
+  getKinhNghiemFormControls(): any {
+    return (<FormArray> this.kinhNghiemForm.get('kinhNghiems')).controls;
+  }
+
+  removeSkill(index: any) {
+    (this.skillForm.get('skills') as FormArray).removeAt(index);
+  }
+
+  removeThanhtich(index: any) {
+    (this.thanhtichForm.get('tts') as FormArray).removeAt(index);
+  }
+
+  removeKinhNghiem(index: any): void{
+    let kinhNghiemArray = this.kinhNghiemForm.controls.kinhNghiems as FormArray;
+    kinhNghiemArray.removeAt(index)
+  }
+
+  ngOnInit(): void {
+    this.kinhNghiemForm=this.fb.group({
+      kinhNghiems: this.fb.array([
+        this.fb.group({
+          tieuDe: [''],
+          dayStart: [''],
+          dayEnd: ['']
+        })
+      ])
+    })
+  }
+
+  send(values:any) {
+    console.log(values);
+    // this.cv_created.skills = values.skills;
+  }
+  sendTT(values:any) {
+    console.log(values);
+  }
   saveimg(event: any) {
     this.selectImg = event.target.files[0];
     const nameimg = this.selectImg.name;
@@ -111,7 +147,10 @@ export class ModuleCreateCvComponent implements OnInit {
       reader.readAsDataURL(this.selectImg);
     }
   }
-  add(){
+  add(values:any, tt: any, kn:any){
+    // this.cv_created.kinhNghiems = kn.kinhNghiems;
+    this.cv_created.skills = values.skills;
+    this.cv_created.thanhTichs = tt.tts;
     this.cv_created.address = this.diachi+' '+this.quan ;
     this.cv_created.avatar=this.imageSrc;
     this.cvCreated.createCV(this.cv_created).subscribe(data => {
