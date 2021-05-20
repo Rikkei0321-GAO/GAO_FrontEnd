@@ -102,7 +102,9 @@
                 <h6 class="mb-0">Giới Tính</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                <h6>  {{account.sex}}</h6>
+                <h6 *ngIf="account.sex == true"> Nam </h6>
+                <h6 *ngIf="account.sex == false"> Nữ </h6>
+                <h6 *ngIf="account.sex == null"> GJBT</h6>
               </div>
             </div>
             <hr>

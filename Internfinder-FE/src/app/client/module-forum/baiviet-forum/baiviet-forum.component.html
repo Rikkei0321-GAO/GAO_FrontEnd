@@ -3,7 +3,6 @@
   <div class="col-large push-top">
     <ul class="breadcrumbs">
       <li><a href="#"><i class="fa fa-home fa-btn"></i>Trang chủ</a></li>
-      <li><h6 href="#">{{share.account?.fullName}}</h6></li>
       <li><h6 href="#">{{share.title}}</h6></li>
     </ul>
     <div class="post-list">
@@ -74,13 +73,14 @@
           <div class="col-md-10">
             <p>
               <a class="float-left"><strong>{{item.account?.fullName}}</strong></a>
-              <span class="float-right">{{item.create_date | date:'dd/mm/yyyy'}}</span>
+              <span class="float-right">{{item.create_date | date:'dd/MM/yyyy'}}</span>
             </p>
             <br>
             <div class="clearfix"></div>
             <p>{{item.content}}<p>
             <div class="meta-line">
               <div *ngIf="account.id != item.account?.id_account; else checkAccountComment">
+                <hr>
               </div>
             </div>
             <ng-template #checkAccountComment>
@@ -107,10 +107,9 @@
                   </div>
                 </div>
               </div>
+              <hr>
             </ng-template>
-            <hr>
           </div>
-
         </div>
         <pagination-controls (pageChange)="pageOfItems = $event"></pagination-controls>
       </div>

@@ -103,7 +103,12 @@
                <h6 class="mb-0">Giới Tính</h6>
              </div>
              <div class="col-sm-9 text-secondary">
-               <input type="text"  [ngModel]="account.sex" formControlName="sex" class="form-control" >
+               <select class="form-select" aria-label="Default select example">
+                 <option selected>Chọn giới tính</option>
+                 <option formControlName="sex" value="1">Nam </option>
+                 <option formControlName="sex" value="2">Nữ</option>
+                 <option formControlName="sex" value="2">GJBT</option>
+               </select>
              </div>
            </div>
            <hr>
@@ -138,7 +143,6 @@
            <div class="row" *ngIf="!isnhatuyendung; else disableform">
            </div>
            <ng-template #disableform>
-             <hr>
              <div class="row">
                <div class="col-sm-3">
                  <h6 class="mb-0">Email Liên Hệ</h6>

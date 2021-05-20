@@ -48,6 +48,7 @@ import { QuanlybinhluanDetailsComponent } from './admin/quanlybinhluan/quanlybin
 import { QuanlythongtinTaikhoanEditComponent } from './client/Quanlythongtin-taikhoanall/quanlythongtin-taikhoan-edit/quanlythongtin-taikhoan-edit.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import {AngularFireModule} from "@angular/fire";
+import '@firebase/auth';
 import {environment} from "../environments/environment";
 import { QuanlybaidangtuyenNvdComponent } from './client/quanlybaidang-nvd-mrdat/quanlybaidangtuyen-nvd/quanlybaidangtuyen-nvd.component';
 import { QuanlybaidangNvdMrdatDetailsComponent } from './client/quanlybaidang-nvd-mrdat/quanlybaidang-nvd-mrdat-details/quanlybaidang-nvd-mrdat-details.component';

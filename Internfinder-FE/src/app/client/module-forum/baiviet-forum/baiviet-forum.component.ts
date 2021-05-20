@@ -11,15 +11,18 @@ import {CommentDTO} from "../../../dto/commentDTO";
 import {CommentService} from "../../../Services/Comment.Service";
 import {ToastrService} from "ngx-toastr";
 import {ShareDTO} from "../../../dto/ShareDTO";
+import {DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-baiviet-forum',
   templateUrl: './baiviet-forum.component.html',
-  styleUrls: ['./baiviet-forum.component.css']
+  styleUrls: ['./baiviet-forum.component.css'],
+  providers: [DatePipe]
 })
 export class BaivietForumComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
+    private datePipe: DatePipe,
     private  toastr: ToastrService,
     private  loadcssServices: LoadcssServices,
     private  accountservice: ShareService,
@@ -27,6 +30,8 @@ export class BaivietForumComponent implements OnInit {
     private  activatedRouteService: ActivatedRoute,
     private router: Router,
     private token: TokenStorageService) {
+    // @ts-ignore
+    this.myDate = this.datePipe.transform(this.myDate, 'yyyy-MM-dd');
     setInterval(()=>{
       this.loadcssServices.loadScript('assets/Client/Datdt/js.js')
     }, 1000)
@@ -37,6 +42,7 @@ export class BaivietForumComponent implements OnInit {
 
 
   }
+  myDate: Date = new Date();
   pageOfItems: number = 1
   flagEdit = false;
   // @ts-ignore
@@ -85,10 +91,9 @@ export class BaivietForumComponent implements OnInit {
   onSubmit() {
     let id_user = JSON.parse(<string>localStorage.getItem("auth-user"));
     this.id_now = id_user['id'];
-    console.log(this.id_now)
     this.comment.id_account = this.id_now;
     this.comment.id_share = this.share.idshare
-    this.comment.create_date = new Date()
+    this.comment.create_date = this.myDate
     this.comment.content = this.commentForm.value.content;
     this.commentService.createComment(this.comment).subscribe(data => {
       this.getAllComment();
@@ -100,13 +105,12 @@ export class BaivietForumComponent implements OnInit {
     if (this.commentForm.invalid) {
       return;
     } else {
-     // @ts-ignore
      this.commentService.getbyIdComment(idcm)
       console.log(this.commentForm.value, idcm)
       this.commentService.updateComment(idcm,this.commentForm.value).subscribe(data => {
         this.flagEdit = false;
         this.ngOnInit();
-        this.toastr.success('Sửa bình luận thành công!', 'Thông báo')
+        this.toastr.success('Sửa bình luận thành công !', 'Thông báo')
       })
     }
   }
