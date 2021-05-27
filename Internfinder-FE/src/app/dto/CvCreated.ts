@@ -1,4 +1,5 @@
 import {KinhNghiem} from "./KinhNghiem";
+import {HocTap} from "./HocTap";
 
 export class CvCreated {
   id: number;
@@ -16,11 +17,11 @@ export class CvCreated {
   quocGia: string;
   skills: String;
   thanhTichs: String[];
-  kinhNghiems: String;
-  hocTap: string;
+  kinhNghiems: Array<KinhNghiem>[];
+  hocTaps: Array<HocTap>[];
 
 
-  constructor(id: number, firstName: string, lastName: string, dayOfBirth: string, phone: string, email: string, gender: string, objective: string, avatar: string, address: string, honNhan: string, quocTich: string, quocGia: string, skills: String, thanhTichs: String[], kinhNghiems: String, hocTap: string) {
+  constructor(id: number, firstName: string, lastName: string, dayOfBirth: string, phone: string, email: string, gender: string, objective: string, avatar: string, address: string, honNhan: string, quocTich: string, quocGia: string, skills: String, thanhTichs: String[], kinhNghiems: Array<KinhNghiem>[], hocTaps: Array<HocTap>[]) {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
@@ -37,6 +38,6 @@ export class CvCreated {
     this.skills = skills;
     this.thanhTichs = thanhTichs;
     this.kinhNghiems = kinhNghiems;
-    this.hocTap = hocTap;
+    this.hocTaps = hocTaps;
   }
 }

@@ -1,11 +1,11 @@
 export class KinhNghiem{
-  tieuDe: string;
+  name: string;
   dayStart: string;
   dayEnd: string;
 
 
-  constructor(tieuDe: string, dayStart: string, dayEnd: string) {
-    this.tieuDe = tieuDe;
+  constructor(name: string, dayStart: string, dayEnd: string) {
+    this.name = name;
     this.dayStart = dayStart;
     this.dayEnd = dayEnd;
   }

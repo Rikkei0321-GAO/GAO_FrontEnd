@@ -219,42 +219,34 @@
                 <h2 class="card-heading"><span class="iconheading"><i class="fa fa-briefcase"></i></span>Kinh nghiệm Làm Việc <span class="col_ff0000bold">*</span></h2>
                 <span class="button-actions" style="display:none;"><a href="#experience-section" onclick="showPopupContentCopyPaste('appendExperienceCV')">Xem lại thông tin</a></span>
               </header>
-              <form name="objective-form" >
-                <div class="col-xs-12 pv-profile-section-body">
-                  <textarea class="form-control" rows="10"  name="objective_job" [(ngModel)]="cv_created.kinhNghiems" ></textarea>
-                  <div class="clearall mar_top2 note">Vui lòng nhập tối đa không quá 20000 ký tự</div>
+              <form name="objective-form" [formGroup]="kinhNghiemForm">
+                <div class="col-xs-12 pv-profile-section-body" >
+                  <div  *ngFor="let kinhNghiemFormGroup of getKinhNghiemFormControls() ; let i = index;">
+                    <div  [formGroup]="kinhNghiemFormGroup" style="margin-bottom: 20px">
+                      <div class="row">
+                                      <label class="col-xs-12 col-md-2">Công Việc </label>
+                                      <input class="col-xs-12 col-md-10 form-control" formControlName="tieuDe" type="text" >
+                                    </div>
+                      <div class="row" style="margin-left: -20px" >
+                                      <div class="col-xs-12 col-sm-6">
+                                        <label class="col-xs-12 col-sm-4" style="margin-left: -10px">Ngày bắt đầu</label>
+                                        <input class="col-xs-12 col-sm-8 form-control" formControlName="dayStart" type="date" style="margin-left: 10px">
+                                      </div>
+                                      <div class="col-xs-12 col-sm-6">
+                                        <label class="col-xs-12 col-sm-4">Ngày kết thúc </label>
+                                        <input class="col-xs-12 col-sm-8 form-control" formControlName="dayEnd" type="date">
+                                      </div>
+
+                                    </div>
+                      <div style="text-align: right">
+                        <button class="btn btn-danger"  style="display: inline; margin-left:5px" (click)="removeKinhNghiem(i)"><i class="fas fa-trash-alt"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <button class="btn btn-next btn-wd" (click)="addKinhNghiem()"><i class="fas fa-plus-circle"></i></button>
                 </div>
               </form>
-              <!--              <form name="objective-form" [formGroup]="kinhNghiemForm">-->
-              <!--                <div class="col-xs-12 pv-profile-section-body" >-->
-              <!--                  <div  *ngFor="let kinhNghiemFormGroup of getKinhNghiemFormControls() ; let i = index;">-->
-              <!--                    <div  [formGroup]="kinhNghiemFormGroup" style="margin-bottom: 20px">-->
-              <!--                      <div class="row">-->
-              <!--                        <label class="col-xs-12 col-md-2">Công Việc </label>-->
-              <!--                        <input class="col-xs-12 col-md-10 form-control" formControlName="tieuDe" type="text" >-->
-              <!--                      </div>-->
-              <!--                      <div class="row" style="margin-left: -20px" >-->
-              <!--                        <div class="col-xs-12 col-sm-6">-->
-              <!--                          <label class="col-xs-12 col-sm-4" style="margin-left: -10px">Ngày bắt đầu</label>-->
-              <!--                          <input class="col-xs-12 col-sm-8 form-control" formControlName="dayStart" type="date" style="margin-left: 10px">-->
-              <!--                        </div>-->
-              <!--                        <div class="col-xs-12 col-sm-6">-->
-              <!--                          <label class="col-xs-12 col-sm-4">Ngày kết thúc </label>-->
-              <!--                          <input class="col-xs-12 col-sm-8 form-control" formControlName="dayEnd" type="date">-->
-              <!--                        </div>-->
-
-              <!--                      </div>-->
-              <!--                      <div style="text-align: right">-->
-              <!--                        <button class="btn btn-danger"  style="display: inline; margin-left:5px" (click)="removeKinhNghiem(i)"><i class="fas fa-trash-alt"></i></button>-->
-              <!--                      </div>-->
-
-              <!--                    </div>-->
-
-              <!--                  </div>-->
-              <!--                  <br>-->
-              <!--                  <button class="btn btn-next btn-wd" (click)="addKinhNghiem()"><i class="fas fa-plus-circle"></i></button>-->
-              <!--                </div>-->
-              <!--              </form>-->
             </div>
             <div class="blockMy col-xs-12 pv-profile-section experience-section" id="experienc-section">
               <header class="card-header">
@@ -295,42 +287,33 @@
                 <h2 class="card-heading"><span class="iconheading"><i class="fa fa-briefcase"></i></span>Đã học tại <span class="col_ff0000bold">*</span></h2>
                 <span class="button-actions" style="display:none;"><a href="#experience-section" onclick="showPopupContentCopyPaste('appendExperienceCV')">Xem lại thông tin</a></span>
               </header>
-              <form name="objective-form" >
-                <div class="col-xs-12 pv-profile-section-body">
-                  <textarea class="form-control" rows="10"  name="objective_job" [(ngModel)]="cv_created.hocTap" ></textarea>
-                  <div class="clearall mar_top2 note">Vui lòng nhập tối đa không quá 20000 ký tự</div>
+              <form name="objective-form" [formGroup]="hoctapForm">
+                <div class="col-xs-12 pv-profile-section-body" >
+                  <div  *ngFor="let hocTapFormGroup of getHocTapFormControls() ; let i = index;">
+                    <div  [formGroup]="hocTapFormGroup" style="margin-bottom: 20px">
+                      <div class="row">
+                        <label class="col-xs-12 col-md-2">Trường </label>
+                        <input class="col-xs-12 col-md-10 form-control" formControlName="Tên Trương" type="text" >
+                      </div>
+                      <div class="row" style="margin-left: -20px" >
+                        <div class="col-xs-12 col-sm-6">
+                          <label class="col-xs-12 col-sm-4" style="margin-left: -10px">Ngày nhập học</label>
+                          <input class="col-xs-12 col-sm-8 form-control" formControlName="dayStart" type="date" style="margin-left: 10px">
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                          <label class="col-xs-12 col-sm-5">Ngày tốt nghiệp</label>
+                          <input class="col-xs-12 col-sm-7 form-control" formControlName="dayEnd" type="date">
+                        </div>
+                      </div>
+                      <div style="text-align: right">
+                        <button class="btn btn-danger"  style="display: inline; margin-left:5px" (click)="removeHocTap(i)"><i class="fas fa-trash-alt"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <button class="btn btn-next btn-wd" (click)="addHocTap()"><i class="fas fa-plus-circle"></i></button>
                 </div>
               </form>
-              <!--              <form name="objective-form" [formGroup]="kinhNghiemForm">-->
-              <!--                <div class="col-xs-12 pv-profile-section-body" >-->
-              <!--                  <div  *ngFor="let kinhNghiemFormGroup of getKinhNghiemFormControls() ; let i = index;">-->
-              <!--                    <div  [formGroup]="kinhNghiemFormGroup" style="margin-bottom: 20px">-->
-              <!--                      <div class="row">-->
-              <!--                        <label class="col-xs-12 col-md-2">Công Việc </label>-->
-              <!--                        <input class="col-xs-12 col-md-10 form-control" formControlName="tieuDe" type="text" >-->
-              <!--                      </div>-->
-              <!--                      <div class="row" style="margin-left: -20px" >-->
-              <!--                        <div class="col-xs-12 col-sm-6">-->
-              <!--                          <label class="col-xs-12 col-sm-4" style="margin-left: -10px">Ngày bắt đầu</label>-->
-              <!--                          <input class="col-xs-12 col-sm-8 form-control" formControlName="dayStart" type="date" style="margin-left: 10px">-->
-              <!--                        </div>-->
-              <!--                        <div class="col-xs-12 col-sm-6">-->
-              <!--                          <label class="col-xs-12 col-sm-4">Ngày kết thúc </label>-->
-              <!--                          <input class="col-xs-12 col-sm-8 form-control" formControlName="dayEnd" type="date">-->
-              <!--                        </div>-->
-
-              <!--                      </div>-->
-              <!--                      <div style="text-align: right">-->
-              <!--                        <button class="btn btn-danger"  style="display: inline; margin-left:5px" (click)="removeKinhNghiem(i)"><i class="fas fa-trash-alt"></i></button>-->
-              <!--                      </div>-->
-
-              <!--                    </div>-->
-
-              <!--                  </div>-->
-              <!--                  <br>-->
-              <!--                  <button class="btn btn-next btn-wd" (click)="addKinhNghiem()"><i class="fas fa-plus-circle"></i></button>-->
-              <!--                </div>-->
-              <!--              </form>-->
             </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-3">
@@ -372,8 +355,7 @@
       <div class="col-xs-12 step-content cv-mode-finish" id="Step4" style="display:none;">
       </div>
       <div style="margin-bottom: 12px">
-        <button type="button" class="btn btn-next btn-wd" (click)="add(skillForm.value, thanhtichForm.value, kinhNghiemForm.value)"
-                style="display: inline; background-color:#28a745"><a>Tiếp Theo</a></button>
+        <button type="button" class="btn btn-next btn-wd" (click)="add(skillForm.value, thanhtichForm.value, kinhNghiemForm.value, hoctapForm.value)" style="display: inline; background-color:#28a745"><a>Tiếp Theo</a></button>
       </div>
     </div>
   </div>

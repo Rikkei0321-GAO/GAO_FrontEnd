@@ -34,10 +34,17 @@ export class ModuleCreateCvComponent implements OnInit {
   diachi:string;
 
   public kinhNghiemForm = new FormGroup({
-    tieuDe: new FormControl(''),
+    name: new FormControl(''),
     dayStart: new FormControl(''),
     dayEnd: new FormControl('')
   });
+
+  public hoctapForm = new FormGroup({
+    nameSchool: new FormControl(''),
+    dayStart: new FormControl(''),
+    dayEnd: new FormControl('')
+  });
+
   skillForm: FormGroup;
   thanhtichForm: FormGroup;
 
@@ -56,11 +63,13 @@ export class ModuleCreateCvComponent implements OnInit {
       tts: this.fb.array([this.fb.control(null)])
     })
   }
+
   addSkill(): void {
     (this.skillForm.get('skills') as FormArray).push(
       this.fb.control(null)
     );
   }
+
   addThanhTich(): void {
     (this.thanhtichForm.get('tts') as FormArray).push(
       this.fb.control(null)
@@ -71,11 +80,22 @@ export class ModuleCreateCvComponent implements OnInit {
     let kinhNghiemArray = this.kinhNghiemForm.controls.kinhNghiems as FormArray;
     let arraylen = kinhNghiemArray.length;
     let newKNgroup: FormGroup = this.fb.group({
-      tieuDe: [''],
+      name: [''],
       dayStart: [''],
       dayEnd: ['']
     })
     kinhNghiemArray.insert(arraylen, newKNgroup);
+  }
+
+  addHocTap(): void {
+    let hocTapArray = this.hoctapForm.controls.hoctaps as FormArray;
+    let arraylen = hocTapArray.length;
+    let newKNgroup: FormGroup = this.fb.group({
+      nameSchool: [''],
+      dayStart: [''],
+      dayEnd: ['']
+    })
+    hocTapArray.insert(arraylen, newKNgroup);
   }
 
   getSkillsFormControls(): any {
@@ -88,6 +108,10 @@ export class ModuleCreateCvComponent implements OnInit {
 
   getKinhNghiemFormControls(): any {
     return (<FormArray> this.kinhNghiemForm.get('kinhNghiems')).controls;
+  }
+
+  getHocTapFormControls(): any {
+    return (<FormArray> this.hoctapForm.get('hoctaps')).controls;
   }
 
   removeSkill(index: any) {
@@ -103,11 +127,25 @@ export class ModuleCreateCvComponent implements OnInit {
     kinhNghiemArray.removeAt(index)
   }
 
+  removeHocTap(index: any): void{
+    let hocTapArray = this.hoctapForm.controls.hoctaps as FormArray;
+    hocTapArray.removeAt(index)
+  }
+
   ngOnInit(): void {
     this.kinhNghiemForm=this.fb.group({
       kinhNghiems: this.fb.array([
         this.fb.group({
-          tieuDe: [''],
+          name: [''],
+          dayStart: [''],
+          dayEnd: ['']
+        })
+      ])
+    }),
+      this.hoctapForm=this.fb.group({
+      hoctaps: this.fb.array([
+        this.fb.group({
+          nameSchool: [''],
           dayStart: [''],
           dayEnd: ['']
         })
@@ -147,8 +185,9 @@ export class ModuleCreateCvComponent implements OnInit {
       reader.readAsDataURL(this.selectImg);
     }
   }
-  add(values:any, tt: any, kn:any){
-    // this.cv_created.kinhNghiems = kn.kinhNghiems;
+  add(values:any, tt: any, kn:any, hocTap: any){
+    this.cv_created.kinhNghiems = kn.kinhNghiems;
+    this.cv_created.hocTaps = hocTap.hoctaps;
     this.cv_created.skills = values.skills;
     this.cv_created.thanhTichs = tt.tts;
     this.cv_created.address = this.diachi+' '+this.quan ;
@@ -159,6 +198,7 @@ export class ModuleCreateCvComponent implements OnInit {
     })
     this.router.navigate(['/slide_cv']);
   }
+
   id_now: any;
   download(){
     let id_user = JSON.parse(<string>localStorage.getItem("auth-user"));
