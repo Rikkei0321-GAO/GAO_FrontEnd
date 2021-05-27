@@ -140,7 +140,6 @@ export class ModuleDangtuyendungComponent implements OnInit {
           console.log(this.addBaidang.title);
           this.router.navigate(['/timkiem-trangchu']);
           this.toast.success('Đăng thành thành công');
-          alert("đăng tin thành công")
         },
         (error: any) => {
           console.log(error);

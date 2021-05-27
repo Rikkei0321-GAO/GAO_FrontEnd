@@ -20,7 +20,7 @@
       <a target="_blank" href="/quy-dinh-dang-tin-tuyen-dung">Quy định duyệt tin trên Intership »</a>
     </div>
   </div>
-  <form class="create-paper" [formGroup]="formDangtuyendung" (ngSubmit)="onSubmit()" style="padding-top: 0px;">
+  <form class="create-paper" [formGroup]="formDangtuyendung" style="padding-top: 0px;">
     <div class="row box">
       <div class="col-md-12">
         <h3 class="header-box-list d-none d-md-block">
@@ -58,7 +58,7 @@
       </div>
       <div class="col-md-6">
         <label for="id_sl" class="form-label">Số lượng cần tuyển</label>
-        <input type="number" [(ngModel)]="addBaidang.quanlity" formControlName="quanlity" class="form-control" id="id_sl" placeholder="0" required>
+        <input type="number" [(ngModel)]="addBaidang.quanlity" formControlName="quanlity" min=0 class="form-control" id="id_sl" placeholder="0" required>
         <div *ngFor="let validation of validation_messages.quanlity">
           <small class="text-danger"
                  *ngIf="formDangtuyendung.get('quanlity')!.hasError(validation.type) && formDangtuyendung.get('quanlity')!.touched">
@@ -318,10 +318,133 @@
     </div>
     <div class="row">
       <div class="col-md-12 upload">
-        <button type="submit" class="btn form-control" [disabled]="!formDangtuyendung.valid" >
+        <button [disabled]="!formDangtuyendung.valid" onclick="document.getElementById('id01').style.display='block'" class="btn form-control">
           <i class="fa fa-upload"></i>&nbsp; Đăng Tin</button>
+        <div id="id01" class="modal">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+          <div class="modal-content" action="/action_page.php" style="width: 602px;height: 152px;">
+            <div class="container" style=" width: 432px;">
+              <h1 style="margin: 10px 0 10px 0;
+    font-size: larger;
+    font-family: ui-serif;">Bạn có muốn đăng bài không</h1>
+              <div class="clearfix">
+                <button type="button" (click)=add()  class="cancelbtn">Đồng ý</button>
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="deletebtn">Huỷ</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </form>
 </section>
 
+
+<script>
+  var modal = document.getElementById('id01');
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+<style>
+
+  button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+
+  button:hover {
+    opacity:1;
+  }
+
+  /* Float cancel and delete buttons and add an equal width */
+  .cancelbtn, .deletebtn {
+    width: 130px;
+    margin: 10px;
+  }
+
+  /* Add a color to the cancel button */
+  .cancelbtn {
+    background-color: #28a745;
+    color: white;
+    float: left;
+
+  }
+
+  /* Add a color to the delete button */
+  .deletebtn {
+    background-color: #f44336;
+    float: right;
+  }
+
+  /* Add padding and center-align text to the container */
+  .container {
+    padding: 16px;
+    text-align: center;
+  }
+
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    padding-top: 50px;
+  }
+
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+
+  /* Style the horizontal ruler */
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+
+  /* The Modal Close Button (x) */
+  .close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #f44336;
+    cursor: pointer;
+  }
+
+  /* Clear floats */
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  /* Change styles for cancel button and delete button on extra small screens */
+  @media screen and (max-width: 300px) {
+    .cancelbtn, .deletebtn {
+      width: 100%;
+    }
+  }
+</style>
