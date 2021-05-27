@@ -32,7 +32,7 @@
             </div>
           </div>
           <div class="box-group-body">
-            <div id="cv-list" *ngFor="let item of cv">
+            <div id="cv-list" *ngFor="let item of cv |paginate: {itemsPerPage: 5, currentPage: pageOfItems}">
               <div class="box box-white cv no-gutter clearfix">
                 <div class="hidden-xs col-sm-3 col-cv-thumb">
                   <a href="https://i.topcv.vn/phanthanhhai?ref=3800738" target="_blank" class="cv-thumb">
@@ -63,6 +63,7 @@
               <div class="box box-white cv no-gutter clearfix box-no-padding">
               </div>
             </div>
+            <pagination-controls (pageChange)="pageOfItems = $event"></pagination-controls>
           </div>
         </div>
       </div>

@@ -62,6 +62,7 @@ import {MatStepperModule} from "@angular/material/stepper";
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import { SinhvienCvComponent } from './client/sinhvien-cv/sinhvien-cv.component';
 import { ModuleTemplateChooseComponent } from './client/module-template-choose/module-template-choose.component';
+import {A11yModule} from "@angular/cdk/a11y";
 @NgModule({
   declarations: [
     AppComponent,
@@ -110,24 +111,26 @@ import { ModuleTemplateChooseComponent } from './client/module-template-choose/m
     PaypalComponent,
     EditbaidangComponent,
     SinhvienCvComponent,
-    ModuleTemplateChooseComponent
+    ModuleTemplateChooseComponent,
+
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    CKEditorModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    JwPaginationModule,
-    ToastrModule.forRoot(),
-    BrowserAnimationsModule,
-    NgxPaginationModule,
-    Ng2SearchPipeModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    NgxPayPalModule,
-    MatStepperModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        CKEditorModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        JwPaginationModule,
+        ToastrModule.forRoot(),
+        BrowserAnimationsModule,
+        NgxPaginationModule,
+        Ng2SearchPipeModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        NgxPayPalModule,
+        MatStepperModule,
+        A11yModule
+    ],
   providers: [
     CommentService,
     ShareService

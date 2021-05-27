@@ -29,7 +29,6 @@ export class DangkyNTTComponent implements OnInit {
       taxCode:['',[Validators.required,Validators.pattern('^[0-9]{10}$')]],
       website:['',[Validators.required,Validators.pattern("[-a-zA-Z0-9@:%_+.~#?&//=]{2,256}(.[a-z]{2,4})?\\b(/[-a-zA-Z0-9@:%_+.~#?&//=]*)?")]],
       phone:['',[Validators.required,Validators.pattern('^[0-9]{10}$')]],
-      contact:['',[Validators.required]],
       email:['',[Validators.required,Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')]]
       }
     );

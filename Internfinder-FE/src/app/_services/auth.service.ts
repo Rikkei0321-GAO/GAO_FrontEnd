@@ -44,6 +44,7 @@ export class AuthService {
       username: user.username,
       email: user.email,
       address: user.address,
+      phone:user.phone,
       password: user.password
     }, httpOptions);
   }
@@ -51,14 +52,14 @@ export class AuthService {
   registerntd(user): Observable<any> {
     return this.http.post(AUTH_API + 'signup', {
       username: user.username,
-      email: user.email,
-      address: user.address,
       password: user.password,
-      companyName: user.companyName,
+      email: user.email,
       company_address: user.company_address,
-      verificationCode:user.verificationCode,
-      website:user.website,
+      companyName: user.companyName,
       phone:user.phone,
+      taxCode:user.taxCode,
+      website:user.website,
+
     }, httpOptions);
   }
   verify(code:string): Observable<any> {

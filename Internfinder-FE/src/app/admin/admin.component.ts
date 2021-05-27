@@ -36,7 +36,7 @@ export class AdminComponent implements OnInit {
     }
     setTimeout(()=>{
       location.reload()
-    }, 30000)
+    }, 300000)
 
   }
   logout(){

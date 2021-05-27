@@ -29,7 +29,7 @@ export class SinhvienCvComponent implements OnInit {
   selectImg: any = null;
   // @ts-ignore
   idImg: string;
-
+  pageOfItems : number = 1
   constructor(private  loadcssServices: LoadcssServices,private activatedRouteService: ActivatedRoute,private cvceated: CvCreatedService,
               private  toast: ToastrService, private http: HttpClient,private  accountservice: AccountService,@Inject(AngularFireStorage) private storage: AngularFireStorage) {
     this.loadcssServices.loaddCss('assets/Client/CSS/bootstrapprofile.css');

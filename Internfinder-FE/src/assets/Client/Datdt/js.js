@@ -5,7 +5,6 @@ $('[data-toggle="collapse"]').on('click', function() {
     $this.find('.glyphicon').toggleClass('glyphicon-plus glyphicon-minus');
     return true;
   }
-
   /* Open element will be close if parent !== undefined */
   var currentIcon = $this.find('.glyphicon');
   currentIcon.toggleClass('glyphicon-plus glyphicon-minus');

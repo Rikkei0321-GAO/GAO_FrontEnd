@@ -32,9 +32,6 @@ export class BaivietForumComponent implements OnInit {
     private token: TokenStorageService) {
     // @ts-ignore
     this.myDate = this.datePipe.transform(this.myDate, 'yyyy-MM-dd');
-    setInterval(()=>{
-      this.loadcssServices.loadScript('assets/Client/Datdt/js.js')
-    }, 1000)
     this.loadcssServices.loaddCss('assets/Client/fontawesome-free-5.15.2-web/css/all.css');
     this.loadcssServices.loaddCss('assets/Client/forum-mockup-master/css/style.css');
     this.loadcssServices.loaddCss('assets/Client/CSS/stylesMH.css');
