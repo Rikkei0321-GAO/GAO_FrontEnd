@@ -41,7 +41,7 @@
           </div>
         </div>
         <div class="form-control" class="search-box_search_input">
-          <label  class="mh">Điểm đến</label>
+          <label  class="mh">Địa điểm</label>
           <div>
             <span for="nganh" class="fa fa-map-marker-alt large search"></span>
             <select style="border-radius: 100px"  id ="nganh" class="form-control" class=" search-box_search_input" type="text" name="noilam" placeholde="Địa chỉ làm việc" [(ngModel)]="noilam">
@@ -132,7 +132,7 @@
                                                 totalItems: totalRec}; let i = index">
           <div class="detail width-100 ">
             <div class="media display-inline text-align-center">
-              <img src="{{list.account.image}}" class="mr-3 " style=" height: 105px;" alt="">
+              <img src="{{list.account.image}}" class="mr-3 " style="    width: 100px;   height: 100px;" alt="">
               <div class="media-body text-left  text-align-center">
                 <h6><a class="font-color-black" (click)="details(list.idNews)">{{list.title}}</a></h6>
                 <i class="large material-icons">account_balance</i>
@@ -145,7 +145,7 @@
                 <span class="textn">Ngành {{list.category.name}}</span>
                 <div class="float-right margin-top text-align-center">
                   <a class="part-full-time" (click)="details(list.idNews)">Xem chi tiết</a>
-                  <p class="date-time">Deadline: {{list.working_time.substr(0, 10)}}</p>
+                  <p class="date-time">Deadline: {{list.working_time.substr(0, 10)| date:'dd/MM/yyyy'}}</p>
                 </div>
               </div>
             </div>

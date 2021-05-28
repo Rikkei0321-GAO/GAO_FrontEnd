@@ -62,7 +62,7 @@
           </div>
         </div>
         <div class="form-control" class="search-box_search_input">
-          <label class="mh">Điểm đến</label>
+          <label class="mh">Địa điểm</label>
           <div>
             <span class="fa fa-map-marker-alt large search"></span>
             <select class=" search-box_search_input " [(ngModel)]="_noilam" name="college2_name" required>
@@ -192,7 +192,8 @@
                                                 totalItems: totalRec}; let i = index">
           <div class="detail" style="width: 100%; padding: 15px">
             <div class="media display-inline text-align-center">
-              <img src="{{list.account.image}}" class="mr-3 " style=" height: 100px;" alt="">
+              <img src="{{list.account.image}}" class="mr-3 " style=" height: 100px;width: 100px;
+" alt="">
               <div class="media-body text-left  text-align-center">
                 <h6><a class="font-color-black" (click)="details(list.idNews)">{{list.title.toUpperCase()}}</a></h6>
                 <i class="large material-icons">account_balance</i>
