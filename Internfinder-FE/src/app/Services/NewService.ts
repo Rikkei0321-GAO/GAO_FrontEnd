@@ -51,6 +51,5 @@ export class NewService {
   getAllbyIdAccount(id: number):Observable<any>{
 
     return this.httpClient.get(baseURL+'/mybaidang/'+ id, this.httpOptions)
-
   }
 }

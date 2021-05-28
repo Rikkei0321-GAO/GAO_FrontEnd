@@ -21,6 +21,8 @@ export class SinhvienCvComponent implements OnInit {
   account: AccountClass=new AccountClass();
   // @ts-ignore
   public cv: Create_CV[];
+
+  public idcv: number=0;
   public  id_now :number=0;
   // @ts-ignore
   public id: number=0;
@@ -36,13 +38,15 @@ export class SinhvienCvComponent implements OnInit {
     this.loadcssServices.loaddCss('assets/Client/CSS/profile.css');
   }
 
+  // this.cvceated.getAll().subscribe(data => {
+  //   // @ts-ignore
+  //   this.cv = data;
+  // });
+
   ngOnInit(): void {
-    this.cvceated.getAll().subscribe(data => {
-      // @ts-ignore
-      this.cv = data;
-    });
     this.id = this.activatedRouteService.snapshot.params['id'];
     console.log(this.id);
+    this.gettaikhoan();
     this.accountservice.getOne(this.id).subscribe(data=>{
       this.account=data;
       console.log(data)
@@ -51,6 +55,17 @@ export class SinhvienCvComponent implements OnInit {
     this.id_now = id_user['id'];
     console.log(this.id_now);
   }
+  gettaikhoan(){
+    let id_user = JSON.parse(<string>localStorage.getItem("auth-user"));
+    this.id_now = id_user['id'];
+    this.cvceated.getIdAccount(this.id_now).subscribe(data=>{
+      this.cv = data;
+      console.log(data)
+    }, error => {
+      console.log(error)
+    })
+  }
+
 
   deletebyid(id: any){
     if(id == null){

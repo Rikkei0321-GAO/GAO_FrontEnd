@@ -42,6 +42,9 @@ export class CvCreatedService {
   getAll(): Observable<Create_CV[]> {
     return this.httpClient.get<Create_CV[]>(baseURL + '/index')
   }
+  getIdAccount(id: number):Observable<any>{
 
+    return this.httpClient.get(baseURL+'/index/'+ id, this.httpOptions)
+  }
 }
 

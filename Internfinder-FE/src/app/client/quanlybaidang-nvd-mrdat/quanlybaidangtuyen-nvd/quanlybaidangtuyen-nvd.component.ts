@@ -15,9 +15,9 @@ export class QuanlybaidangtuyenNvdComponent implements OnInit {
               private  activatedRouteService: ActivatedRoute,
               private  router: Router) {
   }
-  public  id_now :number=0
-  public id: number=0
-  pageOfItems : number = 1
+  public  id_now :number=0;
+  public id: number=0;
+  pageOfItems : number = 1;
   // @ts-ignore
   public newlist: NewsClass[];
   // @ts-ignore
@@ -43,7 +43,7 @@ export class QuanlybaidangtuyenNvdComponent implements OnInit {
   getOneID(id: number){
     this.router.navigate(['/quanlybaidangtuyen/details',id])
   }
-  keyword: any
+  keyword: any;
   // @ts-ignore
   search(){
     if (this.keyword ==""){
