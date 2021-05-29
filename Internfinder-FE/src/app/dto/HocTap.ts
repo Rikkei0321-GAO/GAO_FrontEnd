@@ -1,11 +1,11 @@
 export class HocTap {
-  nameSchool: string;
+  school: string;
   dayStart: string;
   dayEnd: string;
 
 
-  constructor(nameSchool: string, dayStart: string, dayEnd: string) {
-    this.nameSchool = nameSchool;
+  constructor(school: string, dayStart: string, dayEnd: string) {
+    this.school = school;
     this.dayStart = dayStart;
     this.dayEnd = dayEnd;
   }

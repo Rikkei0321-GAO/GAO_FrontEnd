@@ -1,11 +1,11 @@
 export class KinhNghiem{
-  name: string;
+  contact: string;
   dayStart: string;
   dayEnd: string;
 
 
-  constructor(name: string, dayStart: string, dayEnd: string) {
-    this.name = name;
+  constructor(contact: string, dayStart: string, dayEnd: string) {
+    this.contact = contact;
     this.dayStart = dayStart;
     this.dayEnd = dayEnd;
   }

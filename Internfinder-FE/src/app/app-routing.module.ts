@@ -73,7 +73,7 @@ const routes: Routes = [
     path: '', component: ClientComponent, children :
       [
         {path: '', component: PageComponent},
-        {path: 'create_cv', component: ModuleCreateCvComponent, canActivate:[CustomerAuthService] },
+        {path: 'create_cv', component: ModuleCreateCvComponent/*, canActivate:[CustomerAuthService]*/ },
         {path: 'forum', component: TrangchuForumComponent},
         {path: 'forum/index/:id', component: BaivietForumComponent},
         {path: 'dangbaichiase', component: DangbaivietForumComponent, canActivate:[CustomerAuthService]},

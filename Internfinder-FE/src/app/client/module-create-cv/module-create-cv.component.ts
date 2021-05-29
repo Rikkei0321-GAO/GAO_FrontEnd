@@ -7,6 +7,7 @@ import {CvCreatedService} from "../../Services/cv-created.service";
 import {ShareClass} from "../../model/Share.Class";
 import {LoadcssServices} from "../../Services/loadcss.services";
 import {ActivatedRoute, Router} from "@angular/router";
+import {ImageValidator} from "./ImageValidator";
 
 
 @Component({
@@ -18,7 +19,7 @@ export class ModuleCreateCvComponent implements OnInit {
   // @ts-ignore
   idtemplate: number;
   isLinear = false;
-
+  urlImg: string = 'https://firebasestorage.googleapis.com/v0/b/fir-angular-66583.appspot.com/o/avatar-1577909_1280.png?alt=media&token=d7eeaf14-9686-48ee-b313-973b26c57435';
   selectImg: any = null;
   // @ts-ignore
   idImg: string;
@@ -34,13 +35,13 @@ export class ModuleCreateCvComponent implements OnInit {
   diachi:string;
 
   public kinhNghiemForm = new FormGroup({
-    name: new FormControl(''),
+    contact: new FormControl(''),
     dayStart: new FormControl(''),
     dayEnd: new FormControl('')
   });
 
   public hoctapForm = new FormGroup({
-    nameSchool: new FormControl(''),
+    school: new FormControl(''),
     dayStart: new FormControl(''),
     dayEnd: new FormControl('')
   });
@@ -57,12 +58,14 @@ export class ModuleCreateCvComponent implements OnInit {
     this.loadcssServices.loaddCss('assets/page/css/formCV.css');
 
     this.skillForm = this.fb.group({
-      skills: this.fb.array([this.fb.control(null)])
+      skills: this.fb.array([this.fb.control(null,[Validators.required])])
     })
     this.thanhtichForm = this.fb.group({
-      tts: this.fb.array([this.fb.control(null)])
+      tts: this.fb.array([this.fb.control(null, [Validators.required])])
     })
+
   }
+
 
   addSkill(): void {
     (this.skillForm.get('skills') as FormArray).push(
@@ -80,7 +83,7 @@ export class ModuleCreateCvComponent implements OnInit {
     let kinhNghiemArray = this.kinhNghiemForm.controls.kinhNghiems as FormArray;
     let arraylen = kinhNghiemArray.length;
     let newKNgroup: FormGroup = this.fb.group({
-      name: [''],
+      contact: [''],
       dayStart: [''],
       dayEnd: ['']
     })
@@ -91,7 +94,7 @@ export class ModuleCreateCvComponent implements OnInit {
     let hocTapArray = this.hoctapForm.controls.hoctaps as FormArray;
     let arraylen = hocTapArray.length;
     let newKNgroup: FormGroup = this.fb.group({
-      nameSchool: [''],
+      school: [''],
       dayStart: [''],
       dayEnd: ['']
     })
@@ -136,7 +139,7 @@ export class ModuleCreateCvComponent implements OnInit {
     this.kinhNghiemForm=this.fb.group({
       kinhNghiems: this.fb.array([
         this.fb.group({
-          name: [''],
+          contact: [''],
           dayStart: [''],
           dayEnd: ['']
         })
@@ -145,7 +148,7 @@ export class ModuleCreateCvComponent implements OnInit {
       this.hoctapForm=this.fb.group({
       hoctaps: this.fb.array([
         this.fb.group({
-          nameSchool: [''],
+          school: [''],
           dayStart: [''],
           dayEnd: ['']
         })
