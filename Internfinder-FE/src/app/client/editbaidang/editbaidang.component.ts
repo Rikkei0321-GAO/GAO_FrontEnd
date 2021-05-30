@@ -25,41 +25,47 @@ export class EditbaidangComponent implements OnInit {
     this.loadcssServices.loaddCss('assets/Client/CCS/stylesMH.css');
     this.loadcssServices.loaddCss('assets/Client/fontawesome-free-5.15.2-web/css/all.css');
     this.formUpload = this.formBuild.group({
-        title: ['',[Validators.required]],
-        major: ['',[Validators.required]],
-        salary: ['',[Validators.required]],
-        quanlity: ['',[Validators.required]],
-        work_loaction: ['',[Validators.required]],
-        position: ['',[Validators.required]],
-        category_idCategory: ['',[Validators.required]],
-        type_of_work: ['',[Validators.required]],
-        decriptions: ['',[Validators.required]],
-        benefit: ['',[Validators.required]],
-        sex: ['',[Validators.required]],
-        degree: ['',[Validators.required]],
-        working_time: ['',[Validators.required]],
-        profile_language: ['',[Validators.required]],
-        job_requirements: ['',[Validators.required]],
-        profile_requirement: ['',[Validators.required]],
-        name_nd: ['',[Validators.required]],
-        sdt_nd:['',[Validators.required,Validators.pattern('^[0-9]{10}$')]],
-        address_nd: ['',[Validators.required]],
-        email_nd:['',[Validators.required,Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')]]
+      title: ['',[Validators.required,Validators.pattern('^[a-z0-9._-]{3,15}$')]],
+      major: ['',[Validators.required,Validators.pattern('^[a-z0-9._-]{3,15}$'),Validators.maxLength(100)]],
+      salary: ['',[Validators.required]],
+      quanlity: ['',[Validators.required,Validators.pattern('^[1-9][0-9]*$')]],
+      work_loaction: ['',[Validators.required]],
+      position: ['',[Validators.required]],
+      category_idCategory: ['',[Validators.required]],
+      type_of_work: ['',[Validators.required]],
+      decriptions: ['',[Validators.required]],
+      benefit: ['',[Validators.required]],
+      sex: ['',[Validators.required]],
+      degree: ['',[Validators.required]],
+      working_time: ['',[Validators.required]],
+      profile_language: ['',[Validators.required]],
+      job_requirements: ['',[Validators.required]],
+      profile_requirement: ['',[Validators.required]],
+      name_nd: ['',[Validators.required,Validators.maxLength(100),Validators.pattern('^[a-z0-9._-]{3,15}$')]],
+      sdt_nd:['',[Validators.required,Validators.pattern('^[0-9]{10}$')]],
+      address_nd: ['',[Validators.required,Validators.pattern('^[a-z0-9._-]{3,15}$')]],
+      email_nd:['',[Validators.required,Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')]]
       }
     );
   }
   validation_messages = {
     'title': [
       {type: 'required',message: 'Trường này không được để trống!'},
+      {type:'pattern',message: 'Tiêu đề không chứa các ký tự đặc biệt' },
     ],
     'major': [
       {type: 'required',message: 'Trường này không được để trống!'},
+      {type:'pattern',message: 'Chức danh không chứa các ký tự đặc biệt' },
+      {type: 'maxlength', message: 'Chức danh ít hơn 100 ký tự'},
+
     ],
     'salary':[
       {type: 'required',message: 'Trường này không được để trống!'},
     ],
     'quanlity':[
       {type: 'required',message: 'Trường này không được để trống!'},
+      {type:'pattern',message: 'Trường này số lượng lớn hơn 0' },
+
     ],
     'work_loaction':[
       {type: 'required',message: 'Trường này không được để trống!'},
@@ -98,13 +104,21 @@ export class EditbaidangComponent implements OnInit {
       {type: 'required',message: 'Trường này không được để trống!'},
     ],
     'name_nd':[
-      {type: 'required',message: 'Trường này không được để trống!'},],
+      {type: 'required',message: 'Trường này không được để trống!'},
+      {type: 'maxlength', message: 'Trường này ít hơn 100 ký tự'},
+      {type:'pattern',message: 'Trường họ tên không chứa các ký tự đặc biệt' },
+      {type:'pattern',message: 'Trường họ tên không chứa khoảng trắng đầu tiên' },
+
+
+    ],
     'sdt_nd':[
       {type: 'required',message: 'Trường này không được để trống!'},
       {type: 'pattern', message: 'Số điện thoại 10 số'},
     ],
     'address_nd':[
       {type: 'required',message: 'Trường này không được để trống!'},
+      {type:'pattern',message: 'Trường này không chứa các ký tự đặc biệt' },
+
     ],
     'email_nd':[
       {type: 'required',message: 'Trường này không được để trống!'},
@@ -115,6 +129,8 @@ export class EditbaidangComponent implements OnInit {
   editBai: newdto;
   // @ts-ignore
   private idCata:string;
+  date: Date = new Date();
+
   ngOnInit(): void {
     // @ts-ignore
     this.editBai = new newdto();
