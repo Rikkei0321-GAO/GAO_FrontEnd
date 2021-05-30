@@ -233,7 +233,7 @@
       </div>
       <div class="col-md-6">
         <label for="time" class="form-label">Hạn nạp hồ sơ</label>
-        <input type="Date" min="today"  [(ngModel)]="addBaidang.working_time" formControlName="working_time" class="form-control" id="time"required>
+        <input type="date" min="{{date|date:'yyyy-MM-dd'}}"  [(ngModel)]="addBaidang.working_time" formControlName="working_time" class="form-control" id="time" required>
         <div *ngFor="let validation of validation_messages.working_time">
           <small class="text-danger"
                  *ngIf="formDangtuyendung.get('working_time')!.hasError(validation.type) && formDangtuyendung.get('working_time')!.touched">
