@@ -75,7 +75,7 @@
           </a>
           <div class="col-md-10">
             <p>
-              <a class="float-left"><strong>{{item.account?.fullName}}</strong></a>
+              <a class="float-left"><strong>{{item.account?.fullName || 'Người dùng hệ thống'}}</strong></a>
               <span class="float-right">{{item.create_date | date:'dd/MM/yyyy'}}</span>
             </p>
             <br>

@@ -89,12 +89,15 @@ export class QuanlythongtinTaikhoanEditComponent implements OnInit {
       this.router.navigate(['/profile/', this.id]);
     }, error => console.log(error));
   }
-
+  OnComback(){
+    this.router.navigate(['/profile/', this.id])
+  }
   selectedImage: any = null;
   imgaconvert: any
 
   showPreview(event: any) {
     this.selectedImage = event.target.files[0];
+    this.save()
   }
 
 
