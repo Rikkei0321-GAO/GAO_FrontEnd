@@ -1,3 +1,6 @@
+<header>
+  <title>Chi tiết bài đăng</title>
+</header>
 <style>
   pre {
     background: white
@@ -84,10 +87,8 @@
                 </a>
                 <ng-container *ngIf="show">
                   <div style="float: right" [formGroup]="formApply">
-                    <div class="fileUpload">
-                      <!--                      <input type="file" class="upload">-->
+                    <div class="#" style="    margin: 10px;">
                       <input type="file" class="upload" formControlName="url" (change)="showPreview($event)">
-                      <span>Upload CV</span>
                     </div>
                     <a (click)="save()" class="footer-btn grn-btn" type="submit">Xác nhận</a>
                     <a (click)="add()" class="footer-btn grn-btn" type="submit">Gửi CV</a>

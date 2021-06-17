@@ -73,7 +73,7 @@ const routes: Routes = [
     path: '', component: ClientComponent, children :
       [
         {path: '', component: PageComponent},
-        {path: 'create_cv', component: ModuleCreateCvComponent/*, canActivate:[CustomerAuthService]*/ },
+        {path: 'create_cv', component: ModuleCreateCvComponent, canActivate:[CustomerAuthService] },
         {path: 'forum', component: TrangchuForumComponent},
         {path: 'forum/index/:id', component: BaivietForumComponent},
         {path: 'dangbaichiase', component: DangbaivietForumComponent, canActivate:[CustomerAuthService]},
@@ -84,7 +84,7 @@ const routes: Routes = [
         {path: 'quanlybaidangtuyen', component: QuanlybaidangtuyenNvdComponent, canActivate:[CustomerAuthService]},
         {path: 'quanlybaidangtuyen/details/:id', component: QuanlybaidangNvdMrdatDetailsComponent, canActivate:[CustomerAuthService]},
         {path: 'timkiem-trangchu', component: ModuleTimkiemTrangchuComponent},
-        {path: 'xembaidangtuyen/:idNew', component: PapeBaidangtuyenComponent},
+        {path: 'xembaidangtuyen/:idNew', component: PapeBaidangtuyenComponent,canActivate:[CustomerAuthService] },
         {path: 'pay-package', component: PayPackageComponent, canActivate:[CustomerAuthService]},
         {path: 'paypal', component: PaypalComponent,canActivate:[CustomerAuthService]},
         {path: 'quanlycv-sv/:id', component: SinhvienCvComponent,canActivate:[CustomerAuthService]},

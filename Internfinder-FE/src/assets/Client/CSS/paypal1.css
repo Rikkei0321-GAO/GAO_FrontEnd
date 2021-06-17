@@ -1661,7 +1661,7 @@ code {
 ul,
 ol {
   padding: 0;
-  margin: 0 0 0.75rem 25px;
+  /*margin: 0 0 0.75rem 25px;*/
 }
 ul ul,
 ul ol,
@@ -3771,7 +3771,7 @@ a {
   font-family: 'PayPal-Sans', Helvetica Neue, Arial, sans-serif;
   font-size: 0.9375rem;
   font-weight: 500;
-  line-height: 1.5rem;
+  /*line-height: 1.5rem;*/
   text-align: center;
   text-decoration: none;
 }

@@ -75,7 +75,7 @@
             <nav class="main_nav_contaner ml-auto">
               <ul class="main_nav">
                 <li><a href="">Trang chủ</a></li>
-                <li class="dropdown ">
+                <li *ngIf="!isnhatuyendung" class="dropdown ">
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#">Quản lý CV</a>
                   <ul class="dropdown-menu">
                     <li><a href="/create_cv">Tạo CV</a></li>
@@ -84,14 +84,10 @@
                   </ul>
                 </li>
                 <li class="dropdown ">
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Kĩ năng</a>
-                  <ul class="dropdown-menu">
-                    <li><a href="job_category.html">Khóa Học</a></li>
-                    <li><a href="job_detail.html">Phỏng Vấn</a></li>
-                  </ul>
+                  <a target="_blank" href="https://www.w3schools.com/">Khóa Học</a>
                 </li>
-                <li><a href="/timkiemtra">Việc làm</a></li>
-                <li><a routerLink="/xembaidangtuyen">Công ty</a></li>
+                <li><a href="/timkiem-trangchu">Việc làm</a></li>
+                <li><a target="_blank" href="https://rtep.vn/">RTep</a></li>
                 <li><a routerLink="/forum">Diễn đàn</a></li>
                 <li *ngIf="!isnhatuyendung; else disableform">
                   </li>
@@ -99,9 +95,13 @@
                     <a style="color: white;cursor: pointer" routerLink="/quanlybaidangtuyen">Quản lý bài đăng</a>
                   </ng-template>
               </ul>
-              <div class=" Post-Jobs">
-                <a routerLink="/dangtuyendung" style="color: white;">Đăng bài</a>
+                <div  *ngIf="!isnhatuyendung; else disableform123" >
               </div>
+              <ng-template  #disableform123>
+                <div class=" Post-Jobs">
+                <a  routerLink="/dangtuyendung" style="color: white;">Đăng bài</a>
+                </div>
+              </ng-template>
               <div class="hamburger menu_mm menu-vertical">
                 <i class="large material-icons font-color-white menu_mm menu-vertical">menu</i>
               </div>
@@ -111,45 +111,6 @@
       </div>
     </div>
   </div>
-<!--  <div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">-->
-<!--    <div class="menu_close_container">-->
-<!--      <div class="menu_close">-->
-<!--        <div></div>-->
-<!--        <div></div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="search">-->
-<!--      <form action="#" class="header_search_form menu_mm">-->
-<!--        <input type="search" class="search_input menu_mm" required="required">-->
-<!--        <button-->
-<!--          class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">-->
-<!--          <i class="fa fa-search menu_mm" aria-hidden="true"></i>-->
-<!--        </button>-->
-<!--      </form>-->
-<!--    </div>-->
-<!--    <nav class="menu_nav">-->
-<!--      <ul class="menu_mm">-->
-<!--        <li class="dropdown active ">-->
-<!--          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Trang chủ</a>-->
-<!--          &lt;!&ndash;          <ul class="dropdown-menu">&ndash;&gt;-->
-<!--          &lt;!&ndash;            <li><a href="index.html">Home variation 1</a></li>&ndash;&gt;-->
-<!--          &lt;!&ndash;            <li><a href="index2.html">Home variation 2</a></li>&ndash;&gt;-->
-<!--          &lt;!&ndash;          </ul>&ndash;&gt;-->
-<!--        </li>-->
-<!--        <li class="dropdown ">-->
-<!--          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Kĩ năng</a>-->
-<!--          <ul class="dropdown-menu">-->
-<!--            <li><a href="job_category.html">Khóa Học</a></li>-->
-<!--            <li><a href="job_detail.html">Phỏng Vấn</a></li>-->
-<!--          </ul>-->
-<!--        </li>-->
-<!--        <li><a href="blog_page.html">Việc làm</a></li>-->
-<!--        <li><a href="blog_page.html">Diễn đàn</a></li>-->
-<!--        <li><a href="about_us.html">Công ty</a></li>-->
-<!--        <li><a href="contact.html">Liên hệ</a></li>-->
 
-<!--      </ul>-->
-<!--    </nav>-->
-<!--  </div>-->
 </header>
 

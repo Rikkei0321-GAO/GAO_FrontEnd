@@ -1,9 +1,31 @@
-
-<div class="contact-grids d-grid mt-lg-5 mt-4 mx-lg-5">
-  <div class="col-sm-4 accountPage-sections fiLists-container isActive"><section class="fiList-icon_container"><div class="fiList-icon_sideBySide"><a href="https://www.paypal.com/myaccount/money/banks/new" data-name="addBank" class="interstitial-entryLink test_addNewBank" pa-marked="1"><img src="https://www.paypalobjects.com/ui-web/money-icons/generic/addBankIcon_fiList.svg" alt="Add Bank" aria-hidden="true"><span class="col-xs-12 vx_text-body-md_medium test_bankPrimaryText fiList-linkBankText">Liên kết một tài khoản ngân hàng</span></a></div><div class="verticalLine-wrapper"><hr class="vx_hr-alt verticalLine"></div><div class="fiList-icon_sideBySide"><a href="https://www.paypal.com/myaccount/money/cards/new/manual" data-name="addCard" class="interstitial-entryLink test_addNewCard" pa-marked="1"><img class="fiList-addCardIcon" src="https://www.paypalobjects.com/ui-web/money-icons/generic/addCardIcon.svg" alt="" aria-hidden="true"><span class="col-xs-12 vx_text-body-md_medium test_cardPrimaryText linkFi-linkCardText">Liên kết thẻ</span></a></div></section><section class="fiListGroup_testTreatment nemo_fiListGroup"><header class="fiListGroup-header_testTreatment table-row" aria-expanded="true" role="button"></header><ul class="fiList test_fiList js_fiList " tabindex="-1"><li class="fiList-item_testTreatment isSelected_ltr"><a href="/myaccount/money/balances/summary" data-name="viewBalance" class="fiListItem-link test_navItem-balance" pa-marked="1"><span class="fiListItem-row table-row"><span class="fiListItem-col table-col-xs fiListItem-statusIcon"></span><span class="fiListItem-col table-col-xs fiListItem-typeIcon"><span class="product-logo circleLogo_small product-logo_balance "><span class="monogram-logo-group"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 59" preserveAspectRatio="xMidYMid" class="monogram-logo"><g fill="none" fill-rule="evenodd"><path class="monogram-logo-lastP_balance" d="M21.33 14.097h16.705c8.97 0 12.346 4.5 11.825 11.126-.86 10.92-7.52 16.96-16.352 16.96h-4.46c-1.21 0-2.024.793-2.354 2.95L24.78 57.65c-.123.814-.554 1.292-1.202 1.35H13.102c-.985 0-1.336-.748-1.078-2.367l6.397-40.16c.258-1.61 1.146-2.376 2.91-2.376"></path><path class="monogram-logo-firstP_balance" d="M10.885.276h16.723c4.71 0 10.296.152 14.033 3.42 2.498 2.183 3.808 5.66 3.505 9.394-1.025 12.66-8.663 19.753-18.906 19.753h-8.25c-1.403 0-2.333.922-2.73 3.42l-2.3 14.517c-.15.942-.562 1.497-1.313 1.564H1.345c-1.143 0-1.55-.867-1.25-2.745L7.513 3.03C7.81 1.166 8.84.277 10.885.277"></path><path class="monogram-logo-overlap_balance" d="M15.5 34.8l2.92-18.328c.257-1.61 1.145-2.375 2.91-2.375h16.706c2.765 0 5 .428 6.75 1.217-1.678 11.268-9.028 17.53-18.654 17.53h-8.248c-1.085 0-1.896.55-2.384 1.956"></path></g></svg></span></span></span><span class="fiListItem-col table-col-xs"><span class="fiListItem-header">Số dư PayPal</span><span class="fiListItem-identifier"><span class="fiListItem-amount vx_text-3_regular">200,00&nbsp;$</span> <span class="vx_text-legal additional-info-text">Khả dụng</span></span></span></span></a></li></ul></section></div>
-  <ngx-paypal [config]="payPalConfig" style="margin-top: 100px;z-index: 3;
-  position: relative;"></ngx-paypal>
-
+<title>Thanh Toán</title>
+<div class="container">
+  <div style="margin: auto">
+    <div class="img" style="width: 300px;margin: auto; height: 125px">
+      <img src="assets/admin/img/454-removebg-preview.png"></div>
+    <div class="#">
+      <section class="fiList-icon_container">
+        <div class="fiList-icon_sideBySide">
+          <a href="https://www.paypal.com/myaccount/money/banks/new" data-name="addBank" target="_blank"
+             class="interstitial-entryLink test_addNewBank" pa-marked="1"><img
+            src="https://www.paypalobjects.com/ui-web/money-icons/generic/addBankIcon_fiList.svg" alt="Add Bank"
+            aria-hidden="true"><span class="col-xs-12 vx_text-body-md_medium test_bankPrimaryText fiList-linkBankText">Liên kết ngân hàng</span></a>
+        </div>
+        <div class="verticalLine-wrapper">
+          <hr class="vx_hr-alt verticalLine">
+        </div>
+        <div class="fiList-icon_sideBySide"><a target="_blank"
+                                               href="https://www.paypal.com/myaccount/money/cards/new/manual"
+                                               data-name="addCard" class="interstitial-entryLink test_addNewCard"
+                                               pa-marked="1"><img class="fiList-addCardIcon"
+                                                                  src="https://www.paypalobjects.com/ui-web/money-icons/generic/addCardIcon.svg"
+                                                                  alt="" aria-hidden="true"><span
+          class="col-xs-12 vx_text-body-md_medium test_cardPrimaryText linkFi-linkCardText">Liên kết thẻ</span></a>
+        </div>
+      </section>
+    </div>
+    <div style="margin: auto; width: 800px">
+      <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+    </div>
+  </div>
 </div>
-
-
