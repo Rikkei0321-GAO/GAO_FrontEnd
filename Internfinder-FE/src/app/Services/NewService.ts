@@ -34,6 +34,10 @@ export class NewService {
     return this.httpClient.put(`${'http://localhost:8080/quanlybaidang'}/${data.idNews}`, data)
   }
 
+  editntd(id: any, data: string): Observable<NewsClass> {
+    // @ts-ignore
+    return this.httpClient.put('http://localhost:8080/quanlybaidang/'+ id, data)
+  }
   delete(idaccount: number): Observable<any> {
     // @ts-ignore
     return this.httpClient.delete(`${'http://localhost:8080/quanlybaidang/delete'}/${idaccount}`);

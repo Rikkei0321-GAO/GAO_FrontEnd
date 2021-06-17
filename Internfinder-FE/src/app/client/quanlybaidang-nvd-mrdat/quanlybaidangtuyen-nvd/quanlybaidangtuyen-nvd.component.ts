@@ -4,6 +4,9 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {ShareClass} from "../../../model/Share.Class";
 import {NewService} from "../../../Services/NewService";
 import {NewsClass} from "../../../model/News.class";
+import {LoadcssServices} from "../../../Services/loadcss.services";
+import {FormControl, FormGroup} from "@angular/forms";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-quanlybaidangtuyen-nvd',
@@ -12,23 +15,27 @@ import {NewsClass} from "../../../model/News.class";
 })
 export class QuanlybaidangtuyenNvdComponent implements OnInit {
   constructor(private newsService: NewService,
+              private loadcssServices: LoadcssServices,
+              private  accountservice: NewService,
               private  activatedRouteService: ActivatedRoute,
+              private  toaset : ToastrService,
               private  router: Router) {
+    this.loadcssServices.loaddCss('assets/admin/css/switch-btn.css');
   }
   public  id_now :number=0;
-  public id: number=0;
+  // public id: number=0;
   pageOfItems : number = 1;
   // @ts-ignore
   public newlist: NewsClass[];
   // @ts-ignore
   public  news: NewsClass;
-  ngOnInit(): void {
-    this.id = this.activatedRouteService.snapshot.params['id'];
-    this.getAllQuanlytaikhoan();
-    // @ts-ignore
-    this.news = new NewsClass();
-    // @ts-ignore
-  }
+  // ngOnInit(): void {
+  //   this.id = this.activatedRouteService.snapshot.params['id'];
+  //   this.getAllQuanlytaikhoan();
+  //   // @ts-ignore
+  //   this.news = new NewsClass();
+  //   // @ts-ignore
+  // }
 
   getAllQuanlytaikhoan(){
     let id_user = JSON.parse(<string>localStorage.getItem("auth-user"));
@@ -43,18 +50,28 @@ export class QuanlybaidangtuyenNvdComponent implements OnInit {
   getOneID(id: number){
     this.router.navigate(['/quanlybaidangtuyen/details',id])
   }
-  keyword: any;
+
   // @ts-ignore
-  search(){
-    if (this.keyword ==""){
-      this.ngOnInit()
-    }
-    else {
-      return this.newsService.seach(this.keyword).subscribe(data=>{
-        this.newlist =data
-      })
-    }
+  public id: number;
+  // @ts-ignore
+  news: NewsClass=new NewsClass();
+  ngOnInit(): void {
+    this.getAllQuanlytaikhoan();
   }
-
-
+  OnEdit(){
+    // @ts-ignore
+    this.accountservice.editntd(this.idaaaa, this.news).subscribe(data=>{
+      this.toaset.success("Cập nhật trang thái thành công !")
+        location.reload()
+    },error => console.log(error));
+  }
+  getOne(id: number){
+    this.accountservice.getOne(id).subscribe(data=>{})
+    this.idaaaa = id
+  }
+  // @ts-ignore
+  idaaaa : number;
+  contactForm = new FormGroup({
+    status: new  FormControl(''),
+  });
 }

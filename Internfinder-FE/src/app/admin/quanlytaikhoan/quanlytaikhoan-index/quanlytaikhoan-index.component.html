@@ -1,3 +1,8 @@
+<header>
+  <title>
+    Quản lý tài khoản
+  </title>
+</header>
 <!-- Main Content -->
 <div id="content">
   <div class="col-lg-3">
@@ -31,7 +36,7 @@
           <table class="table table-bordered">
             <thead>
             <tr>
-              <th>ID</th>
+              <th>STT</th>
               <th>Tên Tài Khoản</th>
               <th>Họ và Tên</th>
               <th>Địa Chỉ</th>
@@ -42,8 +47,8 @@
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let item of quanlytaikhoans | paginate: {itemsPerPage: 5, currentPage: pageOfItems}">
-              <td>{{item.id_account}}</td>
+            <tr *ngFor="let item of quanlytaikhoans | paginate: {itemsPerPage: 5, currentPage: pageOfItems}, let i = index">
+              <td>{{i+1}}</td>
               <td>{{item.username}}</td>
               <td>{{item.fullName}}</td>
               <td>{{item.address }}</td>
@@ -55,11 +60,8 @@
                   <span class="slider round"></span>
                 </label>
               <td>
-                <a class="btn btn-primary" (click)="OnEdit(item.id_account)">Sửa</a>
-                <!-- Button trigger modal -->
-                <a class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter"
-                   (click)="getOneId(item.id_account)">Xóa</a>
-                <!-- Modal -->
+                <button *ngIf="item.id_account == 1;" [disabled]  class="btn btn-warning" >Sửa</button>
+                <button class="btn btn-primary"*ngIf="item.id_account != 1;" (click)="OnEdit(item.id_account)">Sửa</button>
                 <div>
                   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
