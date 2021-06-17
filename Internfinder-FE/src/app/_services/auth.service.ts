@@ -53,12 +53,12 @@ export class AuthService {
     return this.http.post(AUTH_API + 'signup', {
       username: user.username,
       password: user.password,
-      email: user.email,
-      company_address: user.company_address,
-      companyName: user.companyName,
+      conpany_address: user.company_address,
+      company_name: user.companyName,
       phone:user.phone,
-      taxCode:user.taxCode,
+      tax_code:user.taxCode,
       website:user.website,
+      email: user.email
 
     }, httpOptions);
   }

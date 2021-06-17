@@ -146,8 +146,8 @@ export class ModuleDangtuyendungComponent implements OnInit {
       .subscribe(
         response => {
           console.log(this.addBaidang.title);
-          this.router.navigate(['/timkiem-trangchu']);
           this.toast.success('Đăng thành thành công');
+          this.router.navigate(['/quanlybaidangtuyen'])
         },
         (error: any) => {
           console.log(error);

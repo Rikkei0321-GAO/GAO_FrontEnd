@@ -55,7 +55,7 @@
             <select class=" search-box_search_input " name="nganh" required [(ngModel)]="_nganh"
                     (change)='onOptionsSelected($event)'>
               <option value="">Chọn ngành nghề</option>
-              <option *ngFor='let option of lisstnganh' [value]=option.idCategory>{{option.name}}</option>
+              <option *ngFor='let option of lisstnganh' [value]=option.name>{{option.name}}</option>
             </select>
           </div>
         </div>
@@ -204,7 +204,7 @@
                 <span class="textn">Ngành {{list.category.name}}</span>
                 <div class="float-right margin-top text-align-center">
                   <a class="part-full-time" (click)="details(list.idNews)">Xem chi tiết</a>
-                  <p class="date-time">Deadline: {{list.working_time.substr(0, 10)}}</p>
+<!--                  <p class="date-time">Deadline: {{list.working_time.substr(0, 10)}}</p>-->
                 </div>
               </div>
             </div>

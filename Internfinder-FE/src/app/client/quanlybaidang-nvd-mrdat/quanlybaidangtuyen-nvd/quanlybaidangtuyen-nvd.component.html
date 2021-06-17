@@ -39,7 +39,6 @@
               <td>
                 <button class="btn btn-warning"  (click)="getOneID(item.idNews)">Xem CV</button>
               <button *ngIf="item.status == true;"   class="btn btn-success" onclick="document.getElementById('id01').style.display='block'" (click)="getOne(item.idNews)">Cập nhật</button>
-              <button *ngIf="item.status == false;" [disabled] class="btn btn-success" onclick="document.getElementById('id01').style.display='block'" (click)="getOne(item.idNews)">Cập nhật</button>
               <td>
               <div class="modal" id="id01" aria-hidden="true">
                 <div class="modal-content">
@@ -51,6 +50,9 @@
                         <span class="slider round"></span>
                       </label>
                     </form>
+                  </div>
+                  <div class="modal-footer">
+                    <h6>Lưu ý: Khi tắt trạng thái thì sẻ không thể bật lại ?</h6>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" onclick="document.getElementById('id01').style.display='none'">Đóng</button>

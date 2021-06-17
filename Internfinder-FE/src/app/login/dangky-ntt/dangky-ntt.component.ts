@@ -90,6 +90,7 @@ export class DangkyNTTComponent implements OnInit {
               extendedTimeOut:1500
             })
           }else{
+            console.log(this.formRegCompany.value)
             this.authService.registerntd(this.formRegCompany.value).subscribe(
               data => {
                 this.toastr.success(data.message, "Hoàn tất ", {

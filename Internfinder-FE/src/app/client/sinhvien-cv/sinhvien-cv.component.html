@@ -51,7 +51,7 @@
                   </div>
                   <div class="cv-url text-gray"><input type="text" onclick="this.select();" [ngModel]="item.path" readonly="readonly"></div>
                   <ul class="cv-action text-dark-gray">
-                    <li><a target="_parent" [href]="item.path" class="btn btn-sm bold"><i class="fa fa-eye"></i> Xem</a>
+                    <li><a target="_blank" [href]="item.path" class="btn btn-sm bold"><i class="fa fa-eye"></i> Xem</a>
                     </li>
                     <li>
                       <a class="btn btn-sm bold" (click)="deletebyid(item.id_CV)">

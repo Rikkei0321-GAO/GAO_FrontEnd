@@ -319,8 +319,20 @@
     </div>
     <div class="row">
       <div class="col-md-12 upload">
-        <button type="submit" (click)="Update()" [disabled]="!formUpload.valid" class="btn form-control " >
+        <button type="button" onclick="document.getElementById('id01').style.display='block'"  [disabled]="!formUpload.valid" class="btn form-control " >
           <i class="fa fa-upload"></i> Cập nhật </button>
+      </div>
+      <div class="modal" id="id01" aria-hidden="true">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h6  style="margin-right: 10px"> Bạn có muốn cập nhật bài đăng ?</h6>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" onclick="document.getElementById('id01').style.display='none'">Đóng</button>
+            <button type="submit" class="btn btn-success"  (click)="Update()" >Đồng ý</button>
+          </div>
+        </div>
       </div>
     </div>
   </form>

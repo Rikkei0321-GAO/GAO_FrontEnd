@@ -25,19 +25,55 @@
           <img src="../../../assets/admin/img/cv1.png" alt="RIKKEISOFT"
                style="height: 676px">
           <div class="carousel-caption">
-            <a class="btn " (click)="download(1)">Chọn mẫu</a>
+            <button onclick="document.getElementById('id01').style.display='block'" class="btn ">Chọn mẫu</button>
+            <div class="modal" id="id01" aria-hidden="true">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h6  style="margin-right: 10px; color: #00000c"> Bạn có muốn chọn mẫu CV ?</h6>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-warning" onclick="document.getElementById('id01').style.display='none'">Đóng</button>
+                  <button type="submit" class="btn btn-success"  (click)="download(1)" >Đồng ý</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="carousel-item">
           <img src="../../../assets/admin/img/maucv2.png" alt="FPT" style="height: 676px">
           <div class="carousel-caption">
-            <a class="btn btn-topcv-primary" (click)="download(2)">Chọn mẫu</a>
+            <button onclick="document.getElementById('id02').style.display='block'" class="btn ">Chọn mẫu</button>
+            <div class="modal" id="id02" aria-hidden="true">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h6  style="margin-right: 10px; color: #00000c"> Bạn có muốn chọn mẫu CV ?</h6>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-warning" onclick="document.getElementById('id02').style.display='none'">Đóng</button>
+                  <button type="submit" class="btn btn-success"  (click)="download(2)" >Đồng ý</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="carousel-item">
           <img src="../../../assets/admin/img/maucv33.PNG" alt="MGM"  style="height: 676px">
           <div class="carousel-caption">
-            <a class="btn btn-topcv-primary" (click)="download(3)">Chọn mẫu</a>
+            <button onclick="document.getElementById('id03').style.display='block'" class="btn ">Chọn mẫu</button>
+            <div class="modal" id="id03" aria-hidden="true">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h6  style="margin-right: 10px; color: #00000c"> Bạn có muốn chọn mẫu CV ?</h6>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-warning" onclick="document.getElementById('id03').style.display='none'">Đóng</button>
+                  <button type="submit" class="btn btn-success"  (click)="download(3)" >Đồng ý</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
